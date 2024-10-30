@@ -1,0 +1,170 @@
+<!DOCTYPE html><html><head>
+      <title>第三章</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h2 id="矩阵分解">矩阵分解 </h2>
+<p><em>3.1.1 Lemma:矩阵相抵引理</em></p>
+<blockquote>
+<p>设矩阵<span class="mathjax-exps">$A, B \in F^{m \times n}$</span>，则以下表述等价：<br>
+(1) <span class="mathjax-exps">$A$</span>与<span class="mathjax-exps">$B$</span>相抵；<br>
+(2) 存在可逆矩阵<span class="mathjax-exps">$P \in F^{m \times m}$</span>和<span class="mathjax-exps">$Q \in F^{n \times n}$</span>使得<span class="mathjax-exps">$A = PBQ$</span>；<br>
+(3) 矩阵<span class="mathjax-exps">$A$</span>与<span class="mathjax-exps">$B$</span>均可通过有限次初等行列变换得到同一个矩阵；<br>
+(4) <span class="mathjax-exps">$\text{rank}(A) = \text{rank}(B)$</span>.</p>
+</blockquote>
+<p><em>3.1.1 Example:矩阵秩不等式</em></p>
+<blockquote>
+<p>设<span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}, B \in \mathbb{C}^{n \times p}$</span>，证明：</p><div class="mathjax-exps">\[\text{rank}(A) + \text{rank}(B) - n \leq \text{rank}(AB) \leq \min(\text{rank}(A), \text{rank}(B)).\]</div><p></p>
+</blockquote>
+<p><em>3.2.1 Theorem: 满秩分解</em></p>
+<blockquote>
+<p>设<span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}_r(r &gt; 0)$</span>，则存在列满秩矩阵<span class="mathjax-exps">$B$</span>和行满秩矩阵<span class="mathjax-exps">$C$</span>使得<span class="mathjax-exps">$A = BC$</span>。</p>
+</blockquote>
+<p><em>Proof:</em></p>
+<blockquote>
+<p>令 <span class="mathjax-exps">\(A = [a_1, \cdots, a_n]\)</span>，则有 <span class="mathjax-exps">\(R(A) = \operatorname{span}(a_1, \cdots, a_n)\)</span> 且 <span class="mathjax-exps">\(\operatorname{rank}(A) = \operatorname{dim}(R(A))\)</span>，其中 <span class="mathjax-exps">\(a_i \in \mathbb{C}^m, i = 1, \cdots, n\)</span>。任取 <span class="mathjax-exps">\(R(A)\)</span> 的一组基，则 <span class="mathjax-exps">\(a_i\)</span> 必可由基 <span class="mathjax-exps">\(b_1, \cdots, b_r\)</span> 线性表示，即</p><div class="mathjax-exps">\[a_i = [b_1, \cdots, b_r] c_i\]</div> 式中：<span class="mathjax-exps">\(c_i \in \mathbb{C}^r\)</span> 是 <span class="mathjax-exps">\(a_i\)</span> 在基 <span class="mathjax-exps">\(b_1, \cdots, b_r\)</span> 下的坐标，<span class="mathjax-exps">\(i = 1, \cdots, n\)</span>.<br>
+定义矩阵 <span class="mathjax-exps">\(B = [b_1, \cdots, b_r], C = [c_1, \cdots, c_n]\)</span>，有<br>
+<div class="mathjax-exps">\[A_{m \times n} = [a_1, \cdots, a_n] = [b_1, \cdots, b_r] [c_1, \cdots, c_n] = B_{m \times r}C_{r \times n}\]</div> 式中：<span class="mathjax-exps">\(\operatorname{rank}(B) = \operatorname{dim}(R(B)) = r\)</span>。<br>
+又知<br>
+<div class="mathjax-exps">\[\operatorname{rank}(C) \geq \operatorname{rank}(BC)=\operatorname{rank}(A) = r \text{且} \operatorname{rank}(C) \leqslant r\]</div> 故 <span class="mathjax-exps">\(\operatorname{rank}(C) = r\)</span>。综上所述，矩阵 <span class="mathjax-exps">\(A\)</span> 可分解为列满秩矩阵 <span class="mathjax-exps">\(B\)</span> 和行满秩矩阵 <span class="mathjax-exps">\(C\)</span> 的乘积。<p></p>
+</blockquote>
+<p><em>3.2.3 Theorem: 右逆和左逆</em></p>
+<blockquote>
+<p>矩阵<span class="mathjax-exps">\(A \in \mathbb{C}^{m \times n}(r &gt; 0)\)</span> 有右逆（即存在矩阵 <span class="mathjax-exps">\(B\)</span> 使得 <span class="mathjax-exps">\(AB = I\)</span>）的充分必要条件是 <span class="mathjax-exps">\(A\)</span> 为行满秩矩阵；矩阵 <span class="mathjax-exps">\(A\)</span> 有左逆（即存在矩阵 <span class="mathjax-exps">\(B\)</span> 使得 <span class="mathjax-exps">\(BA = I\)</span>）的充分必要条件是 <span class="mathjax-exps">\(A\)</span> 为列满秩矩阵。</p>
+</blockquote>
+<p><em>Proof</em>:</p>
+<blockquote>
+<p>证明有<span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}$</span> 有右逆 <span class="mathjax-exps">$\Leftrightarrow \exists B \in \mathbb{C}^{n \times m}, A_{m \times n} B_{n \times m} = I_{m}$</span><br>
+充分性. <span class="mathjax-exps">$\operatorname{rank}(A)= m \Rightarrow AB = I$</span>.<br>
+对<span class="mathjax-exps">$A$</span>进行相抵分解, 即<span class="mathjax-exps">$A = P_{m \times m} [I_m, 0]Q_{n \times n}$</span>, 可取<span class="mathjax-exps">$B = Q^{-1} [I_m, 0]^T P^{-1}$</span>, 显然<span class="mathjax-exps">$AB = I$</span>.<br>
+必要性. <span class="mathjax-exps">$AB = I \Rightarrow \operatorname{rank}(A) = m$</span>.<br>
+<span class="mathjax-exps">$\operatorname{rank}(A) \geq rank(AB) = m$</span>, 显然<span class="mathjax-exps">$A$</span>是满秩的.</p>
+</blockquote>
+<p>{注}:<br>
+1.设 <span class="mathjax-exps">\(A \in \mathbb{C}_r^{r \times n}\)</span>，则 <span class="mathjax-exps">\(A A^H\)</span> 是 <span class="mathjax-exps">\(r\)</span> 阶非奇异矩阵。根据 <span class="mathjax-exps">\(A A^H (A A^H)^{-1} = I\)</span>，得 <span class="mathjax-exps">\(A^H (A A^H)^{-1}\)</span> 是矩阵 <span class="mathjax-exps">\(A\)</span> 的一个右逆。同理，当 <span class="mathjax-exps">\(A \in \mathbb{C}_r^{m \times r}\)</span> 时，<span class="mathjax-exps">\((A^H A)^{-1} A^H\)</span> 是矩阵 <span class="mathjax-exps">\(A\)</span> 的一个左逆。<br>
+2.<br>
+当 <span class="mathjax-exps">\(A\)</span> 为可逆矩阵时，其右（左）逆唯一存在，即为 <span class="mathjax-exps">\(A\)</span> 的逆矩阵；<br>
+当 <span class="mathjax-exps">\(A\)</span> 为行（列）满秩矩阵（非可逆阵）时，其右（左）逆存在且不唯一；<br>
+当 <span class="mathjax-exps">\(A\)</span> 为其它情况时，其右（左）逆不存在。</p>
+<p><em>3.1.1 Proposition: 矩阵转置秩等价</em></p>
+<blockquote>
+<p>(1) <span class="mathjax-exps">$\text{rank}(A) = \text{rank}(A^H A)$</span>。<br>
+(2) <span class="mathjax-exps">$\text{rank}(A^H) = \text{rank}(A A^H)$</span>。<br>
+(3) <span class="mathjax-exps">$\text{rank}(A) = \text{rank}(A^H A) = \text{rank}(A A^H) = \text{rank}(A^H) = \text{rank}(A^H)$</span>。</p>
+</blockquote>
+<p><em>Proof:</em></p>
+<blockquote>
+<p><span class="mathjax-exps">$\forall x \in \mathbb{C}^n, Ax = 0 \Rightarrow A^HAx = 0$</span>显然成立.<br>
+<span class="mathjax-exps">$\forall x \in \mathbb{C}^n, A^HAx = 0 \rightarrow x^HA^HAx = 0 \rightarrow (Ax)^H(Ax) = 0 \rightarrow Ax = 0$</span>.<br>
+所以<span class="mathjax-exps">$N(A) = N(A^HA)$</span>, 根据秩-零化度定理, <span class="mathjax-exps">$\operatorname{rank}(A) = \operatorname{rank}(A^HA)$</span>. 又由于 <span class="mathjax-exps">$N(A) + R(A^H ) = \mathbb{C}^n$</span>, 所以 <span class="mathjax-exps">$R(A^H) = R(A^HA)$</span>. 令 <span class="mathjax-exps">$A = A^H$</span>, 则有 <span class="mathjax-exps">$R(A) = R(AA^H)$</span>.<br>
+显然有 <span class="mathjax-exps">$\operatorname{rank}(A) = \operatorname{rank}(AA^H) = \operatorname{rank}(A^H) = \operatorname{rank}(A^H A)$</span>.</p>
+</blockquote>
+<p><em>3.3.1 Theorem: LU分解</em></p>
+<blockquote>
+<p>设<span class="mathjax-exps">$A = [a_{ij}] \in \mathbb{C}^{n \times n}$</span>是非奇异矩阵，则存在唯一的单位下三角矩阵<span class="mathjax-exps">$L$</span>和上三角矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$A = LU$</span>成立的充分必要条件是<span class="mathjax-exps">$A$</span>的所有顺序主子式均非零，即<br>
+</p><div class="mathjax-exps">\[\Delta_i(A) = \left| \begin{array}{cccc} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1i} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2i} \\ \vdots &amp; \vdots &amp; &amp; \vdots \\ a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ii} \end{array} \right| \neq 0, \quad i = 1, \cdots, n\]</div><p></p>
+</blockquote>
+<p><em>Proof:</em></p>
+<blockquote>
+<p>见教材P79.</p>
+</blockquote>
+<p>{注}:</p>
+<ol>
+<li>虽然证明过程较复杂,但实际计算上只需用Gauss消元法求解出<span class="mathjax-exps">$L$</span>和<span class="mathjax-exps">$U$</span>即可.</li>
+<li><span class="mathjax-exps">$L$</span>中记录了消元的过程, <span class="mathjax-exps">$U$</span>中记录了消元后的矩阵. 所以<span class="mathjax-exps">$L$</span>中对角线元素为1, <span class="mathjax-exps">$U$</span>中对角线元素为之积为<span class="mathjax-exps">$A$</span>的行列式.</li>
+</ol>
+<p><em>3.3.2 Theorem: LDU Decomposition Theorem</em></p>
+<blockquote>
+<p>设<span class="mathjax-exps">$A = [a_{ij}] \in \mathbb{C}^{n \times n}$</span>是非奇异矩阵，则存在唯一的单位下三角矩阵<span class="mathjax-exps">$L$</span>，对角矩阵<span class="mathjax-exps">$D$</span>和单位上三角矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$A = LDU$</span>成立的充分必要条件是<span class="mathjax-exps">$A$</span>的所有顺序主子式均非零，即<br>
+</p><div class="mathjax-exps">\[\Delta_i(A) = \left| \begin{array}{cccc} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1i} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2i} \\ \vdots &amp; \vdots &amp; &amp; \vdots \\ a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ii} \end{array} \right| \neq 0, \quad i = 1, \cdots, n\]</div>分解式<span class="mathjax-exps">$A = LDU$</span>称为矩阵<span class="mathjax-exps">$A$</span>的LDU分解。<p></p>
+</blockquote>
+<p>{注}:</p>
+<ol>
+<li><span class="mathjax-exps">$L, U$</span>的对角线元素为1, <span class="mathjax-exps">$D$</span>的对角线元素可由<span class="mathjax-exps">$A$</span>的顺序主子式求得, 即 <span class="mathjax-exps">$d_1 = a_{11}, d_i = \frac{\Delta _i(A)}{\Delta _{i-1}(A)}$</span></li>
+<li>非奇异矩阵只是已知条件, 与命题的充分必要性无关. 实际上, 对于奇异矩阵, 其也可以<span class="mathjax-exps">$LDU$</span>分解; 对于非奇异矩阵, 其可能无法<span class="mathjax-exps">$LDU$</span>分解. 但是以下引理说明非奇异矩阵可以通过重排行列顺序后进行<span class="mathjax-exps">$LDU$</span>分解.</li>
+</ol>
+<p><em>3.3.1 Lemma: 非奇异矩阵重排</em></p>
+<blockquote>
+<p>设<span class="mathjax-exps">$A = [a_{ij}] \in \mathbb{C}^{n \times n}$</span>是非奇异矩阵，则存在排列矩阵<span class="mathjax-exps">$P$</span>使得<span class="mathjax-exps">$PA$</span>的所有顺序主子式均非零。</p>
+</blockquote>
+<p><em>3.3.1 Corollary: Cholesky 分解</em></p>
+<blockquote>
+<p>若<span class="mathjax-exps">$n$</span>阶实对称矩阵<span class="mathjax-exps">$A$</span>是正定的，则存在唯一的正上三角矩阵<span class="mathjax-exps">$R$</span>使得<span class="mathjax-exps">$A = R^{\top} R$</span>。</p>
+</blockquote>
+<p><em>Proof:</em></p>
+<blockquote>
+<p>由于矩阵<span class="mathjax-exps">$A$</span>是正定的，故其所有顺序主子式均大于0。则<span class="mathjax-exps">$A$</span>可以进行<span class="mathjax-exps">$LDU$</span>分解，即<span class="mathjax-exps">$A = LDU$</span>。由于<span class="mathjax-exps">$A$</span>是实对称矩阵，即<span class="mathjax-exps">$A^\top = U^\top DL^\top = LDU$</span>，由分解的唯一性可得<span class="mathjax-exps">$L = U^{\top}$</span>，则有<span class="mathjax-exps">$A = U^{\top} DU$</span>。令<span class="mathjax-exps">$R ^\top = U^{\top} \sqrt{D}$</span>，则有<span class="mathjax-exps">$A = R^{\top} R$</span>。<br>
+唯一性。<br>
+假设存在另一正上三角矩阵 <span class="mathjax-exps">$R'$</span>使得<span class="mathjax-exps">$A = R'^{\top} R'$</span>，由于 <span class="mathjax-exps">$R$</span>为正上三角矩阵，则可令 <span class="mathjax-exps">$R'^\top = U'^\top \sqrt[]{D'}$</span>, 则 <span class="mathjax-exps">$A = U'^\top D'U'$</span>, 由分解的唯一性可得 <span class="mathjax-exps">$U = U'$</span>, <span class="mathjax-exps">$D = D'$</span>, 即 <span class="mathjax-exps">$R = R'$</span>。</p>
+</blockquote>
+<p><em>3.4.1 Definition: QR 分解</em></p>
+<blockquote>
+<p>若复方阵<span class="mathjax-exps">$A$</span>可分解为<span class="mathjax-exps">$A = QR$</span>，其中<span class="mathjax-exps">$Q$</span>为酉矩阵，<span class="mathjax-exps">$R$</span>为上三角矩阵，则称矩阵<span class="mathjax-exps">$A$</span>可作QR分解（或酉三角分解）。若分解式<span class="mathjax-exps">$A = QR$</span>中，矩阵<span class="mathjax-exps">$A$</span>是实方阵，<span class="mathjax-exps">$Q$</span>为正交矩阵，<span class="mathjax-exps">$R$</span>为上三角矩阵，此时称分解式<span class="mathjax-exps">$A = QR$</span>为正交三角分解。</p>
+</blockquote>
+<p><em>3.4.1 Theorem: 正交分解</em></p>
+<blockquote>
+<p>若实方阵<span class="mathjax-exps">$A$</span>满秩，则存在正交矩阵<span class="mathjax-exps">$Q$</span>及正线上三角矩阵<span class="mathjax-exps">$R$</span>满足<span class="mathjax-exps">$A = QR$</span>且分解唯一。</p>
+</blockquote>
+<p><em>Proof:</em></p>
+<blockquote>
+<p>记为 <span class="mathjax-exps">\(A = [a_1, \cdots, a_n]\)</span>，则向量组 <span class="mathjax-exps">\(a_1, \cdots, a_n\)</span> 是 <span class="mathjax-exps">\(\mathbb{R}^n\)</span> 空间的一组基。由 Gram-Schmidt 正交化方法知，根据基 <span class="mathjax-exps">\(a_1, \cdots, a_n\)</span> 可构造出 <span class="mathjax-exps">\(\mathbb{R}^n\)</span> 的一组标准正交基 <span class="mathjax-exps">\(z_1, \cdots, z_n\)</span>，且这两组基有如下关系：<br>
+</p><div class="mathjax-exps">\[[a_1, \cdots, a_n] = [z_1, \cdots, z_n] R \qquad (3.4.1)\]</div> 式中：<span class="mathjax-exps">\(y_k = a_k - \sum_{i=1}^{k-1} (a_i, z_i) z_i, k = 1, \cdots, n\)</span>，矩阵 <span class="mathjax-exps">\(R\)</span> 定义为<div class="mathjax-exps">\[R = \begin{bmatrix} \|y_1\| &amp; (a_2, z_1) &amp; \cdots &amp; (a_n, z_1) \\  &amp; \|y_2\| &amp; \cdots &amp; (a_n, z_2) \\  &amp; &amp; \ddots &amp; \vdots \\ 0 &amp; &amp; &amp; \|y_n\| \end{bmatrix}\]</div> 写成矩阵形式，即 <span class="mathjax-exps">\(A = QR\)</span>，其中，<span class="mathjax-exps">\(Q = [z_1, \cdots, z_n]\)</span>，显然，<span class="mathjax-exps">\(Q\)</span> 是正交矩阵，<span class="mathjax-exps">\(R\)</span> 是正线上三角矩阵。<br>
+唯一性证明。<br>
+若存在 <span class="mathjax-exps">$A=Q_1R_1 = Q_2R_2$</span>.<br>
+令 <span class="mathjax-exps">$\widetilde{Q} = Q_1^TQ_2,\widetilde{R} = R_1R_2^{-1}$</span>, 显然 <span class="mathjax-exps">$\widetilde{Q} = \widetilde{R}$</span>，由于 <span class="mathjax-exps">$\widetilde{Q}$</span>为正交矩阵，<span class="mathjax-exps">$\widetilde{R}$</span>为正线上三角矩阵，则可记<br>
+<div class="mathjax-exps">$$\widetilde{R}=\left[\begin{array}{cccc} \tilde{r}_{11} &amp; \tilde{r}_{12} &amp; \cdots &amp; \tilde{r}_{1 n} \\ &amp; \tilde{r}_{22} &amp; \cdots &amp; \tilde{r}_{2 n} \\ &amp; &amp; \ddots &amp; \vdots \\ &amp; \boldsymbol{O} &amp; &amp; \tilde{r}_{n n} \end{array}\right]$$</div><br>
+由 <span class="mathjax-exps">$\widetilde{R}^\top \widetilde{R} = I$</span>，即<br>
+<div class="mathjax-exps">$$\widetilde{R}^T \widetilde{R} = \left[\begin{array}{cccc} \tilde{r}_{11} &amp;  &amp;  \boldsymbol{O} &amp;  \\ \tilde{r}_{12} &amp; \tilde{r}_{22} &amp; &amp;  \\ \vdots &amp; \vdots &amp; \ddots &amp;  \\ \tilde{r}_{1n} &amp; \tilde{r}_{2n} &amp; \cdots &amp; \tilde{r}_{nn} \end{array}\right]  \left[\begin{array}{cccc} \tilde{r}_{11} &amp; \tilde{r}_{12} &amp; \cdots &amp; \tilde{r}_{1 n} \\ &amp; \tilde{r}_{22} &amp; \cdots &amp; \tilde{r}_{2 n} \\ &amp; &amp; \ddots &amp; \vdots \\ &amp; \boldsymbol{O} &amp; &amp; \tilde{r}_{n n} \end{array}\right] = I$$</div>，对比每一个元素可得<span class="mathjax-exps">$\tilde{r}_{ii}^2 = 1, \tilde{r}_{ij} = 0, i \neq j$</span>，由于所有对角元素都为正，则有<span class="mathjax-exps">$\tilde{r}_{ii} = 1, \tilde{r}_{ij} = 0, i \neq j$</span>，即<span class="mathjax-exps">$\overline{Q} = I, \overline{R} = I$</span>，即 <span class="mathjax-exps">$Q_1 = Q_2, R_1 = R_2$</span>.<p></p>
+</blockquote>
+<p>{注}:</p>
+<ol>
+<li>对于长方形矩阵 <span class="mathjax-exps">$A_{m \times n}$</span>，其依然可以 <span class="mathjax-exps">$QR$</span>分解。有两种分解形式 <span class="mathjax-exps">$A_{m \times n} = Q_{m \times n}R_{n \times n}$</span> 和 <span class="mathjax-exps">$A_{m \times n} = Q_{m \times m}R_{m \times n}$</span></li>
+<li><span class="mathjax-exps">$QR$</span>分解只是将<span class="mathjax-exps">$A$</span>的列向量组转换为标准正交基组，其中<span class="mathjax-exps">$Q$</span>为转化后的标准正交基，<span class="mathjax-exps">$R$</span>记录了转换过程。</li>
+</ol>
+<p><em>Example: 非方阵<span class="mathjax-exps">$QR$</span>分解</em></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$A = \begin{bmatrix}     3&amp; 0\\     0&amp; 1\\     4&amp; 0     \end{bmatrix}$</span>，对<span class="mathjax-exps">$A$</span>可进行两种<span class="mathjax-exps">$QR$</span>分解，如下<br>
+</p><div class="mathjax-exps">$$\boldsymbol{A}=\left[\begin{array}{ll} 3 &amp; 0 \\ 0 &amp; 1 \\ 4 &amp; 0 \end{array}\right]=\left[\begin{array}{ll} \frac{3}{5} &amp; 0 \\ 0 &amp; 1 \\ \frac{4}{5} &amp; 0 \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \end{array}\right] = \left[\begin{array}{rrr} \frac{3}{5} &amp; 0 &amp; -\frac{4}{5} \\ 0 &amp; 1 &amp; 0 \\ \frac{4}{5} &amp; 0 &amp; \frac{3}{5} \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]$$</div><p></p>
+</blockquote>
+<p><em>3.4.2 Theorem: 复方阵正交化</em></p>
+<blockquote>
+<p>设复方阵<span class="mathjax-exps">$A$</span>可逆，则存在酉矩阵<span class="mathjax-exps">$U$</span>及正线上三角矩阵<span class="mathjax-exps">$R$</span>满足<span class="mathjax-exps">$A = UR$</span>且分解唯一。</p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
