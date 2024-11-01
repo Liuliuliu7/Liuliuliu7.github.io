@@ -1,0 +1,225 @@
+<!DOCTYPE html><html><head>
+      <title>第一章</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#概率论基础" class="md-toc-link"><p>概率论基础</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#第一章-事件与概率" class="md-toc-link"><p>第一章 事件与概率</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#古典概型" class="md-toc-link"><p>古典概型</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#组合数" class="md-toc-link">
+            <p>组合数</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#重复组合数" class="md-toc-link">
+            <p>重复组合数</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#二项分布和超几何分布" class="md-toc-link">
+            <p>二项分布和超几何分布</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#几何概率" class="md-toc-link">
+            <p>几何概率</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#概率空间" class="md-toc-link"><p>概率空间</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#概率" class="md-toc-link">
+            <p>概率</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    
+</div>
+<h1 id="概率论基础">概率论基础 </h1>
+<blockquote>
+<p>教材: 概率论基础(第三版) - 李贤平</p>
+</blockquote>
+<h2 id="第一章-事件与概率">第一章 事件与概率 </h2>
+<p><strong>样本点</strong>(sample point): 试验可能出现的结果，用<span class="mathjax-exps">$\omega$</span>表示。<br>
+<strong>样本空间</strong>(sample space): 全体样本点的集合，用<span class="mathjax-exps">$\Omega$</span>表示。<br>
+<strong>事件</strong>: 样本点的集合，用<span class="mathjax-exps">$A, B, C, \cdots$</span>表示。</p>
+<blockquote>
+<p>事件的运算可以等价为集合的运算。</p>
+</blockquote>
+<p><strong>概率</strong>: 映射<span class="mathjax-exps">$P: \omega \mapsto \mathbb{R}$</span>，满足以下三个条件:</p>
+<ol>
+<li>非负性: <span class="mathjax-exps">$P(A) \geq 0$</span></li>
+<li>规范性: <span class="mathjax-exps">$P(\Omega) = 1$</span></li>
+<li>可列可加性: 若<span class="mathjax-exps">$A_1, A_2, \cdots$</span>两两互斥，则<span class="mathjax-exps">$P(\bigcup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i)$</span></li>
+</ol>
+<h3 id="古典概型">古典概型 </h3>
+<p>核心公式: <span class="mathjax-exps">\(P(A) = \frac{m}{n} = \frac{\text{有利场合的数目}}{样本点总数}\)</span></p>
+<h4 id="组合数">组合数 </h4>
+<p></p><div class="mathjax-exps">$$C_n^r ={n  \choose r}= \frac{n!}{r!(n-r)!}$$</div><p></p>
+<p>组合数的意义是二项式系数:<br>
+</p><div class="mathjax-exps">$$(a+b)^n=\sum_\limits{r=0}^{n} {n \choose r} a^{r}b^{n-r}$$</div><p></p>
+<p>可以定义多项式系数<br>
+</p><div class="mathjax-exps">$$P_n^{(r_1,r_2,...,r_k)} = \frac{n!}{r_1!r_2!...r_k!}, \text{for } r_1+r_2+...+r_k=n$$</div><p></p>
+<p>多项式系数代表了多项式的展开式中的系数:<br>
+</p><div class="mathjax-exps">$$(a_1+a_2+...+a_k)^n = \sum_\limits{r_1+r_2+...+r_k=n} P_n^{(r_1,r_2,...,r_k)} a_1^{r_1}a_2^{r_2}...a_k^{r_k}$$</div><p></p>
+<h4 id="重复组合数">重复组合数 </h4>
+<p>从<span class="mathjax-exps">$n$</span>个不同的元素中有重复地取<span class="mathjax-exps">$r$</span>个，不计顺序，则不同的取法有:<br>
+</p><div class="mathjax-exps">$$H_n^r = {n+r-1 \choose r} = \frac{(n+r-1)!}{r!(n-1)!}$$</div><p></p>
+<p><em><strong>Proof</strong></em>:<br>
+设 <span class="mathjax-exps">$n$</span> 个不同的元素为 <span class="mathjax-exps">$1,2,3,\ldots,n$</span><br>
+设取出的 <span class="mathjax-exps">$r$</span> 个元素为 <span class="mathjax-exps">$a_1,a_2,a_3,\ldots,a_r$</span><br>
+构造一个组合 <span class="mathjax-exps">$b_1,b_2,b_3,\ldots,b_r$</span><br>
+其中<br>
+</p><div class="mathjax-exps">$$\begin{array}{lll}  b_1 = a_1 \\ b_2 = a_2 + 1 \\ b_3 = a_3 + 2 \\ \ldots \\ b_r = a_r + r - 1 \end{array}$$</div><p></p>
+<p>显然 <span class="mathjax-exps">$b_i$</span> 是不重复的，且 <span class="mathjax-exps">$b_i \in \{1,2,3,\ldots,n+r-1\}$</span>，所以有 <span class="mathjax-exps">$H_n^r$</span> 种组合</p>
+<p>讨论组合数时，下列的展开式是有用的<br>
+</p><div class="mathjax-exps">$$(1+x)^n=\sum_\limits{r=0}^{n} {n \choose r} x^{r}$$</div><p></p>
+<p>令 <span class="mathjax-exps">$x=1$</span>，得到<br>
+</p><div class="mathjax-exps">$$2^n = \sum_\limits{r=0}^{n} {n \choose r}$$</div><p></p>
+<p></p><div class="mathjax-exps">$$\begin{array}{lll} (1+x)^a(1+x) ^b = (1+x)^{a+b} \\ \sum_\limits{n1=0}^{a} {a \choose n1} x^{n1} \sum_\limits{n2=0}^{b} {b \choose n2} x^{n2} = \sum_\limits{n=0}^{a+b} {a+b \choose n} x^{n} , \text{for } n1+n2=n \end{array}$$</div><p></p>
+<p>可以由系数相等得到<br>
+</p><div class="mathjax-exps">$${a \choose 0} {b \choose n}  + {a \choose 1} {b \choose n-1} + ... + {a \choose n} {b \choose 0} = {a+b \choose n}$$</div><p></p>
+<p>当<span class="mathjax-exps">$n = a,b$</span>时<br>
+</p><div class="mathjax-exps">$${n \choose 0}^2 + {n \choose 1}^2 + ... + {n \choose n}^2 = {2n \choose n}$$</div><p></p>
+<p>为了推广二项式定理，可以定义:<br>
+</p><div class="mathjax-exps">$$\begin{array}{ccc} A_x^r = x(x-1)\cdots (x-r+1), \forall x \in \mathbb{R}  \text{ and } r \in \mathbb{N}\\ {x \choose r} = \frac{A_x^r}{r!} \end{array}$$</div><p></p>
+<p>可以验证<br>
+</p><div class="mathjax-exps">$${-a \choose k} = (-1)^k {a+k-1 \choose k}$$</div><p></p>
+<h4 id="二项分布和超几何分布">二项分布和超几何分布 </h4>
+<p>二项分布和超几何分布分别代表了有放回和无放回的取样概率，其概率公式分别为:<br>
+</p><div class="mathjax-exps">$$\begin{array}{ccc} b_k = {n \choose k} p^k (1-p)^{n-k}\\ h_k = \frac{{M \choose k} {N-M \choose n-k}}{{N \choose n}} \end{array}$$</div><p></p>
+<h3 id="几何概率">几何概率 </h3>
+<p>几何概率定义:<br>
+</p><div class="mathjax-exps">$$P(A_g) = \frac{m}{n}, m为g的测度，n为\Omega的测度$$</div><p></p>
+<p>由于<a href="https://en.wikipedia.org/wiki/Bertrand_paradox_(probability)">贝特朗悖论</a>的出现，需要所研究的事件具有可测的性质。</p>
+<p><strong>几何概率基本性质</strong></p>
+<ol>
+<li>非负性 <span class="mathjax-exps">$P(A) \geq 0$</span></li>
+<li>规范性 <span class="mathjax-exps">$P(S) = 1$</span></li>
+<li>可列可加性 若<span class="mathjax-exps">$A_1, \cdots , A_n$</span>两两互斥，<span class="mathjax-exps">$P(\sum_\limits{n=1}^{\infty }A_n) = \sum_\limits{n=1}^{\infty }P(A_n)$</span></li>
+</ol>
+<h3 id="概率空间">概率空间 </h3>
+<p>记全体事件为 <span class="mathjax-exps">$\mathscr{F}$</span>，是由<span class="mathjax-exps">$\Omega$</span>的部分子集构成，对<span class="mathjax-exps">$\mathscr{F}$</span>加入如下限制:</p>
+<ol>
+<li><span class="mathjax-exps">$\Omega \in \mathscr{F}$</span></li>
+<li>若 <span class="mathjax-exps">$A \in \mathscr{F}$</span>，则 <span class="mathjax-exps">$\bar{A} \in \mathscr{F}$</span></li>
+<li>若 <span class="mathjax-exps">$A_1,A_2,... \in \mathscr{F}$</span>，则 <span class="mathjax-exps">$\cup_{n=1}^{\infty}A_n \in \mathscr{F}$</span></li>
+</ol>
+<p>满足上述条件的集合 <span class="mathjax-exps">$\mathscr{F}$</span> 称为 <span class="mathjax-exps">$\Omega$</span> 的 <span class="mathjax-exps">$\sigma$</span> 代数。</p>
+<p><em>1.5.1 Definition: 事件域</em></p>
+<blockquote>
+<p>若<span class="mathjax-exps">$\mathscr{F}$</span>是由样本空间<span class="mathjax-exps">$\Omega$</span>的一些子集构成的一个<span class="mathjax-exps">$\sigma$</span>域，则称它为事件域，<span class="mathjax-exps">$\mathscr{F}$</span>中的元素称为事件，<span class="mathjax-exps">$\Omega$</span>称为必然事件，<span class="mathjax-exps">$\varnothing$</span>称为不可能事件。</p>
+</blockquote>
+<p><strong>例1</strong> <span class="mathjax-exps">$\mathscr{F}=\{\varnothing,\Omega\}$</span>, 不难验证 <span class="mathjax-exps">$\mathscr{F}$</span> 是一个 <span class="mathjax-exps">$\sigma$</span> 域, 这时只有必然事件 <span class="mathjax-exps">$\Omega$</span> 与不可能事件 <span class="mathjax-exps">$\varnothing$</span> 是事件.<br>
+<strong>例2</strong> <span class="mathjax-exps">$\mathscr{F}=\{\varnothing, A,\bar{A},\Omega\}$</span>. 这时 <span class="mathjax-exps">$\mathscr{F}$</span> 也是一个 <span class="mathjax-exps">$\sigma$</span> 域, <span class="mathjax-exps">$\Omega, A,\bar{A},\varnothing$</span> 是事件.<br>
+<strong>例3</strong> <span class="mathjax-exps">$\Omega=\left\{\omega_1,\cdots,\omega_n\right\}$</span>, <span class="mathjax-exps">$\mathscr{F}$</span> 由 <span class="mathjax-exps">$\Omega$</span> 的一切子集构成, 这时它包含不可能事件 <span class="mathjax-exps">$\varnothing,\left(\begin{array}{l}n\\ 1\end{array}\right)$</span> 个单点集, <span class="mathjax-exps">$\left(\begin{array}{l}n\\ 2\end{array}\right)$</span> 个双点集, <span class="mathjax-exps">$\cdots,\left(\begin{array}{c}n\\ n-1\end{array}\right)$</span> 个 n-1点集, 还有必然事件 <span class="mathjax-exps">$\Omega$</span>, 因此计有 <span class="mathjax-exps">$\binom{n}{0}+\binom{n}{1}+\binom{n}{2}+\cdots+\binom{n}{n-1}+\binom{n}{n}=2^n$</span> 个元素. 不难验证, <span class="mathjax-exps">$\mathscr{F}$</span> 是一个 <span class="mathjax-exps">$\sigma$</span> 域.<br>
+<strong>例4</strong> 对于一般的 <span class="mathjax-exps">$\Omega$</span>, 若 <span class="mathjax-exps">$\mathscr{F}$</span> 由 <span class="mathjax-exps">$\Omega$</span> 的一切子集构成, 可以验证 <span class="mathjax-exps">$\mathscr{F}$</span> 是一个 <span class="mathjax-exps">$\sigma$</span> 域。</p>
+<p><em>Theorem: 最小<span class="mathjax-exps">$\sigma$</span>域</em></p>
+<blockquote>
+<p>给定 <span class="mathjax-exps">$\Omega$</span> 的非空子集 <span class="mathjax-exps">$\mathscr{S}$</span>，必存在唯一的 <span class="mathjax-exps">$\sigma$</span> 代数 <span class="mathjax-exps">$\mathfrak{m}(\mathscr{S})$</span>，使得 <span class="mathjax-exps">$\mathscr{S} \subseteq \mathfrak{m}(\mathscr{S})$</span>, 且 <span class="mathjax-exps">$\mathfrak{m} (\mathscr{S})$</span>是包含 <span class="mathjax-exps">$\mathscr{S}$</span>的最小 <span class="mathjax-exps">$\sigma$</span>代数。</p>
+</blockquote>
+<p><em>Proof</em>:</p>
+<blockquote>
+<p>由例4可以看出由 <span class="mathjax-exps">$\Omega$</span> 的一切子集构成的 <span class="mathjax-exps">$\sigma$</span> 代数是包含 <span class="mathjax-exps">$\mathscr{S}$</span>的<span class="mathjax-exps">$\sigma$</span> 代数。取所有包含 <span class="mathjax-exps">$\mathscr{S}$</span>的 <span class="mathjax-exps">$\sigma$</span> 代数的交集，这个交集就是 <span class="mathjax-exps">$\mathfrak{m}(\mathscr{S})$</span>。不难验证 <span class="mathjax-exps">$\mathfrak{m}(\mathscr{S})$</span> 是包含 <span class="mathjax-exps">$\mathscr{S}$</span>的最小 <span class="mathjax-exps">$\sigma$</span> 代数。</p>
+</blockquote>
+<p><em>Definition: 一维博雷尔点集</em></p>
+<blockquote>
+<p>以<span class="mathjax-exps">$\mathbb{R}^1$</span>记数直线或实数全体，并称由一切形为<span class="mathjax-exps">$[a, b)$</span>的有界左闭右开区间构成的集<span class="mathjax-exps">$\sigma$</span>域为一维博雷尔<span class="mathjax-exps">$\sigma$</span>域，记之为<span class="mathjax-exps">$\mathscr{B}_1$</span>，称<span class="mathjax-exps">$\mathscr{B}_1$</span>的元素为一维博雷尔点集。</p>
+</blockquote>
+<p>{注}: <span class="mathjax-exps">$\mathscr{B}_1$</span>包含了一切开区间、闭区间、单个实数、可列个实数的集合，以及这些集合的可列并、可列交。</p>
+<p>{注}: 为什么要研究博雷尔<span class="mathjax-exps">$\sigma$</span>域？<br>
+Answer:<br>
+因为我们的概率一般是定义在<span class="mathjax-exps">$\mathbb{R}$</span>上的, 自然想要研究在<span class="mathjax-exps">$\mathbb{R}$</span>上可测的集合. 而博雷尔<span class="mathjax-exps">$\sigma$</span>域是可测的, 且一般能包括我们所研究的集合.<br>
+下面给出一个不可测的集合.<br>
+<em>Example: 勒贝格不可测集</em></p>
+<blockquote>
+<p>选取样本空间 <span class="mathjax-exps">$\Omega=[0,1]$</span>, 令 <span class="mathjax-exps">$\Omega$</span> 中的所有有理数集合为 <span class="mathjax-exps">$Q'$</span>, 由于有理数为可数集合, 因而可以写成 <span class="mathjax-exps">$Q'=\{q_1, q_2, \ldots\}$</span>。对于对于任意实数 <span class="mathjax-exps">\(a \in (0,1)\)</span>，定义集合<br>
+</p><div class="mathjax-exps">\[S_a = \left\{ \begin{array}{ccc} a + q &amp; \text{if} &amp; a + q &lt; 1 \\ a + q - 1 &amp; \text{if} &amp; a + q \geqslant 1 \end{array} \forall q \in Q' \right\}\]</div> 其中 <span class="mathjax-exps">\(Q'\)</span> 是 <span class="mathjax-exps">\(\Omega = [0,1]\)</span> 中所有有理数的集合。可知<div class="mathjax-exps">\[\bigcup_{a \in (0,1)} S_a = [0,1]\]</div>由于 <span class="mathjax-exps">\(S_a\)</span> 也是可数集，可以将其写为<div class="mathjax-exps">\[S_a = \{ s_{a1}, s_{a2}, \ldots \}\]</div> 令 <span class="mathjax-exps">\(T_1\)</span> 为所有 <span class="mathjax-exps">\(S_a\)</span> 中的 <span class="mathjax-exps">\(s_{a1}\)</span>，<span class="mathjax-exps">\(T_2\)</span> 为所有 <span class="mathjax-exps">\(S_a\)</span> 中的 <span class="mathjax-exps">\(s_{a2}\)</span>，因此我们有可数个 <span class="mathjax-exps">\(T_k\)</span>，且<div class="mathjax-exps">\[\bigcup_{k=1}^{\infty} T_k = [0,1]\]</div> 且 <span class="mathjax-exps">\(T_k\)</span> 两两不相交。每个 <span class="mathjax-exps">\(T_k\)</span> 地位相等，因此 <div class="mathjax-exps">\[P(T_k) = P(T_{k'})\]</div> 若 <span class="mathjax-exps">\(P(T_k) &gt; 0\)</span>，则<br>
+<div class="mathjax-exps">\[1 = P([0,1]) = P\left( \bigcup_{k=1}^{\infty} T_k \right) = \sum_{k=1}^{\infty} P(T_k) = \infty\]</div> 如果 <span class="mathjax-exps">\(P(T_k) = 0\)</span>，则<br>
+<div class="mathjax-exps">\[1 = P([0,1]) = {P}\left( \bigcup_{k=1}^{\infty} T_k \right) = \sum_{k=1}^{\infty} {P}(T_k) = 0\]</div> 无论如何都会得到矛盾。<p></p>
+</blockquote>
+<h4 id="概率">概率 </h4>
+<p>定义为事件域的元素到实数的映射，  满足以下三个条件:</p>
+<p><strong>1.5.2 Definition: 概率</strong></p>
+<blockquote>
+<p>事件域<span class="mathjax-exps">$\mathscr{F}$</span>上的一个集合函数<span class="mathjax-exps">$P$</span>称为概率，即<span class="mathjax-exps">$P: A_{\mathscr{F}}, \mapsto \mathbb{R}$</span>，如果它满足如下三个要求:<br>
+(i) <span class="mathjax-exps">$P(A) \geq 0$</span>，对一切<span class="mathjax-exps">$A \in \mathscr{F}$</span>；<br>
+(ii) <span class="mathjax-exps">$P(\Omega) = 1$</span>;<br>
+(iii) 若<span class="mathjax-exps">$A_i \in \mathscr{F}, \quad i = 1, 2, \cdots$</span>且两两互不相容，则<br>
+</p><div class="mathjax-exps">\[P\left(\bigcup_{i=1}^{\infty} A_i\right) = \sum_{i=1}^{\infty} P(A_i) \quad (1.5.1)\]</div><p></p>
+</blockquote>
+<p>由概率的定义可以得到以下结论:</p>
+<ol>
+<li><span class="mathjax-exps">$P(\varnothing) = 0$</span></li>
+<li>若<span class="mathjax-exps">$A_iA_j = \varnothing(i \neq j)$</span>，则<span class="mathjax-exps">$P(A_1 + \cdot + A_n) = P(A_1) + \cdots + P(A_n)$</span>.</li>
+<li><span class="mathjax-exps">$P(A-B) = P(A) - P(AB)$</span>.</li>
+<li><span class="mathjax-exps">$P(A + B) = P(A) + P(B) - P(AB)$</span>.</li>
+<li><span class="mathjax-exps">$P(A_1 + \cdots + A_n) \leq P(A_1) + \cdots + P(A_n)$</span>.</li>
+<li><span class="mathjax-exps">$P(A_1A_2\cdots A_n) \geq P(A_1) + \cdots + P(A_n) - (n-1)$</span>.</li>
+<li><span class="mathjax-exps">$P(A_1 + \cdots + A_n) = \sum_{i=1,\cdots,n}P(A_i) - \sum_{i&lt;j}P(A_iA_j) + \sum_{i&lt;j&lt;k}P(A_iA_jA_k) - \cdots + (-1)^{n-1}P(A_1A_2\cdots A_n)$</span>.</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
