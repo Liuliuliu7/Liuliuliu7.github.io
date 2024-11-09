@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>math-analysis</title>
+      <title>二次型</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -113,12 +113,15 @@
       
 <div class="fixed-toc">
 <details open="">
-    <summary>Contents</summary>
+  <summary>Contents</summary>
 <ul>
-<li><a href="#baby-rudin-notes">Baby Rudin Notes</a>
+<li><a href="#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E4%B8%8E%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5">二次型与正定矩阵</a>
 <ul>
-<li><a href="#chapter-1-the-real-and-complex-number-systems">Chapter 1: The Real and Complex Number Systems</a></li>
-<li><a href="#chapter-2-basic-topology">Chapter 2: Basic Topology</a></li>
+<li><a href="#definition-%E4%BA%8C%E6%AC%A1%E5%9E%8B">Definition: 二次型</a></li>
+<li><a href="#definition-%E5%90%88%E5%90%8C%E7%9F%A9%E9%98%B5">Definition: 合同矩阵</a></li>
+<li><a href="#definition-%E6%A0%87%E5%87%86%E4%BA%8C%E6%AC%A1%E5%9E%8B">Definition: 标准二次型</a></li>
+<li><a href="#definition%E6%AD%A3%E5%AE%9A%E4%BA%8C%E6%AC%A1%E5%9E%8B">Definition:正定二次型</a></li>
+<li><a href="#theorem-%E6%AD%A3%E5%AE%9A%E6%80%A7%E5%88%A4%E5%AE%9A%E5%AE%9A%E7%90%86">Theorem: 正定性判定定理</a></li>
 </ul>
 </li>
 </ul>
@@ -127,7 +130,6 @@
 <p><button id="toggleProofs">Toggle Proofs</button></p>
 <script>
   document.getElementById('toggleProofs').addEventListener('click', function() {
-    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
     var details = document.querySelectorAll('details > summary');
     for (var i = 0; i < details.length; i++) {
       if (details[i].textContent.includes('Proof')) {
@@ -136,30 +138,38 @@
     }
   });
 </script>
-<h1 id="baby-rudin-notes">Baby Rudin Notes </h1>
-<p><a href="./Principles%20of%20Mathematical_%20(Z-Library).pdf">Priciple of Mathematical Analysis</a></p>
-<h2 id="chapter-1-the-real-and-complex-number-systems">Chapter 1: The Real and Complex Number Systems </h2>
-<p><span class="callout">1.10 Definition: Least-upper-bound property</span></p>
+<h4 id="二次型与正定矩阵">二次型与正定矩阵 </h4>
+<h5 id="span-classcalloutdefinition-二次型span"><span class="callout">Definition: 二次型</span> </h5>
 <blockquote>
-<p>If <span class="mathjax-exps">$E \subset S$</span> and <span class="mathjax-exps">$E$</span> is bounded above, then <span class="mathjax-exps">$\sup{E}$</span> exists in <span class="mathjax-exps">$S$</span>.</p>
+<p>P 是一个数域, P中的二次齐次多项式称为二次型. 一般写作 <span class="mathjax-exps">$f(x_1, x_2, \cdots, x_n) = \sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}x_ix_j$</span>, 其中 <span class="mathjax-exps">$a_{ij} \in P$</span>.<br>
+若设A为一矩阵 <span class="mathjax-exps">$x = (x_1, x_2, \cdots, x_n)^T$</span>, 则有 <span class="mathjax-exps">$f(x) = x^TAx$</span>, 其中 <span class="mathjax-exps">$A = (a_{ij})_{n \times n}$</span>.</p>
 </blockquote>
-<p><span class="callout">1.11 Theorem</span></p>
+<p>为了使得矩阵变得简单,考虑矩阵的合同.</p>
+<h5 id="span-classcalloutdefinition-合同矩阵span"><span class="callout">Definition: 合同矩阵</span> </h5>
 <blockquote>
-<p>S is a ordered list set with least-upper-bound property. Then, <span class="mathjax-exps">$\forall E \subset S$</span>, if <span class="mathjax-exps">$E$</span> is nonempty and bounded above, then <span class="mathjax-exps">$\sup{E}$</span> exists in S.</p>
+<p><span class="mathjax-exps">$A, B$</span> 为数域<span class="mathjax-exps">$P$</span>上的两个矩阵, 若存在非奇异矩阵 <span class="mathjax-exps">$P$</span>, 使得 <span class="mathjax-exps">$B = P^TAP$</span>, 则称 <span class="mathjax-exps">$A, B$</span> 合同.</p>
 </blockquote>
-<p><em>Proof</em></p>
-<p><span class="callout">1.19 Theorem</span></p>
+<h5 id="span-classcalloutdefinition-标准二次型span"><span class="callout">Definition: 标准二次型</span> </h5>
 <blockquote>
-<p>There exists an ordered field <span class="mathjax-exps">$\mathbb{R}$</span> which has the least-upper-bound property.</p>
+<p>若 <span class="mathjax-exps">$f(x) = \sum_{i=1}^{n}a_{ii}x_i^2$</span>, 则称 <span class="mathjax-exps">$f(x)$</span> 为标准二次型.</p>
 </blockquote>
-<p><em>Proof</em>:</p>
-<p><span class="callout">1.20 Theorem</span></p>
+<p>{注}: 对于n阶实对称矩阵, 其一定可以合同对角化, 即存在正交矩阵<span class="mathjax-exps">$Q$</span>, 使得 <span class="mathjax-exps">$Q^TAQ = \Lambda$</span>, 其中 <span class="mathjax-exps">$\Lambda$</span> 为对角矩阵. 这里的Q是由特征向量组成的矩阵.</p>
+<h5 id="span-classcalloutdefinition正定二次型span"><span class="callout">Definition:正定二次型</span> </h5>
 <blockquote>
-<p>(a)[<em>archimedean property</em>] If <span class="mathjax-exps">$x \in \mathbb{R}, y \in \mathbb{R}, \text{ and } x &gt; 0$</span>, then there exists a positive integer <span class="mathjax-exps">$n$</span> such that <span class="mathjax-exps">$nx &gt; y$</span>.<br>
-(b) If <span class="mathjax-exps">$x \in \mathbb{R}, y \in \mathbb{R}, \text{ and } x &lt; y$</span>, then there exists a rational number <span class="mathjax-exps">$p$</span> such that <span class="mathjax-exps">$x &lt; p &lt; y$</span>.</p>
+<p>若对于任意非零向量 <span class="mathjax-exps">$x$</span>, 都有 <span class="mathjax-exps">$x^TAx &gt; 0$</span>, 则称 <span class="mathjax-exps">$f(x)$</span> 为正定二次型.</p>
 </blockquote>
-<p><em>Proof</em>:</p>
-<h2 id="chapter-2-basic-topology">Chapter 2: Basic Topology </h2>
+<h5 id="span-classcallouttheorem-正定性判定定理span"><span class="callout">Theorem: 正定性判定定理</span> </h5>
+<blockquote>
+<p>设<span class="mathjax-exps">$A$</span> 为实对称矩阵, 满足下列条件之一的为正定矩阵:</p>
+<ol>
+<li><span class="mathjax-exps">\(A\)</span> 的所有特征值 <span class="mathjax-exps">\(\lambda_i\)</span> 均为正的。</li>
+<li>对所有非零向量 <span class="mathjax-exps">\(x\)</span>，有 <span class="mathjax-exps">\(x^T A x &gt; 0\)</span> 成立。</li>
+<li><span class="mathjax-exps">\(A\)</span> 的所有顺序主子式都是正的。</li>
+<li><span class="mathjax-exps">\(A\)</span> 的所有主元（无行交换）都是正的。</li>
+<li>存在列满秩矩阵 <span class="mathjax-exps">\(R\)</span>，使得 <span class="mathjax-exps">\(A = R^T R\)</span>。</li>
+<li><span class="mathjax-exps">\(A\)</span> 的所有主子式都是正的。</li>
+</ol>
+</blockquote>
 
       </div>
       
