@@ -23,11 +23,11 @@
   /* 当鼠标悬停在按钮上时改变背景颜色 */
 }
 .markdown-preview.markdown-preview body {
-  line-height: 150%;
-  /* 设置行间距为当前字体大小的125% */
+  line-height: 175%;
 }
 .markdown-preview.markdown-preview #toggleProofs {
   font: 0.8em;
+  font-style: italic;
   padding: 5px 5px;
   background-color: #4CAF50;
   color: white;
@@ -35,13 +35,12 @@
   border-radius: 5px;
   cursor: pointer;
   float: right;
-  /* 将按钮浮动到右侧 */
 }
 .markdown-preview.markdown-preview #toggleProofs:hover {
   background-color: #45a049;
 }
-.markdown-preview.markdown-preview details:hover {
-  border: 2px solid #90c1f4;
+.markdown-preview.markdown-preview details {
+  border: 2px solid #e1eaed;
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
@@ -52,8 +51,8 @@
   line-height: 200%;
   /* 设置行间距为当前字体大小的125% */
 }
-.markdown-preview.markdown-preview details {
-  border: 2px solid #e1eaed;
+.markdown-preview.markdown-preview details:hover {
+  border: 2px solid #90c1f4;
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
@@ -68,6 +67,35 @@
   font-weight: bold;
   font-style: italic;
 }
+.markdown-preview.markdown-preview .callout {
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+  color: #005792;
+  /* 深蓝色 */
+  background-color: #E7F7FF;
+  /* 浅蓝色背景 */
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  /* 添加圆角 */
+}
+.markdown-preview.markdown-preview .fixed-toc {
+  position: fixed;
+  /* 使用固定定位 */
+  left: 0;
+  /* 贴合窗口右侧 */
+  top: 0;
+  /* 贴合窗口顶部 */
+  max-width: 400px;
+  /* 目录最大宽度 */
+  overflow-y: auto;
+  /* 如果内容超出高度，则显示滚动条 */
+  height: 100%;
+  /* 目录的高度 */
+  padding: 10px;
+  /* 内边距 */
+}
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
@@ -81,69 +109,38 @@
     
       <div class="crossnote markdown-preview  ">
       
-<div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#概率论基础" class="md-toc-link"><p>概率论基础</p>
-</a>
-          </summary>
-        <div>
-          <details style="padding:0;;padding-left:24px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#第一章-事件与概率" class="md-toc-link"><p>第一章 事件与概率</p>
-</a>
-          </summary>
-        <div>
-          <details style="padding:0;;padding-left:24px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#古典概型" class="md-toc-link"><p>古典概型</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#组合数" class="md-toc-link">
-            <p>组合数</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#重复组合数" class="md-toc-link">
-            <p>重复组合数</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#二项分布和超几何分布" class="md-toc-link">
-            <p>二项分布和超几何分布</p>
-
-          </a></div>
-        </div>
-      </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#几何概率" class="md-toc-link">
-            <p>几何概率</p>
-
-          </a></div><details style="padding:0;;padding-left:24px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#概率空间" class="md-toc-link"><p>概率空间</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#概率" class="md-toc-link">
-            <p>概率</p>
-
-          </a></div>
-        </div>
-      </details>
-    
-        </div>
-      </details>
-    
-        </div>
-      </details>
-    
+<div class="fixed-toc">
+<details open="">
+  <summary>Contents</summary>
+<ul>
+<li><a href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80">概率论基础</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%BA%8B%E4%BB%B6%E4%B8%8E%E6%A6%82%E7%8E%87">第一章 事件与概率</a>
+<ul>
+<li><a href="#%E5%8F%A4%E5%85%B8%E6%A6%82%E5%9E%8B">古典概型</a>
+<ul>
+<li><a href="#%E7%BB%84%E5%90%88%E6%95%B0">组合数</a></li>
+<li><a href="#%E9%87%8D%E5%A4%8D%E7%BB%84%E5%90%88%E6%95%B0">重复组合数</a></li>
+<li><a href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E5%92%8C%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83">二项分布和超几何分布</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%A0%E4%BD%95%E6%A6%82%E7%8E%87">几何概率</a></li>
+<li><a href="#%E6%A6%82%E7%8E%87%E7%A9%BA%E9%97%B4">概率空间</a>
+<ul>
+<li><a href="#%E6%A6%82%E7%8E%87">概率</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</details>
 </div>
-<br>
-<button id="toggleProofs">Toggle Proofs</button><p></p>
+<p><button id="toggleProofs">Toggle Proofs</button></p>
 <script>
   document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
     var details = document.querySelectorAll('details > summary');
     for (var i = 0; i < details.length; i++) {
       if (details[i].textContent.includes('Proof')) {
@@ -259,7 +256,7 @@ Answer:<br>
 </blockquote>
 <h4 id="概率">概率 </h4>
 <p>定义为事件域的元素到实数的映射，  满足以下三个条件:</p>
-<p><em>Definition: 概率</em></p>
+<p><span class="callout">Definition: 概率</span></p>
 <blockquote>
 <p>事件域<span class="mathjax-exps">$\mathscr{F}$</span>上的一个集合函数<span class="mathjax-exps">$P$</span>称为概率，即<span class="mathjax-exps">$P: A_{\mathscr{F}}, \mapsto \mathbb{R}$</span>，如果它满足如下三个要求:<br>
 (i) <span class="mathjax-exps">$P(A) \geq 0$</span>，对一切<span class="mathjax-exps">$A \in \mathscr{F}$</span>；<br>

@@ -23,11 +23,11 @@
   /* 当鼠标悬停在按钮上时改变背景颜色 */
 }
 .markdown-preview.markdown-preview body {
-  line-height: 150%;
-  /* 设置行间距为当前字体大小的125% */
+  line-height: 175%;
 }
 .markdown-preview.markdown-preview #toggleProofs {
   font: 0.8em;
+  font-style: italic;
   padding: 5px 5px;
   background-color: #4CAF50;
   color: white;
@@ -35,13 +35,12 @@
   border-radius: 5px;
   cursor: pointer;
   float: right;
-  /* 将按钮浮动到右侧 */
 }
 .markdown-preview.markdown-preview #toggleProofs:hover {
   background-color: #45a049;
 }
-.markdown-preview.markdown-preview details:hover {
-  border: 2px solid #90c1f4;
+.markdown-preview.markdown-preview details {
+  border: 2px solid #e1eaed;
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
@@ -52,8 +51,8 @@
   line-height: 200%;
   /* 设置行间距为当前字体大小的125% */
 }
-.markdown-preview.markdown-preview details {
-  border: 2px solid #e1eaed;
+.markdown-preview.markdown-preview details:hover {
+  border: 2px solid #90c1f4;
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
@@ -68,6 +67,35 @@
   font-weight: bold;
   font-style: italic;
 }
+.markdown-preview.markdown-preview .callout {
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+  color: #005792;
+  /* 深蓝色 */
+  background-color: #E7F7FF;
+  /* 浅蓝色背景 */
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  /* 添加圆角 */
+}
+.markdown-preview.markdown-preview .fixed-toc {
+  position: fixed;
+  /* 使用固定定位 */
+  left: 0;
+  /* 贴合窗口右侧 */
+  top: 0;
+  /* 贴合窗口顶部 */
+  max-width: 400px;
+  /* 目录最大宽度 */
+  overflow-y: auto;
+  /* 如果内容超出高度，则显示滚动条 */
+  height: 100%;
+  /* 目录的高度 */
+  padding: 10px;
+  /* 内边距 */
+}
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
@@ -81,162 +109,56 @@
     
       <div class="crossnote markdown-preview  ">
       
-<div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#矩阵分解" class="md-toc-link"><p>矩阵分解</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#311-lemma矩阵相抵引理" class="md-toc-link">
-            <p><em>3.1.1 Lemma:矩阵相抵引理</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#311-example矩阵秩不等式" class="md-toc-link">
-            <p><em>3.1.1 Example:矩阵秩不等式</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#321-theorem-满秩分解" class="md-toc-link">
-            <p><em>3.2.1 Theorem: 满秩分解</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#323-theorem-右逆和左逆" class="md-toc-link">
-            <p><em>3.2.3 Theorem: 右逆和左逆</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#311-proposition-矩阵转置秩等价" class="md-toc-link">
-            <p><em>3.1.1 Proposition: 矩阵转置秩等价</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#331-theorem-lu分解" class="md-toc-link">
-            <p><em>3.3.1 Theorem: LU分解</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#332-theorem-ldu-decomposition-theorem" class="md-toc-link">
-            <p><em>3.3.2 Theorem: LDU Decomposition Theorem</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#331-lemma-非奇异矩阵重排" class="md-toc-link">
-            <p><em>3.3.1 Lemma: 非奇异矩阵重排</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#331-corollary-cholesky-分解" class="md-toc-link">
-            <p><em>3.3.1 Corollary: Cholesky 分解</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#341-definition-qr-分解" class="md-toc-link">
-            <p><em>3.4.1 Definition: QR 分解</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#341-theorem-正交分解" class="md-toc-link">
-            <p><em>3.4.1 Theorem: 正交分解</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#342-theorem-复方阵正交化" class="md-toc-link">
-            <p><em>3.4.2 Theorem: 复方阵正交化</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#351-theorem-span-idth351schur定理span" class="md-toc-link">
-            <p><em>3.5.1 Theorem: <span id="th3.5.1">Schur定理</span></em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#353-theorem-实方正schurs引理" class="md-toc-link">
-            <p><em>3.5.3 Theorem: 实方正Schur's引理</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#352-theorem-span-idth352schurs-引理span" class="md-toc-link">
-            <p><em>3.5.2 Theorem: <span id="th3.5.2">Schur's 引理</span></em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#352-lemma-三角矩阵的乘积" class="md-toc-link">
-            <p><em>3.5.2 Lemma: 三角矩阵的乘积</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#351-definition-矩阵多项式" class="md-toc-link">
-            <p><em>3.5.1 Definition: 矩阵多项式</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#351-corollary-span-idco351矩阵多项式的特征值span" class="md-toc-link">
-            <p><em>3.5.1 Corollary: <span id="co3.5.1">矩阵多项式的特征值</span></em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#354-theorem-hamilton-cayley-定理" class="md-toc-link">
-            <p><em>3.5.4 Theorem: Hamilton-Cayley 定理</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#353-corollary-矩阵多项式表示逆" class="md-toc-link">
-            <p><em>3.5.3 Corollary: 矩阵多项式表示逆</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#352-definition-零化多项式" class="md-toc-link">
-            <p><em>3.5.2 Definition: 零化多项式</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#353-definition-最小多项式" class="md-toc-link">
-            <p><em>3.5.3 Definition: 最小多项式</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#355-theorem-最小多项式性质" class="md-toc-link">
-            <p><em>3.5.5 Theorem: 最小多项式性质</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#361-definition-单纯矩阵" class="md-toc-link">
-            <p><em>3.6.1 Definition: 单纯矩阵</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#361-theorem-可对角化条件" class="md-toc-link">
-            <p><em>3.6.1 Theorem: 可对角化条件</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#361-corollary" class="md-toc-link">
-            <p><em>3.6.1 Corollary</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#362-corollary" class="md-toc-link">
-            <p><em>3.6.2 Corollary</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#36-theorem-酉相似矩阵的特征空间" class="md-toc-link">
-            <p><em>3.6.* Theorem: 酉相似矩阵的特征空间</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#363-corollary-span-idco3-6-3酉矩阵的对角化span" class="md-toc-link">
-            <p><em>3.6.3 Corollary: <span id="co3-6-3">酉矩阵的对角化</span></em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#364-corollary-正交矩阵的对角化" class="md-toc-link">
-            <p><em>3.6.4 Corollary: 正交矩阵的对角化</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#362-definition-正规矩阵" class="md-toc-link">
-            <p><em>3.6.2 Definition: 正规矩阵</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#362-theorem-正规矩阵的对角化" class="md-toc-link">
-            <p><em>3.6.2 Theorem: 正规矩阵的对角化</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#365-corollary" class="md-toc-link">
-            <p><em>3.6.5 Corollary</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#366-corollary" class="md-toc-link">
-            <p><em>3.6.6 Corollary</em></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#367-corollary" class="md-toc-link">
-            <p><em>3.6.7 Corollary</em></p>
-
-          </a></div>
-        </div>
-      </details>
-    
+<div class="fixed-toc">
+<details open="">
+  <summary>Contents</summary>
+<ul>
+<li><a href="#%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3">矩阵分解</a>
+<ul>
+<li><a href="#311-lemma%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5%E5%BC%95%E7%90%86">3.1.1 Lemma:矩阵相抵引理</a></li>
+<li><a href="#311-example%E7%9F%A9%E9%98%B5%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8F">3.1.1 Example:矩阵秩不等式</a></li>
+<li><a href="#321-theorem-%E6%BB%A1%E7%A7%A9%E5%88%86%E8%A7%A3">3.2.1 Theorem: 满秩分解</a></li>
+<li><a href="#323-theorem-%E5%8F%B3%E9%80%86%E5%92%8C%E5%B7%A6%E9%80%86">3.2.3 Theorem: 右逆和左逆</a></li>
+<li><a href="#311-proposition-%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE%E7%A7%A9%E7%AD%89%E4%BB%B7">3.1.1 Proposition: 矩阵转置秩等价</a></li>
+<li><a href="#331-theorem-lu%E5%88%86%E8%A7%A3">3.3.1 Theorem: LU分解</a></li>
+<li><a href="#332-theorem-ldu%E5%88%86%E8%A7%A3">3.3.2 Theorem: LDU分解</a></li>
+<li><a href="#331-lemma-%E9%9D%9E%E5%A5%87%E5%BC%82%E7%9F%A9%E9%98%B5%E9%87%8D%E6%8E%92">3.3.1 Lemma: 非奇异矩阵重排</a></li>
+<li><a href="#331-corollary-cholesky%E5%88%86%E8%A7%A3">3.3.1 Corollary: Cholesky分解</a></li>
+<li><a href="#341-definition-qr%E5%88%86%E8%A7%A3">3.4.1 Definition: QR分解</a></li>
+<li><a href="#341-theorem-%E6%AD%A3%E4%BA%A4%E5%88%86%E8%A7%A3">3.4.1 Theorem: 正交分解</a></li>
+<li><a href="#342-theorem-%E5%A4%8D%E6%96%B9%E9%98%B5%E6%AD%A3%E4%BA%A4%E5%8C%96">3.4.2 Theorem: 复方阵正交化</a></li>
+<li><a href="#351-theorem-schur%E5%AE%9A%E7%90%86">3.5.1 Theorem: Schur定理</a></li>
+<li><a href="#353-theorem-%E5%AE%9E%E6%96%B9%E6%AD%A3schurs%E5%BC%95%E7%90%86">3.5.3 Theorem: 实方正Schur's引理</a></li>
+<li><a href="#352-theorem-schurs-%E5%BC%95%E7%90%86">3.5.2 Theorem: Schur's 引理</a></li>
+<li><a href="#352-lemma-%E4%B8%89%E8%A7%92%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B9%98%E7%A7%AF">3.5.2 Lemma: 三角矩阵的乘积</a></li>
+<li><a href="#351-definition-%E7%9F%A9%E9%98%B5%E5%A4%9A%E9%A1%B9%E5%BC%8F">3.5.1 Definition: 矩阵多项式</a></li>
+<li><a href="#351-corollary-%E7%9F%A9%E9%98%B5%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC">3.5.1 Corollary: 矩阵多项式的特征值</a></li>
+<li><a href="#354-theorem-hamilton-cayley-%E5%AE%9A%E7%90%86">3.5.4 Theorem: Hamilton-Cayley 定理</a></li>
+<li><a href="#353-corollary-%E7%9F%A9%E9%98%B5%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%A1%A8%E7%A4%BA%E9%80%86">3.5.3 Corollary: 矩阵多项式表示逆</a></li>
+<li><a href="#352-definition-%E9%9B%B6%E5%8C%96%E5%A4%9A%E9%A1%B9%E5%BC%8F">3.5.2 Definition: 零化多项式</a></li>
+<li><a href="#353-definition-%E6%9C%80%E5%B0%8F%E5%A4%9A%E9%A1%B9%E5%BC%8F">3.5.3 Definition: 最小多项式</a></li>
+<li><a href="#355-theorem-%E6%9C%80%E5%B0%8F%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%80%A7%E8%B4%A8">3.5.5 Theorem: 最小多项式性质</a></li>
+<li><a href="#361-definition-%E5%8D%95%E7%BA%AF%E7%9F%A9%E9%98%B5">3.6.1 Definition: 单纯矩阵</a></li>
+<li><a href="#361-theorem-%E5%8F%AF%E5%AF%B9%E8%A7%92%E5%8C%96%E6%9D%A1%E4%BB%B6">3.6.1 Theorem: 可对角化条件</a></li>
+<li><a href="#361-corollary">3.6.1 Corollary</a></li>
+<li><a href="#362-corollary">3.6.2 Corollary</a></li>
+<li><a href="#36-theorem-%E9%85%89%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E4%B8%8D%E5%90%8C%E7%89%B9%E5%BE%81%E7%A9%BA%E9%97%B4%E6%AD%A3%E4%BA%A4">3.6.* Theorem: 酉相似矩阵不同特征空间正交</a></li>
+<li><a href="#363-corollary-%E5%A4%8D%E5%AF%B9%E7%A7%B0%E5%88%A4%E5%AE%9A%E5%AE%9A%E7%90%86">3.6.3 Corollary: 复对称判定定理</a></li>
+<li><a href="#364-corollary-%E5%AE%9E%E5%AF%B9%E7%A7%B0%E5%88%A4%E5%AE%9A%E5%AE%9A%E7%90%86">3.6.4 Corollary: 实对称判定定理</a></li>
+<li><a href="#362-definition-%E6%AD%A3%E8%A7%84%E7%9F%A9%E9%98%B5">3.6.2 Definition: 正规矩阵</a></li>
+<li><a href="#362-theorem-%E6%AD%A3%E8%A7%84%E7%9F%A9%E9%98%B5%E9%85%89%E5%8F%AF%E5%AF%B9%E8%A7%92%E5%8C%96">3.6.2 Theorem: 正规矩阵酉可对角化</a></li>
+<li><a href="#365-corollary">3.6.5 Corollary</a></li>
+<li><a href="#366-corollary">3.6.6 Corollary</a></li>
+<li><a href="#367-corollary">3.6.7 Corollary</a></li>
+</ul>
+</li>
+</ul>
+</details>
 </div>
-<br>
-<button id="toggleProofs">Toggle Proofs</button><p></p>
+<p><button id="toggleProofs">Toggle Proofs</button></p>
 <script>
   document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
     var details = document.querySelectorAll('details > summary');
     for (var i = 0; i < details.length; i++) {
       if (details[i].textContent.includes('Proof')) {
@@ -246,7 +168,7 @@
   });
 </script>
 <h4 id="矩阵分解">矩阵分解 </h4>
-<h5 id="311-lemma矩阵相抵引理"><em>3.1.1 Lemma:矩阵相抵引理</em> </h5>
+<h5 id="span-classcallout311-lemma矩阵相抵引理span"><span class="callout">3.1.1 Lemma:矩阵相抵引理</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A, B \in F^{m \times n}$</span>，则以下表述等价：<br>
 (1) <span class="mathjax-exps">$A$</span>与<span class="mathjax-exps">$B$</span>相抵；<br>
@@ -254,11 +176,11 @@
 (3) 矩阵<span class="mathjax-exps">$A$</span>与<span class="mathjax-exps">$B$</span>均可通过有限次初等行列变换得到同一个矩阵；<br>
 (4) <span class="mathjax-exps">$\text{rank}(A) = \text{rank}(B)$</span>.</p>
 </blockquote>
-<h5 id="311-example矩阵秩不等式"><em>3.1.1 Example:矩阵秩不等式</em> </h5>
+<h5 id="span-classcallout311-example矩阵秩不等式span"><span class="callout">3.1.1 Example:矩阵秩不等式</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}, B \in \mathbb{C}^{n \times p}$</span>，证明：</p><div class="mathjax-exps">\[\text{rank}(A) + \text{rank}(B) - n \leq \text{rank}(AB) \leq \min(\text{rank}(A), \text{rank}(B)).\]</div><p></p>
 </blockquote>
-<h5 id="321-theorem-满秩分解"><em>3.2.1 Theorem: 满秩分解</em> </h5>
+<h5 id="span-classcallout321-theorem-满秩分解span"><span class="callout">3.2.1 Theorem: 满秩分解</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}_r(r &gt; 0)$</span>，则存在列满秩矩阵<span class="mathjax-exps">$B$</span>和行满秩矩阵<span class="mathjax-exps">$C$</span>使得<span class="mathjax-exps">$A = BC$</span>。</p>
 </blockquote>
@@ -270,7 +192,7 @@
 又知<br>
 <div class="mathjax-exps">\[\operatorname{rank}(C) \geq \operatorname{rank}(BC)=\operatorname{rank}(A) = r \text{且} \operatorname{rank}(C) \leqslant r\]</div> 故 <span class="mathjax-exps">\(\operatorname{rank}(C) = r\)</span>。综上所述，矩阵 <span class="mathjax-exps">\(A\)</span> 可分解为列满秩矩阵 <span class="mathjax-exps">\(B\)</span> 和行满秩矩阵 <span class="mathjax-exps">\(C\)</span> 的乘积。<p></p>
 </details>
-<h5 id="323-theorem-右逆和左逆"><em>3.2.3 Theorem: 右逆和左逆</em> </h5>
+<h5 id="span-classcallout323-theorem-右逆和左逆span"><span class="callout">3.2.3 Theorem: 右逆和左逆</span> </h5>
 <blockquote>
 <p>矩阵<span class="mathjax-exps">\(A \in \mathbb{C}^{m \times n}(r &gt; 0)\)</span> 有右逆（即存在矩阵 <span class="mathjax-exps">\(B\)</span> 使得 <span class="mathjax-exps">\(AB = I\)</span>）的充分必要条件是 <span class="mathjax-exps">\(A\)</span> 为行满秩矩阵；矩阵 <span class="mathjax-exps">\(A\)</span> 有左逆（即存在矩阵 <span class="mathjax-exps">\(B\)</span> 使得 <span class="mathjax-exps">\(BA = I\)</span>）的充分必要条件是 <span class="mathjax-exps">\(A\)</span> 为列满秩矩阵。</p>
 </blockquote>
@@ -290,7 +212,7 @@
 当 <span class="mathjax-exps">\(A\)</span> 为可逆矩阵时，其右（左）逆唯一存在，即为 <span class="mathjax-exps">\(A\)</span> 的逆矩阵；<br>
 当 <span class="mathjax-exps">\(A\)</span> 为行（列）满秩矩阵（非可逆阵）时，其右（左）逆存在且不唯一；<br>
 当 <span class="mathjax-exps">\(A\)</span> 为其它情况时，其右（左）逆不存在。</p>
-<h5 id="311-proposition-矩阵转置秩等价"><em>3.1.1 Proposition: 矩阵转置秩等价</em> </h5>
+<h5 id="span-classcallout311-proposition-矩阵转置秩等价span"><span class="callout">3.1.1 Proposition: 矩阵转置秩等价</span> </h5>
 <blockquote>
 <p>(1) <span class="mathjax-exps">$\text{rank}(A) = \text{rank}(A^H A)$</span>。<br>
 (2) <span class="mathjax-exps">$\text{rank}(A^H) = \text{rank}(A A^H)$</span>。<br>
@@ -298,14 +220,14 @@
 </blockquote>
 <details open="">
   <summary>Proof:</summary> 
-<p><span class="mathjax-exps">$\forall x \in \mathbb{C}^n, Ax = 0 \Rightarrow A^HAx = 0$</span>显然成立.<br>
+<p><span class="mathjax-exps">$\forall x \in \mathbb{C}^n, Ax = 0 \rightarrow A^HAx = 0$</span>显然成立.<br>
 <span class="mathjax-exps">$\forall x \in \mathbb{C}^n, A^HAx = 0 \rightarrow x^HA^HAx = 0 \rightarrow (Ax)^H(Ax) = 0 \rightarrow Ax = 0$</span>.<br>
 所以<span class="mathjax-exps">$N(A) = N(A^HA)$</span>, 根据秩-零化度定理, <span class="mathjax-exps">$\operatorname{rank}(A) = \operatorname{rank}(A^HA)$</span>. 又由于 <span class="mathjax-exps">$N(A) + R(A^H ) = \mathbb{C}^n$</span>, 所以 <span class="mathjax-exps">$R(A^H) = R(A^HA)$</span>. 令 <span class="mathjax-exps">$A = A^H$</span>, 则有 <span class="mathjax-exps">$R(A) = R(AA^H)$</span>.</p>
 <blockquote>
 <p>显然有 <span class="mathjax-exps">$\operatorname{rank}(A) = \operatorname{rank}(AA^H) = \operatorname{rank}(A^H) = \operatorname{rank}(A^H A)$</span>.</p>
 </blockquote>
 </details>
-<h5 id="331-theorem-lu分解"><em>3.3.1 Theorem: LU分解</em> </h5>
+<h5 id="span-classcallout331-theorem-lu分解span"><span class="callout">3.3.1 Theorem: LU分解</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A = [a_{ij}] \in \mathbb{C}^{n \times n}$</span>是非奇异矩阵，则存在唯一的单位下三角矩阵<span class="mathjax-exps">$L$</span>和上三角矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$A = LU$</span>成立的充分必要条件是<span class="mathjax-exps">$A$</span>的所有顺序主子式均非零，即<br>
 </p><div class="mathjax-exps">\[\Delta_i(A) = \left| \begin{array}{cccc} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1i} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2i} \\ \vdots &amp; \vdots &amp; &amp; \vdots \\ a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ii} \end{array} \right| \neq 0, \quad i = 1, \cdots, n\]</div><p></p>
@@ -319,7 +241,7 @@
 <li>虽然证明过程较复杂,但实际计算上只需用Gauss消元法求解出<span class="mathjax-exps">$L$</span>和<span class="mathjax-exps">$U$</span>即可.</li>
 <li><span class="mathjax-exps">$L$</span>中记录了消元的过程, <span class="mathjax-exps">$U$</span>中记录了消元后的矩阵. 所以<span class="mathjax-exps">$L$</span>中对角线元素为1, <span class="mathjax-exps">$U$</span>中对角线元素为之积为<span class="mathjax-exps">$A$</span>的行列式.</li>
 </ol>
-<h5 id="332-theorem-ldu-decomposition-theorem"><em>3.3.2 Theorem: LDU Decomposition Theorem</em> </h5>
+<h5 id="span-classcallout332-theorem-ldu分解span"><span class="callout">3.3.2 Theorem: LDU分解</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A = [a_{ij}] \in \mathbb{C}^{n \times n}$</span>是非奇异矩阵，则存在唯一的单位下三角矩阵<span class="mathjax-exps">$L$</span>，对角矩阵<span class="mathjax-exps">$D$</span>和单位上三角矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$A = LDU$</span>成立的充分必要条件是<span class="mathjax-exps">$A$</span>的所有顺序主子式均非零，即<br>
 </p><div class="mathjax-exps">\[\Delta_i(A) = \left| \begin{array}{cccc} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1i} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2i} \\ \vdots &amp; \vdots &amp; &amp; \vdots \\ a_{i1} &amp; a_{i2} &amp; \cdots &amp; a_{ii} \end{array} \right| \neq 0, \quad i = 1, \cdots, n\]</div>分解式<span class="mathjax-exps">$A = LDU$</span>称为矩阵<span class="mathjax-exps">$A$</span>的LDU分解。<p></p>
@@ -329,11 +251,11 @@
 <li><span class="mathjax-exps">$L, U$</span>的对角线元素为1, <span class="mathjax-exps">$D$</span>的对角线元素可由<span class="mathjax-exps">$A$</span>的顺序主子式求得, 即 <span class="mathjax-exps">$d_1 = a_{11}, d_i = \frac{\Delta _i(A)}{\Delta _{i-1}(A)}$</span></li>
 <li>非奇异矩阵只是已知条件, 与命题的充分必要性无关. 实际上, 对于奇异矩阵, 其也可以<span class="mathjax-exps">$LDU$</span>分解; 对于非奇异矩阵, 其可能无法<span class="mathjax-exps">$LDU$</span>分解. 但是以下引理说明非奇异矩阵可以通过重排行列顺序后进行<span class="mathjax-exps">$LDU$</span>分解.</li>
 </ol>
-<h5 id="331-lemma-非奇异矩阵重排"><em>3.3.1 Lemma: 非奇异矩阵重排</em> </h5>
+<h5 id="span-classcallout331-lemma-非奇异矩阵重排span"><span class="callout">3.3.1 Lemma: 非奇异矩阵重排</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A = [a_{ij}] \in \mathbb{C}^{n \times n}$</span>是非奇异矩阵，则存在排列矩阵<span class="mathjax-exps">$P$</span>使得<span class="mathjax-exps">$PA$</span>的所有顺序主子式均非零。</p>
 </blockquote>
-<h5 id="331-corollary-cholesky-分解"><em>3.3.1 Corollary: Cholesky 分解</em> </h5>
+<h5 id="span-classcallout331-corollary-cholesky分解span"><span class="callout">3.3.1 Corollary: Cholesky分解</span> </h5>
 <blockquote>
 <p>若<span class="mathjax-exps">$n$</span>阶实对称矩阵<span class="mathjax-exps">$A$</span>是正定的，则存在唯一的正上三角矩阵<span class="mathjax-exps">$R$</span>使得<span class="mathjax-exps">$A = R^{\top} R$</span>。</p>
 </blockquote>
@@ -343,11 +265,11 @@
 唯一性。<br>
 假设存在另一正上三角矩阵 <span class="mathjax-exps">$R'$</span>使得<span class="mathjax-exps">$A = R'^{\top} R'$</span>，由于 <span class="mathjax-exps">$R$</span>为正上三角矩阵，则可令 <span class="mathjax-exps">$R'^\top = U'^\top \sqrt[]{D'}$</span>, 则 <span class="mathjax-exps">$A = U'^\top D'U'$</span>, 由分解的唯一性可得 <span class="mathjax-exps">$U = U'$</span>, <span class="mathjax-exps">$D = D'$</span>, 即 <span class="mathjax-exps">$R = R'$</span>。</p>
 </details>
-<h5 id="341-definition-qr-分解"><em>3.4.1 Definition: QR 分解</em> </h5>
+<h5 id="span-classcallout341-definition-qr分解span"><span class="callout">3.4.1 Definition: QR分解</span> </h5>
 <blockquote>
 <p>若复方阵<span class="mathjax-exps">$A$</span>可分解为<span class="mathjax-exps">$A = QR$</span>，其中<span class="mathjax-exps">$Q$</span>为酉矩阵，<span class="mathjax-exps">$R$</span>为上三角矩阵，则称矩阵<span class="mathjax-exps">$A$</span>可作<span class="mathjax-exps">$QR$</span>分解（或酉三角分解）。若分解式<span class="mathjax-exps">$A = QR$</span>中，矩阵<span class="mathjax-exps">$A$</span>是实方阵，<span class="mathjax-exps">$Q$</span>为正交矩阵，<span class="mathjax-exps">$R$</span>为上三角矩阵，此时称分解式<span class="mathjax-exps">$A = QR$</span>为正交三角分解。</p>
 </blockquote>
-<h5 id="341-theorem-正交分解"><em>3.4.1 Theorem: 正交分解</em> </h5>
+<h5 id="span-classcallout341-theorem-正交分解span"><span class="callout">3.4.1 Theorem: 正交分解</span> </h5>
 <blockquote>
 <p>若实方阵<span class="mathjax-exps">$A$</span>满秩，则存在正交矩阵<span class="mathjax-exps">$Q$</span>及正线上三角矩阵<span class="mathjax-exps">$R$</span>满足<span class="mathjax-exps">$A = QR$</span>且分解唯一。</p>
 </blockquote>
@@ -377,11 +299,12 @@
 <p>设 <span class="mathjax-exps">$A = \begin{bmatrix}     3&amp; 0\\     0&amp; 1\\     4&amp; 0     \end{bmatrix}$</span>，对<span class="mathjax-exps">$A$</span>可进行两种<span class="mathjax-exps">$QR$</span>分解，如下<br>
 </p><div class="mathjax-exps">$$\boldsymbol{A}=\left[\begin{array}{ll} 3 &amp; 0 \\ 0 &amp; 1 \\ 4 &amp; 0 \end{array}\right]=\left[\begin{array}{ll} \frac{3}{5} &amp; 0 \\ 0 &amp; 1 \\ \frac{4}{5} &amp; 0 \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \end{array}\right] = \left[\begin{array}{rrr} \frac{3}{5} &amp; 0 &amp; -\frac{4}{5} \\ 0 &amp; 1 &amp; 0 \\ \frac{4}{5} &amp; 0 &amp; \frac{3}{5} \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]$$</div><p></p>
 </blockquote>
-<h5 id="342-theorem-复方阵正交化"><em>3.4.2 Theorem: 复方阵正交化</em> </h5>
+<h5 id="span-classcallout342-theorem-复方阵正交化span"><span class="callout">3.4.2 Theorem: 复方阵正交化</span> </h5>
 <blockquote>
 <p>设复方阵<span class="mathjax-exps">$A$</span>可逆，则存在酉矩阵<span class="mathjax-exps">$U$</span>及正线上三角矩阵<span class="mathjax-exps">$R$</span>满足<span class="mathjax-exps">$A = UR$</span>且分解唯一。</p>
 </blockquote>
-<h5 id="351-theorem-span-idth351schur定理span"><em>3.5.1 Theorem: <span id="th3.5.1">Schur定理</span></em> </h5>
+<h5 id="span-classcallout351-theorem-schur定理span"><span class="callout">3.5.1 Theorem: Schur定理</span> </h5>
+<p><span id="th3.5.1"></span></p>
 <blockquote>
 <p>任意<span class="mathjax-exps">$n$</span>阶复方矩阵<span class="mathjax-exps">\(A\)</span>相似于上三角矩阵<span class="mathjax-exps">\(\Lambda\)</span>，即存在可逆矩阵<span class="mathjax-exps">\(P\)</span>使得<span class="mathjax-exps">\(A = P^{-1}\Lambda P\)</span>为上三角矩阵，其中上三角矩阵<span class="mathjax-exps">\(\Lambda\)</span>的对角元素是矩阵<span class="mathjax-exps">\(A\)</span>的特征值。</p>
 </blockquote>
@@ -410,7 +333,7 @@
 </li>
 <li>这里数域为<span class="mathjax-exps">$\mathbb{C}$</span>，因为实数域中矩阵可能没有特征值。</li>
 </ol>
-<h5 id="353-theorem-实方正schurs引理"><em>3.5.3 Theorem: 实方正Schur's引理</em> </h5>
+<h5 id="span-classcallout353-theorem-实方正schurs引理span"><span class="callout">3.5.3 Theorem: 实方正Schur's引理</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A \in \mathbb{R}^{n \times n}$</span>的特征值均为实数，则存在正交矩阵<span class="mathjax-exps">$Q$</span>使得<br>
 </p><div class="mathjax-exps">\[Q^T A Q = Q^{-1} A Q = \begin{bmatrix} \lambda_1 &amp; &amp; * \\ &amp; \ddots &amp; \\ 0 &amp; &amp; \lambda_n \end{bmatrix}\]</div><p></p>
@@ -419,7 +342,8 @@
   <summary>Proof:</summary> 
 <p>证明可由<a href="#th3.5.1">定理3.5.1</a>显然得到。</p>
 </details>
-<h5 id="352-theorem-span-idth352schurs-引理span"><em>3.5.2 Theorem: <span id="th3.5.2">Schur's 引理</span></em> </h5>
+<h5 id="span-classcallout352-theorem-schurs-引理span"><span class="callout">3.5.2 Theorem: Schur's 引理</span> </h5>
+<p><span id="th3.5.2"></span></p>
 <blockquote>
 <p>任意复方阵<span class="mathjax-exps">$A$</span>酉相似于上三角矩阵<span class="mathjax-exps">$\Lambda$</span>，即存在一酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$\Lambda = U^{\text{H}} AU$</span>为上三角矩阵。</p>
 </blockquote>
@@ -427,7 +351,7 @@
   <summary>Proof:</summary> 
 <p>只需要对<a href="#th3.5.1">定理3.5.1</a>中的<span class="mathjax-exps">$P$</span>进行<span class="mathjax-exps">$QR$</span>分解即可得到。</p>
 </details>
-<h5 id="352-lemma-三角矩阵的乘积"><em>3.5.2 Lemma: 三角矩阵的乘积</em> </h5>
+<h5 id="span-classcallout352-lemma-三角矩阵的乘积span"><span class="callout">3.5.2 Lemma: 三角矩阵的乘积</span> </h5>
 <blockquote>
 <p>若矩阵<span class="mathjax-exps">$A, B$</span>均为上三角矩阵，则矩阵<span class="mathjax-exps">$A \pm B, AB, A^{-1}$</span>也为上三角矩阵。</p>
 </blockquote>
@@ -441,13 +365,14 @@
 </p><div class="mathjax-exps">$$A^{-1} = \frac{A^*}{|A|} = \frac{1}{|A|} \begin{bmatrix} A_{11} &amp; A_{21} &amp; \cdots &amp; A_{n1} \\ A_{12} &amp; A_{22} &amp; \cdots &amp; A_{n2} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ A_{n1} &amp; A_{n2} &amp; \cdots &amp; A_{nn} \end{bmatrix}$$</div><br>
 故<span class="mathjax-exps">$A^{-1}$</span>是上三角的。<p></p>
 </details>
-<h5 id="351-definition-矩阵多项式"><em>3.5.1 Definition: 矩阵多项式</em> </h5>
+<h5 id="span-classcallout351-definition-矩阵多项式span"><span class="callout">3.5.1 Definition: 矩阵多项式</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，<span class="mathjax-exps">$\varphi(\lambda) = a_n \lambda^n + a_{n-1} \lambda^{n-1} + \cdots + a_1 \lambda + a_0$</span>，其中<span class="mathjax-exps">$a_i \in \mathbb{C}$</span>（<span class="mathjax-exps">$i = 0, 1, \cdots, n$</span>）是数域<span class="mathjax-exps">$\mathbb{C}$</span>上的多项式，则<br>
 </p><div class="mathjax-exps">\[\varphi(A) = a_n A^n + a_{n-1} A^{n-1} + \cdots + a_1 A + a_0 I\]</div><p></p>
 <p>称为矩阵多项式。</p>
 </blockquote>
-<h5 id="351-corollary-span-idco351矩阵多项式的特征值span"><em>3.5.1 Corollary: <span id="co3.5.1">矩阵多项式的特征值</span></em> </h5>
+<h5 id="span-classcallout351-corollary-矩阵多项式的特征值span"><span class="callout">3.5.1 Corollary: 矩阵多项式的特征值</span> </h5>
+<p><span id="co3.5.1"></span></p>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>的<span class="mathjax-exps">$n$</span>个特征值为<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_n$</span>，<span class="mathjax-exps">$\varphi(\lambda)$</span>为任一多项式，则矩阵多项式<span class="mathjax-exps">$\varphi(A)$</span>的<span class="mathjax-exps">$n$</span>个特征值为<span class="mathjax-exps">$\varphi(\lambda_1), \cdots, \varphi(\lambda_n)$</span>。</p>
 </blockquote>
@@ -460,7 +385,7 @@
 <p>{注}：<br>
 由于对<span class="mathjax-exps">$A$</span>的属于<span class="mathjax-exps">$\lambda _1$</span>的特征向量<span class="mathjax-exps">$\alpha _1$</span>，有<span class="mathjax-exps">$A^k\alpha _1 = \lambda^k _1 \alpha _1, k=1,\cdots,n$</span>，则</p><div class="mathjax-exps">$$\varphi(A)\alpha _1 = a_n A^n \alpha _1 + \cdots + a_1 A \alpha _1 + a_0 \alpha _1 = a_n \lambda^n _1 \alpha _1 + \cdots + a_1 \lambda _1 \alpha _1 + a_0 \alpha _1 = \varphi(\lambda _1) \alpha _1$$</div><p></p>
 <p>显然有<span class="mathjax-exps">$n$</span>阶矩阵<span class="mathjax-exps">$A$</span>的属于特征值<span class="mathjax-exps">$\lambda_i$</span>的特征向量<span class="mathjax-exps">$\alpha_i$</span>也是<span class="mathjax-exps">$\varphi(A)$</span>的属于特征值<span class="mathjax-exps">$\varphi(\lambda_i)$</span>的特征向量。</p>
-<h5 id="354-theorem-hamilton-cayley-定理"><em>3.5.4 Theorem: Hamilton-Cayley 定理</em> </h5>
+<h5 id="span-classcallout354-theorem-hamilton-cayley-定理span"><span class="callout">3.5.4 Theorem: Hamilton-Cayley 定理</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>的特征多项式为<span class="mathjax-exps">$f_A(\lambda) = \det(\lambda I - A)$</span>，则<span class="mathjax-exps">$f(A) = 0$</span>。</p>
 </blockquote>
@@ -469,21 +394,21 @@
 <p>设矩阵<span class="mathjax-exps">$A$</span>的特征多项式为<span class="mathjax-exps">$f_A(\lambda) = \lambda ^n + a_{n-1}\lambda ^{n-1} + \cdots + a_0$</span>。由<a href="#th3.5.2">定理3.5.2</a>知，存在酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$U^H A U = \Lambda$</span>，其中<span class="mathjax-exps">$\Lambda$</span>为上三角矩阵，其对角元素为<span class="mathjax-exps">$\lambda_1, \lambda_2, \ldots, \lambda_n$</span>。则矩阵多项式<span class="mathjax-exps">$f(A)$</span>可写成<br>
 </p><div class="mathjax-exps">\[\begin{array}{l}   f_A(A) = A^n + a_{n-1}A^{n-1} + \cdots + a_0I     &amp;= U \Lambda^n U^H + a_{n-1}U \Lambda^{n-1} U^H + \cdots + a_0I \\    &amp;= U \underset{f_A(\lambda_{1,\cdots ,n}) = 0}{\boxed{(\Lambda^n + a_{n-1}\Lambda^{n-1} + \cdots + a_0I)}}U^H = 0    \end{array}\]</div><p></p>
 </details>
-<h5 id="353-corollary-矩阵多项式表示逆"><em>3.5.3 Corollary: 矩阵多项式表示逆</em> </h5>
+<h5 id="span-classcallout353-corollary-矩阵多项式表示逆span"><span class="callout">3.5.3 Corollary: 矩阵多项式表示逆</span> </h5>
 <blockquote>
 <p>设复方阵<span class="mathjax-exps">$A$</span>可逆，其特征多项式为<span class="mathjax-exps">$f_A(\lambda) = \lambda^n + a_{n-1} \lambda^{n-1} + \cdots + a_1 \lambda + a_0$</span>，则矩阵<span class="mathjax-exps">$A$</span>的逆矩阵计算公式为<br>
 </p><div class="mathjax-exps">\[A^{-1} = -\frac{1}{a_n} \left( A^{n-1} + a_{n-1} A^{n-2} + \cdots + a_1 I \right)\]</div><p></p>
 </blockquote>
 <p>{注}: 该结论说明，矩阵<span class="mathjax-exps">$A$</span>的逆矩阵可以通过低阶矩阵表示。</p>
-<h5 id="352-definition-零化多项式"><em>3.5.2 Definition: 零化多项式</em> </h5>
+<h5 id="span-classcallout352-definition-零化多项式span"><span class="callout">3.5.2 Definition: 零化多项式</span> </h5>
 <blockquote>
 <p>给定复方阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，若存在多项式<span class="mathjax-exps">$g(\lambda)$</span>使得<span class="mathjax-exps">$g(A) = 0$</span>，则称<span class="mathjax-exps">$g(\lambda)$</span>为<span class="mathjax-exps">$A$</span>的零化多项式。</p>
 </blockquote>
-<h5 id="353-definition-最小多项式"><em>3.5.3 Definition: 最小多项式</em> </h5>
+<h5 id="span-classcallout353-definition-最小多项式span"><span class="callout">3.5.3 Definition: 最小多项式</span> </h5>
 <blockquote>
 <p>设复方阵<span class="mathjax-exps">$A$</span>的零化多项式中次数最小的首1多项式称为<span class="mathjax-exps">$A$</span>的最小多项式，记为<span class="mathjax-exps">$m_A(\lambda)$</span>。</p>
 </blockquote>
-<h5 id="355-theorem-最小多项式性质"><em>3.5.5 Theorem: 最小多项式性质</em> </h5>
+<h5 id="span-classcallout355-theorem-最小多项式性质span"><span class="callout">3.5.5 Theorem: 最小多项式性质</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，则</p>
 <ol>
@@ -505,11 +430,11 @@
 </p><div class="mathjax-exps">\[m_A(A) x_i = m_A(\lambda_i) x_i\]</div><p></p>
 <p>由于 <span class="mathjax-exps">\(m_A(A)\)</span> 是矩阵 <span class="mathjax-exps">\(A\)</span> 的零化多项式，故 <span class="mathjax-exps">\(m_A(A) = 0\)</span>，进而有 <span class="mathjax-exps">\(m_A(\lambda_i) x_i = 0\)</span>。又知 <span class="mathjax-exps">\(x_i\)</span> 是非零向量，故 <span class="mathjax-exps">\(m_A(\lambda_i) = 0\)</span>，即<span class="mathjax-exps">$f_A(\lambda )$</span>的根也是<span class="mathjax-exps">$m_A(\lambda )$</span>的根。证毕。</p>
 </details>
-<h5 id="361-definition-单纯矩阵"><em>3.6.1 Definition: 单纯矩阵</em> </h5>
+<h5 id="span-classcallout361-definition-单纯矩阵span"><span class="callout">3.6.1 Definition: 单纯矩阵</span> </h5>
 <blockquote>
 <p>若<span class="mathjax-exps">$n$</span>阶复方阵<span class="mathjax-exps">$A$</span>相似于对角矩阵，则矩阵<span class="mathjax-exps">$A$</span>称为可对角化矩阵（或单纯矩阵）。</p>
 </blockquote>
-<h5 id="361-theorem-可对角化条件"><em>3.6.1 Theorem: 可对角化条件</em> </h5>
+<h5 id="span-classcallout361-theorem-可对角化条件span"><span class="callout">3.6.1 Theorem: 可对角化条件</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>的全部互异特征根为<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_m$</span>（其中<span class="mathjax-exps">$m \leqslant n$</span>），则以下表达等价：</p>
 <ol>
@@ -526,14 +451,12 @@
 下面证明(5)。<br>
 (1) <span class="mathjax-exps">$\Rightarrow$</span> (5).<br>
 由于矩阵 <span class="mathjax-exps">\(A\)</span> 是单纯矩阵，所以存在一个可逆矩阵 <span class="mathjax-exps">\(P\)</span> 使得 <span class="mathjax-exps">\(P^{-1}AP = \Lambda\)</span>，其中<span class="mathjax-exps">$\Lambda$</span>是对角矩阵。<br>
-设<span class="mathjax-exps">$\lambda  _1, \cdots, \lambda  _s$</span>为互异特征值，考虑如下矩阵多项式</p>
-<blockquote>
-<p></p><div class="mathjax-exps">$$g(A) = (A - \lambda_1 I) \cdots (A - \lambda_m I) = P^{-1} \underset{\triangleq B   }{\boxed{(\Lambda - \lambda_1 I) \cdots (\Lambda - \lambda_m I)}} P$$</div><br>
+设<span class="mathjax-exps">$\lambda  _1, \cdots, \lambda  _m$</span>为互异特征值，<span class="mathjax-exps">$d_i$</span>代表重数<span class="mathjax-exps">\((\sum_{i=1}^{m}d_i = n)\)</span>，考虑如下矩阵多项式<br>
+</p><div class="mathjax-exps">$$g(A) = (A - \lambda_1 I) \cdots (A - \lambda_m I) = P^{-1} \underset{\triangleq B   }{\boxed{(\Lambda - \lambda_1 I) \cdots (\Lambda - \lambda_m I)}} P$$</div><br>
 式中<p></p>
-</blockquote>
-<p></p><div class="mathjax-exps">$$\Lambda = \begin{bmatrix} \boxed{\lambda_1} &amp; (d_1个)  \\ &amp; \boxed{\lambda_1}  \\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; \boxed{\lambda_s} &amp; (d_s个) \\ &amp; &amp; &amp; &amp; \boxed{\lambda_s} \end{bmatrix}$$</div><p></p>
+<p></p><div class="mathjax-exps">$$\Lambda = \begin{bmatrix} \boxed{\lambda_1} &amp; (d_1个)  \\ &amp; \boxed{\lambda_1}  \\ &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; \boxed{\lambda_m} &amp; (d_m个) \\ &amp; &amp; &amp; &amp; \boxed{\lambda_m} \end{bmatrix}$$</div><p></p>
 <p>下面考察矩阵矩阵<span class="mathjax-exps">$B$</span>。<br>
-</p><div class="mathjax-exps">$$B = \begin{bmatrix} 0 \\ &amp; 0 \\ &amp; &amp; \ddots\\ &amp; &amp; &amp; \lambda_s - \lambda_1\\ &amp; &amp; &amp; &amp; \lambda_s - \lambda_1 \end{bmatrix} \cdots  \begin{bmatrix} \lambda _1 - \lambda _s \\ &amp; \lambda _1 - \lambda _s \\ &amp; &amp; \ddots\\ &amp; &amp; &amp; 0 \\ &amp; &amp; &amp; &amp; 0 \end{bmatrix} = 0$$</div><p></p>
+</p><div class="mathjax-exps">$$B = \begin{bmatrix} 0 \\ &amp; 0 \\ &amp; &amp; \ddots\\ &amp; &amp; &amp; \lambda_m - \lambda_1\\ &amp; &amp; &amp; &amp; \lambda_m - \lambda_1 \end{bmatrix} \cdots  \begin{bmatrix} \lambda _1 - \lambda _m \\ &amp; \lambda _1 - \lambda _m \\ &amp; &amp; \ddots\\ &amp; &amp; &amp; 0 \\ &amp; &amp; &amp; &amp; 0 \end{bmatrix} = 0$$</div><p></p>
 <p>故<span class="mathjax-exps">$g(A) = 0$</span>，所以<span class="mathjax-exps">$g(\lambda )$</span>为最小多项式，且无重根。</p>
 <p>(5) <span class="mathjax-exps">$\Rightarrow$</span> (4).<br>
 设矩阵 <span class="mathjax-exps">$A$</span> 的最小多项式为 <span class="mathjax-exps">$m_A(\lambda) = (\lambda - \lambda_1) \cdots (\lambda - \lambda_m)$</span>, 则<br>
@@ -544,16 +467,16 @@
 </p><div class="mathjax-exps">$$\operatorname{dim} E(\lambda_1) + \cdots + \operatorname{dim} E(\lambda_m) = (n - \operatorname{rank}(A - \lambda_1 I)) + \cdots + (n - \operatorname{rank}(A - \lambda_m I)) \geq n$$</div><p></p>
 <p>由于 <span class="mathjax-exps">$m$</span> 个特征子空间的和空间是 <span class="mathjax-exps">$\mathbb{C}^n$</span> 空间的线性子空间, 因此<span class="mathjax-exps">$\sum_{i=1}^m \operatorname{dim} E(\lambda_i) = n$</span>. 证毕.</p>
 </details>
-<h5 id="361-corollary"><em>3.6.1 Corollary</em> </h5>
+<h5 id="span-classcallout361-corollaryspan"><span class="callout">3.6.1 Corollary</span> </h5>
 <blockquote>
 <p>若复方阵<span class="mathjax-exps">$A$</span>的零化多项式<span class="mathjax-exps">$g(\lambda)$</span>无重根，则矩阵<span class="mathjax-exps">$A$</span>是单纯矩阵。</p>
 </blockquote>
-<h5 id="362-corollary"><em>3.6.2 Corollary</em> </h5>
+<h5 id="span-classcallout362-corollaryspan"><span class="callout">3.6.2 Corollary</span> </h5>
 <blockquote>
 <p>若<span class="mathjax-exps">$n$</span>阶复方阵<span class="mathjax-exps">$A$</span>恰好有<span class="mathjax-exps">$n$</span>个互异特征值，则它必可对角化；反之则不然。</p>
 </blockquote>
 <p>{注}：上述两个推论仅是复方阵<span class="mathjax-exps">$A$</span>为单纯矩阵的充分条件而非必要条件。</p>
-<h5 id="36-theorem-酉相似矩阵的特征空间"><em>3.6.* Theorem: 酉相似矩阵的特征空间</em> </h5>
+<h5 id="span-classcallout36-theorem-酉相似矩阵不同特征空间正交span"><span class="callout">3.6.* Theorem: 酉相似矩阵不同特征空间正交</span> </h5>
 <blockquote>
 <p>设存在酉矩阵 <span class="mathjax-exps">$U$</span> 使得 <span class="mathjax-exps">$U^H A U = \operatorname{diag}(\lambda_1, \cdots, \lambda_n)$</span>。则<span class="mathjax-exps">$A$</span>的不同特征值的特征子空间正交。</p>
 </blockquote>
@@ -566,7 +489,8 @@
 </p><div class="mathjax-exps">$$E(\lambda_i) = \operatorname{span}\{u_{i_{d_1}}, \cdots, u_{i_{d_i}}\}, E(\lambda_j) = \operatorname{span}\{u_{j_{d_1}}, \cdots, u_{j_{d_j}}\} (i \neq j)$$</div><p></p>
 <p>由于<span class="mathjax-exps">$u_i, u_j$</span>两两正交，故<span class="mathjax-exps">$E(\lambda_i)$</span>与<span class="mathjax-exps">$E(\lambda_j)$</span>正交。证毕。</p>
 </details>
-<h5 id="363-corollary-span-idco3-6-3酉矩阵的对角化span"><em>3.6.3 Corollary: <span id="co3-6-3">酉矩阵的对角化</span></em> </h5>
+<h5 id="span-classcallout363-corollary-复对称判定定理span"><span class="callout">3.6.3 Corollary: 复对称判定定理</span> </h5>
+<p><span id="co3-6-3"></span></p>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，则<span class="mathjax-exps">$A$</span>是Hermite矩阵当且仅当<span class="mathjax-exps">$A$</span>的所有特征值<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_n$</span>为实数，且存在酉矩阵<span class="mathjax-exps">$U \in \mathbb{C}^{n \times n}$</span>使得<span class="mathjax-exps">$U^H A U = \operatorname{diag}(\lambda_1, \cdots, \lambda_n)$</span>。</p>
 </blockquote>
@@ -577,15 +501,15 @@
 必要性。<br>
 若<span class="mathjax-exps">$A$</span>是Hermite矩阵，由<a href="#th3.5.1">Schur定理</a>可得<span class="mathjax-exps">$A$</span>酉相似于上三角矩阵，即存在酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$U^H A U = \Lambda$</span>，其中<span class="mathjax-exps">$\Lambda$</span>对角线元素为<span class="mathjax-exps">$A$</span>的特征值。对其两端取共轭转置有 <span class="mathjax-exps">$U^H A^H U = \overline{\Lambda } = U^H A U = \Lambda$</span>，则有<span class="mathjax-exps">$A$</span>的特征值为实数。证毕。</p>
 </details>
-<h5 id="364-corollary-正交矩阵的对角化"><em>3.6.4 Corollary: 正交矩阵的对角化</em> </h5>
+<h5 id="span-classcallout364-corollary-实对称判定定理span"><span class="callout">3.6.4 Corollary: 实对称判定定理</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{R}^{n \times n}$</span>，则<span class="mathjax-exps">$A$</span>是实对称矩阵当且仅当<span class="mathjax-exps">$A$</span>的所有特征值<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_n$</span>为实数，且存在正交矩阵<span class="mathjax-exps">$Q \in \mathbb{R}^{n \times n}$</span>使得<span class="mathjax-exps">$Q^{\top} A Q = \operatorname{diag}(\lambda_1, \cdots, \lambda_n)$</span>。</p>
 </blockquote>
-<h5 id="362-definition-正规矩阵"><em>3.6.2 Definition: 正规矩阵</em> </h5>
+<h5 id="span-classcallout362-definition-正规矩阵span"><span class="callout">3.6.2 Definition: 正规矩阵</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，若<span class="mathjax-exps">$A^H A = A A^H$</span>，则称<span class="mathjax-exps">$A$</span>为正规矩阵（或规范矩阵）。</p>
 </blockquote>
-<h5 id="362-theorem-正规矩阵的对角化"><em>3.6.2 Theorem: 正规矩阵的对角化</em> </h5>
+<h5 id="span-classcallout362-theorem-正规矩阵酉可对角化span"><span class="callout">3.6.2 Theorem: 正规矩阵酉可对角化</span> </h5>
 <blockquote>
 <p>复方阵<span class="mathjax-exps">$A$</span>是正规矩阵当且仅当<span class="mathjax-exps">$A$</span>酉相似于对角矩阵，即<span class="mathjax-exps">$A^H A = A A^H$</span>当且仅当存在酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$U^H A U = \operatorname{diag}(\lambda_1, \cdots, \lambda_n)$</span>。</p>
 </blockquote>
@@ -606,11 +530,11 @@
 </p><div class="mathjax-exps">\[\begin{gathered} \left|\lambda_1\right|^2 = \left|\lambda_1\right|^2 + \left|a_{12}\right|^2 + \cdots + \left|a_{1 n}\right|^2 \\ \left|\lambda_2\right|^2 + \left|a_{12}\right|^2 = \left|\lambda_2\right|^2 + \left|a_{23}\right|^2 + \cdots + \left|a_{2 n}\right|^2 \\ \vdots \\ \left|\lambda_n\right|^2 + \left|a_{1 n}\right|^2 + \left|a_{2 n}\right|^2 + \cdots + \left|a_{(n-1) n}\right|^2 = \left|\lambda_n\right|^2 \end{gathered}\]</div><p></p>
 <p>依次求解得 <span class="mathjax-exps">\(a_{12} = \cdots = a_{1 n} = 0, a_{23} = \cdots = a_{2 n} = 0, \cdots, a_{(n-1) n} = 0\)</span>。由此，上三角矩阵 <span class="mathjax-exps">\(\Lambda\)</span> 退化为对角矩阵，即 <span class="mathjax-exps">\(A\)</span> 酉相似于对角矩阵 <span class="mathjax-exps">\(\Lambda\)</span>。</p>
 </details>
-<h5 id="365-corollary"><em>3.6.5 Corollary</em> </h5>
+<h5 id="span-classcallout365-corollaryspan"><span class="callout">3.6.5 Corollary</span> </h5>
 <blockquote>
 <p>复方阵<span class="mathjax-exps">$A$</span>是正规矩阵当且仅当<span class="mathjax-exps">$A$</span>有<span class="mathjax-exps">$n$</span>个特征向量构成<span class="mathjax-exps">$\mathbb{C}^n$</span>空间的一组标准正交基，且属于<span class="mathjax-exps">$A$</span>的不同特征值的特征向量正交。</p>
 </blockquote>
-<h5 id="366-corollary"><em>3.6.6 Corollary</em> </h5>
+<h5 id="span-classcallout366-corollaryspan"><span class="callout">3.6.6 Corollary</span> </h5>
 <blockquote>
 <p>实方阵<span class="mathjax-exps">$A$</span>是正交矩阵当且仅当<span class="mathjax-exps">$A$</span>的所有特征值的模值为1，且存在酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$U^H A U = \operatorname{diag}(\lambda_1, \cdots, \lambda_n)$</span>，其中<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_n$</span>是<span class="mathjax-exps">$A$</span>的<span class="mathjax-exps">$n$</span>个特征值。</p>
 </blockquote>
@@ -628,7 +552,7 @@
 <p>由于特征向量<span class="mathjax-exps">$x$</span>为非零向量，故<span class="mathjax-exps">$x^H x \neq 0$</span>。因此，<span class="mathjax-exps">$\|\lambda\|^2 = 1$</span>，即<span class="mathjax-exps">$\|\lambda\| = 1$</span>。</p>
 </details>
 <p>{注}：由于正交矩阵的特征值不一定为实数，所以这里只能说明其模值为1和存在酉矩阵对角化。</p>
-<h5 id="367-corollary"><em>3.6.7 Corollary</em> </h5>
+<h5 id="span-classcallout367-corollaryspan"><span class="callout">3.6.7 Corollary</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，则<span class="mathjax-exps">$A$</span>是酉矩阵当且仅当<span class="mathjax-exps">$A$</span>的所有特征值的模为1，且存在酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$U^H A U = \operatorname{diag}(\lambda_1, \cdots, \lambda_n)$</span>，其中<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_n$</span>是<span class="mathjax-exps">$A$</span>的<span class="mathjax-exps">$n$</span>个特征值。</p>
 </blockquote>
