@@ -21,6 +21,7 @@
 .markdown-preview.markdown-preview {
   /* 样式化按钮 */
   /* 当鼠标悬停在按钮上时改变背景颜色 */
+  /* 响应式设计：针对移动端 */
 }
 .markdown-preview.markdown-preview body {
   line-height: 175%;
@@ -83,8 +84,8 @@
 .markdown-preview.markdown-preview .fixed-toc {
   position: fixed;
   /* 使用固定定位 */
-  right: 0;
-  /* 贴合窗口右侧 */
+  left: 0;
+  /* 贴合窗口左侧 */
   top: 0;
   /* 贴合窗口顶部 */
   max-width: 400px;
@@ -97,6 +98,16 @@
   /* 内边距 */
   z-index: -100;
   /* 使目录在最底层 */
+}
+@media (max-width: 768px) {
+  .markdown-preview.markdown-preview .fixed-toc {
+    padding: 10px;
+    /* 内边距 */
+    position: inherit;
+    /* 取消固定定位 */
+    z-index: 100;
+    /* 使目录在最顶层 */
+  }
 }
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
