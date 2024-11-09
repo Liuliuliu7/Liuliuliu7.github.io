@@ -27,6 +27,7 @@
 }
 .markdown-preview.markdown-preview #toggleProofs {
   font: 0.8em;
+  font-style: italic;
   padding: 5px 5px;
   background-color: #4CAF50;
   color: white;
@@ -34,13 +35,12 @@
   border-radius: 5px;
   cursor: pointer;
   float: right;
-  /* 将按钮浮动到右侧 */
 }
 .markdown-preview.markdown-preview #toggleProofs:hover {
   background-color: #45a049;
 }
-.markdown-preview.markdown-preview details:hover {
-  border: 2px solid #90c1f4;
+.markdown-preview.markdown-preview details {
+  border: 2px solid #e1eaed;
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
@@ -51,8 +51,8 @@
   line-height: 200%;
   /* 设置行间距为当前字体大小的125% */
 }
-.markdown-preview.markdown-preview details {
-  border: 2px solid #e1eaed;
+.markdown-preview.markdown-preview details:hover {
+  border: 2px solid #90c1f4;
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
@@ -80,6 +80,24 @@
   border-radius: 5px;
   /* 添加圆角 */
 }
+.markdown-preview.markdown-preview .fixed-toc {
+  position: fixed;
+  /* 使用固定定位 */
+  right: 0;
+  /* 贴合窗口右侧 */
+  top: 0;
+  /* 贴合窗口顶部 */
+  max-width: 400px;
+  /* 目录最大宽度 */
+  overflow-y: auto;
+  /* 如果内容超出高度，则显示滚动条 */
+  height: 100%;
+  /* 目录的高度 */
+  padding: 10px;
+  /* 内边距 */
+  z-index: -100;
+  /* 使目录在最底层 */
+}
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
@@ -93,82 +111,36 @@
     
       <div class="crossnote markdown-preview  ">
       
-<div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#线性代数复习笔记" class="md-toc-link"><p>线性代数复习笔记</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout131-definition-余子式与代数余子式span" class="md-toc-link">
-            <p><span class="callout">1.3.1 Definition: 余子式与代数余子式</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout131-theorem-行列式展开定理span" class="md-toc-link">
-            <p><span class="callout">1.3.1 Theorem: 行列式展开定理</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout232-definition-伴随矩阵span" class="md-toc-link">
-            <p><span class="callout">2.3.2 Definition: 伴随矩阵</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout251-definition-初等行列变换span" class="md-toc-link">
-            <p><span class="callout">2.5.1 Definition: 初等行（列）变换</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout254-definition-初等矩阵span" class="md-toc-link">
-            <p><span class="callout">2.5.4 Definition: 初等矩阵</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout253-theorem-初等变换与初等矩阵span" class="md-toc-link">
-            <p><span class="callout">2.5.3 Theorem: 初等变换与初等矩阵</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout254-theorem-矩阵等价span" class="md-toc-link">
-            <p><span class="callout">2.5.4 Theorem: 矩阵等价</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout262-definition-矩阵的秩span" class="md-toc-link">
-            <p><span class="callout">2.6.2 Definition: 矩阵的秩</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout262-theorem-初等变换与矩阵秩span" class="md-toc-link">
-            <p><span class="callout">2.6.2 Theorem: 初等变换与矩阵秩</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout262-corollary-矩阵秩与可逆矩阵乘积span" class="md-toc-link">
-            <p><span class="callout">2.6.2 Corollary: 矩阵秩与可逆矩阵乘积</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout265-example-矩阵乘积的秩span" class="md-toc-link">
-            <p><span class="callout">2.6.5 Example: 矩阵乘积的秩</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout265-theorem-span-idth265多矩阵乘积秩关系spanspan" class="md-toc-link">
-            <p><span class="callout">2.6.5 Theorem: <span id="th2.6.5">多矩阵乘积秩关系</span></span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout265-corollary-矩阵秩乘积span" class="md-toc-link">
-            <p><span class="callout">2.6.5 Corollary: 矩阵秩乘积</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout422-theorem-齐次线性方程组的解span" class="md-toc-link">
-            <p><span class="callout">4.2.2 Theorem: 齐次线性方程组的解</span></p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#span-classcallout432-theorem-非齐次线性方程组的通解span" class="md-toc-link">
-            <p><span class="callout">4.3.2 Theorem: 非齐次线性方程组的通解</span></p>
-
-          </a></div>
-        </div>
-      </details>
-    
+<div class="fixed-toc">
+<details open="">
+  <summary>Contents</summary>
+<ul>
+<li><a href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0">线性代数复习笔记</a>
+<ul>
+<li><a href="#131-definition-%E4%BD%99%E5%AD%90%E5%BC%8F%E4%B8%8E%E4%BB%A3%E6%95%B0%E4%BD%99%E5%AD%90%E5%BC%8F">1.3.1 Definition: 余子式与代数余子式</a></li>
+<li><a href="#131-theorem-%E8%A1%8C%E5%88%97%E5%BC%8F%E5%B1%95%E5%BC%80%E5%AE%9A%E7%90%86">1.3.1 Theorem: 行列式展开定理</a></li>
+<li><a href="#232-definition-%E4%BC%B4%E9%9A%8F%E7%9F%A9%E9%98%B5">2.3.2 Definition: 伴随矩阵</a></li>
+<li><a href="#251-definition-%E5%88%9D%E7%AD%89%E8%A1%8C%E5%88%97%E5%8F%98%E6%8D%A2">2.5.1 Definition: 初等行（列）变换</a></li>
+<li><a href="#254-definition-%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5">2.5.4 Definition: 初等矩阵</a></li>
+<li><a href="#253-theorem-%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5">2.5.3 Theorem: 初等变换与初等矩阵</a></li>
+<li><a href="#254-theorem-%E7%9F%A9%E9%98%B5%E7%AD%89%E4%BB%B7">2.5.4 Theorem: 矩阵等价</a></li>
+<li><a href="#262-definition-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9">2.6.2 Definition: 矩阵的秩</a></li>
+<li><a href="#262-theorem-%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%A7%A9">2.6.2 Theorem: 初等变换与矩阵秩</a></li>
+<li><a href="#262-corollary-%E7%9F%A9%E9%98%B5%E7%A7%A9%E4%B8%8E%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5%E4%B9%98%E7%A7%AF">2.6.2 Corollary: 矩阵秩与可逆矩阵乘积</a></li>
+<li><a href="#265-example-%E7%9F%A9%E9%98%B5%E4%B9%98%E7%A7%AF%E7%9A%84%E7%A7%A9">2.6.5 Example: 矩阵乘积的秩</a></li>
+<li><a href="#265-theorem-%E5%A4%9A%E7%9F%A9%E9%98%B5%E4%B9%98%E7%A7%AF%E7%A7%A9%E5%85%B3%E7%B3%BB">2.6.5 Theorem: 多矩阵乘积秩关系</a></li>
+<li><a href="#265-corollary-%E7%9F%A9%E9%98%B5%E7%A7%A9%E4%B9%98%E7%A7%AF">2.6.5 Corollary: 矩阵秩乘积</a></li>
+<li><a href="#422-theorem-%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3">4.2.2 Theorem: 齐次线性方程组的解</a></li>
+<li><a href="#432-theorem-%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E9%80%9A%E8%A7%A3">4.3.2 Theorem: 非齐次线性方程组的通解</a></li>
+</ul>
+</li>
+</ul>
+</details>
 </div>
-<br>
-<button id="toggleProofs">Toggle Proofs</button><p></p>
+<p><button id="toggleProofs">Toggle Proofs</button></p>
 <script>
   document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
     var details = document.querySelectorAll('details > summary');
     for (var i = 0; i < details.length; i++) {
       if (details[i].textContent.includes('Proof')) {
@@ -236,7 +208,6 @@
 </blockquote>
 <details open="">
   <summary>Proof:</summary>
-<blockquote>
 <p>① 设<span class="mathjax-exps">\(R(A) = r\)</span>，则存在<span class="mathjax-exps">\(m\)</span>阶可逆矩阵<span class="mathjax-exps">\(P\)</span>和<span class="mathjax-exps">\(n\)</span>阶可逆矩阵<span class="mathjax-exps">\(Q\)</span>，使得<br>
 </p><div class="mathjax-exps">\[PAQ = \left(\begin{array}{cc} E_r &amp; O \\ O &amp; O \end{array}\right)\]</div> 于是<br>
 <div class="mathjax-exps">\[A = P^{-1} \left(\begin{array}{cc} E_r &amp; O \\ O &amp; O \end{array}\right) Q^{-1}\]</div> 所以<br>
@@ -249,7 +220,6 @@
 由例2.6.3可知<br>
 <div class="mathjax-exps">\[n + R(AB) = R\left(\begin{array}{c} E_r \\ C' \end{array}\right) + R(AB) = R(C)\]</div> 容易看出，矩阵<span class="mathjax-exps">\(C\)</span>中至少有一个<span class="mathjax-exps">\(R(A) + R(B)\)</span>阶子式不为零，所以<span class="mathjax-exps">\(R(C) \geq R(A) + R(B)\)</span>。于是<br>
 <div class="mathjax-exps">\[R(A) + R(B) - n \leq R(AB)\]</div><p></p>
-</blockquote>
 </details>
 <h5 id="span-classcallout265-theorem-span-idth265多矩阵乘积秩关系spanspan"><span class="callout">2.6.5 Theorem: <span id="th2.6.5">多矩阵乘积秩关系</span></span> </h5>
 <blockquote>
@@ -257,7 +227,6 @@
 </blockquote>
 <details open="">
   <summary>Proof:</summary>
-<blockquote>
 <p>用数学归纳法证明。<br>
 当<span class="mathjax-exps">$m=2$</span>时，由例2.6.5可知不等式成立。<br>
 假设当<span class="mathjax-exps">$m=k$</span>时不等式成立，即<br>
@@ -270,7 +239,6 @@
 </p><div class="mathjax-exps">\[R \leq \boxed{R(A_1) + R(A_2) + \cdots + R(A_k)} + R(A_{k+1}) - R(A_1A_2\cdots A_k) - R(A_{k+1}) + n\]</div><p></p>
 <p>利用归纳条件可得：<br>
 </p><div class="mathjax-exps">\[R(A_1) + R(A_2) + \cdots + R(A_{k+1}) - R(A_1A_2\cdots A_{k+1}) \leq kn\]</div> 由数学归纳法原理，不等式对任意正整数<span class="mathjax-exps">$m$</span>成立。证毕。<p></p>
-</blockquote>
 </details>
 <h5 id="span-classcallout265-corollary-矩阵秩乘积span"><span class="callout">2.6.5 Corollary: 矩阵秩乘积</span> </h5>
 <blockquote>

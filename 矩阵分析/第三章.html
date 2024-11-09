@@ -83,7 +83,7 @@
 .markdown-preview.markdown-preview .fixed-toc {
   position: fixed;
   /* 使用固定定位 */
-  left: 0;
+  right: 0;
   /* 贴合窗口右侧 */
   top: 0;
   /* 贴合窗口顶部 */
@@ -95,6 +95,8 @@
   /* 目录的高度 */
   padding: 10px;
   /* 内边距 */
+  z-index: -100;
+  /* 使目录在最底层 */
 }
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
