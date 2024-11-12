@@ -1,0 +1,358 @@
+<!DOCTYPE html><html><head>
+      <title>第四章</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  /* 样式化按钮 */
+  /* 当鼠标悬停在按钮上时改变背景颜色 */
+  /* 响应式设计：针对移动端 */
+}
+.markdown-preview.markdown-preview body {
+  line-height: 175%;
+}
+.markdown-preview.markdown-preview #toggleProofs {
+  font: 0.8em;
+  font-style: italic;
+  padding: 5px 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+.markdown-preview.markdown-preview #toggleProofs:hover {
+  background-color: #45a049;
+}
+.markdown-preview.markdown-preview details {
+  border: 2px solid #e1eaed;
+  /* 蓝色边框 */
+  border-radius: 10px;
+  /* 圆角 */
+  padding: 8px;
+  /* 内边距 */
+  transition: box-shadow 0.3s ease;
+  /* 阴影过渡效果 */
+  line-height: 200%;
+  /* 设置行间距为当前字体大小的125% */
+}
+.markdown-preview.markdown-preview details:hover {
+  border: 2px solid #90c1f4;
+  /* 蓝色边框 */
+  border-radius: 10px;
+  /* 圆角 */
+  padding: 8px;
+  /* 内边距 */
+  transition: box-shadow 0.3s ease;
+  /* 阴影过渡效果 */
+  line-height: 200%;
+  /* 设置行间距为当前字体大小的125% */
+}
+.markdown-preview.markdown-preview summary {
+  font-weight: bold;
+  font-style: italic;
+}
+.markdown-preview.markdown-preview .callout {
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+  color: #005792;
+  /* 深蓝色 */
+  background-color: #E7F7FF;
+  /* 浅蓝色背景 */
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  /* 添加圆角 */
+}
+.markdown-preview.markdown-preview .fixed-toc {
+  position: fixed;
+  /* 使用固定定位 */
+  left: 0;
+  /* 贴合窗口左侧 */
+  top: 0;
+  /* 贴合窗口顶部 */
+  max-width: 400px;
+  /* 目录最大宽度 */
+  overflow-y: auto;
+  /* 如果内容超出高度，则显示滚动条 */
+  height: 100%;
+  /* 目录的高度 */
+  padding: 10px;
+  /* 内边距 */
+  z-index: -100;
+  /* 使目录在最底层 */
+}
+@media (max-width: 768px) {
+  .markdown-preview.markdown-preview .fixed-toc {
+    padding: 10px;
+    /* 内边距 */
+    position: inherit;
+    /* 取消固定定位 */
+    z-index: 100;
+    /* 使目录在最顶层 */
+  }
+}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<div class="fixed-toc">
+<details open="">
+    <summary>Contents</summary>
+<ul>
+<li><a href="#%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0">数字特征与特征函数</a>
+<ul>
+<li><a href="#%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B">数学期望</a>
+<ul>
+<li><a href="#%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F">离散型随机变量</a></li>
+<li><a href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F">连续型随机变量</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%B9%E5%B7%AE">方差</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0">相关系数</a></li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+<h2 id="数字特征与特征函数">数字特征与特征函数 </h2>
+<h3 id="数学期望">数学期望 </h3>
+<h4 id="离散型随机变量">离散型随机变量 </h4>
+<p><span class="callout">4.1.1 Definition: 数学期望</span></p>
+<p>设<span class="mathjax-exps">$\xi$</span>为一离散型随机变量，它取值<span class="mathjax-exps">$x_1, x_2, x_3, \cdots$</span>对应的概率为<span class="mathjax-exps">$p_1, p_2, p_3, \cdots$</span>如果级数</p>
+<p></p><div class="mathjax-exps">$$\sum_{i=1}^{\infty} x_i p_i$$</div><p></p>
+<p>绝对收敛，则把它称为<span class="mathjax-exps">$\xi$</span>的数学期望(mathematical expectation)，简称期望、期望值或均值(mean)，记作<span class="mathjax-exps">$E\xi$</span>。</p>
+<p><span class="callout">Example: 伯努利分布</span></p>
+<p>事件<span class="mathjax-exps">$A$</span>发生的概率为<span class="mathjax-exps">$p$</span>，若以<span class="mathjax-exps">$1_A$</span>记其示性函数，即<span class="mathjax-exps">$A$</span>发生时取值1，否则取值0，则<br>
+</p><div class="mathjax-exps">$$E 1_A = 1 \times p + 0 \times (1 - p) = p = P(A)$$</div><p></p>
+<p><span class="callout">Example: 二项分布的数学期望</span></p>
+<p>二项分布<span class="mathjax-exps">$p_k = \binom{n}{k} p^k q^{n-k}, \quad k=0,1,2,\cdots, n$</span></p>
+<p></p><div class="mathjax-exps">$$\sum_{k=0}^n k p_k = \sum_{k=1}^n k \binom{n}{k} p^k q^{n-k} = n p \sum_{k=1}^n \binom{n-1}{k-1} p^{k-1} q^{n-k} = n p (p+q)^{n-1} = n p$$</div><p></p>
+<p><span class="callout">Example: 泊松分布的数学期望</span></p>
+<p>泊松分布<span class="mathjax-exps">$p_k = \frac{\lambda}{k!} e^{-\lambda}, \quad k=0,1,2,\cdots$</span></p>
+<p></p><div class="mathjax-exps">$$\sum_{k=0}^{\infty} k p_k = \sum_{k=1}^{\infty} k \cdot \frac{\lambda^k}{k!} e^{-\lambda} = \lambda e^{-\lambda} \sum_{k=1}^{\infty} \frac{\lambda^{k-1}}{(k-1)!} = \lambda e^{-\lambda} \cdot e^{\lambda} = \lambda$$</div><p></p>
+<p>由此看出，泊松分布的参数<span class="mathjax-exps">$\lambda$</span>就是它的期望值。</p>
+<p><span class="callout">Example: 几何分布的数学期望</span></p>
+<p>几何分布<span class="mathjax-exps">$p_k = q^{k-1} p, \quad k=1,2,\cdots$</span></p>
+<p></p><div class="mathjax-exps">$$\sum_{k=1}^{\infty} k p_k = \sum_{k=1}^{\infty} k q^{k-1} p = p(1 + 2q + 3q^2 + \cdots) = p(q + q^2 + q^3 + \cdots)' = p\left(\frac{q}{1-q}\right)' = p\frac{1}{(1-q)^2} = \frac{1}{p}$$</div><p></p>
+<p><span class="callout">Example: 数学期望不存在</span></p>
+<p>随机变量<span class="mathjax-exps">$\xi$</span>取值<span class="mathjax-exps">$x_k = (-1)^k \frac{2^k}{k}, \quad k=1,2,\cdots$</span>，概率为<span class="mathjax-exps">$p_k = \frac{1}{2^k}$</span>，则由于<span class="mathjax-exps">$p_k \geqslant 0, \sum_{k=1}^{\infty} p_k = 1$</span>，因此它是概率分布，而且</p>
+<p></p><div class="mathjax-exps">$$\sum_{k=1}^{\infty} x_k p_k = \sum_{k=1}^{\infty} (-1)^k \frac{1}{k} = -\ln 2$$</div><p></p>
+<p>但由于</p>
+<p></p><div class="mathjax-exps">$$\sum_{k=1}^{\infty} |x_k| p_k = \sum_{k=1}^{\infty} \frac{1}{k} = \infty$$</div><p></p>
+<p>因此按定义<span class="mathjax-exps">$\xi$</span>的数学期望不存在。</p>
+<p>这个例子展示了如何计算几何分布的数学期望。</p>
+<h4 id="连续型随机变量">连续型随机变量 </h4>
+<p><span class="callout">4.1.2 Definition: 连续型随机变量的数学期望</span></p>
+<blockquote>
+<p>设<span class="mathjax-exps">$\xi$</span>为具有密度函数<span class="mathjax-exps">$p(x)$</span>的连续型随机变量，当积分<span class="mathjax-exps">$\int_{-\infty}^{\infty} x p(x) \, dx$</span>绝对收敛时，我们称它为<span class="mathjax-exps">$\xi$</span>的数学期望（或均值），记作<span class="mathjax-exps">$E\xi$</span>，即<br>
+</p><div class="mathjax-exps">$$E\xi = \int_{-\infty}^{\infty} x p(x) \, dx$$</div><p></p>
+</blockquote>
+<p><span class="callout">Example: 正态分布的数学期望</span></p>
+<blockquote>
+<p>正态分布<span class="mathjax-exps">$N(\mu, \sigma^2)$</span>。</p>
+</blockquote>
+<p></p><div class="mathjax-exps">$$\int_{-\infty}^{\infty} x p(x) \, dx = \int_{-\infty}^{\infty} x \frac{1}{\sqrt{2\pi}\sigma} e^{-(x-\mu)^2/(2\sigma^2)} \, dx = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} (\sigma z + \mu) e^{-z^2/2} \, dz = \frac{\mu}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-z^2/2} \, dz = \mu$$</div><p></p>
+<p>可见<span class="mathjax-exps">$N(\mu, \sigma^2)$</span>中的参数<span class="mathjax-exps">$\mu$</span>正是它的数学期望。</p>
+<p><span class="callout">Example: 指数分布的数学期望</span></p>
+<blockquote>
+<p>指数分布<span class="mathjax-exps">$p(x) = \lambda e^{-\lambda x}, \quad x \geqslant 0$</span>。</p>
+</blockquote>
+<p></p><div class="mathjax-exps">$$\int_0^{\infty} x \lambda e^{-\lambda x} \, dx = -\int_0^{\infty} x \, d e^{-\lambda x} = \int_0^{\infty} e^{-\lambda x} \, dx = \frac{1}{\lambda}$$</div><p></p>
+<p><span class="callout">Example: 柯西分布的数学期望</span></p>
+<blockquote>
+<p>柯西分布<span class="mathjax-exps">$p(x) = \frac{1}{\pi} \cdot \frac{1}{1+x^2}$</span>。</p>
+</blockquote>
+<p>由于</p>
+<p></p><div class="mathjax-exps">$$\int_{-\infty}^{\infty} |x| \cdot \frac{1}{\pi(1+x^2)} \, dx = \infty$$</div><p></p>
+<p>因此柯西分布的数学期望不存在。</p>
+<p>对于一般情况下，使用斯蒂尔斯积分：</p>
+<p><span class="callout">4.1.3 Definition: 数学期望</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$\xi$</span> 的分布函数为 <span class="mathjax-exps">$F(x)$</span>，则定义<br>
+</p><div class="mathjax-exps">$$E\xi = \int_{-\infty}^{\infty} x dF(x)$$</div><p></p>
+<p>为 <span class="mathjax-exps">$\xi$</span> 的数学期望（或均值）。要求上述积分绝对收敛，否则数学期望不存在。</p>
+</blockquote>
+<p><span class="callout">4.1.4 Theorem: 随机变量函数函数的数学期望</span></p>
+<blockquote>
+<p>若<span class="mathjax-exps">$g(x)$</span>是一元博雷尔函数，而<span class="mathjax-exps">$\eta = g(\xi)$</span>，则<br>
+</p><div class="mathjax-exps">$$\int_{-\infty}^{\infty} y dF_{\eta}(y) = \int_{-\infty}^{\infty} g(x) dF_{\xi}(x)$$</div><p></p>
+<p>即这两个积分中，若有一个存在，则另一个也存在，而且两者相等。</p>
+</blockquote>
+<p>该定理使得我们计算随机变量函数的数学期望时不需要先求解函数的分布函数，而是直接利用原随机变量的分布函数即可。</p>
+<p><span class="callout">4.1.4 Definition: 随机向量数学期望</span></p>
+<blockquote>
+<p>随机向量 <span class="mathjax-exps">$\left(\xi_1,\xi_2,\cdots,\xi_n\right)$</span> 的数学期望为 <span class="mathjax-exps">$\left(E\xi_1, E\xi_2,\cdots, E\xi_n\right)$</span>，其中<br>
+</p><div class="mathjax-exps">$$E\xi_i=\int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty} x_i d F\left(x_1,\cdots, x_n\right)=\int_{-\infty}^{\infty} x_i d F_i\left(x_i\right)$$</div><p></p>
+<p>这里 <span class="mathjax-exps">$F_i\left(x_i\right)$</span> 是 <span class="mathjax-exps">$\xi_i$</span> 的分布函数 <span class="mathjax-exps">$\left(i=1,2,\cdots, n\right)$</span>。</p>
+</blockquote>
+<h3 id="方差">方差 </h3>
+<p><span class="callout">4.2.1 Definition: 随机变量方差</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$E(\xi-E\xi)^2$</span> 存在，则称它为随机变量 <span class="mathjax-exps">$\xi$</span> 的方差(variance)，并记为 <span class="mathjax-exps">$D\xi$</span>，而 <span class="mathjax-exps">$\sqrt{D\xi}$</span> 称为根方差、均方差或更多地称为标准差(standard deviation)。</p>
+</blockquote>
+<p>利用数学期望的线性性质，可以得到方差的另一种表达形式：</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} D\xi &amp;= E(\xi-E\xi)^2 = E\left[\xi^2-2\xi\cdot E\xi+(E\xi)^2\right] \\ &amp;= E\xi^2-2 E\xi\cdot E\xi+(E\xi)^2 = E\xi^2-(E\xi)^2 \end{align*}$$</div><p></p>
+<p><span class="callout">Example: 伯努利分布方差</span></p>
+<p></p><div class="mathjax-exps">$$\begin{gather*} E\xi^2 = 1^2 \cdot p + 0^2 \cdot (1 - p) = p\\ D\xi = E\xi^2 - (E\xi)^2 = p - p^2 = pq \end{gather*}$$</div><p></p>
+<p>当 <span class="mathjax-exps">$p = q = \frac{1}{2}$</span> 时方差最大——投币最难预测，预测阴晴则较易。</p>
+<p><span class="callout">Example: 二项分布方差</span></p>
+<p></p><div class="mathjax-exps">$$\begin{aligned} D \xi  &amp;= E \xi ^2 - (E \xi )^2 \\ &amp;= \sum_{k=0}^{n} k^2 C_n^k p^k (1 - p)^{n-k} - (np)^2 \\ &amp;= \sum_{k=0}^{n} k \cdot np C_{n-1}^{k-1} p^{k-1} (1 - p)^{n-k} - (np)^2 \\ &amp;= np(\sum_{k=1}^{n} (k - 1) C_{n-1}^{k-1} p^{k-1} (1 - p)^{n-k} + \sum_{k=1}^{n} C_{n-1}^{k-1} p^{k-1} (1 - p)^{n-k}) - (np)^2 \\ &amp;= np(\sum_{k=0}^{n-1} k C_{n-1}^{k} p^k (1 - p)^{n-1-k} + \sum_{k=1}^{n} C_{n-1}^{k-1} (1 - p)^{n-k} p^{k-1}) - (np)^2 \\ &amp;= np(E\xi + (p + (1 - p)^{n-1}) - (np)^2 \\ &amp;= np((n - 1)p + 1) - n^2 p^2 \\ &amp;= np(1 - p) \end{aligned}$$</div><p></p>
+<p>该定理利用独立性可以显然得出结果。</p>
+<p><span class="callout">Example: 泊松分布方差</span></p>
+<p></p><div class="mathjax-exps">$$\begin{gather*} E\xi^2 = \sum_{k=0}^{\infty} k^2 p_k = \sum_{k=1}^{\infty} k \frac{\lambda^k e^{-\lambda}}{k!} = \sum_{k=1}^{\infty} k \frac{\lambda^k}{(k-1)!} e^{-\lambda} \\ $= \lambda \sum_{k=0}^{\infty} (k+1) \frac{\lambda^k}{k!} e^{-\lambda} = \lambda^2 + \lambda \\ $D\xi = E\xi^2 - (E\xi)^2 = \lambda^2 + \lambda - \lambda^2 = \lambda \end{gather*}$$</div><p></p>
+<p>均值与方差都是 <span class="mathjax-exps">$\lambda$</span>。</p>
+<p><span class="callout">Example: 均匀分布方差</span></p>
+<p></p><div class="mathjax-exps">$$\begin{gather*} E\xi = \int_{a}^{b} x \frac{1}{b-a} dx = \frac{b+a}{2}\\ E\xi^2 = \int_{a}^{b} x^2 \frac{1}{b-a} dx = \frac{b^2 + ab + a^2}{3}\\ D\xi = E\xi^2 - (E\xi)^2 = \frac{b^2 + ab + a^2}{3} - \left(\frac{b+a}{2}\right)^2 = \frac{(b-a)^2}{12} \end{gather*}$$</div><p></p>
+<p><span class="callout">Example:正态分布方差</span></p>
+<p></p><div class="mathjax-exps">$$\begin{align*} D\xi &amp;= \int_{-\infty}^{\infty} (x-\mu)^2 \frac{1}{\sqrt{2\pi}\sigma} e^{-(x-\mu)^2/(2\sigma^2)} dx \\ &amp;= \frac{\sigma^2}{\sqrt{2\pi}} \int_{-\infty}^{\infty} z^2 e^{-z^2/2} dz \\ &amp;= \frac{\sigma^2}{\sqrt{2\pi}} \left[ \left( -ze^{-z^2/2} \right) \bigg|_{-\infty}^{\infty} + \int_{-\infty}^{\infty} e^{-z^2/2} dz \right] \\ &amp;= \frac{\sigma^2}{\sqrt{2\pi}} \sqrt{2\pi} = \sigma^2   \end{align*}$$</div><p></p>
+<p>方差的性质</p>
+<ol>
+<li>
+<p>常数的方差为 0。</p>
+</li>
+<li>
+<p><span class="mathjax-exps">$D(\xi + c) = D\xi$</span>，这里 <span class="mathjax-exps">$c$</span> 是常数。</p>
+</li>
+<li>
+<p><span class="mathjax-exps">$D(c\xi) = c^2 D\xi$</span>，这里 <span class="mathjax-exps">$c$</span> 是常数。<br>
+对于随机变量 <span class="mathjax-exps">$\xi$</span>，若它的数学期望 <span class="mathjax-exps">$E\xi$</span> 及方差 <span class="mathjax-exps">$D\xi$</span> 都存在，而且 <span class="mathjax-exps">$D\xi &gt; 0$</span>，有时要考虑标准化了的随机变量<br>
+</p><div class="mathjax-exps">$$\xi^* = \frac{\xi - E\xi}{\sqrt{D\xi}}$$</div><p></p>
+<p>显然 <span class="mathjax-exps">$E\xi^* = 0, D\xi^* = 1$</span>。</p>
+</li>
+<li>
+<p>若 <span class="mathjax-exps">$c \neq E\xi$</span>，则 <span class="mathjax-exps">$D\xi &lt; E(\xi - c)^2$</span>。</p>
+</li>
+</ol>
+<details open="">
+    <summary>Proof:</summary>
+<p></p><div class="mathjax-exps">$$D\xi = E(\xi - E\xi)^2 = E(\xi - c)^2 - (c - E\xi)^2$$</div><p></p>
+</details>
+<p>这个性质表明数学期望具有一个重要的极值性质：在 <span class="mathjax-exps">$E(\xi - c)^2$</span> 中，当 <span class="mathjax-exps">$c = E\xi$</span> 时达到极小；这也说明在 <span class="mathjax-exps">$D\xi$</span> 的定义中取 <span class="mathjax-exps">$c = E\xi$</span> 的合理性。</p>
+<p><span class="callout">切比雪夫不等式</span></p>
+<blockquote>
+<p>对于任何具有有限方差的随机变量 <span class="mathjax-exps">$\xi$</span>，都有<br>
+</p><div class="mathjax-exps">$$P\{|\xi-E\xi|\geqslant\varepsilon\}\leqslant\frac{D\xi}{\varepsilon^2}$$</div><p></p>
+</blockquote>
+<p>其中 <span class="mathjax-exps">$\varepsilon$</span> 是任一正数。</p>
+<details open="">
+    <summary>Proof:</summary>
+<p>若 <span class="mathjax-exps">$F(x)$</span> 是 <span class="mathjax-exps">$\xi$</span> 的分布函数，则显然有</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} D\xi=\int_{-\infty}^{\infty}(x-E\xi)^2 d F(x)&amp;\geqslant\int_{|x-E\xi|\geqslant\varepsilon}(x-E\xi)^2 d F(x) \\ &amp;\geqslant\int_{|x-E\xi|\geqslant\varepsilon}\varepsilon^2 d F(x) =\varepsilon^2 P\left\{|\xi-E\xi|\geqslant\varepsilon\right\} \end{align*}$$</div><p></p>
+<p>有时把该不等式改写成<br>
+</p><div class="mathjax-exps">$$P\{|\xi-E\xi|&lt;\varepsilon\}\geqslant 1-\frac{D\xi}{\varepsilon^2}$$</div><p></p>
+<p>或</p>
+<p></p><div class="mathjax-exps">$$P\left\{\left|\frac{\xi-E\xi}{\sqrt{D\xi}}\right|\geqslant\delta\right\}\leqslant\frac{1}{\delta^2}$$</div><p></p>
+</details>
+<p>切比雪夫不等式利用随机变量 <span class="mathjax-exps">$\xi$</span> 的数学期望 <span class="mathjax-exps">$E\xi$</span> 及方差 <span class="mathjax-exps">$D\xi=\sigma^2$</span> 对 <span class="mathjax-exps">$\xi$</span> 的概率分布进行估计。因为只利用数学期望及方差就描述了随机变量的重要情况，因此它在理论研究及实际应用中都很有价值。</p>
+<p>下面给出典型分布的均值和方差<br>
+<span id="mu-sigma-table"></span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分布</th>
+<th style="text-align:center">均值<span class="mathjax-exps">$\mu$</span></th>
+<th style="text-align:center">方差<span class="mathjax-exps">$D$</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">伯努利</td>
+<td style="text-align:center"><span class="mathjax-exps">$p$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$pq$</span></td>
+</tr>
+<tr>
+<td style="text-align:center">二项分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$np$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$npq$</span></td>
+</tr>
+<tr>
+<td style="text-align:center">泊松分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$\lambda$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$\lambda$</span></td>
+</tr>
+<tr>
+<td style="text-align:center">几何分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{1}{p}$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{1-p}{p^2}$</span></td>
+</tr>
+<tr>
+<td style="text-align:center">正态分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$\mu$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$\sigma^2$</span></td>
+</tr>
+<tr>
+<td style="text-align:center">指数分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{1}{\lambda}$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{1}{\lambda^2}$</span></td>
+</tr>
+<tr>
+<td style="text-align:center">均匀分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{a+b}{2}$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{(b-a)^2}{12}$</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="相关系数">相关系数 </h3>
+<p>对于随机向量，只用方差是不够的，还需要考虑随机变量之间的关系。<br>
+计算 <span class="mathjax-exps">$\xi \pm \eta$</span> 的方差：<br>
+</p><div class="mathjax-exps">$$\begin{align*}   D(\xi \pm \eta) &amp;= E[(\xi \pm \eta) - (E\xi \pm E\eta)]^2 \\ &amp;= E(\xi - E\xi)^2 + E(\eta - E\eta)^2 \pm 2 E[(\xi - E\xi)(\eta - E\eta)] \\ &amp;= D\xi + D\eta \pm 2 E[(\xi - E\xi)(\eta - E\eta)] \end{align*}$$</div><p></p>
+<p>这启发我们引入 <span class="mathjax-exps">$E[(\xi - E\xi)(\eta - E\eta)]$</span> 。</p>
+<p><span class="callout">Definition 4.2.2</span></p>
+<blockquote>
+<p>称 <span class="mathjax-exps">$\sigma_{ij} = \operatorname{cov}(\xi_i, \xi_j) = E[(\xi_i - E\xi_i)(\xi_j - E\xi_j)] \quad i, j = 1, 2, \ldots, n$</span> 为 <span class="mathjax-exps">$\xi_i$</span> 与 <span class="mathjax-exps">$\xi_j$</span> 的协方差(covariance)。</p>
+</blockquote>
+<p>不难验算<br>
+</p><div class="mathjax-exps">$$\begin{gather*} \operatorname{}{cov}(\xi_i, \xi_j) = E\xi_i \xi_j - E\xi_i \cdot E\xi_j \\ D\left(\sum_{i=1}^{n} \xi_i\right) = \sum_{i=1}^{n} D\xi_i + 2 \sum_{1 \leq i &lt; j \leq n} \text{cov}(\xi_i, \xi_j) \end{gather*}$$</div><p></p>
+<p>特别地<br>
+</p><div class="mathjax-exps">$$D(\xi_i \pm \xi_j) = D\xi_i + D\xi_j \pm 2\text{cov}(\xi_i, \xi_j)$$</div><p></p>
+<p>方差是协方差的特例，显然 <span class="mathjax-exps">$\sigma_{ii} = D\xi_i$</span>。矩阵<br>
+</p><div class="mathjax-exps">$$\Sigma = \begin{pmatrix} \sigma_{11} &amp; \sigma_{12} &amp; \cdots &amp; \sigma_{1n} \\ \sigma_{21} &amp; \sigma_{22} &amp; \cdots &amp; \sigma_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \sigma_{n1} &amp; \sigma_{n2} &amp; \cdots &amp; \sigma_{nn} \end{pmatrix}$$</div><p></p>
+<p>称为 <span class="mathjax-exps">$\xi$</span> 的协方差矩阵，简记作 <span class="mathjax-exps">$D\xi$</span>，显然这是一个对称矩阵。</p>
+<p>此外，对任何实数 <span class="mathjax-exps">$t_j (j=1, 2, \ldots, n)$</span> 有<br>
+</p><div class="mathjax-exps">$$\sum_{j,k} \sigma_{jk} t_j t_k = E\left[\sum_{j=1}^{n} t_j (\xi_j - E\xi_j)\right]^2 \geq 0$$</div><p></p>
+<p>因此 <span class="mathjax-exps">$\Sigma$</span> 是一个非负定矩阵，所以若以 <span class="mathjax-exps">$\det \Sigma$</span> 记 <span class="mathjax-exps">$\Sigma$</span> 的行列式，则有</p>
+<p><span class="mathjax-exps">$\det \Sigma \geq 0$</span></p>
+<p>更常用的是如下“标准化”了的协方差。</p>
+<p><span class="callout">4.2.3 Definition: 相关系数</span></p>
+<blockquote>
+<p>称 <span class="mathjax-exps">$\rho_{ij} = \frac{\text{cov}(\xi_i, \xi_j)}{\sqrt{D\xi_i D\xi_j}}$</span> 为 <span class="mathjax-exps">$\xi_i$</span> 与 <span class="mathjax-exps">$\xi_j$</span> 的相关系数(correlation coefficient)，这里要求 <span class="mathjax-exps">$D\xi_i$</span> 与 <span class="mathjax-exps">$D\xi_j$</span> 不为零。</p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
