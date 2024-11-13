@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>第二章</title>
+      <title>第五章</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -7,7 +7,7 @@
         <script type="text/javascript">
           window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
         </script>
-        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
         
       
       
@@ -45,8 +45,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -57,8 +59,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -122,168 +126,78 @@
     
       <div class="crossnote markdown-preview  ">
       
-<div class="fixed-toc">
-<details open="">
-  <summary>Contents</summary>
-<ul>
-<li><a href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%8B%AC%E7%AB%8B%E6%80%A7">第二章 条件概率与统计独立性</a>
-<ul>
-<li><a href="#%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E5%8F%8A%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F">条件概率及全概率公式</a></li>
-<li><a href="#%E7%8B%AC%E7%AB%8B%E6%80%A7">独立性</a></li>
-<li><a href="#%E5%B8%B8%E8%A7%81%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">常见概率分布</a>
-<ul>
-<li><a href="#%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83">几何分布</a></li>
-<li><a href="#%E5%B8%95%E6%96%AF%E5%8D%A1%E5%88%86%E5%B8%83">帕斯卡分布</a></li>
-<li><a href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83">二项分布</a></li>
-<li><a href="#%E5%A4%9A%E9%A1%B9%E5%88%86%E5%B8%83">多项分布</a></li>
-<li><a href="#%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83">泊松分布</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</details></div>
-
-<p><button id="toggleProofs">Toggle Proofs</button></p>
-<script>
-  document.getElementById('toggleProofs').addEventListener('click', function() {
-    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
-    var details = document.querySelectorAll('details > summary');
-    for (var i = 0; i < details.length; i++) {
-      if (details[i].textContent.includes('Proof')) {
-        details[i].parentElement.open = !details[i].parentElement.open;
-      }
-    }
-  });
-</script>
-<h2 id="第二章-条件概率与统计独立性">第二章 条件概率与统计独立性 </h2>
-<h3 id="条件概率及全概率公式">条件概率及全概率公式 </h3>
-<p><span class="callout">Definition: 条件概率</span></p>
+<h2 id="第五章-极限定理">第五章 极限定理 </h2>
+<h3 id="大数定律">大数定律 </h3>
+<p><span class="callout">5.1.1 Definition: 大数定律</span></p>
 <blockquote>
-<p>设<span class="mathjax-exps">$(\Omega, \mathscr{F}, P)$</span>是一个概率空间，<span class="mathjax-exps">$B \in \mathscr{F}$</span>且<span class="mathjax-exps">$P(B) &gt; 0$</span>，则对任意<span class="mathjax-exps">$A \in \mathscr{F}$</span>，记<br>
-</p><div class="mathjax-exps">\[P(A \mid B) = \frac{P(A \cap B)}{P(B)}\]</div> 并称<span class="mathjax-exps">$P(A \mid B)$</span>为在事件<span class="mathjax-exps">$B$</span>发生的条件下事件<span class="mathjax-exps">$A$</span>发生的条件概率。<p></p>
+<p>若<span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n, \cdots$</span>是随机变量序列，令<br>
+</p><div class="mathjax-exps">$$\eta_n = \frac{\xi_1 + \xi_2 + \cdots + \xi_n}{n}$$</div><p></p>
+<p>如果存在这样的一个常数序列<span class="mathjax-exps">$a_1, a_2, \cdots, a_n, \cdots$</span>，对任意的<span class="mathjax-exps">$\epsilon &gt; 0$</span>，恒有<br>
+</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{ \left| \eta_n - a_n \right| &lt; \epsilon\right\} = 1$$</div><p></p>
+<p>则称序列<span class="mathjax-exps">$\{\xi_n\}$</span>服从大数定律（或大数法则）。</p>
 </blockquote>
-<p><span class="callout">Definition: 全概率公式</span></p>
+<p><span class="callout">Definition: 中心极限定理</span></p>
 <blockquote>
-<p>对<span class="mathjax-exps">$A_i, \cdot ,A_n \in \mathscr{F}$</span>，设<span class="mathjax-exps">$A_i \cap A_j = \varnothing(i \neq j), A_1 \cup A_2 \cup \cdots \cup A_n = \Omega$</span>，则对任意事件<span class="mathjax-exps">$B \in \mathscr{F}$</span>，有<span class="mathjax-exps">$B = \sum_{i=1}^{n}A_iB$</span>，则<span class="mathjax-exps">$P(B) = \sum_{i=1}^{n}P(A_i)P(B \mid A_i)$</span>。</p>
+<p>若独立随机变量序列 <span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n, \cdots$</span> 的标准化和 <span class="mathjax-exps">$\zeta_n$</span> 满足<br>
+</p><div class="mathjax-exps">$$\begin{gathered}     \zeta_n = \frac{\sum_{i=1}^n \xi_i - \sum_{i=1}^n E\xi_i}{\sqrt{\sum_{i=1}^n D\xi_i}} \\     \lim_{n \to \infty} P\{\zeta_n &lt; x\} = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} e^{-t^2/2} \, dt \end{gathered}$$</div><p></p>
+<p>则我们称<span class="mathjax-exps">$\{\xi_i\}$</span>服从中心极限定理（central limit theorem）。</p>
 </blockquote>
-<p><span class="callout">Definition: 贝叶斯公式</span></p>
+<p><span class="callout">Theorem: 切比雪夫大数定律</span></p>
 <blockquote>
-<p>若事件<span class="mathjax-exps">$B \in \mathscr{F}$</span>能且只能与两两互不相容的事件<span class="mathjax-exps">$A_1, A_2, \cdots, A_n, \cdots$</span>之一同时发生，即<br>
-</p><div class="mathjax-exps">\[B = \bigcup_{i=1}^{\infty} (B \cap A_i)\]</div>由于 <div class="mathjax-exps">\[P(A_i \cap B) = P(B) P(A_i \mid B) = P(A_i) P(B \mid A_i)\]</div>故<br>
-<div class="mathjax-exps">\[P(A_i \mid B) = \frac{P(A_i) P(B \mid A_i)}{P(B)}\]</div>再利用全概率公式即得<br>
-<div class="mathjax-exps">\[P(A_i \mid B) = \frac{P(A_i) P(B \mid A_i)}{\sum_{i=1}^{\infty} P(A_i) P(B \mid A_i)}\]</div>这个公式称为贝叶斯公式。<p></p>
-</blockquote>
-<h3 id="独立性">独立性 </h3>
-<p><span class="callout">Definition: 独立事件</span></p>
-<blockquote>
-<p>对事件<span class="mathjax-exps">$A$</span>及<span class="mathjax-exps">$B$</span>，若</p><div class="mathjax-exps">\[P(A \cap B) = P(A) P(B)\]</div> 则称它们是统计独立的，简称独立的(independent)。<p></p>
-</blockquote>
-<p><span class="callout">Definition: 多事件独立</span></p>
-<blockquote>
-<p>对<span class="mathjax-exps">$n$</span>个事件<span class="mathjax-exps">$A_1, A_2, \cdots, A_n$</span>，若对于所有可能的组合<span class="mathjax-exps">$1 \leq i &lt; j &lt; k &lt; \cdots \leq n$</span>成立着<br>
-</p><div class="mathjax-exps">\[\begin{cases} P(A_i \cap A_j) = P(A_i) P(A_j) \\ P(A_i \cap A_j \cap A_k) = P(A_i) P(A_j) P(A_k) \\ \vdots \\ P(A_1 \cap A_2 \cap \cdots \cap A_n) = P(A_1) P(A_2) \cdots P(A_n) \end{cases}\]</div>则称<span class="mathjax-exps">$A_1, A_2, \cdots, A_n$</span>相互独立。<p></p>
-</blockquote>
-<p>{注}: 上面任何一个式子都不能省略.</p>
-<p><span class="callout">Definition: 独立试验</span></p>
-<blockquote>
-<p>若对于任意的</p><div class="mathjax-exps">\[A^{(1)} \in \mathscr{F}_1, A^{(2)} \in \mathscr{F}_2, \cdots, A^{(n)} \in \mathscr{F}_n\]</div>均成立<br>
-<div class="mathjax-exps">\[P(A^{(1)} \cap A^{(2)} \cap \cdots \cap A^{(n)}) = P(A^{(1)}) P(A^{(2)}) \cdots P(A^{(n)})\]</div>则称试验<span class="mathjax-exps">$E_1, E_2, \cdots, E_n$</span>是相互独立的。<p></p>
-</blockquote>
-<h3 id="常见概率分布">常见概率分布 </h3>
-<p>在此都假设事件是独立同分布的.</p>
-<h4 id="几何分布">几何分布 </h4>
-<blockquote>
-<p>事件 <span class="mathjax-exps">$A$</span> 第一次发生在第 <span class="mathjax-exps">$k$</span> 次试验的概率, 记为<span class="mathjax-exps">$g(k;p)$</span>.</p>
-</blockquote>
-<p></p><div class="mathjax-exps">$$g(k;p)=P(W_k) = (1-p)^{k-1} p$$</div><p></p>
-<p>由于 <span class="mathjax-exps">$g(k;p)$</span> 是几何级数的一般项，所以有<br>
-</p><div class="mathjax-exps">$$\sum_\limits{k=1}^{\infty } g(k;p) = \sum_{k=1}^{\infty } (1-p)^{k-1} p = p \sum_{k=0}^{\infty } (1-p)^k = p \frac{1}{1-(1-p)} = 1$$</div><br>
-显然，几何分布具有无记忆性<br>
-<div class="mathjax-exps">$$P(\eta ' =k) = P(\eta  = m + k | \eta  &gt; m) = \frac{P(\eta = m+k)}{P(\eta&gt;m) } = \frac{q^{m+k-1}p}{q^m} =  q^{k-1}p$$</div><p></p>
-<p>在离散型分布中，几何分布是唯一具有无记忆性的分布.</p>
-<details open="">
-  <summary>Proof:</summary>
-<p>记<span class="mathjax-exps">$q_k = P(\eta&gt;k)$</span>和 <span class="mathjax-exps">$p_k=P(\eta = k)$</span>，则<span class="mathjax-exps">$p_{k+1} = q_k - q_{k+1} = P(\eta&gt;k) - P(\eta &gt; k+1)$</span>，则<span class="mathjax-exps">$P(\eta =k+1 \mid \eta &gt;k) = \frac{P(\eta = k+1, \eta &gt; k)}{P(\eta &gt; k)} = \frac{p_{k+1}}{q_k} = \operatorname{const}$</span>，令<span class="mathjax-exps">$p = \frac{p_{k+1}}{q_k}$</span>，则<span class="mathjax-exps">$\frac{q_{k+1}}{q_k} = 1 - p$</span>，则<span class="mathjax-exps">$q_k = (1-p)^k q_0 = (1-p)^k$</span>，则<span class="mathjax-exps">$p_k = (1-p)^{k-1} p$</span>，这就是几何分布。</p>
-</details>
-<h4 id="帕斯卡分布">帕斯卡分布 </h4>
-<blockquote>
-<p>第<span class="mathjax-exps">$r$</span>次成功发生在第<span class="mathjax-exps">$k$</span>次试验的概率, 记为<span class="mathjax-exps">$f(k;r,p)$</span>.</p>
-</blockquote>
-<p></p><div class="mathjax-exps">$$f(k;r,p) = {k-1 \choose r-1} p^r (1-p)^{k-r}$$</div><p></p>
-<h4 id="二项分布">二项分布 </h4>
-<blockquote>
-<p><span class="mathjax-exps">$n$</span>重伯努利实验中事件<span class="mathjax-exps">$A$</span>发生<span class="mathjax-exps">$k$</span>次的概率, 记为<span class="mathjax-exps">$b(k;n,p)$</span>.</p>
-</blockquote>
-<p></p><div class="mathjax-exps">$$b(k;n,p) = {n \choose k} p^k (1-p)^{n-k}$$</div><br>
-单调性：<br>
-<div class="mathjax-exps">$$\frac{b(k;n,p)}{b(k-1;n,p)}=\frac{n-k+1}{k} \frac{p}{1-p}  = 1 + \frac{(n+1)p-k}{kq}$$</div><p></p>
-<p>当 <span class="mathjax-exps">$k=\lfloor (n+1)p \rfloor$</span> 时值最大<br>
-可以证明 <span class="mathjax-exps">$b(m;n,p)\approx (2\pi npq)^{-\frac{1}{2}}$</span></p>
-<h4 id="多项分布">多项分布 </h4>
-<blockquote>
-<p><span class="mathjax-exps">$n$</span>重伯努利实验中事件<span class="mathjax-exps">$A_1,A_2,\cdots,A_r$</span>分别发生<span class="mathjax-exps">$k_1,k_2,\cdots,k_r$</span>次的概率, 记为<span class="mathjax-exps">$m(k_1,k_2,\cdots,k_r;n,p_1,p_2,\cdots,p_r)$</span>.</p>
-</blockquote>
-<p></p><div class="mathjax-exps">$$m(k_1,k_2,\cdots,k_r;n,p_1,p_2,\cdots,p_r) = \frac{n!}{k_{1}! k_{2}!\cdots k_{r}!} p_{1}^{k_{1}} p_{2}^{k_{2}}\cdots p_{r}^{k_{r}}=1$$</div><p></p>
-<h4 id="泊松分布">泊松分布 </h4>
-<blockquote>
-<p>事件<span class="mathjax-exps">$A$</span>在单位时间内发生<span class="mathjax-exps">$k$</span>次的概率, 记为<span class="mathjax-exps">$p(k;\lambda)$</span>.</p>
-</blockquote>
-<p>由于二项分布在<span class="mathjax-exps">$n$</span>很大的时候, 其计算较为复杂, 所以引入泊松分布.<br>
-对于<span class="mathjax-exps">$n$</span>很大, <span class="mathjax-exps">$p$</span>很小的情况, <span class="mathjax-exps">$\lambda = np$</span>适中的情况, 可将泊松分布作为二项分布的近似.</p>
-<p><span class="callout">Theorem: Poisson Distribution</span></p>
-<blockquote>
-<p>在独立试验中，以<span class="mathjax-exps">$p_n$</span>代表事件<span class="mathjax-exps">$A$</span>在试验中出现的概率，它与试验总数<span class="mathjax-exps">$n$</span>有关，如果<span class="mathjax-exps">$n p_n \rightarrow \lambda$</span>，则当<span class="mathjax-exps">$n \rightarrow \infty$</span>时，<br>
-</p><div class="mathjax-exps">\[b(k; n, p_n) \rightarrow \frac{\lambda^k}{k!} e^{-\lambda}\]</div><p></p>
+<p>设<span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n, \cdots$</span>是由两两不相关的随机变量所构成的序列，每一随机变量都有有限的方差，并且它们有公共上界<br>
+</p><div class="mathjax-exps">$$D\xi_1 \leq C, \quad D\xi_2 \leq C, \quad \cdots, \quad D\xi_n \leq C, \cdots$$</div><p></p>
+<p>则对任意的<span class="mathjax-exps">$\epsilon &gt; 0$</span>，皆有<br>
+</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{\left|\frac{1}{n} \sum_{k=1}^n \xi_k - \frac{1}{n} \sum_{k=1}^n E\xi_k\right| &lt; \epsilon\right\} = 1$$</div><p></p>
 </blockquote>
 <details open="">
     <summary>Proof:</summary>
-<p>记<span class="mathjax-exps">$\lambda_n = n p_n$</span>，则<br>
-</p><div class="mathjax-exps">\[\begin{align*} b(k; n, p_n) &amp;= \binom{n}{k} p_n^k (1 - p_n)^{n-k} \\ &amp;= \frac{n(n-1) \cdots (n-k+1)}{k!} \left(\frac{\lambda_n}{n}\right)^k \left(1 - \frac{\lambda_n}{n}\right)^{n-k} \\ &amp;= \frac{\lambda_n^k}{k!} \left(1 - \frac{1}{n}\right) \left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{k-1}{n}\right) \left(1 - \frac{\lambda_n}{n}\right)^{n-k} \end{align*}\]</div><p></p>
-<p>由于对固定的<span class="mathjax-exps">$k$</span>有<br>
-</p><div class="mathjax-exps">\[\lim_{n \rightarrow \infty} \lambda_n^k = \lambda^k, \quad \lim_{n \rightarrow \infty} \left(1 - \frac{\lambda_n}{n}\right)^{n-k} = e^{-\lambda}\]</div><p></p>
-<p></p><div class="mathjax-exps">\[\lim_{n \rightarrow \infty} \left(1 - \frac{1}{n}\right) \left(1 - \frac{2}{n}\right) \cdots \left(1 - \frac{k-1}{n}\right) = 1\]</div><p></p>
-<p>因此<br>
-</p><div class="mathjax-exps">\[\lim_{n \rightarrow \infty} b(k; n, p_n) = \frac{\lambda^k}{k!} e^{-\lambda}\]</div><p></p>
-<p>证毕.</p>
+<p>因为 <span class="mathjax-exps">\(\{\xi_k\}\)</span> 两两不相关，故<br>
+</p><div class="mathjax-exps">\[D\left(\frac{1}{n} \sum_{k=1}^n \xi_k\right) = \frac{1}{n^2} \sum_{k=1}^n D\xi_k \leq \frac{C}{n}\]</div><p></p>
+<p>再由<a href="./第四章.html#Chebyshev-inequality">切比雪夫不等式</a>得到<br>
+</p><div class="mathjax-exps">\[P\left\{\left|\frac{1}{n} \sum_{k=1}^n \xi_k - \frac{1}{n} \sum_{k=1}^n E\xi_k\right| &lt; \varepsilon\right\} \geq 1 - \frac{D\left(\frac{1}{n} \sum_{k=1}^n \xi_k\right)}{\varepsilon^2} \geq 1 - \frac{C}{n\varepsilon^2}\]</div><p></p>
+<p>所以</p>
+<p></p><div class="mathjax-exps">\[1 \geq P\left\{\left|\frac{1}{n} \sum_{k=1}^n \xi_k - \frac{1}{n} \sum_{k=1}^n E\xi_k\right| &lt; \varepsilon\right\} \geq 1 - \frac{C}{n\varepsilon^2}\]</div><p></p>
+<p>于是，当 <span class="mathjax-exps">\(n \to \infty\)</span> 时有上不等式成立，因此定理得证。</p>
 </details>
-<p>由证明可知, 这里<span class="mathjax-exps">$p$</span>应该较小.<br>
-当<span class="mathjax-exps">$p$</span>较小时(一般小于0.1), 可用如下近似公式:<br>
-</p><div class="mathjax-exps">$$b(k; n, p) \approx \frac{(np)^k}{k!} e^{-np}$$</div><p></p>
-<p>由于泊松分布可以看作二项分布的近似，所以其极大值出现在<span class="mathjax-exps">$k = \lfloor \lambda \rfloor$</span>处。</p>
-<p>下面研究泊松过程, 其代表事件间隔<span class="mathjax-exps">$\Delta t$</span>内事件发生<span class="mathjax-exps">$k$</span>次的概率.<br>
-<em>Lemma: <span id="Le2.4.1">柯西定理</span></em></p>
+<p><span class="callout">Theorem: 马尔可夫大数定律</span></p>
 <blockquote>
-<p>若函数连续且 <span class="mathjax-exps">$f(x)$</span> 满足 <span class="mathjax-exps">$f(x+y) = f(x) f(y), \text{ for } \forall x, y \in \mathbb{R}$</span>, 则 <span class="mathjax-exps">$f(x) = a^x$</span>.</p>
+<p>对于随机变量序列<span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n, \cdots$</span>，若<br>
+</p><div class="mathjax-exps">$$D\left(\frac{1}{n} \sum_{k=1}^n \xi_k\right) \rightarrow 0$$</div><p></p>
+<p>成立，则对任意<span class="mathjax-exps">$\epsilon &gt; 0$</span>，均有切比雪夫大数定律成立。</p>
 </blockquote>
-<p><span class="callout">Definition: 泊松过程</span></p>
+<p>切比雪夫大数定律显然可由马尔可夫大数定律推出；更重要的是马尔可夫大数定律已经没有任何关于独立性的假定。</p>
+<p><span class="callout">Theorem: 伯努利大数定律</span></p>
 <blockquote>
-<p>考虑一个事件<span class="mathjax-exps">$A$</span>，其满足如下性质:</p>
-<ol>
-<li>平稳性：<span class="mathjax-exps">$[t_0,t)$</span> 时间内，<span class="mathjax-exps">$k$</span> 与 <span class="mathjax-exps">$t_0$</span> 无关，只与 <span class="mathjax-exps">$t$</span> 有关</li>
-<li>独立增量性：<span class="mathjax-exps">$[t_0,t_1)$</span> 与 <span class="mathjax-exps">$[t_1,t_2)$</span> 是独立的</li>
-<li>普通性：充分小时间内，最多发生一次</li>
-</ol>
-<p>则称事件<span class="mathjax-exps">$A$</span>为泊松过程。</p>
+<p>设<span class="mathjax-exps">$\mu_n$</span>是<span class="mathjax-exps">$n$</span>次伯努利试验中事件<span class="mathjax-exps">$A$</span>出现的次数，而<span class="mathjax-exps">$p$</span>是事件<span class="mathjax-exps">$A$</span>在每次试验中出现的概率，则对任意<span class="mathjax-exps">$\epsilon &gt; 0$</span>，都有<br>
+</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{ \left| \mu_n - p \right| &lt; \epsilon \right\} = 1$$</div><p></p>
 </blockquote>
-<p>记<span class="mathjax-exps">$P_k(t)$</span>为时间<span class="mathjax-exps">$t$</span>内发生<span class="mathjax-exps">$k$</span>次的概率, 利用如上公式求<span class="mathjax-exps">$P_k(t)$</span>.<br>
-对<span class="mathjax-exps">$\Delta t &gt; 0$</span>, 考虑<span class="mathjax-exps">$[0, t+\Delta t)$</span>中事件发生<span class="mathjax-exps">$k$</span>次的概率<span class="mathjax-exps">$P_k(t + \Delta t)$</span>, 由独立性和全概率公式有:<br>
-</p><div class="mathjax-exps">$$P_k(t+\Delta t) = P_k(t)P_0(\Delta t) + P_{k-1}(t)P_1(\Delta t) + \cdots + P_0(t)P_k(\Delta t)$$</div><p></p>
-<p>当 <span class="mathjax-exps">$k=0$</span> 时，有 <span class="mathjax-exps">$P_0(t+\Delta t) = P_0(t)P_0(\Delta t)$</span><br>
-由<a href="#Le2.4.1">引理2.4.1</a>可知<br>
-</p><div class="mathjax-exps">$$P_0(t)=a^t = e^{-\lambda t}$$</div><p></p>
-<p>若<span class="mathjax-exps">$a=0$</span>, 则<span class="mathjax-exps">$P_0(t) = 0$</span>, 则<span class="mathjax-exps">$t \rightarrow 0$</span>时, 事件也会发生, <span class="mathjax-exps">$\Delta t$</span>内事件发生无穷次, 在此不考虑这种情况. 当<span class="mathjax-exps">$a = 1$</span>时, 代表事件永不发生, 也不考虑这种情况. 所以<span class="mathjax-exps">$0 &lt; a &lt; 1$</span>. 令<span class="mathjax-exps">$\lambda = -\ln a$</span>, 则有 <span class="mathjax-exps">$P_0(t) = e^{-\lambda t}$</span>.</p>
-<p>因此当 <span class="mathjax-exps">$\Delta t \rightarrow 0$</span> 时，我们有<br>
-</p><div class="mathjax-exps">\[\begin{gathered} P_0(\Delta t) = e^{-\lambda \Delta t} = 1 - \lambda \Delta t + o(\Delta t) \\ P_1(\Delta t) = 1 - P_0(\Delta t) - \psi(\Delta t) = \lambda \Delta t + o(\Delta t) \\ \sum_{l=2}^{\infty} P_{k-l}(t) P_l(\Delta t) \leqslant \sum_{l=2}^{\infty} P_l(\Delta t) = \psi(\Delta t) = o(\Delta t) \end{gathered}\]</div><p></p>
-<p>故:<br>
-</p><div class="mathjax-exps">\[\begin{gathered} P_k(t + \Delta t) = P_k(t)(1 - \lambda \Delta t) + P_{k-1}(t) \cdot \lambda \Delta t + o(\Delta t), k \geqslant 1 \end{gathered}\]</div><p></p>
-<p>因此<br>
-</p><div class="mathjax-exps">\[\frac{P_k(t + \Delta t) - P_k(t)}{\Delta t} = \lambda [P_{k-1}(t) - P_k(t)] + o(1), k \geqslant 1\]</div><p></p>
-<p>令 <span class="mathjax-exps">$\Delta t \rightarrow 0$</span>, 得<br>
-</p><div class="mathjax-exps">\[P_k'(t) = \lambda [P_{k-1}(t) - P_k(t)], k \geqslant 1\]</div><p></p>
-<p>由于已知<span class="mathjax-exps">$P_0(t) = e^{-\lambda t}$</span>, 故有 <span class="mathjax-exps">$P_1'(t) = \lambda [e^{-\lambda t} - P_1(t)]$</span>, 可解得 <span class="mathjax-exps">$P_1(t) = \lambda t e^{-\lambda t}$</span>.<br>
-这样下去, 可解得一切 <span class="mathjax-exps">$P_k(t) = \frac{(\lambda t)^k}{k!} e^{-\lambda t}$</span>。</p>
-<p>泊松过程描述了时间间隔<span class="mathjax-exps">$t$</span>内事件发生<span class="mathjax-exps">$k$</span>次的概率，可以看出泊松分布是<span class="mathjax-exps">$t=1$</span>的特殊情况，即单位时间随机事件发生的次数的概率分布。</p>
+<details open="">
+    <summary>Proof:</summary>
+<p>定义随机变量<span class="mathjax-exps">$\xi$</span>，则<br>
+</p><div class="mathjax-exps">$$E\xi = p, \quad D\xi = pq \leqslant \frac{1}{4}$$</div><p></p>
+<p>而<br>
+</p><div class="mathjax-exps">$$\frac{1}{n} \sum_{k=1}^n \xi_k - \frac{1}{n} \sum_{k=1}^n E\xi_k = \frac{\mu_n}{n} - p$$</div><p></p>
+<p>故由切比雪夫大数定律立刻推出伯努利大数定律。</p>
+</details>
+<p><span class="callout">Theorem: 泊松大数定律</span></p>
+<blockquote>
+<p>如果在一个独立试验序列中，事件<span class="mathjax-exps">$A$</span>在第<span class="mathjax-exps">$k$</span>次试验中出现的概率等于<span class="mathjax-exps">$p_k$</span>，以<span class="mathjax-exps">$\mu_n$</span>记在前<span class="mathjax-exps">$n$</span>次试验中事件<span class="mathjax-exps">$A$</span>出现的次数，则对任意<span class="mathjax-exps">$\varepsilon &gt; 0$</span>，都有<br>
+</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{ \left|\frac{\mu_n}{n} - \frac{p_1 + p_2 + \cdots + p_n}{n}\right| &lt; \varepsilon\right\} = 1$$</div><p></p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p></p><div class="mathjax-exps">$$E\xi_k = p_k, \quad D\xi_k = p_k(1 - p_k) \leqslant \frac{1}{4}$$</div><p></p>
+<p>再用切比雪夫大数定律立刻可以推出结论。</p>
+</details>
+<p><span class="callout">5.1.1 Theorem: 棣莫弗-拉普拉斯定理</span></p>
+<blockquote>
+<p>若<span class="mathjax-exps">$\mu_n$</span>是<span class="mathjax-exps">$n$</span>次伯努利试验中事件<span class="mathjax-exps">$A$</span>出现的次数，<span class="mathjax-exps">$0 &lt; p &lt; 1$</span>，则对任意有限区间<span class="mathjax-exps">$[a, b]$</span>：<br>
+(i) 当<span class="mathjax-exps">$a \leq x_k = \frac{k - np}{\sqrt{npq}} \leq b$</span>及<span class="mathjax-exps">$n \to \infty$</span>时，一致地有<br>
+</p><div class="mathjax-exps">$$P\{\mu_n = k\} \div \left(\frac{1}{\sqrt{npq}} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}x_k^2}\right) \to 1$$</div><p></p>
+<p>(ii) 当<span class="mathjax-exps">$n \to \infty$</span>时，一致地有<br>
+</p><div class="mathjax-exps">$$P\left\{a \leq \frac{\mu_n - np}{\sqrt{npq}} &lt; b\right\} \to \int_a^b \varphi(x) dx$$</div><p></p>
+<p>其中<span class="mathjax-exps">$\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \quad (-\infty &lt; x &lt; \infty)$</span>。</p>
+</blockquote>
 
       </div>
       

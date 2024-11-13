@@ -126,7 +126,9 @@
 <details open="">
     <summary>Contents</summary>
 <ul>
-<li><a href="#%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0">数字特征与特征函数</a>
+<li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E4%B8%8E%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0">第四章 数字特征与特征函数</a>
+<ul>
+<li><a href="#%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81">数字特征</a>
 <ul>
 <li><a href="#%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B">数学期望</a>
 <ul>
@@ -136,14 +138,20 @@
 </li>
 <li><a href="#%E6%96%B9%E5%B7%AE">方差</a></li>
 <li><a href="#%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0">相关系数</a></li>
+<li><a href="#%E7%9F%A9">矩</a></li>
+<li><a href="#%E5%88%86%E4%BD%8D%E6%95%B0">分位数</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B">条件数学期望</a></li>
 </ul>
 </li>
 </ul>
 </details>
 </div>
-<h2 id="数字特征与特征函数">数字特征与特征函数 </h2>
-<h3 id="数学期望">数学期望 </h3>
-<h4 id="离散型随机变量">离散型随机变量 </h4>
+<h2 id="第四章-数字特征与特征函数">第四章 数字特征与特征函数 </h2>
+<h3 id="数字特征">数字特征 </h3>
+<h4 id="数学期望">数学期望 </h4>
+<h5 id="离散型随机变量">离散型随机变量 </h5>
 <p><span class="callout">4.1.1 Definition: 数学期望</span></p>
 <p>设<span class="mathjax-exps">$\xi$</span>为一离散型随机变量，它取值<span class="mathjax-exps">$x_1, x_2, x_3, \cdots$</span>对应的概率为<span class="mathjax-exps">$p_1, p_2, p_3, \cdots$</span>如果级数</p>
 <p></p><div class="mathjax-exps">$$\sum_{i=1}^{\infty} x_i p_i$$</div><p></p>
@@ -168,7 +176,7 @@
 <p></p><div class="mathjax-exps">$$\sum_{k=1}^{\infty} |x_k| p_k = \sum_{k=1}^{\infty} \frac{1}{k} = \infty$$</div><p></p>
 <p>因此按定义<span class="mathjax-exps">$\xi$</span>的数学期望不存在。</p>
 <p>这个例子展示了如何计算几何分布的数学期望。</p>
-<h4 id="连续型随机变量">连续型随机变量 </h4>
+<h5 id="连续型随机变量">连续型随机变量 </h5>
 <p><span class="callout">4.1.2 Definition: 连续型随机变量的数学期望</span></p>
 <blockquote>
 <p>设<span class="mathjax-exps">$\xi$</span>为具有密度函数<span class="mathjax-exps">$p(x)$</span>的连续型随机变量，当积分<span class="mathjax-exps">$\int_{-\infty}^{\infty} x p(x) \, dx$</span>绝对收敛时，我们称它为<span class="mathjax-exps">$\xi$</span>的数学期望（或均值），记作<span class="mathjax-exps">$E\xi$</span>，即<br>
@@ -212,7 +220,7 @@
 </p><div class="mathjax-exps">$$E\xi_i=\int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty} x_i d F\left(x_1,\cdots, x_n\right)=\int_{-\infty}^{\infty} x_i d F_i\left(x_i\right)$$</div><p></p>
 <p>这里 <span class="mathjax-exps">$F_i\left(x_i\right)$</span> 是 <span class="mathjax-exps">$\xi_i$</span> 的分布函数 <span class="mathjax-exps">$\left(i=1,2,\cdots, n\right)$</span>。</p>
 </blockquote>
-<h3 id="方差">方差 </h3>
+<h4 id="方差">方差 </h4>
 <p><span class="callout">4.2.1 Definition: 随机变量方差</span></p>
 <blockquote>
 <p>若 <span class="mathjax-exps">$E(\xi-E\xi)^2$</span> 存在，则称它为随机变量 <span class="mathjax-exps">$\xi$</span> 的方差(variance)，并记为 <span class="mathjax-exps">$D\xi$</span>，而 <span class="mathjax-exps">$\sqrt{D\xi}$</span> 称为根方差、均方差或更多地称为标准差(standard deviation)。</p>
@@ -247,7 +255,8 @@
 <p>显然 <span class="mathjax-exps">$E\xi^* = 0, D\xi^* = 1$</span>。</p>
 </li>
 <li>
-<p>若 <span class="mathjax-exps">$c \neq E\xi$</span>，则 <span class="mathjax-exps">$D\xi &lt; E(\xi - c)^2$</span>。</p>
+<p>若 <span class="mathjax-exps">$c \neq E\xi$</span>，则 <span class="mathjax-exps">$D\xi &lt; E(\xi - c)^2$</span>。<br>
+<span id="Var-1"></span></p>
 </li>
 </ol>
 <details open="">
@@ -317,14 +326,19 @@
 <td style="text-align:center"><span class="mathjax-exps">$\frac{a+b}{2}$</span></td>
 <td style="text-align:center"><span class="mathjax-exps">$\frac{(b-a)^2}{12}$</span></td>
 </tr>
+<tr>
+<td style="text-align:center">超几何分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{nM}{N}$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{nM}{N}\left(1 - \frac{M}{N}\right)\frac{N-n}{N-1}$</span></td>
+</tr>
 </tbody>
 </table>
-<h3 id="相关系数">相关系数 </h3>
+<h4 id="相关系数">相关系数 </h4>
 <p>对于随机向量，只用方差是不够的，还需要考虑随机变量之间的关系。<br>
 计算 <span class="mathjax-exps">$\xi \pm \eta$</span> 的方差：<br>
 </p><div class="mathjax-exps">$$\begin{align*}   D(\xi \pm \eta) &amp;= E[(\xi \pm \eta) - (E\xi \pm E\eta)]^2 \\ &amp;= E(\xi - E\xi)^2 + E(\eta - E\eta)^2 \pm 2 E[(\xi - E\xi)(\eta - E\eta)] \\ &amp;= D\xi + D\eta \pm 2 E[(\xi - E\xi)(\eta - E\eta)] \end{align*}$$</div><p></p>
 <p>这启发我们引入 <span class="mathjax-exps">$E[(\xi - E\xi)(\eta - E\eta)]$</span> 。</p>
-<p><span class="callout">Definition 4.2.2</span></p>
+<p><span class="callout">Definition 4.2.2: 协方差</span></p>
 <blockquote>
 <p>称 <span class="mathjax-exps">$\sigma_{ij} = \operatorname{cov}(\xi_i, \xi_j) = E[(\xi_i - E\xi_i)(\xi_j - E\xi_j)] \quad i, j = 1, 2, \ldots, n$</span> 为 <span class="mathjax-exps">$\xi_i$</span> 与 <span class="mathjax-exps">$\xi_j$</span> 的协方差(covariance)。</p>
 </blockquote>
@@ -335,15 +349,185 @@
 <p>方差是协方差的特例，显然 <span class="mathjax-exps">$\sigma_{ii} = D\xi_i$</span>。矩阵<br>
 </p><div class="mathjax-exps">$$\Sigma = \begin{pmatrix} \sigma_{11} &amp; \sigma_{12} &amp; \cdots &amp; \sigma_{1n} \\ \sigma_{21} &amp; \sigma_{22} &amp; \cdots &amp; \sigma_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \sigma_{n1} &amp; \sigma_{n2} &amp; \cdots &amp; \sigma_{nn} \end{pmatrix}$$</div><p></p>
 <p>称为 <span class="mathjax-exps">$\xi$</span> 的协方差矩阵，简记作 <span class="mathjax-exps">$D\xi$</span>，显然这是一个对称矩阵。</p>
-<p>此外，对任何实数 <span class="mathjax-exps">$t_j (j=1, 2, \ldots, n)$</span> 有<br>
-</p><div class="mathjax-exps">$$\sum_{j,k} \sigma_{jk} t_j t_k = E\left[\sum_{j=1}^{n} t_j (\xi_j - E\xi_j)\right]^2 \geq 0$$</div><p></p>
-<p>因此 <span class="mathjax-exps">$\Sigma$</span> 是一个非负定矩阵，所以若以 <span class="mathjax-exps">$\det \Sigma$</span> 记 <span class="mathjax-exps">$\Sigma$</span> 的行列式，则有</p>
-<p><span class="mathjax-exps">$\det \Sigma \geq 0$</span></p>
+<p>此外，对任何随机向量和期望向量，有<br>
+</p><div class="mathjax-exps">$$\begin{align*} X=&amp;\left[\begin{array}{cccc} X_1&amp; X_2&amp;\cdots&amp; X_n\end{array}\right]^T\\ \mu=&amp;\left[\begin{array}{cccc}\mu_1&amp;\mu_2&amp;\cdots&amp;\mu_n\end{array}\right]^T \end{align*}$$</div><p></p>
+<p>所以：<span class="mathjax-exps">\(\Sigma=E\left[(X-\mu)(X-\mu)^T\right]\)</span><br>
+对任意实向量y:</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} &amp; y^T\Sigma y= y^T E[(X-\mu)(X-\mu)^T] y\\ &amp;= E[ y^T(X-\mu)(X-\mu)^T y]\\ &amp;= E[\left((X-\mu)^T y\right)^T\left((X-\mu)^T y\right)]\\ &amp;= E[\left\|(X-\mu)^T y\right\|^2]\geq 0 \end{align*}$$</div><p></p>
+<p>因此 <span class="mathjax-exps">$\Sigma$</span> 是一个非负定矩阵，所以有 <span class="mathjax-exps">$\det \Sigma \geq 0$</span></p>
 <p>更常用的是如下“标准化”了的协方差。</p>
 <p><span class="callout">4.2.3 Definition: 相关系数</span></p>
 <blockquote>
 <p>称 <span class="mathjax-exps">$\rho_{ij} = \frac{\text{cov}(\xi_i, \xi_j)}{\sqrt{D\xi_i D\xi_j}}$</span> 为 <span class="mathjax-exps">$\xi_i$</span> 与 <span class="mathjax-exps">$\xi_j$</span> 的相关系数(correlation coefficient)，这里要求 <span class="mathjax-exps">$D\xi_i$</span> 与 <span class="mathjax-exps">$D\xi_j$</span> 不为零。</p>
 </blockquote>
+<p>相关系数的优点是排除了量纲的影响，且有 <span class="mathjax-exps">$-1 \leq \rho_{ij} \leq 1$</span>。<br>
+由于<br>
+</p><div class="mathjax-exps">$$\rho_{a\xi+b, c\eta+d}= \frac{\text{cov}(a \xi+b, c \eta + d)}{ \sqrt{D(a\xi+b) D(c\eta+d)} }  =  \frac{ac \text{cov}(\xi,\eta)}{|a c|\sqrt{D\xi}\sqrt{D\eta}}=\rho_{\xi\eta}$$</div><p></p>
+<p>相关系数在线性变化下保持不变，即 <span class="mathjax-exps">$a \xi + b$</span> 与 <span class="mathjax-exps">$c \eta + d$</span> 的相关系数仍为 <span class="mathjax-exps">$\rho _{\xi \eta }$</span>。</p>
+<p>由于 <span class="mathjax-exps">$E\frac{\xi_i - E\xi_i}{\sqrt{D\xi_i}} = 0, D\frac{\xi_i - E\xi_i}{\sqrt{D\xi_i}} = 1$</span>，所以相关系数就是标准化随机变量的协方差。</p>
+<p><span class="callout">4.2.1 Theorem: Cauchy-Schwarz 不等式</span></p>
+<blockquote>
+<p>对任意随机变量<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>都有<br>
+</p><div class="mathjax-exps">$$|E\xi\eta|^2 \leq E\xi^2 \cdot E\eta^2$$</div><p></p>
+<p>等式成立当且仅当<br>
+</p><div class="mathjax-exps">$$P\left\{\eta=t_0\xi\right\}=1$$</div><p></p>
+<p><span class="mathjax-exps">$t_0$</span>为常数。</p>
+</blockquote>
+<p>由该定理可以得到相关系数的性质：<br>
+<span class="mathjax-exps">$|\rho|\leqslant 1$</span>，并且 <span class="mathjax-exps">\(\rho=1\)</span> 当且仅当<br>
+</p><div class="mathjax-exps">$$P\left\{\frac{\xi-E\xi}{\sqrt{D\xi}}=\frac{\eta-E\eta}{\sqrt{D\eta}}\right\}=1$$</div><p></p>
+<p>而 <span class="mathjax-exps">\(\rho=-1\)</span> 当且仅当<br>
+</p><div class="mathjax-exps">$$P\left\{\frac{\xi-E\xi}{\sqrt{D\xi}}=-\frac{\eta-E\eta}{\sqrt{D\eta}}\right\}=1$$</div><p></p>
+<p>当 <span class="mathjax-exps">\(\rho=\pm 1\)</span> 时，<span class="mathjax-exps">\(\xi\)</span> 与 <span class="mathjax-exps">\(\eta\)</span> 存在着完全线性关系，这时如果给定一个随机变量之值，另一个随机变量的值便完全决定。<span class="mathjax-exps">\(\rho=1\)</span> 时，称为完全正相关；<span class="mathjax-exps">\(\rho=-1\)</span> 时，称为完全负相关。</p>
+<p><span class="callout">4.2.4 Definition: 随机变量的不相关性</span></p>
+<blockquote>
+<p>若随机变量<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>的相关系数<span class="mathjax-exps">$\rho=0$</span>，则我们称<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>不相关。</p>
+</blockquote>
+<p><span class="callout">不相关随机变量的性质</span></p>
+<blockquote>
+<p>对随机变量<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>，下面事实是等价的：<br>
+(1) <span class="mathjax-exps">$\operatorname{cov}(\xi,\eta)=0;$</span><br>
+(2) <span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>不相关;<br>
+(3) <span class="mathjax-exps">$E\xi\eta=E\xi E\eta;$</span><br>
+(4) <span class="mathjax-exps">$D(\xi+\eta)=D\xi+D\eta.$</span></p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>显然(1)与(2)是等价的。由于<br>
+</p><div class="mathjax-exps">$$\operatorname{cov}(\xi,\eta)=E\xi\eta-E\xi\cdot E\eta$$</div><p></p>
+<p>因此(1)与(3)等价。又由于</p>
+<p></p><div class="mathjax-exps">$$D(\xi+\eta)=D\xi+D\eta+2\operatorname{cov}(\xi,\eta)$$</div><p></p>
+<p>因此(1)与(4)等价。</p>
+</details>
+<p><span class="callout">Theorem: 独立性与相关性</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$\eta$</span> 独立，则 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$\eta$</span> 不相关.</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>因为 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$\eta$</span> 独立，故其密度函数 <span class="mathjax-exps">$p(x,y) = p_1(x)p_2(y)$</span>，因此<br>
+</p><div class="mathjax-exps">$$\begin{align*} \text{cov}(\xi, \eta) &amp;= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} (x - E\xi)(y - E\eta)p(x,y) \, dx \, dy \\ &amp;= \int_{-\infty}^{\infty} (x - E\xi)p_1(x) \, dx \cdot \int_{-\infty}^{\infty} (y - E\eta)p_2(y) \, dy = 0 \end{align*}$$</div><p></p>
+</details>
+<p>结合性质 2 及性质 3 可得：若 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$\eta$</span> 独立，则 <span class="mathjax-exps">$E\xi\eta = E\xi \cdot E\eta$</span> 及 <span class="mathjax-exps">$D(\xi + \eta) = D\xi + D\eta$</span> 成立。同样的论证可以证明类似的结论在 <span class="mathjax-exps">$n$</span> 个随机变量的场合也成立，即若 <span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n$</span> 是相互独立的随机变量，则</p>
+<p></p><div class="mathjax-exps">$$\begin{gathered} E\xi_1\xi_2\cdots\xi_n = E\xi_1 E\xi_2 \cdots E\xi_n\\ D(\xi_1 + \xi_2 + \cdots + \xi_n) = D\xi_1 + D\xi_2 + \cdots + D\xi_n  \end{gathered}$$</div><p></p>
+<p>由独立性可以推出不相关性，但是反过来是不成立的。实际上，相关性只表示了线性关系，而独立性则表示了更强的关系。<br>
+一般地，若 <span class="mathjax-exps">$\xi$</span> 服从对称分布，则 <span class="mathjax-exps">$\eta = \xi^2$</span> 或 <span class="mathjax-exps">$\eta = |\xi|$</span> 与 <span class="mathjax-exps">$\xi$</span> 不相关但不独立。但对于二元正态分布，不相关性与独立性是等价的。</p>
+<p><span class="callout">Theorem: 二值随机变量的不相关性与独立性</span></p>
+<blockquote>
+<p>若<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>都是二值随机变量，则不相关性与独立性是等价的。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>设<span class="mathjax-exps">$\xi$</span>取二值<span class="mathjax-exps">$a$</span>及<span class="mathjax-exps">$c$</span>，<span class="mathjax-exps">$\eta$</span>取二值<span class="mathjax-exps">$b$</span>及<span class="mathjax-exps">$d$</span>，下面证明由<span class="mathjax-exps">$\rho_{\xi\eta}=0$</span>可推得<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>独立。<br>
+记<span class="mathjax-exps">$A=\{\xi=a\}, B=\{\eta=b\}$</span><br>
+从而<span class="mathjax-exps">$\bar{A}=\{\xi=c\},\quad\bar{B}=\{\eta=d\}$</span><br>
+于是它们的示性函数<br>
+</p><div class="mathjax-exps">$$1_A=\frac{\xi-c}{a-c},\quad 1_B=\frac{\eta-d}{b-d}$$</div><p></p>
+<p>由<span class="mathjax-exps">$\operatorname{cov}(1_A, 1_B)=E 1_A 1_B-E 1_A\cdot E 1_B=P(A B)-P(A) P(B)$</span><br>
+</p><div class="mathjax-exps">$$D 1_A=P(A) P(\bar{A}),\quad D 1_B=P(B) P(\bar{B})$$</div><p></p>
+<p>得到<br>
+</p><div class="mathjax-exps">$$\rho_{1 A 1 B}=\frac{P(A B)-P(A) P(B)}{\sqrt{P(A) P(\bar{A}) P(B) P(\bar{B})}}=0$$</div><p></p>
+<p>这是因为<span class="mathjax-exps">$1_A$</span>与<span class="mathjax-exps">$1_B$</span>分别为<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>的线性变换，而后者不相关。</p>
+<p>因而<span class="mathjax-exps">$P(A B)=P(A) P(B)$</span>，即</p>
+<p></p><div class="mathjax-exps">$$P\{\xi=a,\eta=b\} = P\{\xi=a \} P\{\eta=b\}$$</div><p></p>
+<p>再由<span class="mathjax-exps">$(A,\bar{B}),(\bar{A}, B)$</span>及<span class="mathjax-exps">$(\bar{A},\bar{B})$</span>的独立性可知</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} P\{\xi=a,\eta=d\}&amp;=P\{\xi=a\} P\{\eta=d\}\\ P\{\xi=c,\eta=b\}&amp;=P\{\xi=c\} P\{\eta=b\}\\ P\{\xi=c,\eta=d\}&amp;=P\{\xi=c\} P\{\eta=d\} \end{align*}$$</div><p></p>
+<p>至此我们已证得<span class="mathjax-exps">$\xi$</span>与<span class="mathjax-exps">$\eta$</span>独立。</p>
+</details>
+<p>由上述推导可知，对事件 <span class="mathjax-exps">\(A\)</span> 与 <span class="mathjax-exps">\(B\)</span>，若定义事件相关系数为<br>
+</p><div class="mathjax-exps">\[\rho_{AB} = \rho_{1A1B} = \frac{P(AB) - P(A)P(B)}{\sqrt{P(A)P(\bar{A})P(B)P(\bar{B})}}\]</div><p></p>
+<p>则 <span class="mathjax-exps">\(A\)</span> 与 <span class="mathjax-exps">\(B\)</span> 独立的充要条件为 <span class="mathjax-exps">\(\rho_{AB} = 0\)</span>.</p>
+<p><span class="callout">Corollary</span></p>
+<blockquote>
+<p><span class="mathjax-exps">\(|P(AB) - P(A)P(B)| \leq \frac{1}{4}\)</span></p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>由<br>
+</p><div class="mathjax-exps">\[\rho_{AB} = \rho_{1A1B} = \frac{P(AB) - P(A)P(B)}{\sqrt{P(A)P(\bar{A})P(B)P(\bar{B})}} \leq 1\]</div><p></p>
+<p>可得 <span class="mathjax-exps">\(|P(AB) - P(A)P(B)| \leq \sqrt{P(A)P(\bar{A})P(B)P(\bar{B})} \leq \frac{1}{4}\)</span>.</p>
+</details>
+<h4 id="矩">矩 </h4>
+<p><span class="callout">4.2.5 Definition: 原点矩</span></p>
+<blockquote>
+<p>对正整数<span class="mathjax-exps">$k$</span>，称<br>
+</p><div class="mathjax-exps">$$m_k = E\xi^k$$</div><p></p>
+<p>为<span class="mathjax-exps">$k$</span>阶原点矩。数学期望是一阶原点矩。<br>
+由于<span class="mathjax-exps">$|\xi|^{k-1} \leqslant 1+|\xi|^k$</span>，因此若<span class="mathjax-exps">$k$</span>阶矩存在，则所有低阶矩都存在。</p>
+</blockquote>
+<p><span class="callout">4.2.6 Definition: 中心矩</span></p>
+<blockquote>
+<p>对正整数<span class="mathjax-exps">$k$</span>，称<br>
+</p><div class="mathjax-exps">$$c_k = E(\xi-E\xi)^k$$</div><p></p>
+<p>为<span class="mathjax-exps">$k$</span>阶中心矩。方差是2阶中心矩。</p>
+</blockquote>
+<p>由于</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} c_k = E(\xi-E\xi)^k &amp;= \sum_{i=0}^k \binom{k}{i}(-E\xi)^{k-i} E\xi^i\\ &amp;= \sum_{i=0}^k \binom{k}{i}(-m_1)^{k-i} m_i \end{align*}$$</div><p></p>
+<p>故中心矩可通过原点矩来表达，反之，<br>
+</p><div class="mathjax-exps">\[\begin{align*}       m_k &amp;= E\xi^k = E\left[\left(\xi - m_1\right) + m_1\right]^k \\ &amp;= \sum_{i=0}^k \binom{k}{i} E\left(\xi - m_1\right)^{k-i} m_1^i = \sum_{i=0}^k \binom{k}{i} c_{k-i} m_1^i \end{align*}\]</div><p></p>
+<p>因此当已知数学期望之后，原点矩也可以通过中心矩给出。</p>
+<p><span class="callout">Example: 正态分布的矩</span></p>
+<p>设<span class="mathjax-exps">$\xi$</span>为正态随机变量，其密度函数为<br>
+</p><div class="mathjax-exps">$$p(x)=\frac{1}{\sqrt{2\pi\sigma}} e^{-x^2/\left(2\sigma^2\right)}$$</div><p></p>
+<p>因此<span class="mathjax-exps">$E\xi=0$</span>，故</p>
+<p></p><div class="mathjax-exps">$$m_k=c_k=E\xi^k=\int_{-\infty}^{\infty} x^k\frac{1}{\sqrt{2\pi\sigma}} e^{-x^2/\left(2\sigma^2\right)} d x$$</div><p></p>
+<p>显然，<span class="mathjax-exps">$k$</span>为奇数时，<span class="mathjax-exps">$c_k=0$</span>；<span class="mathjax-exps">$k$</span>为偶数时，</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} c_k&amp;=\sqrt{\frac{2}{\pi}}\int_0^{\infty}\frac{x^k}{\sigma}{e^{-\frac{x^2}{2\sigma^2}}~d x}=\sqrt{\frac{2}{\pi}}\sigma^k\cdot 2^{\frac{k-1}{2}}\int_0^{\infty} z^{\frac{k-1}{2}} e^{-z}~d z \\ &amp;=\sqrt{\frac{2}{\pi}}\sigma^k 2^{\frac{k-1}{2}}\Gamma\left(\frac{k+1}{2}\right)=\sigma^k(k-1)(k-3)\cdots 3\cdot 1 \end{align*}$$</div><p></p>
+<p>特别地<br>
+</p><div class="mathjax-exps">$$c_4=3\sigma^4$$</div><p></p>
+<h4 id="分位数">分位数 </h4>
+<p><span class="callout">4.2.7 Definition: 分位数</span></p>
+<blockquote>
+<p>对<span class="mathjax-exps">$0 &lt; p &lt; 1$</span>，若<br>
+</p><div class="mathjax-exps">$$F(x_p) \leqslant p \leqslant F(x_p+0)$$</div><p></p>
+<p>则称<span class="mathjax-exps">$x_p$</span>为分布函数<span class="mathjax-exps">$F(x)$</span>的<span class="mathjax-exps">$p$</span>分位数。</p>
+</blockquote>
+<p>由于 <span class="mathjax-exps">$F(x)$</span> 可能不是严格单调递增的，所以不采用 <span class="mathjax-exps">$F(x_p) = p$</span> 来定义分位数。</p>
+<h3 id="条件数学期望">条件数学期望 </h3>
+<p><span class="callout">4.2.8 Definition: 条件数学期望</span></p>
+<blockquote>
+<p>在<span class="mathjax-exps">$\xi=x$</span>的条件下，<span class="mathjax-exps">$\eta$</span>的条件数学期望定义为<br>
+</p><div class="mathjax-exps">$$E\{\eta | \xi = x\} = \int_{-\infty}^{\infty} yp(y | x) dy$$</div><p></p>
+</blockquote>
+<p>条件数学期望在预测问题(拟合)中有重要应用。<br>
+考虑随机变量 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$\eta$</span>，若需要寻找 <span class="mathjax-exps">$h(\xi )$</span>，使得 <span class="mathjax-exps">$E(\eta - h(\xi ))^2$</span> 最小。<br>
+</p><div class="mathjax-exps">\[\begin{align*} E[\eta - h(\xi)]^2 &amp;= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} [y - h(x)]^2 p(x,y) \, dx \, dy\\ &amp;= \int_{-\infty}^{\infty} p_1(x) \left\{ \int_{-\infty}^{\infty} [y - h(x)]^2 p(y \mid x) \, dy \right\} \, dx \end{align*}\]</div><p></p>
+<p>由<a href="#Var-1">方差的性质</a>可知，当 <span class="mathjax-exps">$h(x) = E(\eta \mid \xi = x)$</span> 时，<span class="mathjax-exps">$E[\eta - h(\xi)]^2$</span> 最小。称 <span class="mathjax-exps">$E(\eta \mid \xi = x)$</span> 为 <span class="mathjax-exps">$\eta$</span> 关于 <span class="mathjax-exps">$\xi = x$</span> 的回归。</p>
+<p><span class="callout">Theorem: 重期望公式</span></p>
+<blockquote>
+<p>记<span class="mathjax-exps">\(E\{\eta|\xi\}\)</span> 为 <span class="mathjax-exps">\(\xi\)</span> 的如下函数：当 <span class="mathjax-exps">\(\xi = x\)</span> 时，它取值 <span class="mathjax-exps">\(E\{\eta|\xi = x\}\)</span>。显然<span class="mathjax-exps">\(E\{\eta|\xi\}\)</span> 是随机变量，且<span class="mathjax-exps">\(E\eta = E[E\{\eta \mid \xi\}]\)</span>。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p></p><div class="mathjax-exps">$$\begin{align*} E[E\{\eta\mid\xi\}] &amp;= \int_{-\infty}^{\infty} E\left\{\eta\mid\xi=x\right\} p_{1}(x) d x \\ &amp;=\int_{-\infty}^{\infty}\left[\int_{-\infty}^{\infty} y p(y\mid x) d y\right] p_{1}(x) d x\\ &amp;=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} y p(x, y) d x d y = E\eta \end{align*}$$</div><p></p>
+</details>
+<p>一般情况下 <span class="mathjax-exps">$E\{\eta \mid \xi = x\}$</span> 不易求出，则对 <span class="mathjax-exps">$h(x)$</span> 的拟合可以采用线性函数，即 <span class="mathjax-exps">$L(x) = ax + b$</span>。<br>
+求下列误差函数的最小值，即<br>
+</p><div class="mathjax-exps">\[(a,b) =  \arg \min e(a, b) = E[\eta - (a + b\xi)]^2\]</div><p></p>
+<p>把 <span class="mathjax-exps">\(e(a, b)\)</span> 对 <span class="mathjax-exps">\(a, b\)</span> 求偏导数并令它们等于 0 ，得到<br>
+</p><div class="mathjax-exps">\[\begin{align*} &amp; 2 E[\eta - (a + b\xi)] = 0 \\ &amp; 2 E[(\eta - (a + b\xi))\xi] = 0 \end{align*}\]</div><p></p>
+<p>整理后变成<br>
+</p><div class="mathjax-exps">\[\begin{align*} &amp; a + b\mu_1 = \mu_2 \\ &amp; a\mu_1 + b E\xi^2 = E\xi\eta \end{align*}\]</div><p></p>
+<p>因此解得<br>
+</p><div class="mathjax-exps">\[\begin{align*} &amp; a = \mu_2 - b\mu_1, \quad b = \frac{\operatorname{cov}(\xi, \eta)}{\sigma_1^2} = \rho \cdot \frac{\sigma_2}{\sigma_1} \end{align*}\]</div><p></p>
+<p>最佳线性预测为<br>
+</p><div class="mathjax-exps">\[L(x) = \mu_2 + \rho \frac{\sigma_2}{\sigma_1} (x - \mu_1)\]</div><p></p>
+<p>我们称为 <span class="mathjax-exps">\(\eta\)</span> 关于 <span class="mathjax-exps">\(\xi\)</span> 的线性回归。这个结果与 <span class="mathjax-exps">\(E\{\eta \mid \xi = x\}\)</span> 一般是不同的，但是在 <span class="mathjax-exps">\((\xi, \eta)\)</span> 是二元正态分布的场合两者是重合的，所以在正态分布场合，最佳预测是线性预测，这是一个十分重要的结果。</p>
+<p>进一步，我们还可以计算最佳线性预测的均方误差.</p>
+<p></p><div class="mathjax-exps">\[\begin{aligned}     E[\eta - L(\xi)]^2 &amp;= E[\eta - \mu_2 - b(\xi - \mu_1)]^2 \\     &amp;= \sigma_2^2 + b^2\sigma_1^2 - 2b\operatorname{cov}(\xi, \eta)\\ &amp;= \sigma_2^2 - \frac{\operatorname{cov}^2(\xi, \eta)}{\sigma_1^2} = \sigma_2^2(1 - \rho^2) \end{aligned}\]</div><p></p>
+<p>因此预测误差同 <span class="mathjax-exps">\(\eta\)</span> 的方差有关，也同 <span class="mathjax-exps">\(\xi\)</span> 与 <span class="mathjax-exps">\(\eta\)</span> 的相关系数有关，特别当 <span class="mathjax-exps">\(|\rho| = 1\)</span> 时（这时 <span class="mathjax-exps">\(\xi\)</span> 与 <span class="mathjax-exps">\(\eta\)</span> 有线性关系），预测误差为 0，也就是说，可以完全准确地进行线性预测。从这个讨论再次看出，相关系数反映了 <span class="mathjax-exps">\(\xi\)</span> 与 <span class="mathjax-exps">\(\eta\)</span> 线性联系的程度。</p>
+<p>最佳线性预测理论中的另一个重要事实是：预测值 <span class="mathjax-exps">\(\hat{\eta} = L(\xi)\)</span> 与残差 <span class="mathjax-exps">\(\eta - \hat{\eta}\)</span> 是不相关的。证明如下：</p>
+<details open="">
+    <summary>Proof:</summary>
+<p>由于<br>
+</p><div class="mathjax-exps">\[\hat{\eta} = L(\xi) = \mu_2 + \rho \frac{\sigma_2}{\sigma_1} (\xi - \mu_1)\]</div><p></p>
+<p>因此<br>
+</p><div class="mathjax-exps">$$\begin{gathered} E\hat{\eta} = \mu_2 \\ E(\eta - \hat{\eta}) = 0 \end{gathered}$$</div><p></p>
+<p>这样一来<br>
+</p><div class="mathjax-exps">$$\begin{align*} \operatorname{cov}(\hat{\eta}, \eta - \hat{\eta}) &amp;= E[(\hat{\eta} - \mu_2)(\eta - \hat{\eta})] \\ &amp;= E\left\{\rho \frac{\sigma_2}{\sigma_1} (\xi - \mu_1)[(\eta - \mu_2) - \rho \frac{\sigma_2}{\sigma_1} (\xi - \mu_1)]\right\} \\ &amp;= \rho \frac{\sigma_2}{\sigma_1} (\rho \sigma_1 \sigma_2 - \rho \frac{\sigma_2}{\sigma_1} \sigma_1^2) = 0 \end{align*}$$</div><p></p>
+<p>这个事实可以解释为：残差中已不再包含对预测 <span class="mathjax-exps">\(\eta\)</span> 有用的知识。因此观察值 <span class="mathjax-exps">\(\eta\)</span> 被分解为两个不相关的随机变量之和：<br>
+</p><div class="mathjax-exps">\[\eta = \hat{\eta} + (\eta - \hat{\eta})\]</div><p></p>
+</details>
 
       </div>
       
