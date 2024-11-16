@@ -198,6 +198,63 @@
 </p><div class="mathjax-exps">$$P\left\{a \leq \frac{\mu_n - np}{\sqrt{npq}} &lt; b\right\} \to \int_a^b \varphi(x) dx$$</div><p></p>
 <p>其中<span class="mathjax-exps">$\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \quad (-\infty &lt; x &lt; \infty)$</span>。</p>
 </blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>先证<strong>局部极限定理</strong>, 我们将给出一个上比更为精确的渐近式.</p>
+<p>因 <span class="mathjax-exps">$x_k$</span> 只能在有限区间 <span class="mathjax-exps">$[a, b]$</span> 中取值,故当 <span class="mathjax-exps">$n\rightarrow\infty$</span> 时,</p>
+<p></p><div class="mathjax-exps">$$k=n p+x_k\sqrt{n p q}\rightarrow\infty$$</div><p></p>
+<p></p><div class="mathjax-exps">$$j\equiv n-k=n q-x_k\sqrt{n p q}\rightarrow\infty$$</div><p></p>
+<p>由斯特林(Stirling)公式:</p>
+<p></p><div class="mathjax-exps">$$m!=\sqrt{2\pi m} m^m e^{-m} e^{\theta m}\left(0&lt;\theta_m&lt;\frac{1}{12 m}\right)$$</div><p></p>
+<p>可知</p>
+<p></p><div class="mathjax-exps">$$\begin{align*}  P\left\{\mu_n=k\right\}&amp;=\frac{n!}{k! j!} p^kq^j\\ &amp;=\frac{\sqrt{2\pi n} n^n e^{-n}}{\sqrt{2\pi k} k^k e^{-k}\sqrt{2\pi j} j^j e^{-j}} p^kq^je^{\theta_n-\theta_k-\theta_j}\\ &amp;=\frac{1}{\sqrt{2\pi}\sqrt{n p q}}\left(\frac{n p}{k}\right)^{k+\frac{1}{2}}\left(\frac{n q}{n-k}\right)^{n-k+\frac{1}{2}} e^{\theta} \end{align*}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\theta=\theta_n-\theta_k-\theta_{n-k}$</span>, 因此</p>
+<p></p><div class="mathjax-exps">$$|\theta|&lt;\frac{1}{12}\left(\frac{1}{n}+\frac{1}{k}+\frac{1}{n-k}\right)$$</div><p></p>
+<p></p><div class="mathjax-exps">$$\frac{k}{n p}=1+x_k\sqrt{\frac{q}{n p}},\frac{n-k}{n q}=1-x_k\sqrt{\frac{p}{n q}}$$</div><p></p>
+<p>我们将利用展开式<br>
+</p><div class="mathjax-exps">$$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots$$</div><p></p>
+<p>来对它们进行估计. 这个展开式当 <span class="mathjax-exps">$-1&lt;x\leqslant 1$</span> 时收敛, 但只有对绝对值很小的那种 <span class="mathjax-exps">$x$</span> 值才收敛得快. 现在, 当 <span class="mathjax-exps">$n$</span> 充分大时, <span class="mathjax-exps">$x_k\sqrt{np}$</span> 及 <span class="mathjax-exps">$\sqrt{\frac{p}{nq}}$</span> 都很小(因此, 当 <span class="mathjax-exps">$p=0$</span> 及 <span class="mathjax-exps">$p=1$</span> 时不能用; 此外, 当 <span class="mathjax-exps">$p$</span> 或 <span class="mathjax-exps">$q$</span> 很小时, 渐近展开式引起的误差也较大, 这时我们已推荐用泊松逼近公式). 所以</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} \ln\left(\sqrt{2\pi n p q} P\left\{\mu_n=k\right\}\right) &amp;=\theta-\left(k+\frac{1}{2}\right)\ln\frac{k}{n p}-\left(n-k+\frac{1}{2}\right)\ln\frac{n-k}{n q} \\ &amp;=\theta-\left(n p+x_{k}\sqrt{n p q}+\frac{1}{2}\right)\ln\left(1+x_{k}\sqrt{\frac{q}{n p}}\right) \\ &amp;-\left(n q-x_{k}\sqrt{n p q}+\frac{1}{2}\right)\ln\left(1-x_{k}\sqrt{\frac{p}{n q}}\right) \\ &amp;=\theta-\left(n p+x_{k}\sqrt{n p q}+\frac{1}{2}\right) \left( x_{k}\sqrt{\frac{q}{n p}}-\frac{x_{k}^{2} q}{2 n p}+\frac{x_{k}^{3} q\sqrt{n p q}}{3 n^{2} p^{2}}-\frac{x_{k}^{4} q^{2}}{4 n^{2} p^{2}}+\cdots \right) \\ &amp;-\left(n q-x_{k}\sqrt{n p q}+\frac{1}{2}\right) \cdot\left(-x_{k}\sqrt{\frac{p}{n q}}-\frac{x_{k}^{2} p}{2 n q}-\frac{x_{k}^{3} p\sqrt{n p q}}{3 n^{2} q^{2}}-\frac{x_{k}^{4} p^{2}}{4 n^{2} q^{2}}+\cdots\right)\\ &amp;=\theta-\frac{x_{k}^{2}}{2}+\frac{q-p}{6\sqrt{n p q}}\left(x_{k}^{3}-3 x_{k}\right) + \frac{1}{12 n p q}\left[3\left(p^{2}+q^{2}\right) x_{k}^{2}-\left(p^{3}+q^{3}\right) x_{k}^{4}\right]+O\left(\frac{1}{n}\right) \end{align*}$$</div><p></p>
+<p>因此</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} P\{\mu_n = k\} &amp;= \frac{1}{\sqrt{2\pi}} \cdot \frac{1}{\sqrt{npq}} \exp\left\{ -\frac{x_k^2}{2} + \frac{(q-p)(x_k^3 - 3x_k)}{6\sqrt{npq}} + O\left(\frac{1}{n}\right) \right\} \\ &amp;= \frac{1}{\sqrt{2\pi}} \cdot \frac{1}{\sqrt{npq}} \exp\left\{-\frac{x_k^2}{2}\right\} \exp \left\{ \frac{(q-p)(x_k^3 - 3x_k)}{6\sqrt{npq}} + O\left(\frac{1}{n}\right) \right\} \end{align*}$$</div><p></p>
+<p>取其第一项即得证明中的等式，因此我们已证得了局部极限定理。显然，我们得到了更精确的估计式。又知当 <span class="mathjax-exps">$p=q$</span> 及 <span class="mathjax-exps">$x_k^3 - 3x_k = 0$</span> 时，近似效果尤佳。</p>
+<p>下面转入证明<strong>积分极限定理</strong>.</p>
+<p></p><div class="mathjax-exps">$$\begin{align*} &amp; P\left\{a\leqslant\frac{\mu_n-n p}{\sqrt{n p q}}&lt;b\right\}\\ &amp;=P\left\{n p+a\sqrt{n p q}\leqslant\mu_n&lt;n p+b\sqrt{n p q}\right\}\\ &amp;=\sum_{k=k_1}^{k_2} P\left\{\mu_n=k\right\} \end{align*}$$</div><p></p>
+<p>上式中 <span class="mathjax-exps">$k_1$</span> 为不小于 <span class="mathjax-exps">$n p+a\sqrt{n p q}$</span> 的最小整数, <span class="mathjax-exps">$k_2$</span> 为小于 <span class="mathjax-exps">$n p+b\sqrt{n p q}$</span> 的最大整数,由局部极限定理知当 <span class="mathjax-exps">$n$</span> 充分大时,对任给 <span class="mathjax-exps">$\varepsilon&gt;0$</span>, 有</p>
+<p></p><div class="mathjax-exps">$$P\left\{\mu_n=k\right\}=\frac{1}{\sqrt{n p q}}\left(\varphi\left(x_k\right)+\varepsilon_k\right),\left|\varepsilon_k\right|&lt;\varepsilon \left(k=k_1, k_1+1,\cdots, k_2\right)$$</div><p></p>
+<p>代入前式得到<br>
+</p><div class="mathjax-exps">$$\begin{align*} &amp;P\left\{a\leqslant\frac{\mu_n-n p}{\sqrt{n p q}}&lt;b\right\}\\ &amp;=\sum_{k=k_1}^{k_2}\frac{1}{\sqrt{n p q}}\varphi\left(x_k\right)+\sum_{k=k_1}^{k_2}\frac{\varepsilon_k}{\sqrt{n p q}} \end{align*}$$</div><p></p>
+<p>因为有</p>
+<p></p><div class="mathjax-exps">$$\left|\sum_{k=k_1}^{k_2}\frac{\varepsilon_k}{\sqrt{n p q}}\right|\leqslant\frac{1}{\sqrt{n p q}}\left(k_2-k_1+1\right)\varepsilon\leqslant\frac{(b-a)\sqrt{n p q}+1}{\sqrt{n p q}}\varepsilon$$</div><p></p>
+<p>故当 <span class="mathjax-exps">$n\rightarrow\infty$</span> 时,注意 <span class="mathjax-exps">$x_k$</span> 的增量为 <span class="mathjax-exps">$\frac{1}{\sqrt{n p q}}$</span>, 就得到</p>
+<p></p><div class="mathjax-exps">$$P\left\{a\leqslant\frac{\mu_n-n p}{\sqrt{n p q}}&lt;b\right\}\rightarrow\int_a^b\varphi(x) d WW$$</div><p></p>
+</details>
+<p>由积分极限定理<br>
+</p><div class="mathjax-exps">$$\begin{align*} P\left\{\left|\frac{\mu_n}{n}-p\right|&lt;\varepsilon\right\} &amp;=P\left\{-\varepsilon &lt; \sqrt{\frac{n}{pq}}\frac{\mu_n-np}{\sqrt{npq}}&lt;\varepsilon\sqrt{\frac{n}{pq}}\right\}\\ &amp;=\Phi\left(\varepsilon\sqrt{\frac{n}{pq}}\right)-\Phi\left(-\varepsilon\sqrt{\frac{n}{pq}}\right)=2\Phi\left(\varepsilon\sqrt{\frac{n}{pq}}\right)-1 \end{align*}$$</div><p></p>
+<p>频率估计概率的三类问题：</p>
+<ol>
+<li>已知实验次数<span class="mathjax-exps">$n$</span>，发生概率<span class="mathjax-exps">$p$</span>，误差区间<span class="mathjax-exps">$\varepsilon$</span>，求置信度 <span class="mathjax-exps">$\beta$</span>；<br>
+求解的是实验的可信度，利用正态分布密度函数查表即可。</li>
+<li>已知发生概率<span class="mathjax-exps">$p$</span>，置信度<span class="mathjax-exps">$\beta$</span>，误差区间<span class="mathjax-exps">$\varepsilon$</span>，求实验次数<span class="mathjax-exps">$n$</span>；<br>
+<div class="mathjax-exps">$$2\Phi\left(\varepsilon\sqrt{\frac{n}{pq}}\right) - 1 \geq \beta$$</div><br>
+求解的是达到可信情况下需要的最小的试验次数，反解出<span class="mathjax-exps">$n$</span>即可。</li>
+<li>已知实验次数<span class="mathjax-exps">$n$</span>，置信度<span class="mathjax-exps">$\beta$</span>，发生概率<span class="mathjax-exps">$p$</span>，求误差区间<span class="mathjax-exps">$\varepsilon$</span>。<br>
+求解的是在可信的情况下，误差区间的大小，反解出<span class="mathjax-exps">$\varepsilon$</span>即可。</li>
+</ol>
+<p><span class="callout">Definition: 概率的置信区间</span></p>
+<blockquote>
+<p>由积分极限定理<br>
+</p><div class="mathjax-exps">$$P\left\{\left|\frac{\frac{\mu_n}{n}-p}{\frac{p(1-p)}{n}}\right|&lt;z_\beta\right\}=\beta$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$z_{\beta}$</span> 满足 <span class="mathjax-exps">$2\Phi\left(z_{\beta}\right)-1=\beta$</span>, 只要 <span class="mathjax-exps">$n$</span> 相当大.<br>
+对 <span class="mathjax-exps">$p$</span> 的二次方程<br>
+</p><div class="mathjax-exps">$$\left(\frac{\mu_n}{n}-p\right)^2=z_\beta^2\frac{p(1-p)}{n}$$</div><p></p>
+<p>求解并略去 <span class="mathjax-exps">$\frac{1}{n}$</span> 的高阶无穷小项得:<br>
+</p><div class="mathjax-exps">$$P\left\{\frac{\mu_n}{n}-z_{\beta}\sqrt{\frac{\mu_n}{n}\left(1-\frac{\mu_n}{n}\right)}{n}&lt;p&lt;\frac{\mu_n}{n}+z_{\beta}\sqrt{\frac{\mu_n}{n}\left(1-\frac{\mu_n}{n}\right)}{n}\right\}=\beta$$</div><p></p>
+<p>在数理统计中称我们已在置信水平 <span class="mathjax-exps">$\beta$</span>（一般为 95%）下得到概率 <span class="mathjax-exps">$p$</span> 的置信区间<br>
+</p><div class="mathjax-exps">$$\left\{\frac{\mu_n}{n}-z_\beta\sqrt{\frac{\mu_n}{n}\left(1-\frac{\mu_n}{n}\right)}{n}, \frac{\mu_n}{n}+z_\beta\sqrt{\frac{\mu_n}{n}\left(1-\frac{\mu_n}{n}\right)}{n}\right\}$$</div><p></p>
+</blockquote>
+<p>当 <span class="mathjax-exps">$n$</span> 很大时，除了泊松分布近似二项分布外，局部定理提供了另外一种对二项分布的近似。<br>
+</p><div class="mathjax-exps">$$\begin{aligned} \binom{n}{k} p^k q^{n-k} &amp;\approx \frac{1}{\sqrt{npq}} \varphi(x_k)  \\ P\left\{a\leqslant\frac{\mu_{n}-n p}{\sqrt{n p q}}&lt;b\right\} &amp;\approx \Phi(b)-\Phi(a) \\ P\{k_1 \leq \mu_n \leq k_2\} &amp;= P\left\{\frac{k_1 - np}{\sqrt{npq}} \leq \frac{\mu_n - np}{\sqrt{npq}} \leq \frac{k_2 - np}{\sqrt{npq}}\right\} \\ &amp;\approx \Phi\left(\frac{k_2 - np}{\sqrt{npq}}\right) - \Phi\left(\frac{k_1 - np}{\sqrt{npq}}\right) \end{aligned}$$</div><p></p>
 
       </div>
       

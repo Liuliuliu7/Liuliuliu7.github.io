@@ -7,7 +7,7 @@
         <script type="text/javascript">
           window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
         </script>
-        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
         
       
       
@@ -45,8 +45,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -57,8 +59,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -128,8 +132,8 @@
 <div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="code-chunk-btn-group"><div class="run-btn btn btn-xs btn-primary"><span>▶︎</span></div><div class="run-all-btn btn btn-xs btn-primary">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
 <li><a href="#%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3">矩阵分解</a>
 <ul>
-<li><a href="#span-classcallout311-lemma%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5%E5%BC%95%E7%90%86span">3.1.1 Lemma:矩阵相抵引理</a></li>
-<li><a href="#span-classcallout311-example%E7%9F%A9%E9%98%B5%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8Fspan">3.1.1 Example:矩阵秩不等式</a></li>
+<li><a href="#span-classcallout311-lemma-%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5%E5%BC%95%E7%90%86span">3.1.1 Lemma: 矩阵相抵引理</a></li>
+<li><a href="#span-classcallout311-example-%E7%9F%A9%E9%98%B5%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8Fspan">3.1.1 Example: 矩阵秩不等式</a></li>
 <li><a href="#span-classcallout321-theorem-%E6%BB%A1%E7%A7%A9%E5%88%86%E8%A7%A3span">3.2.1 Theorem: 满秩分解</a></li>
 <li><a href="#span-classcallout323-theorem-%E5%8F%B3%E9%80%86%E5%92%8C%E5%B7%A6%E9%80%86span">3.2.3 Theorem: 右逆和左逆</a></li>
 <li><a href="#span-classcallout311-proposition-%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE%E7%A7%A9%E7%AD%89%E4%BB%B7span">3.1.1 Proposition: 矩阵转置秩等价</a></li>
@@ -139,6 +143,7 @@
 <li><a href="#span-classcallout331-corollary-cholesky%E5%88%86%E8%A7%A3span">3.3.1 Corollary: Cholesky分解</a></li>
 <li><a href="#span-classcallout341-definition-qr%E5%88%86%E8%A7%A3span">3.4.1 Definition: QR分解</a></li>
 <li><a href="#span-classcallout341-theorem-%E6%AD%A3%E4%BA%A4%E5%88%86%E8%A7%A3span">3.4.1 Theorem: 正交分解</a></li>
+<li><a href="#span-classcalloutexample-%E9%9D%9E%E6%96%B9%E9%98%B5qr%E5%88%86%E8%A7%A3span">Example: 非方阵<span class="mathjax-exps">$QR$</span>分解</a></li>
 <li><a href="#span-classcallout342-theorem-%E5%A4%8D%E6%96%B9%E9%98%B5%E6%AD%A3%E4%BA%A4%E5%8C%96span">3.4.2 Theorem: 复方阵正交化</a></li>
 <li><a href="#span-classcallout351-theorem-schur%E5%AE%9A%E7%90%86span">3.5.1 Theorem: Schur定理</a></li>
 <li><a href="#span-classcallout353-theorem-%E5%AE%9E%E6%96%B9%E6%AD%A3schurs%E5%BC%95%E7%90%86span">3.5.3 Theorem: 实方正Schur's引理</a></li>
@@ -163,11 +168,48 @@
 <li><a href="#span-classcallout365-corollary-%E6%AD%A3%E8%A7%84%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%A4%E5%AE%9Aspan">3.6.5 Corollary: 正规矩阵的判定</a></li>
 <li><a href="#span-classcallout366-corollary-%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%A4%E5%AE%9Aspan">3.6.6 Corollary: 正交矩阵的判定</a></li>
 <li><a href="#span-classcallout367-corollary-%E9%85%89%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%A4%E5%AE%9Aspan">3.6.7 Corollary: 酉矩阵的判定</a></li>
+<li><a href="#span-classcallout371-definition-%E6%AD%A3%E8%A7%84%E7%9F%A9%E9%98%B5%E8%B0%B1%E5%88%86%E8%A7%A3span">3.7.1 Definition: 正规矩阵谱分解</a></li>
 <li><a href="#span-classcallout371-theorem-%E6%AD%A3%E8%A7%84%E7%9F%A9%E9%98%B5%E8%B0%B1%E9%98%B5%E7%9A%84%E6%80%A7%E8%B4%A8span">3.7.1 Theorem: 正规矩阵谱阵的性质</a></li>
 <li><a href="#span-classcallout372-definition-%E5%B9%82%E7%AD%89%E7%9F%A9%E9%98%B5span">3.7.2 Definition: 幂等矩阵</a></li>
 <li><a href="#span-classcallout373-theorem-%E5%B9%82%E7%AD%89%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8span">3.7.3 Theorem: 幂等矩阵性质</a></li>
 <li><a href="#span-classcallout372-example-%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1%E7%9F%A9%E9%98%B5span">3.7.2 Example: 正交投影矩阵</a></li>
 <li><a href="#span-classcallout37-theorem-%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1%E7%9A%84%E6%80%A7%E8%B4%A8span">3.7.* Theorem: 正交投影的性质</a></li>
+<li><a href="#span-classcallout373-definition-%E5%8D%95%E7%BA%AF%E7%9F%A9%E9%98%B5%E8%B0%B1%E5%88%86%E8%A7%A3span">3.7.3 Definition: 单纯矩阵谱分解</a></li>
+<li><a href="#span-classcallout374-theorem-%E5%8D%95%E7%BA%AF%E7%9F%A9%E9%98%B5%E5%88%A4%E5%AE%9A%E5%AE%9A%E7%90%86span">3.7.4 Theorem: 单纯矩阵判定定理</a></li>
+<li><a href="#span-classcallout371-corollary-%E5%8D%95%E7%BA%AF%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%B1%E5%88%86%E8%A7%A3span">3.7.1 Corollary: 单纯矩阵函数的谱分解</a></li>
+<li><a href="#span-classcallout372-corollary-%E5%8D%95%E7%BA%AF%E7%9F%A9%E9%98%B5%E8%B0%B1%E9%98%B5%E7%9A%84%E8%AE%A1%E7%AE%97span">3.7.2 Corollary: 单纯矩阵谱阵的计算</a></li>
+<li><a href="#span-classcallout381-definition-lambda-%E7%9F%A9%E9%98%B5span">3.8.1 Definition: <span class="mathjax-exps">$\lambda$</span> 矩阵</a></li>
+<li><a href="#span-classcallout381-example-lambda-%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%A4%E5%AE%9Aspan">3.8.1 Example: <span class="mathjax-exps">$\lambda$</span> 矩阵的判定</a></li>
+<li><a href="#span-classcallout382-definition-%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9span">3.8.2 Definition: 矩阵的秩</a></li>
+<li><a href="#span-classcallout382-example-%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F%E5%92%8C%E7%A7%A9span">3.8.2 Example: 矩阵的行列式和秩</a></li>
+<li><a href="#span-classcallout383-example-%E7%89%B9%E5%BE%81%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9span">3.8.3 Example: 特征矩阵的秩</a></li>
+<li><a href="#span-classcallout383-definition-lambda-%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86%E7%9F%A9%E9%98%B5span">3.8.3 Definition: <span class="mathjax-exps">$\lambda$</span> 矩阵的逆矩阵</a></li>
+<li><a href="#span-classcallout381-theorem-lambda-%E7%9F%A9%E9%98%B5%E5%8F%AF%E9%80%86%E6%80%A7%E5%88%A4%E5%AE%9Aspan">3.8.1 Theorem: <span class="mathjax-exps">$\lambda$</span> 矩阵可逆性判定</a></li>
+<li><a href="#span-classcallout384-definition-%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2span">3.8.4 Definition: 初等变换</a></li>
+<li><a href="#span-classcallout385-definition-%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5span">3.8.5 Definition: 矩阵相抵</a></li>
+<li><a href="#span-classcallout386-definition-%E8%A1%8C%E5%88%97%E5%BC%8F%E5%9B%A0%E5%AD%90span">3.8.6 Definition: 行列式因子</a></li>
+<li><a href="#span-classcallout385-example-%E8%AE%A1%E7%AE%97%E8%A1%8C%E5%88%97%E5%BC%8F%E5%9B%A0%E5%AD%90span">3.8.5 Example: 计算行列式因子</a></li>
+<li><a href="#span-classcallout382-theorem-%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5%E6%80%A7%E8%B4%A8span">3.8.2 Theorem: 矩阵相抵性质</a></li>
+<li><a href="#span-classcallout383-theorem-smith%E6%A0%87%E5%87%86%E5%BD%A2span">3.8.3 Theorem: Smith标准形</a></li>
+<li><a href="#span-classcallout381-corollary-smith%E6%A0%87%E5%87%86%E5%BD%A2%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7span">3.8.1 Corollary: Smith标准形的唯一性</a></li>
+<li><a href="#span-classcallout387-definition-%E4%B8%8D%E5%8F%98%E5%9B%A0%E5%AD%90span">3.8.7 Definition: 不变因子</a></li>
+<li><a href="#span-classcallout38-theorem-%E8%A1%8C%E5%88%97%E5%BC%8F%E5%9B%A0%E5%AD%90%E5%92%8C%E4%B8%8D%E5%8F%98%E5%9B%A0%E5%AD%90%E5%85%B3%E7%B3%BBspan">3.8.* Theorem: 行列式因子和不变因子关系</a></li>
+<li><a href="#span-classcallout382-corollary-%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6span">3.8.2 Corollary: 矩阵相抵充要条件</a></li>
+<li><a href="#span-classcallout388-definition-%E5%88%9D%E7%AD%89%E5%9B%A0%E5%AD%90span">3.8.8 Definition: 初等因子</a></li>
+<li><a href="#span-classcallout384-theorem-%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5%E7%9A%84%E5%88%A4%E5%AE%9Aspan">3.8.4 Theorem: 矩阵相抵的判定</a></li>
+<li><a href="#span-classcallout385-theorem-%E5%AF%B9%E8%A7%92%E5%9D%97%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%9B%A0%E5%AD%90span">3.8.5 Theorem: 对角块矩阵的初等因子</a></li>
+<li><a href="#span-classcallout3811-example-jordan-%E5%9D%97%E7%89%B9%E5%BE%81%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%9B%A0%E5%AD%90span">3.8.11 Example: Jordan 块特征矩阵的初等因子</a></li>
+<li><a href="#span-classcallout386-theorem-%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E7%89%B9%E5%BE%81%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5span">3.8.6 Theorem: 相似矩阵特征矩阵相抵</a></li>
+<li><a href="#span-classcallout383-corollary-%E5%8D%95%E7%BA%AF%E7%89%B9%E5%BE%81%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%9B%A0%E5%AD%90span">3.8.3 Corollary: 单纯特征矩阵的初等因子</a></li>
+<li><a href="#span-classcallout384-corollary-%E5%8D%95%E7%BA%AF%E7%89%B9%E5%BE%81%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%8D%E5%8F%98%E5%9B%A0%E5%AD%90span">3.8.4 Corollary: 单纯特征矩阵的不变因子</a></li>
+<li><a href="#span-classcallout3812-example-jordan-%E5%9D%97%E4%B8%8D%E5%8F%AF%E5%AF%B9%E8%A7%92%E5%8C%96span">3.8.12 Example: Jordan 块不可对角化</a></li>
+<li><a href="#span-classcallout389-definition-jordan%E5%9D%97span">3.8.9 Definition: Jordan块</a></li>
+<li><a href="#span-classcallout3814-example-jordan%E5%9D%97%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A4%9A%E9%A1%B9%E5%BC%8Fspan">3.8.14 Example: Jordan块的最小多项式</a></li>
+<li><a href="#span-classcallout3810-definition-jordan%E6%A0%87%E5%87%86%E5%BD%A2span">3.8.10 Definition: Jordan标准形</a></li>
+<li><a href="#span-classcallout387-theorem-jordan%E6%A0%87%E5%87%86%E5%BD%A2%E5%AE%9A%E7%90%86span">3.8.7 Theorem: Jordan标准形定理</a></li>
+<li><a href="#span-classcallout38-theorem-jordan-%E5%9D%97%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E5%85%B3%E7%B3%BBspan">3.8.* Theorem: Jordan 块和特征向量关系</a></li>
+<li><a href="#span-classcallout3816-example-jordan%E6%A0%87%E5%87%86%E5%BD%A2%E4%B8%8E%E7%9B%B8%E4%BC%BC%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5span">3.8.16 Example: Jordan标准形与相似变换矩阵</a></li>
+<li><a href="#span-classcallout388-theorem-frobenius-%E5%AE%9A%E7%90%86span">3.8.8 Theorem: Frobenius 定理</a></li>
 </ul>
 </li>
 </ul>
@@ -176,6 +218,7 @@
 <p><button id="toggleProofs">Toggle Proofs</button></p>
 <script>
   document.getElementById('toggleProofs').addEventListener('click', function() {
+
     this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
     var details = document.querySelectorAll('details > summary');
     for (var i = 0; i < details.length; i++) {
@@ -183,10 +226,11 @@
         details[i].parentElement.open = !details[i].parentElement.open;
       }
     }
-  });
+
+  }); 
 </script>
 <h4 id="矩阵分解">矩阵分解 </h4>
-<h5 id="span-classcallout311-lemma矩阵相抵引理span"><span class="callout">3.1.1 Lemma:矩阵相抵引理</span> </h5>
+<h5 id="span-classcallout311-lemma-矩阵相抵引理span"><span class="callout">3.1.1 Lemma: 矩阵相抵引理</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A, B \in F^{m \times n}$</span>，则以下表述等价：<br>
 (1) <span class="mathjax-exps">$A$</span>与<span class="mathjax-exps">$B$</span>相抵；<br>
@@ -194,7 +238,7 @@
 (3) 矩阵<span class="mathjax-exps">$A$</span>与<span class="mathjax-exps">$B$</span>均可通过有限次初等行列变换得到同一个矩阵；<br>
 (4) <span class="mathjax-exps">$\text{rank}(A) = \text{rank}(B)$</span>.</p>
 </blockquote>
-<h5 id="span-classcallout311-example矩阵秩不等式span"><span class="callout">3.1.1 Example:矩阵秩不等式</span> </h5>
+<h5 id="span-classcallout311-example-矩阵秩不等式span"><span class="callout">3.1.1 Example: 矩阵秩不等式</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}, B \in \mathbb{C}^{n \times p}$</span>，证明：</p><div class="mathjax-exps">\[\text{rank}(A) + \text{rank}(B) - n \leq \text{rank}(AB) \leq \min(\text{rank}(A), \text{rank}(B)).\]</div><p></p>
 </blockquote>
@@ -217,17 +261,17 @@
 <details open="">
   <summary>Proof:</summary> 
 <p>证明有<span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}$</span> 有右逆 <span class="mathjax-exps">$\Leftrightarrow \exists B \in \mathbb{C}^{n \times m}, A_{m \times n} B_{n \times m} = I_{m}$</span></p>
-<blockquote>
 <p>充分性. <span class="mathjax-exps">$\operatorname{rank}(A)= m \Rightarrow AB = I$</span>.<br>
-对<span class="mathjax-exps">$A$</span>进行相抵分解, 即<span class="mathjax-exps">$A = P_{m \times m} [I_m, 0]Q_{n \times n}$</span>, 可取<span class="mathjax-exps">$B = Q^{-1} [I_m, 0]^T P^{-1}$</span>, 显然<span class="mathjax-exps">$AB = I$</span>.<br>
-必要性. <span class="mathjax-exps">$AB = I \Rightarrow \operatorname{rank}(A) = m$</span>.<br>
+对<span class="mathjax-exps">$A$</span>进行相抵分解, 即<span class="mathjax-exps">$A = P_{m \times m} [I_m, 0]Q_{n \times n}$</span>, 可取<span class="mathjax-exps">$B = Q^{-1} [I_m, 0]^T P^{-1}$</span>, 显然<span class="mathjax-exps">$AB = I$</span>.</p>
+<p>必要性. <span class="mathjax-exps">$AB = I \Rightarrow \operatorname{rank}(A) = m$</span>.<br>
 <span class="mathjax-exps">$\operatorname{rank}(A) \geq rank(AB) = m$</span>, 显然<span class="mathjax-exps">$A$</span>是满秩的.</p>
-</blockquote>
 </details>
-<p>{注}:<br>
-1.设 <span class="mathjax-exps">\(A \in \mathbb{C}_r^{r \times n}\)</span>，则 <span class="mathjax-exps">\(A A^H\)</span> 是 <span class="mathjax-exps">\(r\)</span> 阶非奇异矩阵。根据 <span class="mathjax-exps">\(A A^H (A A^H)^{-1} = I\)</span>，得 <span class="mathjax-exps">\(A^H (A A^H)^{-1}\)</span> 是矩阵 <span class="mathjax-exps">\(A\)</span> 的一个右逆。同理，当 <span class="mathjax-exps">\(A \in \mathbb{C}_r^{m \times r}\)</span> 时，<span class="mathjax-exps">\((A^H A)^{-1} A^H\)</span> 是矩阵 <span class="mathjax-exps">\(A\)</span> 的一个左逆。<br>
-2.<br>
-当 <span class="mathjax-exps">\(A\)</span> 为可逆矩阵时，其右（左）逆唯一存在，即为 <span class="mathjax-exps">\(A\)</span> 的逆矩阵；<br>
+<p>{注}:</p>
+<ol>
+<li>设 <span class="mathjax-exps">\(A \in \mathbb{C}_r^{r \times n}\)</span>，则 <span class="mathjax-exps">\(A A^H\)</span> 是 <span class="mathjax-exps">\(r\)</span> 阶非奇异矩阵。根据 <span class="mathjax-exps">\(A A^H (A A^H)^{-1} = I\)</span>，得 <span class="mathjax-exps">\(A^H (A A^H)^{-1}\)</span> 是矩阵 <span class="mathjax-exps">\(A\)</span> 的一个右逆。同理，当 <span class="mathjax-exps">\(A \in \mathbb{C}_r^{m \times r}\)</span> 时，<span class="mathjax-exps">\((A^H A)^{-1} A^H\)</span> 是矩阵 <span class="mathjax-exps">\(A\)</span> 的一个左逆。</li>
+<li></li>
+</ol>
+<p>当 <span class="mathjax-exps">\(A\)</span> 为可逆矩阵时，其右（左）逆唯一存在，即为 <span class="mathjax-exps">\(A\)</span> 的逆矩阵；<br>
 当 <span class="mathjax-exps">\(A\)</span> 为行（列）满秩矩阵（非可逆阵）时，其右（左）逆存在且不唯一；<br>
 当 <span class="mathjax-exps">\(A\)</span> 为其它情况时，其右（左）逆不存在。</p>
 <h5 id="span-classcallout311-proposition-矩阵转置秩等价span"><span class="callout">3.1.1 Proposition: 矩阵转置秩等价</span> </h5>
@@ -297,7 +341,7 @@
 </p><div class="mathjax-exps">\[[a_1, \cdots, a_n] = [z_1, \cdots, z_n] R \qquad (3.4.1)\]</div> 式中：<span class="mathjax-exps">\(y_k = a_k - \sum_{i=1}^{k-1} (a_i, z_i) z_i, k = 1, \cdots, n\)</span>，矩阵 <span class="mathjax-exps">\(R\)</span> 定义为<div class="mathjax-exps">\[R = \begin{bmatrix} \|y_1\| &amp; (a_2, z_1) &amp; \cdots &amp; (a_n, z_1) \\  &amp; \|y_2\| &amp; \cdots &amp; (a_n, z_2) \\  &amp; &amp; \ddots &amp; \vdots \\ 0 &amp; &amp; &amp; \|y_n\| \end{bmatrix}\]</div> 写成矩阵形式，即 <span class="mathjax-exps">\(A = QR\)</span>，其中，<span class="mathjax-exps">\(Q = [z_1, \cdots, z_n]\)</span>，显然，<span class="mathjax-exps">\(Q\)</span> 是正交矩阵，<span class="mathjax-exps">\(R\)</span> 是正线上三角矩阵。<br>
 唯一性证明。<br>
 若存在 <span class="mathjax-exps">$A=Q_1R_1 = Q_2R_2$</span>.<br>
-令 <span class="mathjax-exps">$\widetilde{Q} = Q_1^TQ_2,\widetilde{R} = R_1R_2^{-1}$</span>, 显然 <span class="mathjax-exps">$\widetilde{Q} = \widetilde{R}$</span>，由于 <span class="mathjax-exps">$\widetilde{Q}$</span>为正交矩阵，<span class="mathjax-exps">$\widetilde{R}$</span>为正线上三角矩阵，则可记<br>
+令 <span class="mathjax-exps">$\widetilde{Q} = Q_1^TQ_2, \widetilde{R} = R_1R_2^{-1}$</span>, 显然 <span class="mathjax-exps">$\widetilde{Q} = \widetilde{R}$</span>，由于 <span class="mathjax-exps">$\widetilde{Q}$</span>为正交矩阵，<span class="mathjax-exps">$\widetilde{R}$</span>为正线上三角矩阵，则可记<br>
 <div class="mathjax-exps">$$\widetilde{R}=\left[\begin{array}{cccc} \tilde{r}_{11} &amp; \tilde{r}_{12} &amp; \cdots &amp; \tilde{r}_{1 n} \\ &amp; \tilde{r}_{22} &amp; \cdots &amp; \tilde{r}_{2 n} \\ &amp; &amp; \ddots &amp; \vdots \\ &amp; \boldsymbol{O} &amp; &amp; \tilde{r}_{n n} \end{array}\right]$$</div><br>
 由 <span class="mathjax-exps">$\widetilde{R}^\top \widetilde{R} = I$</span>，即<br>
 <div class="mathjax-exps">$$\widetilde{R}^T \widetilde{R} = \left[\begin{array}{cccc} \tilde{r}_{11} &amp;  &amp;  \boldsymbol{O} &amp;  \\ \tilde{r}_{12} &amp; \tilde{r}_{22} &amp; &amp;  \\ \vdots &amp; \vdots &amp; \ddots &amp;  \\ \tilde{r}_{1n} &amp; \tilde{r}_{2n} &amp; \cdots &amp; \tilde{r}_{nn} \end{array}\right]  \left[\begin{array}{cccc} \tilde{r}_{11} &amp; \tilde{r}_{12} &amp; \cdots &amp; \tilde{r}_{1 n} \\ &amp; \tilde{r}_{22} &amp; \cdots &amp; \tilde{r}_{2 n} \\ &amp; &amp; \ddots &amp; \vdots \\ &amp; \boldsymbol{O} &amp; &amp; \tilde{r}_{n n} \end{array}\right] = I$$</div>，对比每一个元素可得<span class="mathjax-exps">$\tilde{r}_{ii}^2 = 1, \tilde{r}_{ij} = 0, i \neq j$</span>，由于所有对角元素都为正，则有<span class="mathjax-exps">$\tilde{r}_{ii} = 1, \tilde{r}_{ij} = 0, i \neq j$</span>，即<span class="mathjax-exps">$\overline{Q} = I, \overline{R} = I$</span>，即 <span class="mathjax-exps">$Q_1 = Q_2, R_1 = R_2$</span>.<p></p>
@@ -309,12 +353,12 @@
 <li><span class="mathjax-exps">$QR$</span>分解可以用来求解特征值。<br>
 具体思想如下：<br>
 对于可逆矩阵<span class="mathjax-exps">$A \in \mathbb{R}^{n \times n}$</span>，令<span class="mathjax-exps">$A_1 = A$</span>，对<span class="mathjax-exps">$A_1$</span>进行<span class="mathjax-exps">$QR$</span>分解，即<span class="mathjax-exps">$A_1 = Q_1R_1$</span>，其中<span class="mathjax-exps">$Q_1$</span>为正交矩阵，<span class="mathjax-exps">$R_1$</span>为上三角矩阵。令<span class="mathjax-exps">$A_2 = R_1Q_1 = Q_1^\top A_1 Q_1$</span>，显然<span class="mathjax-exps">$A_1$</span>和<span class="mathjax-exps">$A_2$</span>相似，其特征值相同。重复如上过程，得<span class="mathjax-exps">$A_{k+1} = Q_k^H A_k Q_k = Q^H A Q$</span>。<br>
-通过重复某个过程，可以定义矩阵序列 <span class="mathjax-exps">\(\{A_k, k=1,2,\ldots\}\)</span>。<br>
+通过重复某个过程，可以定义矩阵序列 <span class="mathjax-exps">\(\{A_k, k=1, 2, \ldots\}\)</span>。<br>
 已知结论：若非奇异矩阵的各特征值具有不同的模值，则<span class="mathjax-exps">$QR$</span>算法定义的矩阵序列收敛于上三角矩阵，则对角线元素即为特征值。</li>
 </ol>
-<p><span class="callout">Example: 非方阵<span class="mathjax-exps">$QR$</span>分解</span></p>
-<p>设 <span class="mathjax-exps">$A = \begin{bmatrix}     3&amp; 0\\     0&amp; 1\\     4&amp; 0     \end{bmatrix}$</span>，对<span class="mathjax-exps">$A$</span>可进行两种<span class="mathjax-exps">$QR$</span>分解，如下<br>
-</p><div class="mathjax-exps">$$\boldsymbol{A}=\left[\begin{array}{ll} 3 &amp; 0 \\ 0 &amp; 1 \\ 4 &amp; 0 \end{array}\right]=\left[\begin{array}{ll} \frac{3}{5} &amp; 0 \\ 0 &amp; 1 \\ \frac{4}{5} &amp; 0 \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \end{array}\right] = \left[\begin{array}{rrr} \frac{3}{5} &amp; 0 &amp; -\frac{4}{5} \\ 0 &amp; 1 &amp; 0 \\ \frac{4}{5} &amp; 0 &amp; \frac{3}{5} \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]$$</div><p></p>
+<h5 id="span-classcalloutexample-非方阵qr分解span"><span class="callout">Example: 非方阵<span class="mathjax-exps">$QR$</span>分解</span> </h5>
+<p>设 <span class="mathjax-exps">$A = \begin{bmatrix}     3&amp; 0\\     0&amp; 1\\     4&amp; 0     \end{bmatrix}$</span>，对<span class="mathjax-exps">$A$</span>可进行两种<span class="mathjax-exps">$QR$</span>分解，如下</p>
+<p></p><div class="mathjax-exps">$$\boldsymbol{A}=\left[\begin{array}{ll} 3 &amp; 0 \\ 0 &amp; 1 \\ 4 &amp; 0 \end{array}\right]=\left[\begin{array}{ll} \frac{3}{5} &amp; 0 \\ 0 &amp; 1 \\ \frac{4}{5} &amp; 0 \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \end{array}\right] = \left[\begin{array}{rrr} \frac{3}{5} &amp; 0 &amp; -\frac{4}{5} \\ 0 &amp; 1 &amp; 0 \\ \frac{4}{5} &amp; 0 &amp; \frac{3}{5} \end{array}\right]\left[\begin{array}{ll} 5 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 0 \end{array}\right]$$</div><p></p>
 <h5 id="span-classcallout342-theorem-复方阵正交化span"><span class="callout">3.4.2 Theorem: 复方阵正交化</span> </h5>
 <blockquote>
 <p>设复方阵<span class="mathjax-exps">$A$</span>可逆，则存在酉矩阵<span class="mathjax-exps">$U$</span>及正线上三角矩阵<span class="mathjax-exps">$R$</span>满足<span class="mathjax-exps">$A = UR$</span>且分解唯一。</p>
@@ -327,7 +371,7 @@
 <details open="">
   <summary>Proof:</summary> 
 <p>采用数学归纳法证明存在 <span class="mathjax-exps">\(m\)</span> 个可逆矩阵 <span class="mathjax-exps">\(P_1, \cdots, P_m\)</span> 使得</p><div class="mathjax-exps">\[P_m^{-1} \cdots P_1^{-1} A P_1 \cdots P_m = \left[ \begin{array}{cc} T_m &amp; C_m \\ 0 &amp; A_m \end{array} \right]\]</div><p></p>
-<p>当<span class="mathjax-exps">\(m = 1\)</span>时，令<span class="mathjax-exps">$\lambda_1$</span>为一个特征值，<span class="mathjax-exps">$\eta _1$</span>为对应的特征向量。令利用基的扩充定理找到<span class="mathjax-exps">$\mathbb{C}^n$</span>的一组基并构成列向量，即令<span class="mathjax-exps">$P=[\eta _1, \cdots ,\eta _n]$</span>，则有<span class="mathjax-exps">$AP = A[\eta _1, \cdots ,\eta _n]=[\lambda _1\eta _1, \cdots ,A\eta _n]$</span>，即有<br>
+<p>当<span class="mathjax-exps">\(m = 1\)</span>时，令<span class="mathjax-exps">$\lambda_1$</span>为一个特征值，<span class="mathjax-exps">$\eta _1$</span>为对应的特征向量。令利用基的扩充定理找到<span class="mathjax-exps">$\mathbb{C}^n$</span>的一组基并构成列向量，即令<span class="mathjax-exps">$P=[\eta _1, \cdots , \eta _n]$</span>，则有<span class="mathjax-exps">$AP = A[\eta _1, \cdots , \eta _n]=[\lambda _1\eta _1, \cdots , A\eta _n]$</span>，即有<br>
 </p><div class="mathjax-exps">\[P_1^{-1} A P_1 = \left[ \begin{array}{ll} \lambda_1 &amp; C_1 \\ 0 &amp; A_1 \end{array} \right]\]</div><p></p>
 <p>由于<span class="mathjax-exps">$A$</span>与<span class="mathjax-exps">$P^{-1}AP$</span>相似，有<span class="mathjax-exps">\(A_1 \in \mathbb{C}^{(n-1) \times (n-1)}\)</span> 的特征值为 <span class="mathjax-exps">\(\lambda_2, \cdots, \lambda_n\)</span>。<br>
 假设当 <span class="mathjax-exps">\(m = k \in \{1, \cdots, n-2\}\)</span> 时存在可逆矩阵 <span class="mathjax-exps">\(P_1, \cdots, P_k\)</span> 使得<br>
@@ -342,18 +386,21 @@
 </details>
 <p>{注}：</p>
 <ol>
-<li>当<span class="mathjax-exps">$m=1$</span>时，一定可以找到特征值的原因是根据代数基本定理，但是在实数域中不一定成立。
+<li>
+<p>当<span class="mathjax-exps">$m=1$</span>时，一定可以找到特征值的原因是根据代数基本定理，但是在实数域中不一定成立。</p>
 <blockquote>
 <p>代数基本定理：任何复系数一元<span class="mathjax-exps">$n$</span>次多项式 方程在复数域上至少有一根(<span class="mathjax-exps">$n \geq 1$</span>)，由此推出，<span class="mathjax-exps">$n$</span>次复系数多项式方程在复数域内有且只有<span class="mathjax-exps">$n$</span>个根（重根按重数计算）。</p>
 </blockquote>
 </li>
-<li>这里数域为<span class="mathjax-exps">$\mathbb{C}$</span>，因为实数域中矩阵可能没有特征值。</li>
+<li>
+<p>这里数域为<span class="mathjax-exps">$\mathbb{C}$</span>，因为实数域中矩阵可能没有特征值。</p>
+</li>
 </ol>
 <h5 id="span-classcallout353-theorem-实方正schurs引理span"><span class="callout">3.5.3 Theorem: 实方正Schur's引理</span> </h5>
 <blockquote>
-<p>设<span class="mathjax-exps">$A \in \mathbb{R}^{n \times n}$</span>的特征值均为实数，则存在正交矩阵<span class="mathjax-exps">$Q$</span>使得<br>
-</p><div class="mathjax-exps">\[Q^T A Q = Q^{-1} A Q = \begin{bmatrix} \lambda_1 &amp; &amp; * \\ &amp; \ddots &amp; \\ 0 &amp; &amp; \lambda_n \end{bmatrix}\]</div><p></p>
+<p>设<span class="mathjax-exps">$A \in \mathbb{R}^{n \times n}$</span>的特征值均为实数，则存在正交矩阵<span class="mathjax-exps">$Q$</span>使得</p>
 </blockquote>
+<p></p><div class="mathjax-exps">\[Q^T A Q = Q^{-1} A Q = \begin{bmatrix} \lambda_1 &amp; &amp; * \\ &amp; \ddots &amp; \\ 0 &amp; &amp; \lambda_n \end{bmatrix}\]</div><p></p>
 <details open="">
   <summary>Proof:</summary> 
 <p>证明可由<a href="#th3.5.1">定理3.5.1</a>显然得到。</p>
@@ -383,8 +430,10 @@
 </details>
 <h5 id="span-classcallout351-definition-矩阵多项式span"><span class="callout">3.5.1 Definition: 矩阵多项式</span> </h5>
 <blockquote>
-<p>设<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，<span class="mathjax-exps">$\varphi(\lambda) = a_n \lambda^n + a_{n-1} \lambda^{n-1} + \cdots + a_1 \lambda + a_0$</span>，其中<span class="mathjax-exps">$a_i \in \mathbb{C}$</span>（<span class="mathjax-exps">$i = 0, 1, \cdots, n$</span>）是数域<span class="mathjax-exps">$\mathbb{C}$</span>上的多项式，则<br>
-</p><div class="mathjax-exps">\[\varphi(A) = a_n A^n + a_{n-1} A^{n-1} + \cdots + a_1 A + a_0 I\]</div><p></p>
+<p>设<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，<span class="mathjax-exps">$\varphi(\lambda) = a_n \lambda^n + a_{n-1} \lambda^{n-1} + \cdots + a_1 \lambda + a_0$</span>，其中<span class="mathjax-exps">$a_i \in \mathbb{C}$</span>（<span class="mathjax-exps">$i = 0, 1, \cdots, n$</span>）是数域<span class="mathjax-exps">$\mathbb{C}$</span>上的多项式，则</p>
+</blockquote>
+<p></p><div class="mathjax-exps">\[\varphi(A) = a_n A^n + a_{n-1} A^{n-1} + \cdots + a_1 A + a_0 I\]</div><p></p>
+<blockquote>
 <p>称为矩阵多项式。</p>
 </blockquote>
 <h5 id="span-classcallout351-corollary-矩阵多项式的特征值span"><span class="callout">3.5.1 Corollary: 矩阵多项式的特征值</span> </h5>
@@ -399,7 +448,7 @@
 <p>式中：上三角矩阵<span class="mathjax-exps">$\varphi(\Lambda)$</span>的对角线元素为<span class="mathjax-exps">$\varphi(\lambda_1), \cdots, \varphi(\lambda_n)$</span>。由于<span class="mathjax-exps">$\varphi(A)$</span>酉相似于上三角矩阵<span class="mathjax-exps">$\varphi(\Lambda)$</span>，故矩阵多项式<span class="mathjax-exps">$\varphi(A)$</span>的<span class="mathjax-exps">$n$</span>个特征值为<span class="mathjax-exps">$\varphi(\lambda_1), \cdots, \varphi(\lambda_n)$</span>。证毕。</p>
 </details>
 <p>{注}：<br>
-由于对<span class="mathjax-exps">$A$</span>的属于<span class="mathjax-exps">$\lambda _1$</span>的特征向量<span class="mathjax-exps">$\alpha _1$</span>，有<span class="mathjax-exps">$A^k\alpha _1 = \lambda^k _1 \alpha _1, k=1,\cdots,n$</span>，则</p><div class="mathjax-exps">$$\varphi(A)\alpha _1 = a_n A^n \alpha _1 + \cdots + a_1 A \alpha _1 + a_0 \alpha _1 = a_n \lambda^n _1 \alpha _1 + \cdots + a_1 \lambda _1 \alpha _1 + a_0 \alpha _1 = \varphi(\lambda _1) \alpha _1$$</div><p></p>
+由于对<span class="mathjax-exps">$A$</span>的属于<span class="mathjax-exps">$\lambda _1$</span>的特征向量<span class="mathjax-exps">$\alpha _1$</span>，有<span class="mathjax-exps">$A^k\alpha _1 = \lambda^k _1 \alpha _1, k=1, \cdots, n$</span>，则</p><div class="mathjax-exps">$$\varphi(A)\alpha _1 = a_n A^n \alpha _1 + \cdots + a_1 A \alpha _1 + a_0 \alpha _1 = a_n \lambda^n _1 \alpha _1 + \cdots + a_1 \lambda _1 \alpha _1 + a_0 \alpha _1 = \varphi(\lambda _1) \alpha _1$$</div><p></p>
 <p>显然有<span class="mathjax-exps">$n$</span>阶矩阵<span class="mathjax-exps">$A$</span>的属于特征值<span class="mathjax-exps">$\lambda_i$</span>的特征向量<span class="mathjax-exps">$\alpha_i$</span>也是<span class="mathjax-exps">$\varphi(A)$</span>的属于特征值<span class="mathjax-exps">$\varphi(\lambda_i)$</span>的特征向量。</p>
 <h5 id="span-classcallout354-theorem-hamilton-cayley-定理span"><span class="callout">3.5.4 Theorem: Hamilton-Cayley 定理</span> </h5>
 <blockquote>
@@ -408,7 +457,7 @@
 <details open="">
   <summary>Proof:</summary> 
 <p>设矩阵<span class="mathjax-exps">$A$</span>的特征多项式为<span class="mathjax-exps">$f_A(\lambda) = \lambda ^n + a_{n-1}\lambda ^{n-1} + \cdots + a_0$</span>。由<a href="#th3.5.2">定理3.5.2</a>知，存在酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$U^H A U = \Lambda$</span>，其中<span class="mathjax-exps">$\Lambda$</span>为上三角矩阵，其对角元素为<span class="mathjax-exps">$\lambda_1, \lambda_2, \ldots, \lambda_n$</span>。则矩阵多项式<span class="mathjax-exps">$f(A)$</span>可写成<br>
-</p><div class="mathjax-exps">\[\begin{array}{l}   f_A(A) = A^n + a_{n-1}A^{n-1} + \cdots + a_0I     &amp;= U \Lambda^n U^H + a_{n-1}U \Lambda^{n-1} U^H + \cdots + a_0I \\    &amp;= U \underset{f_A(\lambda_{1,\cdots ,n}) = 0}{\boxed{(\Lambda^n + a_{n-1}\Lambda^{n-1} + \cdots + a_0I)}}U^H = 0    \end{array}\]</div><p></p>
+</p><div class="mathjax-exps">\[\begin{array}{l}   f_A(A) = A^n + a_{n-1}A^{n-1} + \cdots + a_0I     &amp;= U \Lambda^n U^H + a_{n-1}U \Lambda^{n-1} U^H + \cdots + a_0I \\    &amp;= U \underset{f_A(\lambda_{1, \cdots , n}) = 0}{\boxed{(\Lambda^n + a_{n-1}\Lambda^{n-1} + \cdots + a_0I)}}U^H = 0    \end{array}\]</div><p></p>
 </details>
 <h5 id="span-classcallout353-corollary-矩阵多项式表示逆span"><span class="callout">3.5.3 Corollary: 矩阵多项式表示逆</span> </h5>
 <blockquote>
@@ -572,7 +621,7 @@
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，则<span class="mathjax-exps">$A$</span>是酉矩阵当且仅当<span class="mathjax-exps">$A$</span>的所有特征值的模为1，且存在酉矩阵<span class="mathjax-exps">$U$</span>使得<span class="mathjax-exps">$U^H A U = \operatorname{diag}(\lambda_1, \cdots, \lambda_n)$</span>，其中<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_n$</span>是<span class="mathjax-exps">$A$</span>的<span class="mathjax-exps">$n$</span>个特征值。</p>
 </blockquote>
-<p><span class="callout">3.7.1 Definition: 正规矩阵谱分解</span></p>
+<h5 id="span-classcallout371-definition-正规矩阵谱分解span"><span class="callout">3.7.1 Definition: 正规矩阵谱分解</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_m$</span>是正规矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>的<span class="mathjax-exps">$m$</span>个互异特征值，其代数重数分别为<span class="mathjax-exps">$d_1, \cdots, d_m$</span>且<span class="mathjax-exps">$d_1 + \cdots + d_m = n$</span>。矩阵<span class="mathjax-exps">$A$</span>的谱分解式为<br>
 </p><div class="mathjax-exps">$$A = \sum_{j=1}^{m} \lambda_j E_j$$</div><p></p>
@@ -586,7 +635,7 @@
 (2) <span class="mathjax-exps">$E_i E_j = O$</span>;<br>
 (3) <span class="mathjax-exps">$E_i A = A E_i = \lambda_i E_i$</span>;<br>
 (4) <span class="mathjax-exps">$\sum_{k=1}^{m} E_k = I$</span>;<br>
-(5)谱阵集合<span class="mathjax-exps">$\{E_1, \cdots, E_m\}$</span>唯一。</p>
+(5) 谱阵集合<span class="mathjax-exps">$\{E_1, \cdots, E_m\}$</span>唯一。</p>
 </blockquote>
 <details open="">
   <summary>Proof:</summary>
@@ -650,18 +699,18 @@
   <summary>Proof:</summary>
 <p>(1) <span class="mathjax-exps">$R(A) = V_m$</span>。<br>
 由于 <span class="mathjax-exps">$\forall x, R(P) = Px = A(A^H A)^{-1} A^H x = A((A^H A)^{-1} A^H x) = Ay$</span>，则有 <span class="mathjax-exps">$R(P) \subset R(A)$</span>。<br>
-同时 <span class="mathjax-exps">$\forall y, R(A) = Ay$</span>，取 <span class="mathjax-exps">$x = Ay$</span>，则有 <span class="mathjax-exps">$Px = A(A^H A)^{-1} A^H Ay = Ay$</span>，故 <span class="mathjax-exps">$R(A) \subset R(P)$</span>。综上 <span class="mathjax-exps">$R(P) = R(A) = V_m$</span>。</p>
-<p>(2) <span class="mathjax-exps">$N(P) = R(P)^\perp$</span>。<br>
+同时 <span class="mathjax-exps">$\forall y, R(A) = Ay$</span>，取 <span class="mathjax-exps">$x = Ay$</span>，则有 <span class="mathjax-exps">$Px = A(A^H A)^{-1} A^H Ay = Ay$</span>，故 <span class="mathjax-exps">$R(A) \subset R(P)$</span>。综上 <span class="mathjax-exps">$R(P) = R(A) = V_m$</span>。<br>
+(2) <span class="mathjax-exps">$N(P) = R(P)^\perp$</span>。<br>
 由 <a href="./第一章.html#th1.5.3">定理1.5.3</a> 有 <span class="mathjax-exps">$N(P) = R(P^H)^\perp = R(P)^\perp$</span>。<br>
 (3) (4) (5) 显然。</p>
 </details>
-<p><span class="callout">3.7.3 Definition: 单纯矩阵谱分解</span></p>
+<h5 id="span-classcallout373-definition-单纯矩阵谱分解span"><span class="callout">3.7.3 Definition: 单纯矩阵谱分解</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$\lambda_1, \cdots, \lambda_m$</span>是单纯矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>的<span class="mathjax-exps">$m$</span>个互异特征值，其代数重数分别为<span class="mathjax-exps">$d_1, \cdots, d_m$</span>，则矩阵<span class="mathjax-exps">$A$</span>的谱分解式定义为<br>
 </p><div class="mathjax-exps">$$A = \sum_{j=1}^{m} \lambda_j E_j$$</div><p></p>
 <p>式中：<span class="mathjax-exps">$E_j = \sum_{i=1}^{d_j} a_{ji} \beta_{ji}^H, j = 1, \cdots, m$</span>，称为<span class="mathjax-exps">$A$</span>的谱阵，<span class="mathjax-exps">$a_{j1}, \cdots, a_{jd_j}$</span>是属于特征值<span class="mathjax-exps">$\lambda_j$</span>的<span class="mathjax-exps">$d_j$</span>个线性无关的单位特征向量，行向量<span class="mathjax-exps">$\beta_{jk}^H, k = 1, \cdots, d_j, j = 1, \cdots, m$</span>，是矩阵<span class="mathjax-exps">$[a_{11}, \cdots, a_{1d_1}, \cdots, a_{m1}, \cdots, a_{md_m}]^{-1}$</span>的第<span class="mathjax-exps">$\left(\sum_{i=1}^{j-1} d_i + k\right)$</span>行（令<span class="mathjax-exps">$d_0 = 0$</span>）。</p>
 </blockquote>
-<p><span class="callout">3.7.4 Theorem: 单纯矩阵判定定理</span></p>
+<h5 id="span-classcallout374-theorem-单纯矩阵判定定理span"><span class="callout">3.7.4 Theorem: 单纯矩阵判定定理</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$n$</span>阶复方阵<span class="mathjax-exps">$A$</span>有<span class="mathjax-exps">$m$</span>个互异特征值<span class="mathjax-exps">$\lambda_1, \ldots, \lambda_m$</span>，则<span class="mathjax-exps">$A$</span>是单纯矩阵当且仅当存在<span class="mathjax-exps">$m$</span>个<span class="mathjax-exps">$n$</span>阶矩阵<span class="mathjax-exps">$E_1, \ldots, E_m$</span>使得对任意<span class="mathjax-exps">$i, j = 1, \ldots, m$</span>且<span class="mathjax-exps">$i \neq j$</span>，有性质：</p>
 <ol>
@@ -705,8 +754,8 @@
 <p></p><div class="mathjax-exps">\[= [\lambda_1 X_1, \cdots, \lambda_m X_m] = \text{diag}(\lambda_1, \cdots, \lambda_m) [X_1, \cdots, X_m]\]</div><p></p>
 <p>即 <span class="mathjax-exps">\(AX = \text{diag}(\lambda_1, \cdots, \lambda_m) X\)</span>。因此，<span class="mathjax-exps">\(A\)</span> 是单纯矩阵。证毕。</p>
 </details>
-<p><span class="callout">3.7.1 Corollary: 单纯矩阵函数的谱分解</span><br>
-<span id="co3.7.1"></span></p>
+<h5 id="span-classcallout371-corollary-单纯矩阵函数的谱分解span"><span class="callout">3.7.1 Corollary: 单纯矩阵函数的谱分解</span> </h5>
+<p><span id="co3.7.1"></span></p>
 <blockquote>
 <p>设单纯矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>的谱分解为<span class="mathjax-exps">$A = \sum_{j=1}^{m} \lambda_j E_j$</span>，<span class="mathjax-exps">$f(\lambda)$</span>为数域<span class="mathjax-exps">$\mathbb{C}$</span>上的多项式，则</p>
 <p></p><div class="mathjax-exps">$$f(A) = \sum_{j=1}^{m} f(\lambda_j) E_j$$</div><p></p>
@@ -728,7 +777,7 @@
 <p></p><div class="mathjax-exps">\[\begin{align*} f(A) = &amp;\left(a_n \lambda_1^{n-1} + a_{n-1} \lambda_1^{n-2} + \cdots + a_1 \lambda_1 + a_0\right) E_1 + \cdots + \\ &amp;\left(a_n \lambda_m^{n-1} + a_{n-1} \lambda_m^{n-2} + \cdots + a_1 \lambda_m + a_0\right) E_m \end{align*}\]</div><p></p>
 <p>注意到 <span class="mathjax-exps">\(f(\lambda_i) = a_n \lambda_i^n + a_{n-1} \lambda_i^{n-1} + \cdots + a_1 \lambda_i + a_0\)</span>，故 <span class="mathjax-exps">\(f(A) = \sum_{i=1}^m f(\lambda_i) E_i\)</span>。证毕。</p>
 </details>
-<p><span class="callout">3.7.2 Corollary: 单纯矩阵谱阵的计算</span></p>
+<h5 id="span-classcallout372-corollary-单纯矩阵谱阵的计算span"><span class="callout">3.7.2 Corollary: 单纯矩阵谱阵的计算</span> </h5>
 <blockquote>
 <p>设单纯矩阵<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>的谱分解为<span class="mathjax-exps">$A = \sum_{j=1}^{m} \lambda_j E_j$</span>，则</p>
 <p></p><div class="mathjax-exps">$$E_i = \frac{1}{\prod_{l=1, l \neq i}^{m} (\lambda_i - \lambda_l)} \prod_{l=1, l \neq i}^{m} (A - \lambda_l I), \quad i = 1, \cdots, m$$</div><p></p>
@@ -742,35 +791,35 @@
 <p>因此，<span class="mathjax-exps">$f_i(A) = f_i(\lambda_i) E_i$</span>，即<span class="mathjax-exps">$E_i = f_i(A) / f_i(\lambda_i)$</span>。证毕。</p>
 </details>
 <p>{注}：该推论提供了一种高效求解单纯矩阵谱阵的方法，其不再需要求特征向量。</p>
-<p><span class="callout">3.8.1 Definition: <span class="mathjax-exps">$\lambda$</span> 矩阵</span></p>
+<h5 id="span-classcallout381-definition-lambda-矩阵span"><span class="callout">3.8.1 Definition: <span class="mathjax-exps">$\lambda$</span> 矩阵</span> </h5>
 <blockquote>
 <p>以<span class="mathjax-exps">$\lambda$</span>多项式为元素的矩阵称为<span class="mathjax-exps">$\lambda$</span>矩阵，记为<span class="mathjax-exps">$A(\lambda)$</span>，即<br>
 </p><div class="mathjax-exps">$$A(\lambda) = [a_{ij}(\lambda)]_{m \times n}, \quad a_{ij}(\lambda) \in P_n(\lambda).$$</div><p></p>
 </blockquote>
-<p><span class="callout">3.8.1 Example: <span class="mathjax-exps">$\lambda$</span> 矩阵的判定</span></p>
+<h5 id="span-classcallout381-example-lambda-矩阵的判定span"><span class="callout">3.8.1 Example: <span class="mathjax-exps">$\lambda$</span> 矩阵的判定</span> </h5>
 <blockquote>
 <p>判断<span class="mathjax-exps">$A(\lambda)$</span>和<span class="mathjax-exps">$B(\lambda)$</span>是否为<span class="mathjax-exps">$\lambda$</span>矩阵，其中<br>
 </p><div class="mathjax-exps">$$A(\lambda) = \begin{bmatrix} 1-\lambda &amp; \lambda^2 &amp; \lambda \\ \lambda &amp; \lambda &amp; -\lambda \\ 1+\lambda^2 &amp; \lambda^2 &amp; -\lambda^2 \end{bmatrix}, \quad B(\lambda) = \begin{bmatrix} \lambda &amp; \lambda^2 &amp; \lambda \\ \lambda &amp; \lambda &amp; -\lambda \\ \lambda^{-2} &amp; \lambda^2 &amp; -\lambda^2 \end{bmatrix}$$</div><p></p>
 </blockquote>
 <p><span class="mathjax-exps">$A(\lambda)$</span> 是 <span class="mathjax-exps">$\lambda$</span> 矩阵；由于 <span class="mathjax-exps">$\lambda^{-2}$</span> 不是 <span class="mathjax-exps">$\lambda$</span> 多项式，故 <span class="mathjax-exps">$B(\lambda)$</span> 不是 <span class="mathjax-exps">$\lambda$</span> 矩阵。</p>
-<p><span class="callout">3.8.2 Definition: 矩阵的秩</span></p>
+<h5 id="span-classcallout382-definition-矩阵的秩span"><span class="callout">3.8.2 Definition: 矩阵的秩</span> </h5>
 <blockquote>
 <p><span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>中非零子式的最高阶数<span class="mathjax-exps">$r$</span>定义为<span class="mathjax-exps">$A(\lambda)$</span>的秩，记为<span class="mathjax-exps">$\text{rank}(A(\lambda)) = r$</span>。</p>
 </blockquote>
-<p><span class="callout">3.8.2 Example: 矩阵的行列式和秩</span></p>
+<h5 id="span-classcallout382-example-矩阵的行列式和秩span"><span class="callout">3.8.2 Example: 矩阵的行列式和秩</span> </h5>
 <blockquote>
 <p>求<span class="mathjax-exps">$A(\lambda) = \begin{bmatrix} \lambda &amp; 0 \\ 0 &amp; \lambda + 1 \end{bmatrix}$</span>的行列式和秩。</p>
 </blockquote>
 <p><span class="mathjax-exps">$|A(\lambda)| = \lambda(\lambda + 1)$</span>，故<span class="mathjax-exps">$\text{rank}(A(\lambda)) = 2$</span>。由于 <span class="mathjax-exps">$\lambda$</span> 只是一个符号，就相当于 <span class="mathjax-exps">$f(x) = ax^2 + bx + c$</span> 中的 <span class="mathjax-exps">$x$</span>，故不能讨论 <span class="mathjax-exps">$\lambda$</span> 不同取值下 <span class="mathjax-exps">$A(\lambda)$</span> 的秩。</p>
-<p><span class="callout">3.8.3 Example: 特征矩阵的秩</span></p>
+<h5 id="span-classcallout383-example-特征矩阵的秩span"><span class="callout">3.8.3 Example: 特征矩阵的秩</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，<span class="mathjax-exps">$f_A(\lambda) = |\lambda I - A|$</span>是关于<span class="mathjax-exps">$\lambda$</span>的一元<span class="mathjax-exps">$n$</span>次多项式。<span class="mathjax-exps">$A$</span>的特征矩阵<span class="mathjax-exps">$\lambda I - A$</span>的秩为<span class="mathjax-exps">$n$</span>，即<span class="mathjax-exps">$\lambda I - A$</span>总是满秩的。</p>
 </blockquote>
-<p><span class="callout">3.8.3 Definition: <span class="mathjax-exps">$\lambda$</span> 矩阵的逆矩阵</span></p>
+<h5 id="span-classcallout383-definition-lambda-矩阵的逆矩阵span"><span class="callout">3.8.3 Definition: <span class="mathjax-exps">$\lambda$</span> 矩阵的逆矩阵</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$A(\lambda)$</span>是<span class="mathjax-exps">$n$</span>阶<span class="mathjax-exps">$\lambda$</span>方阵，若存在<span class="mathjax-exps">$n$</span>阶<span class="mathjax-exps">$\lambda$</span>方阵<span class="mathjax-exps">$B(\lambda)$</span>满足<span class="mathjax-exps">$A(\lambda)B(\lambda) = B(\lambda)A(\lambda) = I$</span>，则称<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>是可逆的，并称<span class="mathjax-exps">$B(\lambda)$</span>为<span class="mathjax-exps">$A(\lambda)$</span>的逆矩阵，记作<span class="mathjax-exps">$A(\lambda)^{-1}$</span>。</p>
 </blockquote>
-<p><span class="callout">3.8.1 Theorem: <span class="mathjax-exps">$\lambda$</span> 矩阵可逆性判定</span></p>
+<h5 id="span-classcallout381-theorem-lambda-矩阵可逆性判定span"><span class="callout">3.8.1 Theorem: <span class="mathjax-exps">$\lambda$</span> 矩阵可逆性判定</span> </h5>
 <blockquote>
 <p><span class="mathjax-exps">$n$</span>阶<span class="mathjax-exps">$\lambda$</span>方阵<span class="mathjax-exps">$A(\lambda)$</span>可逆的充分必要条件是它的行列式<span class="mathjax-exps">$|A(\lambda)|$</span>为非零常数。</p>
 </blockquote>
@@ -786,7 +835,7 @@
 <p>注意到<span class="mathjax-exps">$\frac{1}{\tau}(A(\lambda))^*$</span>也是<span class="mathjax-exps">$n$</span>阶<span class="mathjax-exps">$\lambda$</span>矩阵，则根据上式知，<span class="mathjax-exps">$\frac{1}{\tau}(A(\lambda))^*$</span>是<span class="mathjax-exps">$A(\lambda)$</span>的逆矩阵。<br>
 证毕。</p>
 </details>
-<p><span class="callout">3.8.4 Definition: 初等变换</span></p>
+<h5 id="span-classcallout384-definition-初等变换span"><span class="callout">3.8.4 Definition: 初等变换</span> </h5>
 <blockquote>
 <p>下列三种变换称为<span class="mathjax-exps">$\lambda$</span>矩阵的初等变换：<br>
 (1) <span class="mathjax-exps">$\lambda$</span>矩阵的两行（列）互换位置，记为 <span class="mathjax-exps">$P(i, j)$</span>；<br>
@@ -794,58 +843,59 @@
 (3) <span class="mathjax-exps">$\lambda$</span>矩阵的某一行（列）的<span class="mathjax-exps">$\varphi(\lambda)$</span>倍加到另一行（列），其中<span class="mathjax-exps">$\varphi(\lambda) \in P_n(\lambda)$</span>，记为 <span class="mathjax-exps">$P(i, j(\phi ))$</span>。</p>
 </blockquote>
 <p>对 <span class="mathjax-exps">\(\lambda\)</span> 矩阵作一次初等行变换意味着左乘相应的初等矩阵，对 <span class="mathjax-exps">\(\lambda\)</span> 矩阵作一次初等列变换则意味着右乘相应的初等矩阵。由于三种初等矩阵的行列式均为非零常数，故初等矩阵都是可逆的且对 <span class="mathjax-exps">\(\lambda\)</span> 矩阵作初等变换不改变它的秩。</p>
-<p><span class="callout">3.8.5 Definition: 矩阵相抵</span></p>
+<h5 id="span-classcallout385-definition-矩阵相抵span"><span class="callout">3.8.5 Definition: 矩阵相抵</span> </h5>
 <blockquote>
 <p>若<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>经过有限次初等变换变为<span class="mathjax-exps">$B(\lambda)$</span>，则称<span class="mathjax-exps">$A(\lambda)$</span>与<span class="mathjax-exps">$B(\lambda)$</span>相抵，记为 <span class="mathjax-exps">$A(\lambda) \cong B(\lambda)$</span>。</p>
 </blockquote>
 <p>{注}：<span class="mathjax-exps">$\lambda$</span> 矩阵的相抵关系秩相等不等价。由于 <span class="mathjax-exps">$A(\lambda) \cong B(\lambda) \Rightarrow PAQ = B$</span>，由于初等矩阵都是可逆的，其行列式为非零常数，由 <span class="mathjax-exps">$\lvert P \rvert  \lvert A \rvert \lvert Q \rvert = \lvert B \rvert$</span> 知其行列式只能相差一个非零常数。</p>
-<p><span class="callout">3.8.6 Definition: 行列式因子</span></p>
+<h5 id="span-classcallout386-definition-行列式因子span"><span class="callout">3.8.6 Definition: 行列式因子</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>的秩为<span class="mathjax-exps">$r$</span>，对于正整数<span class="mathjax-exps">$1 \leq k \leq r$</span>，<span class="mathjax-exps">$A(\lambda)$</span>的全部<span class="mathjax-exps">$k$</span>阶子式的首1最大公因式称为<span class="mathjax-exps">$k$</span>阶行列式因子，记为<span class="mathjax-exps">$D_k(\lambda)$</span>。</p>
 </blockquote>
-<p><span class="callout">3.8.5 Example: 计算行列式因子</span></p>
+<h5 id="span-classcallout385-example-计算行列式因子span"><span class="callout">3.8.5 Example: 计算行列式因子</span> </h5>
 <blockquote>
 <p>求<span class="mathjax-exps">$A(\lambda) = \begin{bmatrix} 1-\lambda &amp; \lambda^2 &amp; \lambda \\ \lambda &amp; \lambda &amp; -\lambda \\ 1+\lambda^2 &amp; \lambda^2 &amp; -\lambda^2 \end{bmatrix}$</span>各阶行列式因子。</p>
 </blockquote>
 <p><span class="mathjax-exps">$A(\lambda)$</span>的一阶子式为：<span class="mathjax-exps">$1-\lambda, \lambda^2, \lambda, \lambda, \lambda, -\lambda, 1+\lambda^2, \lambda^2, -\lambda^2$</span>。一阶因子的首1最大公因式为<span class="mathjax-exps">$D_1(\lambda) = 1$</span>。</p>
 <p><span class="mathjax-exps">$A(\lambda)$</span>的二阶子式共9个，分别为：<span class="mathjax-exps">$\lambda(1-\lambda-\lambda^2), -\lambda, -\lambda(\lambda^2+\lambda), -\lambda(\lambda^2+\lambda), -\lambda(\lambda^2+\lambda), -\lambda(\lambda^2), -\lambda(\lambda^2), -\lambda(\lambda^3-\lambda^2), -\lambda, \lambda, 0$</span>。二阶因子的首1最大公因式<span class="mathjax-exps">$D_2(\lambda) = \lambda$</span>。</p>
 <p><span class="mathjax-exps">$A(\lambda)$</span>的三阶子式共1个，即<span class="mathjax-exps">$D_3(\lambda) = |A(\lambda)| = \lambda^3 + \lambda^2$</span>。</p>
-<p><span class="callout">3.8.2 Theorem: 矩阵相抵性质</span></p>
+<h5 id="span-classcallout382-theorem-矩阵相抵性质span"><span class="callout">3.8.2 Theorem: 矩阵相抵性质</span> </h5>
 <blockquote>
 <p>相抵的<span class="mathjax-exps">$\lambda$</span>矩阵具有相同的秩和相同的各阶行列式因子。</p>
 </blockquote>
 <details open="">
   <summary>Proof:</summary>
 <p>只需证明 <span class="mathjax-exps">\(\lambda\)</span> 矩阵经过 1 次初等变换，秩和行列式因子不变。<br>
-(1) 对 <span class="mathjax-exps">$P(i,j)A =B$</span>，在 <span class="mathjax-exps">$k$</span> 阶子式中，若未包含第 <span class="mathjax-exps">$i,j$</span> 行，则该子式不变；若同时包含 <span class="mathjax-exps">$i,j$</span> 行，则显然其子式为相反数。若只包含第 <span class="mathjax-exps">$i$</span> 行，由于行列式因子的定义，可以将第 <span class="mathjax-exps">$i$</span> 行替换为第 <span class="mathjax-exps">$j$</span> 行，故其 <span class="mathjax-exps">$k$</span> 阶子式集合保持不变。</p>
+(1) 对 <span class="mathjax-exps">$P(i, j)A =B$</span>，在 <span class="mathjax-exps">$k$</span> 阶子式中，若未包含第 <span class="mathjax-exps">$i, j$</span> 行，则该子式不变；若同时包含 <span class="mathjax-exps">$i, j$</span> 行，则显然其子式为相反数。若只包含第 <span class="mathjax-exps">$i$</span> 行，由于行列式因子的定义，可以将第 <span class="mathjax-exps">$i$</span> 行替换为第 <span class="mathjax-exps">$j$</span> 行，故其 <span class="mathjax-exps">$k$</span> 阶子式集合保持不变。</p>
 <p>(2) 对 <span class="mathjax-exps">$P(i(c))A = B$</span>，在 <span class="mathjax-exps">$k$</span> 阶子式中，若未包含第 <span class="mathjax-exps">$i$</span> 行，则该子式不变；若包含第 <span class="mathjax-exps">$i$</span> 行，则其子式为 <span class="mathjax-exps">$k$</span> 阶子式的 <span class="mathjax-exps">$c$</span> 倍。由于行列式因子要求为首 1 最大公因式，故其不变。</p>
-<p>(3) 对 <span class="mathjax-exps">$P(i,j(\phi))A = B$</span>，在 <span class="mathjax-exps">$k$</span> 阶子式中，若未包含第 <span class="mathjax-exps">$i$</span> 行，则该子式不变；若包含第 <span class="mathjax-exps">$i$</span> 行，则其子式为一个 <span class="mathjax-exps">$k$</span> 阶子式和另一个 <span class="mathjax-exps">$k$</span> 阶子式的 <span class="mathjax-exps">$\phi(或-\phi )$</span> 倍之和。由于行列式因子要求为首 1 最大公因式，故其不变。</p>
+<p>(3) 对 <span class="mathjax-exps">$P(i, j(\phi))A = B$</span>，在 <span class="mathjax-exps">$k$</span> 阶子式中，若未包含第 <span class="mathjax-exps">$i$</span> 行，则该子式不变；若包含第 <span class="mathjax-exps">$i$</span> 行，则其子式为一个 <span class="mathjax-exps">$k$</span> 阶子式和另一个 <span class="mathjax-exps">$k$</span> 阶子式的 <span class="mathjax-exps">$\phi$</span>(或<span class="mathjax-exps">$-\phi$</span>) 倍之和。由于行列式因子要求为首 1 最大公因式，故其不变。</p>
 </details>
-<p><span class="callout">3.8.3 Theorem: Smith标准形</span></p>
+<h5 id="span-classcallout383-theorem-smith标准形span"><span class="callout">3.8.3 Theorem: Smith标准形</span> </h5>
 <blockquote>
 <p>设<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>的秩为<span class="mathjax-exps">$r$</span>，则<br>
 </p><div class="mathjax-exps">$$A(\lambda) \cong \begin{bmatrix} d_1(\lambda) &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; \ddots &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; \cdots  &amp; d_r(\lambda) &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots  &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \end{bmatrix}$$</div><p></p>
 </blockquote>
 <p>式中：<span class="mathjax-exps">$d_i(\lambda)$</span>是首1多项式，且<span class="mathjax-exps">$d_i(\lambda) | d_{i+1}(\lambda)$</span>，称此标准形为<span class="mathjax-exps">$A(\lambda)$</span>的Smith标准形。</p>
-<p><span class="callout">3.8.1 Corollary: Smith标准形的唯一性</span></p>
+<h5 id="span-classcallout381-corollary-smith标准形的唯一性span"><span class="callout">3.8.1 Corollary: Smith标准形的唯一性</span> </h5>
 <blockquote>
 <p><span class="mathjax-exps">$\lambda$</span>矩阵的Smith标准形是唯一的。</p>
 </blockquote>
-<p><span class="callout">3.8.7 Definition: 不变因子</span></p>
+<h5 id="span-classcallout387-definition-不变因子span"><span class="callout">3.8.7 Definition: 不变因子</span> </h5>
 <blockquote>
 <p>在<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>的Smith标准形中 <span class="mathjax-exps">$d_1(\lambda), \cdots, d_r(\lambda)$</span>由<span class="mathjax-exps">$A(\lambda)$</span>唯一确定的，称为<span class="mathjax-exps">$A(\lambda)$</span>的不变因子。</p>
 </blockquote>
-<p><span class="callout">3.8.* Theorem: 行列式因子和不变因子关系</span></p>
+<h5 id="span-classcallout38-theorem-行列式因子和不变因子关系span"><span class="callout">3.8.* Theorem: 行列式因子和不变因子关系</span> </h5>
 <blockquote>
 <p></p><div class="mathjax-exps">$$\begin{gathered} D_1(\lambda) = d_1(\lambda)\\ D_2(\lambda) = d_1(\lambda) d_2(\lambda) \\ D_r(\lambda) = d_1(\lambda) d_2(\lambda) \cdot \ldots \cdot d_r(\lambda) \end{gathered}$$</div><p></p>
 <p>或<br>
 </p><div class="mathjax-exps">$$\begin{gathered} d_1(\lambda) = D_1(\lambda) \\ d_2(\lambda) = \frac{D_2(\lambda)}{D_1(\lambda)} \\ d_r(\lambda) = \frac{D_r(\lambda)}{D_{r-1}(\lambda)} \end{gathered}$$</div><p></p>
 </blockquote>
-<p><span class="callout">3.8.2 Corollary: 矩阵相抵充要条件</span></p>
+<h5 id="span-classcallout382-corollary-矩阵相抵充要条件span"><span class="callout">3.8.2 Corollary: 矩阵相抵充要条件</span> </h5>
 <blockquote>
 <p><span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>与<span class="mathjax-exps">$B(\lambda)$</span>相抵当且仅当它们有完全一致的不变因子 <span class="mathjax-exps">$d_i(\lambda )$</span>。</p>
 </blockquote>
-<p><span class="callout">3.8.8 Definition: 初等因子</span></p>
+<h5 id="span-classcallout388-definition-初等因子span"><span class="callout">3.8.8 Definition: 初等因子</span> </h5>
+<p><span id="def3.8.3"></span></p>
 <blockquote>
 <p>设<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>的不变因子为<span class="mathjax-exps">$d_1(\lambda), \cdots, d_r(\lambda)$</span>，且有如下分解式，则所有幂指数大于零的因子<span class="mathjax-exps">$(\lambda - \lambda_j)^{e_{ij}}, i = 1, \cdots, r, j = 1, \cdots, s$</span>，统称为<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>的初等因子。</p>
 </blockquote>
@@ -856,7 +906,7 @@
 <p></p><div class="mathjax-exps">\[\left\{ \begin{gathered} 0 \leq e_{11} \leq e_{21} \leq \cdots \leq e_{r1} \\ 0 \leq e_{12} \leq e_{22} \leq \cdots \leq e_{r2} \\ \vdots \\ 0 \leq e_{1s} \leq e_{2s} \leq \cdots \leq e_{rs}\\ \end{gathered}   \right.\]</div><p></p>
 <p>即序列 <span class="mathjax-exps">\(e_{1j}, e_{2j}, \cdots, e_{rj}\)</span> 是非严格递增的。</p>
 <p>{注}：相抵矩阵有相同的行列式因子 <span class="mathjax-exps">$D_i(\lambda )$</span>，有相同的不变因子 <span class="mathjax-exps">$d_i(\lambda )$</span>，有相同的初等因子。</p>
-<p><span class="callout">3.8.4 Theorem: 矩阵相抵的判定</span></p>
+<h5 id="span-classcallout384-theorem-矩阵相抵的判定span"><span class="callout">3.8.4 Theorem: 矩阵相抵的判定</span> </h5>
 <blockquote>
 <p><span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda) \cong B(\lambda)$</span>当且仅当它们有完全一致的初等因子，且<span class="mathjax-exps">$\text{rank}(A(\lambda)) = \text{rank}(B(\lambda))$</span>。</p>
 </blockquote>
@@ -867,25 +917,157 @@
 <p><strong>充分性</strong>。<br>
 由于秩相同，则其不变因子的个数相同，记为 <span class="mathjax-exps">$d_1, \cdots , d_r$</span>。由于 <span class="mathjax-exps">$d_{i} \mid d_{i+1}$</span>，所以幂指数最大的初等因子 <span class="mathjax-exps">$(\lambda - \lambda _j)^{e_{rj}}, e_{rj} = \max {e_{ij}}$</span> 必是 <span class="mathjax-exps">$d_r$</span> 的因子，故 <span class="mathjax-exps">$d_{rA} = d_{rB}$</span>。对于 <span class="mathjax-exps">$d_{r-1}$</span>，首先在初等因子中去掉 <span class="mathjax-exps">$d_r$</span> 的因子，则余下的的幂指数最大的初等因子(若已为空集，则补1)必是 <span class="mathjax-exps">$d_{r-1}$</span> 的因子，故 <span class="mathjax-exps">$d_{r-1A} = d_{r-1B}$</span>。以此类推，可知 <span class="mathjax-exps">$d_{1A} = d_{1B}$</span>。证毕。</p>
 </details>
-<p><span class="callout">3.8.5 Theorem: 对角块矩阵的初等因子</span></p>
+<h5 id="span-classcallout385-theorem-对角块矩阵的初等因子span"><span class="callout">3.8.5 Theorem: 对角块矩阵的初等因子</span> </h5>
+<p><span id="th3.8.5"></span></p>
 <blockquote>
 <p>设<span class="mathjax-exps">$\lambda$</span>矩阵<span class="mathjax-exps">$A(\lambda)$</span>为对角块矩阵，即<br>
 </p><div class="mathjax-exps">$$A(\lambda) = \operatorname{diag}(A_1(\lambda), \cdots, A_s(\lambda))$$</div><p></p>
 <p>则 <span class="mathjax-exps">$A_1(\lambda), \cdots, A_s(\lambda)$</span> 初等因子的全体就是 <span class="mathjax-exps">$A(\lambda)$</span> 的全部初等因子，其中 <span class="mathjax-exps">$A_i(\lambda), i = 1, \cdots, s$</span> 是适当阶数的<span class="mathjax-exps">$\lambda$</span>矩阵。</p>
 </blockquote>
 <p>{注}：该定理给出了一个求解初等因子的方法，不需要再求不变因子。再求解 Smith 标准型的时候，可以先对角化，然后再求出各个对角块的初等因子。</p>
-<p><span class="callout">3.8.6 Theorem: 相似矩阵特征矩阵相抵</span></p>
+<h5 id="span-classcallout3811-example-jordan-块特征矩阵的初等因子span"><span class="callout">3.8.11 Example: Jordan 块特征矩阵的初等因子</span> </h5>
+<p><span id="ex3.8.11"></span></p>
+<blockquote>
+<p>求 <span class="mathjax-exps">$A(\lambda) = \begin{vmatrix} \lambda - a &amp; -1 \\ &amp; \lambda - a &amp; \ddots \\ &amp; &amp; \ddots &amp; -1 \\ &amp; &amp; &amp; \lambda - a \end{vmatrix}_{n \times n}$</span> 的初等因子、不变因子和 Smith 标准形。</p>
+</blockquote>
+<p>考察 <span class="mathjax-exps">$A(\lambda)$</span> 的 <span class="mathjax-exps">$(n-1)$</span> 阶子式</p>
+<p></p><div class="mathjax-exps">$$\begin{vmatrix} -1 \\ \lambda - a &amp; -1 \\ &amp; \ddots &amp; \ddots \\ &amp; &amp; \lambda - a &amp; -1 \end{vmatrix} = (-1)^{n-1}$$</div><p></p>
+<p>故 <span class="mathjax-exps">$A(\lambda)$</span> 的 <span class="mathjax-exps">$(n-1)$</span> 阶子式的不变因子为 <span class="mathjax-exps">$d_{n-1} = 1$</span>。</p>
+<p>又知 <span class="mathjax-exps">$|A(\lambda)| = (\lambda - a)^n$</span>，故 <span class="mathjax-exps">$A(\lambda)$</span> 的不变因子为 <span class="mathjax-exps">$d_1 = d_2 = \cdots = d_{n-1} = 1, d_n = (\lambda - a)^n$</span>。相应地，<span class="mathjax-exps">$A(\lambda)$</span> 的初等因子为 <span class="mathjax-exps">$(\lambda - a)^n$</span>，其 Smith 标准形为<br>
+</p><div class="mathjax-exps">$$A(\lambda) \cong \begin{bmatrix} 1 &amp; &amp; &amp; \\ &amp; 1 &amp; &amp; \mathbf{0} \\ &amp; &amp; \ddots &amp; \\ &amp; \mathbf{0} &amp; &amp; (\lambda - a)^n \end{bmatrix}$$</div><p></p>
+<p>{注}：后面可以看见这里的 <span class="mathjax-exps">$A(\lambda )$</span> 其实是一个 Jordan 块。</p>
+<h5 id="span-classcallout386-theorem-相似矩阵特征矩阵相抵span"><span class="callout">3.8.6 Theorem: 相似矩阵特征矩阵相抵</span> </h5>
 <blockquote>
 <p>复方阵<span class="mathjax-exps">$A$</span>和<span class="mathjax-exps">$B$</span>相似当且仅当它们的特征矩阵相抵。</p>
 </blockquote>
-<p><span class="callout">3.8.3 Corollary: 单纯特征矩阵的初等因子</span></p>
+<details open="">
+  <summary>Proof:</summary>
+<p><strong>必要性</strong>。<br>
+若矩阵 <span class="mathjax-exps">$A$</span> 与 <span class="mathjax-exps">$B$</span> 相似, 则存在可逆矩阵 <span class="mathjax-exps">$P$</span> 使得 <span class="mathjax-exps">$P^{-1}AP=B$</span>，从而</p>
+<p></p><div class="mathjax-exps">$$P^{-1} (\lambda I - A)P = \lambda I - P^{-1}AP = \lambda I - B$$</div><p></p>
+<p>故 <span class="mathjax-exps">$\lambda I - A$</span> 与 <span class="mathjax-exps">$\lambda I - B$</span> 相抵。</p>
+<p><strong>充分性</strong>。<br>
+书上的充分性看不懂，也不知道对不对，可能需要另找证明。</p>
+</details>
+<p>{注}：矩阵相抵等价于矩阵不变因子相同，等价于秩相等且初等因子相同(由于特征矩阵都是满秩的，所以对于特征矩阵来说也就是初等因子相同)。</p>
+<h5 id="span-classcallout383-corollary-单纯特征矩阵的初等因子span"><span class="callout">3.8.3 Corollary: 单纯特征矩阵的初等因子</span> </h5>
+<p><span id="co3.8.3"></span></p>
 <blockquote>
 <p>复方阵<span class="mathjax-exps">$A$</span>是单纯矩阵的充分必要条件是它的特征矩阵<span class="mathjax-exps">$\lambda I - A$</span>的初等因子为一次的。</p>
 </blockquote>
-<p><span class="callout">3.8.4 Corollary: 单纯特征矩阵的不变因子</span></p>
+<details open="">
+    <summary>Proof:</summary>
+<p><strong>必要性</strong>。<br>
+由于 <span class="mathjax-exps">$A$</span> 是单纯矩阵，即可对角化。<br>
+</p><div class="mathjax-exps">$$A \sim B = \begin{bmatrix} \lambda_1 &amp; \cdots  &amp; 0\\ 0 &amp; \ddots &amp; 0\\ 0 &amp; \cdots  &amp; \lambda_n \end{bmatrix}$$</div><p></p>
+<p>则 <span class="mathjax-exps">$A$</span> 的特征矩阵与 <span class="mathjax-exps">$B$</span> 的特征矩阵相抵，即<br>
+</p><div class="mathjax-exps">$$\lambda I - A \cong \lambda I - B =  \begin{bmatrix} \lambda - \lambda_1 &amp; \cdots &amp; 0\\ 0 &amp; \ddots &amp; 0 \\ 0 &amp; \cdots  &amp;\lambda - \lambda_n \end{bmatrix}$$</div><p></p>
+<p>由于相抵的矩阵的初等因子相同，所以 <span class="mathjax-exps">$\lambda I - A$</span> 的初等因子与 <span class="mathjax-exps">$\lambda I - B$</span> 的初等因子相同，根据<a href="#th3.8.5">定理3.8.5</a>，<span class="mathjax-exps">$\lambda I - B$</span> 的初等因子即为对角线所有元素 <span class="mathjax-exps">$\lambda  - \lambda _i$</span>，均为一次的(可能有重复的)。</p>
+<p><strong>充分性</strong>。<br>
+若 <span class="mathjax-exps">$\lambda I - A$</span> 的初等因子均为一次的，由于其秩为 <span class="mathjax-exps">$n$</span>，故其必有 <span class="mathjax-exps">$n$</span> 个初等因子。构造矩阵 <span class="mathjax-exps">$B = \lambda I - \Lambda$</span>，将这 <span class="mathjax-exps">$n$</span> 个初等因子分布在其对角线上，使得每个对角线元素对应一个初等因子，由<a href="#th3.8.5">定理3.8.5</a>可知，<span class="mathjax-exps">$B$</span> 的特征矩阵的初等因子与 <span class="mathjax-exps">$\lambda I - A$</span> 的初等因子相等。由<a href="#th3.8.6">定理3.8.6</a>可知，<span class="mathjax-exps">$A$</span> 与 <span class="mathjax-exps">$\Lambda$</span> 相似。而显然 <span class="mathjax-exps">$\Lambda$</span> 为对角矩阵，所以 <span class="mathjax-exps">$A$</span> 是单纯矩阵。</p>
+</details>
+<h5 id="span-classcallout384-corollary-单纯特征矩阵的不变因子span"><span class="callout">3.8.4 Corollary: 单纯特征矩阵的不变因子</span> </h5>
 <blockquote>
 <p>复方阵<span class="mathjax-exps">$A$</span>是单纯矩阵的充分必要条件是它的特征矩阵<span class="mathjax-exps">$\lambda I - A$</span>的不变因子无重根。</p>
 </blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>根据<a href="#def3.8.3">初等因子的定义</a>和<a href="#co3.8.3">推论3.8.3</a>，该推论显然成立。</p>
+</details>
+<h5 id="span-classcallout3812-example-jordan-块不可对角化span"><span class="callout">3.8.12 Example: Jordan 块不可对角化</span> </h5>
+<blockquote>
+<p>判断<span class="mathjax-exps">$n$</span>阶方阵<span class="mathjax-exps">$A$</span>是否为单纯矩阵，其中<br>
+</p><div class="mathjax-exps">$$A=\left[\begin{array}{cccc} a &amp; 1 &amp; &amp; \\ &amp; a &amp; 1 &amp; \\ &amp; &amp; a &amp; \ddots \\ &amp; &amp; &amp; \ddots &amp; 1 \\ &amp; &amp; &amp; &amp; a \end{array}\right]_{n\times n}$$</div><p></p>
+</blockquote>
+<p>由<a href="#ex3.8.11">例3.8.11</a>知，特征矩阵 <span class="mathjax-exps">$\lambda I-A$</span> 的初等因子为 <span class="mathjax-exps">$(\lambda-a)^n$</span>。故当 <span class="mathjax-exps">$n\geqslant 2$</span> 时，其初等因子不是一次的，即矩阵 <span class="mathjax-exps">$A$</span> 不是单纯矩阵。</p>
+<h5 id="span-classcallout389-definition-jordan块span"><span class="callout">3.8.9 Definition: Jordan块</span> </h5>
+<blockquote>
+<p>设<span class="mathjax-exps">$A=\left[a_{ij}\right]\in \mathbb{C}^{n\times n}$</span>，其特征矩阵<span class="mathjax-exps">$\lambda I-A$</span>的初等因子为<span class="mathjax-exps">$(\lambda-\lambda_1)^{n_1},(\lambda-\lambda_2)^{n_2},\cdots,(\lambda-\lambda_t)^{n_s}$</span>。对<span class="mathjax-exps">$(\lambda-\lambda_i)^{n_i}$</span>作<span class="mathjax-exps">$n_i$</span>阶矩阵<br>
+</p><div class="mathjax-exps">$$J_i=\left[\begin{array}{cccc} \lambda_i &amp; 1 &amp; &amp; \\ &amp; \lambda_i &amp; 1 &amp; \\ &amp; &amp; \ddots &amp; \ddots \\ &amp; &amp; &amp; \lambda_i &amp; 1 \\ &amp; &amp; &amp; &amp; \lambda_i \end{array}\right]_{n_i\times n_i}$$</div><p></p>
+<p>则称矩阵<span class="mathjax-exps">$J_i(i=1,\cdots, s)$</span>为矩阵<span class="mathjax-exps">$A$</span>的Jordan块。</p>
+</blockquote>
+<p>{注}：</p>
+<ol>
+<li>Jordan块是一种特殊的矩阵，其对角线元素相同，对角线上方的元素为1，其余元素为0。</li>
+<li>将<a href="#ex3.8.11">例3.8.11</a>次对角线元素改为任意复数可以发现其初等因子不变，则次对角线元素为任意值均可以当作 Jordan块。</li>
+</ol>
+<h5 id="span-classcallout3814-example-jordan块的最小多项式span"><span class="callout">3.8.14 Example: Jordan块的最小多项式</span> </h5>
+<p><span id="ex3.8.14"></span></p>
+<blockquote>
+<p>求 Jordan 块<br>
+</p><div class="mathjax-exps">$$J_i=\left[\begin{array}{cccc} \lambda_i &amp; 1 &amp; &amp; \mathbf{O} \\ &amp; \lambda_i &amp; 1 &amp; \\ &amp; &amp; \ddots &amp; \ddots \\ \mathbf{O} &amp; &amp; &amp; \lambda_i \end{array}\right]_{n_i\times n_i}$$</div><p></p>
+<p>的最小多项式。</p>
+</blockquote>
+<p>由矩阵 <span class="mathjax-exps">$J_i$</span> 的特征多项式为 <span class="mathjax-exps">$f_{J_i}(\lambda)=(\lambda-\lambda_i)^{n_i}$</span> 知，其最小多项式可能为 <span class="mathjax-exps">$(\lambda-\lambda_i),\ldots,(\lambda-\lambda_i)^{n_i}$</span>。经计算知，对 <span class="mathjax-exps">$j=1,\ldots,n_i-1$</span>，<span class="mathjax-exps">$(J_i-\lambda_i I)^j \neq \mathbf{O}$</span>。因此，矩阵 <span class="mathjax-exps">$J_i$</span> 的最小多项式为 <span class="mathjax-exps">$m_{J_i}(\lambda)=(\lambda-\lambda_i)^{n_i}$</span>。</p>
+<p>{注}：</p>
+<ol>
+<li>任一 Jordan 块的最小多项式等于它的特征多项式，也是 Jordan 块所对应的初等因子。从 Jordan 块形式看，给定初等因子所作的最简 <span class="mathjax-exps">$\lambda$</span> 矩阵就是 Jordan 块的特征矩阵。</li>
+<li>Jordan 块的行列式因子和不变因子为 <span class="mathjax-exps">$D _1 = d_1 \cdots =D _{n-1}= d_{n-1} = 1, d_n = D _n = (\lambda-\lambda_i)^{n_i}$</span>，初等因子为 <span class="mathjax-exps">$E = (\lambda - \lambda _i)^{n_i}$</span>。</li>
+</ol>
+<h5 id="span-classcallout3810-definition-jordan标准形span"><span class="callout">3.8.10 Definition: Jordan标准形</span> </h5>
+<blockquote>
+<p>设<span class="mathjax-exps">$A=\left[a_{ij}\right]\in \mathbb{C}^{n\times n}$</span>，其特征矩阵<span class="mathjax-exps">$\lambda I-A$</span>的初等因子为<span class="mathjax-exps">$(\lambda-\lambda_1)^{n_1},\cdots,(\lambda-\lambda_s)^{n_s}$</span>，其对应的 Jordan 块分别记为<span class="mathjax-exps">$J_1,\cdots, J_s$</span>，则由 <span class="mathjax-exps">$s$</span> 个 Jordan 块组成的 <span class="mathjax-exps">$n$</span> 阶对角块矩阵<span class="mathjax-exps">$J=\operatorname{diag}(J_1,\cdots, J_s)$</span>称为矩阵<span class="mathjax-exps">$A$</span>的 Jordan 标准形）。</p>
+</blockquote>
+<p>{注}：显然，Jordan 标准形中的 Jordan 块是唯一的，但 Jordan 块的排列次序不唯一。</p>
+<h5 id="span-classcallout387-theorem-jordan标准形定理span"><span class="callout">3.8.7 Theorem: Jordan标准形定理</span> </h5>
+<blockquote>
+<p>设矩阵 <span class="mathjax-exps">$J$</span> 是复方阵 <span class="mathjax-exps">$A$</span> 的 Jordan 标准形，则矩阵 <span class="mathjax-exps">$A$</span> 与矩阵 <span class="mathjax-exps">$J$</span> 相似。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>特征矩阵 <span class="mathjax-exps">$\lambda I-A$</span> 的初等因子为 <span class="mathjax-exps">$(\lambda-\lambda_1)^{n_1},\cdots,(\lambda-\lambda_s)^{n_s}$</span>，其对应的 Jordan 块分别为 <span class="mathjax-exps">$J_1,\cdots, J_s$</span>，则 <span class="mathjax-exps">$J=\operatorname{diag}(J_1,\cdots, J_s)$</span> 是矩阵 <span class="mathjax-exps">$A$</span> 的 Jordan 标准形。显然，<span class="mathjax-exps">$\lambda$</span> 矩阵 <span class="mathjax-exps">$\lambda I-J$</span> 与 <span class="mathjax-exps">$\lambda I-A$</span> 的初等因子完全相同。因此，<span class="mathjax-exps">$\lambda I-A$</span> 与 <span class="mathjax-exps">$\lambda I-J$</span> 相抵，即矩阵 <span class="mathjax-exps">$A$</span> 与 <span class="mathjax-exps">$J$</span> 相似。证毕。</p>
+</details>
+<p>{注}：由该定理可知，Jordan 标准形已经是 <span class="mathjax-exps">$A$</span> 的相似矩阵的最简形式。由此可见，若矩阵 <span class="mathjax-exps">$A$</span> 想要对角化，次对角线上的元素必须为0，即必须有 <span class="mathjax-exps">$n_i=1$</span>，即 <span class="mathjax-exps">$n$</span> 个 Jordan 块。</p>
+<h5 id="span-classcallout38-theorem-jordan-块和特征向量关系span"><span class="callout">3.8.* Theorem: Jordan 块和特征向量关系</span> </h5>
+<blockquote>
+<p>设 <span class="mathjax-exps">$J$</span> 为 <span class="mathjax-exps">$A$</span> 的 Jordan 标准形，<span class="mathjax-exps">$J_1, \cdots, J_s$</span> 为 <span class="mathjax-exps">$J$</span> 的Jordan块，则 <span class="mathjax-exps">$J_i$</span> 对应的特征值的特征空间维度为1。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>设 <span class="mathjax-exps">$J_1, \cdots, J_s$</span> 为 <span class="mathjax-exps">$J$</span> 的Jordan块<br>
+</p><div class="mathjax-exps">$$J =  \begin{bmatrix} J_1 &amp; &amp; &amp; \mathbf{O} \\ &amp; J_2 &amp; &amp; \\     &amp; &amp; \ddots &amp; \\ \mathbf{O} &amp; &amp; &amp; J_s \end{bmatrix} = \begin{bmatrix} \lambda_1 &amp; 1 &amp; &amp; \mathbf{O} \\ &amp; \lambda_1 &amp; \ddots  &amp; \\ &amp; &amp; \ddots &amp; 1\\ \mathbf{O} &amp; &amp; &amp; \lambda_s  \end{bmatrix}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\lambda _i$</span> 为矩阵<span class="mathjax-exps">$A$</span>的特征值。<br>
+1.若 <span class="mathjax-exps">$\lambda _i, \cdots ,\lambda _s$</span> 互不相同。<br>
+Jordan 块的定义<br>
+</p><div class="mathjax-exps">$$J_i=\left[\begin{array}{cccc} \lambda_i &amp; 1 &amp; &amp; \mathbf{O} \\ &amp; \lambda_i &amp; \ddots &amp; \\ &amp; &amp; \ddots &amp; 1 \\ \mathbf{O} &amp; &amp; &amp; \lambda_i \end{array}\right]_{n_i\times n_i}$$</div><p></p>
+<p>由于<br>
+</p><div class="mathjax-exps">$$\operatorname{rank}(\lambda _i I_j - J_j) = \begin{cases} n_i - 1, &amp; j = i\\ n_i, &amp; j \neq i \end{cases}$$</div><p></p>
+<p>所以 <span class="mathjax-exps">$\operatorname{rank}(\lambda_i I - J) = n-1$</span>，则 <span class="mathjax-exps">$\dim N (\lambda_i I - J) = 1$</span>，即 <span class="mathjax-exps">$\lambda_i$</span> 对应的特征向量为一维的。<br>
+2.若存在 <span class="mathjax-exps">$\lambda _i = \lambda _j$</span>。<br>
+将 <span class="mathjax-exps">$J_i$</span> 和 <span class="mathjax-exps">$J_j$</span> 看作同一个块，则显然 <span class="mathjax-exps">$\operatorname{rank}(\lambda_i I - J) = n-2$</span>，则 <span class="mathjax-exps">$\dim N (\lambda_i I - J) = 2$</span>，即 <span class="mathjax-exps">$\lambda_i$</span> 对应的特征向量为二维。仍然有 <span class="mathjax-exps">$J_i$</span> 对应的特征向量为一维的。</p>
+</details>
+<h5 id="span-classcallout3816-example-jordan标准形与相似变换矩阵span"><span class="callout">3.8.16 Example: Jordan标准形与相似变换矩阵</span> </h5>
+<blockquote>
+<p>求矩阵 <span class="mathjax-exps">$A$</span> 的 Jordan 标准形 <span class="mathjax-exps">$J$</span>，并求可逆矩阵 <span class="mathjax-exps">$P$</span> 使得 <span class="mathjax-exps">$P^{-1}AP=J$</span>，其中<br>
+</p><div class="mathjax-exps">$$A=\left[\begin{array}{ccc} -1 &amp; -2 &amp; 6 \\ -1 &amp; 0 &amp; 3 \\ -1 &amp; -1 &amp; 4 \end{array}\right]$$</div><p></p>
+</blockquote>
+<p>对矩阵 <span class="mathjax-exps">$A$</span> 的特征矩阵 <span class="mathjax-exps">$\lambda I-A$</span> 作初等变换得</p>
+<p></p><div class="mathjax-exps">$$\lambda I-A\cong\left[\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; \lambda-1 &amp; 0 \\ 0 &amp; 0 &amp; (\lambda-1)^2 \end{array}\right]$$</div><p></p>
+<p>则特征矩阵 <span class="mathjax-exps">$\lambda I-A$</span> 的初等因子为 <span class="mathjax-exps">$(\lambda-1),(\lambda-1)^2$</span>。由此，矩阵 <span class="mathjax-exps">$A$</span> 的 Jordan 标准形为</p>
+<p></p><div class="mathjax-exps">$$J=\left[\begin{array}{llll} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1 \end{array}\right]$$</div><p></p>
+<p>设 <span class="mathjax-exps">$P=[p_1 \quad p_2 \quad p_3]$</span>，则 <span class="mathjax-exps">$A[p_1 \quad p_2 \quad p_3]=[p_1 \quad p_2 \quad p_3]J$</span>。整理得</p>
+<p></p><div class="mathjax-exps">$$\left\{ \begin{array}{l} Ap_1=p_1 \\ Ap_2=p_2 \\ Ap_3=p_2+p_3 \end{array} \right.$$</div><p></p>
+<p>由 <span class="mathjax-exps">$Ap_i=p_i$</span> 解得两个线性无关的向量为 <span class="mathjax-exps">$p_1=(3,0,1)^T$</span> 和 <span class="mathjax-exps">$p_2=(0,3,1)^T$</span>。</p>
+<p>将 <span class="mathjax-exps">$p_2=(0,3,1)^T$</span> 代入 <span class="mathjax-exps">$Ap_3=p_2+p_3$</span> 发现此方程无解（为什么？）。<br>
+<strong>解释</strong>：将 <span class="mathjax-exps">$Ap_3=p_2+p_3$</span> 变为 <span class="mathjax-exps">$(A - I)p_3 = p_2$</span> 可知，<span class="mathjax-exps">$p_2$</span> 必须在 <span class="mathjax-exps">$A-I$</span> 零空间和 <span class="mathjax-exps">$A-I$</span> 列空间的交空间中，显然上面取的 <span class="mathjax-exps">$p_2$</span> 不在 <span class="mathjax-exps">$A-I$</span> 的列空间中，故无解。<br>
+重新调整方程 <span class="mathjax-exps">$Ap_i=p_i$</span> 的解，经观察得 <span class="mathjax-exps">$p_1=(3,0,1)^T$</span> 和 <span class="mathjax-exps">$p_2=(2,1,1)^T$</span>。此时，<span class="mathjax-exps">$p_3=(-1,0,0)^T$</span>。<br>
+因此，</p>
+<p></p><div class="mathjax-exps">$$P=\left[\begin{array}{ccc} 3 &amp; 2 &amp; -1 \\ 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 0 \end{array}\right]$$</div><p></p>
+<h5 id="span-classcallout388-theorem-frobenius-定理span"><span class="callout">3.8.8 Theorem: Frobenius 定理</span> </h5>
+<blockquote>
+<p>设 <span class="mathjax-exps">$A\in C^{n\times n}$</span>，其特征矩阵 <span class="mathjax-exps">$\lambda I-A$</span> 的 Smith 标准形为 <span class="mathjax-exps">$\operatorname{diag}\left(d_1(\lambda),\cdots, d_n(\lambda)\right)$</span>，则 <span class="mathjax-exps">$A$</span> 的最小多项式 <span class="mathjax-exps">$m_A(\lambda)=d_n(\lambda)$</span>。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>利用矩阵 <span class="mathjax-exps">$A$</span> 的 Jordan 标准形 <span class="mathjax-exps">$J$</span> 进行求解。若标准形 <span class="mathjax-exps">$J$</span> 仅包含一个 Jordan 块 <span class="mathjax-exps">$J_1$</span>，则由<a href="#ex3.8/14">例3.8.14</a> 知，<span class="mathjax-exps">$m_{J_1}(\lambda)=\left(\lambda-\lambda_1\right)^{k_1}$</span>，故 <span class="mathjax-exps">$J_1$</span> 的最小多项式恰好等于它所对应的初等因子。</p>
+<p>当 <span class="mathjax-exps">$J$</span> 包含两个 Jordan 块 <span class="mathjax-exps">$J_1$</span> 和 <span class="mathjax-exps">$J_2$</span> 时，下面分两种情况讨论：<br>
+(1) 若 <span class="mathjax-exps">$\lambda_1=\lambda_2$</span>，此时 <span class="mathjax-exps">$J_1$</span> 和 <span class="mathjax-exps">$J_2$</span> 的最小多项式分别为<br>
+</p><div class="mathjax-exps">$$m_{J_1}(\lambda)=\left(\lambda-\lambda_1\right)^{k_1},\quad m_{J_2}(\lambda)=\left(\lambda-\lambda_2\right)^{k_2}$$</div><p></p>
+<p>经计算知，矩阵 <span class="mathjax-exps">$J$</span> 的最小多项式为 <span class="mathjax-exps">$m_{J_1}(\lambda)$</span> 和 <span class="mathjax-exps">$m_{J_2}(\lambda)$</span> 的最小公倍式。</p>
+<p>(2) 若 <span class="mathjax-exps">$\lambda_i\neq\lambda_p$</span>，矩阵 <span class="mathjax-exps">$J$</span> 的最小多项式仍为 <span class="mathjax-exps">$m_{J_i}(\lambda)$</span> 和 <span class="mathjax-exps">$m_{J_p}(\lambda)$</span> 的最小公倍式。<br>
+将上述结论推广至一般的 Jordan 标准形 <span class="mathjax-exps">$J$</span> 时，矩阵 <span class="mathjax-exps">$J$</span> 的最小多项式等于特征矩阵 <span class="mathjax-exps">$\lambda I-A$</span> 的初等因子的最小公倍式。又知所有初等因子的最高幂指数必为不变因子 <span class="mathjax-exps">$d_n(\lambda)$</span> 的因子，因此，矩阵 <span class="mathjax-exps">$J$</span> 的最小多项式恰为不变因子 <span class="mathjax-exps">$d_n(\lambda)$</span>。</p>
+</details>
+<p>{注}：<span class="mathjax-exps">$\lambda I-A$</span> 的初等因子的最小公倍式即为矩阵 <span class="mathjax-exps">$A$</span> 的最小多项式 <span class="mathjax-exps">$m_A(\lambda)$</span>。</p>
 
       </div>
       
