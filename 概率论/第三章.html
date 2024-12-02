@@ -45,8 +45,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -57,8 +59,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -183,9 +187,8 @@
 <blockquote>
 <p>分布函数<span class="mathjax-exps">\(F(\alpha)\)</span>具有下列性质：<br>
 (i) 单调性：若<span class="mathjax-exps">\(a &lt; b\)</span>，则<span class="mathjax-exps">\(F(a) \leq F(b)\)</span>；<br>
-(ii)<br>
-</p><div class="mathjax-exps">\[\lim_{x \to -\infty} F(x) = 0, \quad \lim_{x \to +\infty} F(x) = 1;\]</div><p></p>
-<p>(iii) 左连续性：<span class="mathjax-exps">\(F(\alpha-0) = F(\alpha)\)</span>。</p>
+(ii) <span class="mathjax-exps">\(\lim_{x \to -\infty} F(x) = 0, \quad \lim_{x \to +\infty} F(x) = 1\)</span>；<br>
+(iii) 左连续性：<span class="mathjax-exps">\(F(\alpha-0) = F(\alpha)\)</span>。</p>
 </blockquote>
 <p><span class="callout">Definition: 连续型随机变量</span></p>
 <blockquote>
@@ -195,9 +198,9 @@
 </blockquote>
 <h4 id="正态分布">正态分布 </h4>
 <p>一元分布，记为<span class="mathjax-exps">$N(\mu, \sigma^2)$</span><br>
-</p><div class="mathjax-exps">$$f(x|\mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$</div><br>
-二元分布<br>
-<div class="mathjax-exps">$$f(x_1, x_2) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}} \exp\left(-\frac{1}{2(1-\rho^2)}\left[\frac{(x_1-\mu_1)^2}{\sigma_1^2} - 2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2} + \frac{(x_2-\mu_2)^2}{\sigma_2^2}\right]\right)$$</div><p></p>
+</p><div class="mathjax-exps">$$f(x|\mu, \sigma) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$$</div><p></p>
+<p>二元分布<br>
+</p><div class="mathjax-exps">$$f(x_1, x_2) = \frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}} \exp\left(-\frac{1}{2(1-\rho^2)}\left[\frac{(x_1-\mu_1)^2}{\sigma_1^2} - 2\rho\frac{(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2} + \frac{(x_2-\mu_2)^2}{\sigma_2^2}\right]\right)$$</div><p></p>
 <p>由于正态分布较为常见，所以对于服从<span class="mathjax-exps">$N(0 , 1)$</span>的正态分布密度函数<span class="mathjax-exps">$\phi (x)$</span>和分布函数<span class="mathjax-exps">$\Phi (x)$</span>都制定了表格。服从<span class="mathjax-exps">$N(\mu , \sigma ^2)$</span>的正态分布可以通过标准正态分布通过线性变换得到。<br>
 若 <span class="mathjax-exps">$\eta \sim N(\mu , \sigma ^2)$</span>，则<br>
 </p><div class="mathjax-exps">$$\begin{array}l P(\eta \le x) = P\left(\frac{\eta - \mu}{\sigma} \le \frac{x - \mu}{\sigma}\right) = \Phi\left(\frac{x - \mu}{\sigma}\right) \\ P(a \le \eta \le b) = P\left(\frac{a - \mu}{\sigma} \le \frac{\eta - \mu}{\sigma} \le \frac{b - \mu}{\sigma}\right) = \Phi\left(\frac{b - \mu}{\sigma}\right) - \Phi\left(\frac{a - \mu}{\sigma}\right)\\ P(|\eta - \mu| \le kx) = P\left(-kx \le \frac{\eta - \mu}{\sigma} \le kx\right) = \Phi(kx) - \Phi(-kx) = 2\Phi(kx) - 1 \end{array}$$</div><p></p>
@@ -262,6 +265,9 @@
 </p><div class="mathjax-exps">$$f(x)=\left\{\begin{array}{cc}\frac{\lambda^r}{\Gamma(r)} x^{r-1} e^{-\lambda x},&amp; x&gt;0\\ 0,&amp; x\leqslant 0\end{array}\right.$$</div><p></p>
 <p>的分布称为 <span class="mathjax-exps">$\Gamma$</span> 分布，其中 <span class="mathjax-exps">$\lambda&gt;0, r&gt;0$</span> 为参数。简记作 <span class="mathjax-exps">$\Gamma(r,\lambda)$</span>。<span class="mathjax-exps">$r$</span> 称为形状参数，<span class="mathjax-exps">$\lambda$</span> 称为尺度参数。</p>
 </blockquote>
+<p>假设随机变量<span class="mathjax-exps">$X$</span>为等到第<span class="mathjax-exps">$a$</span>件事发生所需之等候时间，且每个事件之间的等待时间是互相独立的，<span class="mathjax-exps">$a$</span>为事件发生的次数， <span class="mathjax-exps">$\beta$</span>代表事件发生一次的概率，那么这 <span class="mathjax-exps">$a$</span>个事件的时间之和服从伽马分布，即 <span class="mathjax-exps">$X \sim \Gamma(a, \beta)$</span>。</p>
+<p>可以看出当 <span class="mathjax-exps">$r = 1$</span> 时，<span class="mathjax-exps">$\Gamma(1, \lambda)$</span> 就是指数分布，当 <span class="mathjax-exps">$r = \frac{n}{2}, \lambda =\frac{1}{2}$</span> 时，<span class="mathjax-exps">$\Gamma( \frac{n}{2}, \frac{1}{2})$</span> 就是 <span class="mathjax-exps">$\chi^2$</span> 分布。<br>
+可以证明，两个独立随机变量 <span class="mathjax-exps">$X$</span> 和 <span class="mathjax-exps">$Y$</span>，且 <span class="mathjax-exps">$X \sim \Gamma(a, \lambda )，Y \sim \Gamma(b, \lambda)$</span>，则 <span class="mathjax-exps">$Z = X+Y \sim \Gamma (a+b, \lambda )$</span>。即两个尺度参数相同的独立的伽马分布之和仍满足伽马分布，其尺度参数不变，而形状参数相加。</p>
 <h3 id="随机向量-随机变量的独立性">随机向量、随机变量的独立性 </h3>
 <p><span class="callout">3.2.1 Definition: n维随机向量定义</span></p>
 <blockquote>
@@ -324,7 +330,7 @@
 </p><div class="mathjax-exps">\[\Sigma = \begin{pmatrix} \sigma_1^2 &amp; \rho\sigma_1\sigma_2 \\ \rho\sigma_1\sigma_2 &amp; \sigma_2^2 \end{pmatrix}, \mu = (\mu_1, \mu_2)\]</div><p></p>
 <p><span class="callout">3.2.1 Theorem:二元正态密度的典型分解</span></p>
 <blockquote>
-<p>二元正态密度函数 (3.2.22) 具有如下两个分解式：<br>
+<p>二元正态密度函数具有如下两个分解式：<br>
 </p><div class="mathjax-exps">\[p(x, y) = \frac{1}{\sqrt{2\pi}\sigma_{1}} e^{-\frac{(x-\mu_{1})^{2}}{2\sigma_{1}^{2}}} \times \frac{1}{\sqrt{2\pi}\sigma_{2}\sqrt{1-\rho^{2}}} e^{-\frac{\left[y-\left(\mu_{2}+\rho\frac{\sigma_{2}}{\sigma_{1}}(x-\mu_{1})\right)\right]^{2}}{2\sigma_{2}^{2}(1-\rho^{2})}}\]</div><p></p>
 <p></p><div class="mathjax-exps">\[p(x, y) = \frac{1}{\sqrt{2\pi}\sigma_{2}} e^{-\frac{(y-\mu_{2})^{2}}{2\sigma_{2}^{2}}} \times \frac{1}{\sqrt{2\pi}\sigma_{1}\sqrt{1-\rho^{2}}} e^{-\frac{\left[x-\left(\mu_{1}+\rho\frac{\sigma_{1}}{\sigma_{2}}(y-\mu_{2})\right)\right]^{2}}{2\sigma_{1}^{2}(1-\rho^{2})}}\]</div><p></p>
 </blockquote>
@@ -429,8 +435,8 @@
 <p><span class="callout">3.3.1 Definition: 一维博雷尔函数</span></p>
 <blockquote>
 <p>设 <span class="mathjax-exps">$y=g(x)$</span> 是 <span class="mathjax-exps">$R^1$</span> 到 <span class="mathjax-exps">$R^1$</span> 上的一个映照，若对于一切 <span class="mathjax-exps">$R^1$</span> 中的博雷尔点集 <span class="mathjax-exps">$B_1$</span> 均有<br>
-</p><div class="mathjax-exps">$$\left\{x: g(x)\in B_1\right\}\in\mathscr{B}_1$$</div><br>
-其中 <span class="mathjax-exps">$\mathscr{B}_1$</span> 为 <span class="mathjax-exps">$R^1$</span> 上博雷尔 <span class="mathjax-exps">$\sigma$</span> 域，则称 <span class="mathjax-exps">$g(x)$</span> 是一元博雷尔（可测）函数。<p></p>
+</p><div class="mathjax-exps">$$\left\{x: g(x)\in B_1\right\}\in\mathscr{B}_1$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\mathscr{B}_1$</span> 为 <span class="mathjax-exps">$R^1$</span> 上博雷尔 <span class="mathjax-exps">$\sigma$</span> 域，则称 <span class="mathjax-exps">$g(x)$</span> 是一元博雷尔（可测）函数。</p>
 </blockquote>
 <p><span class="callout">3.3.2 Definition: <span class="mathjax-exps">$n$</span>元博雷尔函数</span></p>
 <blockquote>
@@ -462,7 +468,7 @@
 <p>当 <span class="mathjax-exps">$y &gt; 0$</span> 时，<br>
 </p><div class="mathjax-exps">$$\begin{align*} P\{\eta &lt; y\} &amp;= P\{e^{\xi} &lt; y\} = P\{\xi &lt; \ln y\} \\ &amp;= \int_{-\infty}^{\ln y} \frac{1}{\sqrt{2\pi}\sigma} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \, dx \end{align*}$$</div><p></p>
 <p>所以，<span class="mathjax-exps">$\eta$</span> 的密度函数为<br>
-</p><div class="mathjax-exps">$$q(y) = \frac{1}{\sqrt{2\pi}\sigma y} e^{-\frac{(\ln y - \mu)^2}{2\sigma^2}}, \quad y &gt; 0. \quad (3.3.9)$$</div><p></p>
+</p><div class="mathjax-exps">$$q(y) = \frac{1}{\sqrt{2\pi}\sigma y} e^{-\frac{(\ln y - \mu)^2}{2\sigma^2}}, \quad y &gt; 0$$</div><p></p>
 </details>
 <p><span class="mathjax-exps">$\eta$</span> 的对数即 <span class="mathjax-exps">$\ln \eta = \xi$</span> 服从正态分布，故称 <span class="mathjax-exps">$\eta$</span> 所服从的分布为对数正态分布。</p>
 <p><span class="callout">Example: 卡方分布</span></p>
@@ -538,10 +544,10 @@
 </p><div class="mathjax-exps">$$P(\eta _1^* \le x) = 1 - P(\eta _1 &gt; x, \eta _2 &gt; x, \cdots, \eta _n &gt; x) = 1 - (1-F(x))^n$$</div><p></p>
 <p>进一步，讨论 <span class="mathjax-exps">$(\xi_1^*, \xi_n^*)$</span> 的联合分布。</p>
 <p>记 <span class="mathjax-exps">$G(x, y) = P\{\xi_1^* &lt; x, \xi_n^* &lt; y\}$</span>。</p>
-<p>若 <span class="mathjax-exps">$x \geqslant y$</span>，则</p>
-<p></p><div class="mathjax-exps">$$\begin{align*} G(x, y) &amp;= P\{\xi_1^* &lt; x, \xi_n^* &lt; y\} \\ &amp;= P\{\xi_n^* &lt; y\} = [F(y)]^n \end{align*}$$</div><p></p>
+<p>若 <span class="mathjax-exps">$x \geqslant y$</span>，则<br>
+</p><div class="mathjax-exps">$$\begin{align*} G(x, y) &amp;= P\{\xi_1^* &lt; x, \xi_n^* &lt; y\} \\ &amp;= P\{\xi_n^* &lt; y\} = [F(y)]^n \end{align*}$$</div><p></p>
 <p>若 <span class="mathjax-exps">$x &lt; y$</span>，则</p>
-<p></p><div class="mathjax-exps">$$\begin{align*} G(x, y) &amp;= P\{\xi_1^* &lt; x, \xi_n^* &lt; y\} \\ &amp;= P\{\xi_n^* &lt; y\} - P\{\xi_1^* \geqslant x, \xi_n^* &lt; y\} \\ &amp;= [F(y)]^n - [F(y) - F(x)]^n \end{align*}$$</div><p></p>
+<p></p><div class="mathjax-exps">$$\begin{align*} G(x, y) &amp;= P\{\xi_1^* &lt; x, \xi_n^* &lt; y\} \\ &amp;= P\{\xi_n^* &lt; y\} - P\{\xi_1^* \geqslant x, \xi_n^* &lt; y\} \\ &amp;= P\{\xi_n^* &lt; y\} - P\{  x \leqslant \xi _i &lt; y \} \\ &amp;= [F(y)]^n - [F(y) - F(x)]^n \end{align*}$$</div><p></p>
 <p>其联合密度函数为</p>
 <p></p><div class="mathjax-exps">$$\begin{align*} q(x, y) &amp;= \left\{ \begin{array}{l} 0, \quad x \geqslant y \\ n(n-1) [F(y) - F(x)]^{n-2} p(x) p(y), \quad x &lt; y \end{array} \right. \end{align*}$$</div><p></p>
 <p><span class="callout">Definition: 极差</span></p>
@@ -559,7 +565,7 @@
 <p>如果对 <span class="mathjax-exps">$y_i = g_i(x_1, \cdots, x_n), i = 1, 2, \cdots, n$</span>，存在唯一的反函数 <span class="mathjax-exps">$x_i(y_1, \cdots, y_n) = x_i(i = 1, \cdots, n)$</span>，而且 <span class="mathjax-exps">$(\eta_1, \cdots, \eta_n)$</span> 的密度函数为 <span class="mathjax-exps">$q(y_1, \cdots, y_n)$</span>，那么</p>
 <p></p><div class="mathjax-exps">$$\begin{align*} G(y_1, \cdots, y_n) &amp;= \underset{{u_1 &lt; y_1, \cdots , u_n &lt; y_n}}{\int \cdots  \int}  q(u_1, \cdots, u_n) \, du_1 \cdots du_n  \end{align*}$$</div><p></p>
 <p>则有<br>
-</p><div class="mathjax-exps">$$\begin{align*} q(y_1, \cdots, y_n) &amp;= \left\{ \begin{array}{l} p(x_1(y_1, \cdots, y_n), \cdots, x_n(y_1, \cdots, y_n)) |J|, \text{若} (y_1, \cdots, y_n) \\ 0, \quad \text{其他} \end{array} \right. \end{align*}$$</div><p></p>
+</p><div class="mathjax-exps">$$\begin{align*} q(y_1, \cdots, y_n) &amp;= \left\{ \begin{array}{l} p(x_1(y_1, \cdots, y_n), \cdots, x_n(y_1, \cdots, y_n)) |J|, \text{若} (y_1, \cdots, y_n) \in \text{range}(g_i) \\ 0, \quad \text{其他} \end{array} \right. \end{align*}$$</div><p></p>
 <p>其中 <span class="mathjax-exps">$J$</span> 为坐标变换的雅可比行列式</p>
 <p></p><div class="mathjax-exps">$$J = \left| \begin{array}{ccc} \frac{\partial x_1}{\partial y_1} &amp; \cdots &amp; \frac{\partial x_1}{\partial y_n} \\ \vdots &amp; \vdots &amp; \vdots \\ \frac{\partial x_n}{\partial y_1} &amp; \cdots &amp; \frac{\partial x_n}{\partial y_n} \end{array} \right|$$</div><p></p>
 <p><span class="callout">Example: 卡方分布可加性</span></p>
@@ -580,11 +586,11 @@
 <p>当 <span class="mathjax-exps">$m &lt; n$</span> 时，可以通过增补变量再使用变换法求解。<br>
 <span class="callout">Example: <span class="mathjax-exps">$t$</span>分布</span></p>
 <blockquote>
-<p>设 <span class="mathjax-exps">$\xi, \eta$</span> 为两个独立随机变量，<span class="mathjax-exps">$\xi$</span> 服从 <span class="mathjax-exps">$N(0,1), \eta$</span> 服从自由度为 <span class="mathjax-exps">$n$</span> 的 <span class="mathjax-exps">$\chi^2$</span> 分布，令 <span class="mathjax-exps">$T = \xi / \sqrt{\frac{n}{n}}$</span>，试求 <span class="mathjax-exps">$T$</span> 的密度函数。</p>
+<p>设 <span class="mathjax-exps">$\xi, \eta$</span> 为两个独立随机变量，<span class="mathjax-exps">$\xi$</span> 服从 <span class="mathjax-exps">$N(0,1), \eta$</span> 服从自由度为 <span class="mathjax-exps">$n$</span> 的 <span class="mathjax-exps">$\chi^2$</span> 分布，令 <span class="mathjax-exps">$T = \xi / \sqrt{\frac{\eta }{n}}$</span>，试求 <span class="mathjax-exps">$T$</span> 的密度函数。</p>
 </blockquote>
 <p>为求得 <span class="mathjax-exps">$T$</span> 的密度函数，引进增补变量 <span class="mathjax-exps">$S = \eta$</span>，先求 <span class="mathjax-exps">$(S, T)$</span> 的联合密度函数。</p>
-<p><span class="mathjax-exps">$\xi, \eta$</span> 相互独立，故 <span class="mathjax-exps">$(\xi, \eta)$</span> 的联合密度函数为</p>
-<p></p><div class="mathjax-exps">$$p(x, y) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \cdot \frac{1}{2^{n/2} \Gamma\left(\frac{n}{2}\right)} y^{\frac{n}{2}-1} e^{-\frac{y}{2}} \quad -\infty &lt; x &lt; \infty, y &gt; 0$$</div><p></p>
+<p><span class="mathjax-exps">$\xi, \eta$</span> 相互独立，故 <span class="mathjax-exps">$(\xi, \eta)$</span> 的联合密度函数为<br>
+</p><div class="mathjax-exps">$$p(x, y) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} \cdot \frac{1}{2^{n/2} \Gamma\left(\frac{n}{2}\right)} y^{\frac{n}{2}-1} e^{-\frac{y}{2}} \quad -\infty &lt; x &lt; \infty, y &gt; 0$$</div><p></p>
 <p>变换 <span class="mathjax-exps">$s = y, t = \frac{x}{\sqrt{y/n}}$</span> 的逆变换为 <span class="mathjax-exps">$x = t\left(\frac{s}{n}\right)^{1/2}, y = s$</span>，其雅可比行列式</p>
 <p></p><div class="mathjax-exps">$$J = \left| \begin{array}{cc} \frac{\partial x}{\partial s} &amp; \frac{\partial x}{\partial t} \\ \frac{\partial y}{\partial s} &amp; \frac{\partial y}{\partial t} \end{array} \right| =\left| \begin{array}{cc} \frac{t}{2 n} \left(\frac{s}{n}\right)^{-\frac{1}{2}} &amp; \left(\frac{s}{n}\right)^{\frac{1}{2}} \\ 1 &amp; 0 \end{array} \right|  = -\left(\frac{s}{n}\right)^{\frac{1}{2}}$$</div><p></p>
 <p></p><div class="mathjax-exps">$$|J| = \left(\frac{s}{n}\right)^{\frac{1}{2}}$$</div><p></p>

@@ -45,8 +45,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -57,8 +59,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -235,7 +239,7 @@
 <li>若 <span class="mathjax-exps">$A_1,A_2,... \in \mathscr{F}$</span>，则 <span class="mathjax-exps">$\cup_{n=1}^{\infty}A_n \in \mathscr{F}$</span></li>
 </ol>
 <p>满足上述条件的集合 <span class="mathjax-exps">$\mathscr{F}$</span> 称为 <span class="mathjax-exps">$\Omega$</span> 的 <span class="mathjax-exps">$\sigma$</span> 代数。</p>
-<p><em>Definition: 事件域</em></p>
+<p><span class="callout">Definition:  事件域</span></p>
 <blockquote>
 <p>若<span class="mathjax-exps">$\mathscr{F}$</span>是由样本空间<span class="mathjax-exps">$\Omega$</span>的一些子集构成的一个<span class="mathjax-exps">$\sigma$</span>域，则称它为事件域，<span class="mathjax-exps">$\mathscr{F}$</span>中的元素称为事件，<span class="mathjax-exps">$\Omega$</span>称为必然事件，<span class="mathjax-exps">$\varnothing$</span>称为不可能事件。</p>
 </blockquote>
@@ -243,7 +247,7 @@
 <strong>例2</strong> <span class="mathjax-exps">$\mathscr{F}=\{\varnothing, A,\bar{A},\Omega\}$</span>. 这时 <span class="mathjax-exps">$\mathscr{F}$</span> 也是一个 <span class="mathjax-exps">$\sigma$</span> 域, <span class="mathjax-exps">$\Omega, A,\bar{A},\varnothing$</span> 是事件.<br>
 <strong>例3</strong> <span class="mathjax-exps">$\Omega=\left\{\omega_1,\cdots,\omega_n\right\}$</span>, <span class="mathjax-exps">$\mathscr{F}$</span> 由 <span class="mathjax-exps">$\Omega$</span> 的一切子集构成, 这时它包含不可能事件 <span class="mathjax-exps">$\varnothing,\left(\begin{array}{l}n\\ 1\end{array}\right)$</span> 个单点集, <span class="mathjax-exps">$\left(\begin{array}{l}n\\ 2\end{array}\right)$</span> 个双点集, <span class="mathjax-exps">$\cdots,\left(\begin{array}{c}n\\ n-1\end{array}\right)$</span> 个 n-1点集, 还有必然事件 <span class="mathjax-exps">$\Omega$</span>, 因此计有 <span class="mathjax-exps">$\binom{n}{0}+\binom{n}{1}+\binom{n}{2}+\cdots+\binom{n}{n-1}+\binom{n}{n}=2^n$</span> 个元素. 不难验证, <span class="mathjax-exps">$\mathscr{F}$</span> 是一个 <span class="mathjax-exps">$\sigma$</span> 域.<br>
 <strong>例4</strong> 对于一般的 <span class="mathjax-exps">$\Omega$</span>, 若 <span class="mathjax-exps">$\mathscr{F}$</span> 由 <span class="mathjax-exps">$\Omega$</span> 的一切子集构成, 可以验证 <span class="mathjax-exps">$\mathscr{F}$</span> 是一个 <span class="mathjax-exps">$\sigma$</span> 域。</p>
-<p><em>Theorem: 最小<span class="mathjax-exps">$\sigma$</span>域</em></p>
+<p><span class="callout">Theorem:  最小<span class="mathjax-exps">$\sigma$</span>域</span></p>
 <blockquote>
 <p>给定 <span class="mathjax-exps">$\Omega$</span> 的非空子集 <span class="mathjax-exps">$\mathscr{S}$</span>，必存在唯一的 <span class="mathjax-exps">$\sigma$</span> 代数 <span class="mathjax-exps">$\mathfrak{m}(\mathscr{S})$</span>，使得 <span class="mathjax-exps">$\mathscr{S} \subseteq \mathfrak{m}(\mathscr{S})$</span>, 且 <span class="mathjax-exps">$\mathfrak{m} (\mathscr{S})$</span>是包含 <span class="mathjax-exps">$\mathscr{S}$</span>的最小 <span class="mathjax-exps">$\sigma$</span>代数。</p>
 </blockquote>
@@ -251,7 +255,7 @@
     <summary>Proof:</summary>
 <p>由例4可以看出由 <span class="mathjax-exps">$\Omega$</span> 的一切子集构成的 <span class="mathjax-exps">$\sigma$</span> 代数是包含 <span class="mathjax-exps">$\mathscr{S}$</span>的<span class="mathjax-exps">$\sigma$</span> 代数。取所有包含 <span class="mathjax-exps">$\mathscr{S}$</span>的 <span class="mathjax-exps">$\sigma$</span> 代数的交集，这个交集就是 <span class="mathjax-exps">$\mathfrak{m}(\mathscr{S})$</span>。不难验证 <span class="mathjax-exps">$\mathfrak{m}(\mathscr{S})$</span> 是包含 <span class="mathjax-exps">$\mathscr{S}$</span>的最小 <span class="mathjax-exps">$\sigma$</span> 代数。</p>
 </details>
-<p><em>Definition: 一维博雷尔点集</em></p>
+<p><span class="callout">Definition:  一维博雷尔点集</span></p>
 <blockquote>
 <p>以<span class="mathjax-exps">$\mathbb{R}^1$</span>记数直线或实数全体，并称由一切形为<span class="mathjax-exps">$[a, b)$</span>的有界左闭右开区间构成的集<span class="mathjax-exps">$\sigma$</span>域为一维博雷尔<span class="mathjax-exps">$\sigma$</span>域，记之为<span class="mathjax-exps">$\mathscr{B}_1$</span>，称<span class="mathjax-exps">$\mathscr{B}_1$</span>的元素为一维博雷尔点集。</p>
 </blockquote>
@@ -260,7 +264,7 @@
 Answer:<br>
 因为我们的概率一般是定义在<span class="mathjax-exps">$\mathbb{R}$</span>上的, 自然想要研究在<span class="mathjax-exps">$\mathbb{R}$</span>上可测的集合. 而博雷尔<span class="mathjax-exps">$\sigma$</span>域是可测的, 且一般能包括我们所研究的集合.<br>
 下面给出一个不可测的集合.<br>
-<em>Example: 勒贝格不可测集</em></p>
+<span class="callout">Example: 勒贝格不可测集</span></p>
 <blockquote>
 <p>选取样本空间 <span class="mathjax-exps">$\Omega=[0,1]$</span>, 令 <span class="mathjax-exps">$\Omega$</span> 中的所有有理数集合为 <span class="mathjax-exps">$Q'$</span>, 由于有理数为可数集合, 因而可以写成 <span class="mathjax-exps">$Q'=\{q_1, q_2, \ldots\}$</span>。对于对于任意实数 <span class="mathjax-exps">\(a \in (0,1)\)</span>，定义集合<br>
 </p><div class="mathjax-exps">\[S_a = \left\{ \begin{array}{ccc} a + q &amp; \text{if} &amp; a + q &lt; 1 \\ a + q - 1 &amp; \text{if} &amp; a + q \geqslant 1 \end{array} \forall q \in Q' \right\}\]</div> 其中 <span class="mathjax-exps">\(Q'\)</span> 是 <span class="mathjax-exps">\(\Omega = [0,1]\)</span> 中所有有理数的集合。可知<div class="mathjax-exps">\[\bigcup_{a \in (0,1)} S_a = [0,1]\]</div>由于 <span class="mathjax-exps">\(S_a\)</span> 也是可数集，可以将其写为<div class="mathjax-exps">\[S_a = \{ s_{a1}, s_{a2}, \ldots \}\]</div> 令 <span class="mathjax-exps">\(T_1\)</span> 为所有 <span class="mathjax-exps">\(S_a\)</span> 中的 <span class="mathjax-exps">\(s_{a1}\)</span>，<span class="mathjax-exps">\(T_2\)</span> 为所有 <span class="mathjax-exps">\(S_a\)</span> 中的 <span class="mathjax-exps">\(s_{a2}\)</span>，因此我们有可数个 <span class="mathjax-exps">\(T_k\)</span>，且<div class="mathjax-exps">\[\bigcup_{k=1}^{\infty} T_k = [0,1]\]</div> 且 <span class="mathjax-exps">\(T_k\)</span> 两两不相交。每个 <span class="mathjax-exps">\(T_k\)</span> 地位相等，因此 <div class="mathjax-exps">\[P(T_k) = P(T_{k'})\]</div> 若 <span class="mathjax-exps">\(P(T_k) &gt; 0\)</span>，则<br>

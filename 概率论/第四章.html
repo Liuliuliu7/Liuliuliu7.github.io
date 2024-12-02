@@ -45,8 +45,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -57,8 +59,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -143,11 +147,39 @@
 </ul>
 </li>
 <li><a href="#%E6%9D%A1%E4%BB%B6%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B">条件数学期望</a></li>
+<li><a href="#%E7%86%B5%E4%B8%8E%E4%BF%A1%E6%81%AF">熵与信息</a></li>
+<li><a href="#%E6%AF%8D%E5%87%BD%E6%95%B0">母函数</a>
+<ul>
+<li><a href="#%E6%AF%8D%E5%87%BD%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5">母函数的概念</a></li>
+<li><a href="#%E7%8B%AC%E7%AB%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%92%8C%E7%9A%84%E6%AF%8D%E5%87%BD%E6%95%B0">独立随机变量和的母函数</a></li>
+<li><a href="#%E9%9A%8F%E6%9C%BA%E4%B8%AA%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%AF%8D%E5%87%BD%E6%95%B0">随机个随机变量的母函数</a></li>
+</ul>
+</li>
+<li><a href="#%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0">特征函数</a>
+<ul>
+<li><a href="#%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%86%8D%E7%94%9F%E6%80%A7">分布函数的再生性</a></li>
+<li><a href="#%E5%A4%9A%E5%85%83%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0">多元特征函数</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%9A%E5%85%83%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83">多元正态分布</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
 </ul>
 </li>
 </ul>
 </details>
 </div>
+<button id="toggleProofs">Toggle Proofs</button>
+<script>
+  document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
+    var details = document.querySelectorAll('details > summary');
+    for (var i = 0; i < details.length; i++) {
+      if (details[i].textContent.includes('Proof')) {
+        details[i].parentElement.open = !details[i].parentElement.open;
+      }
+    }
+  });
+</script>
 <h2 id="第四章-数字特征与特征函数">第四章 数字特征与特征函数 </h2>
 <h3 id="数字特征">数字特征 </h3>
 <h4 id="数学期望">数学期望 </h4>
@@ -264,7 +296,8 @@
 <p></p><div class="mathjax-exps">$$D\xi = E(\xi - E\xi)^2 = E(\xi - c)^2 - (c - E\xi)^2$$</div><p></p>
 </details>
 <p>这个性质表明数学期望具有一个重要的极值性质：在 <span class="mathjax-exps">$E(\xi - c)^2$</span> 中，当 <span class="mathjax-exps">$c = E\xi$</span> 时达到极小；这也说明在 <span class="mathjax-exps">$D\xi$</span> 的定义中取 <span class="mathjax-exps">$c = E\xi$</span> 的合理性。</p>
-<p><span class="callout">切比雪夫不等式</span></p>
+<p><span class="callout">Theorem: 切比雪夫不等式</span><br>
+<span id="Chebyshev-inequality"></span></p>
 <blockquote>
 <p>对于任何具有有限方差的随机变量 <span class="mathjax-exps">$\xi$</span>，都有<br>
 </p><div class="mathjax-exps">$$P\{|\xi-E\xi|\geqslant\varepsilon\}\leqslant\frac{D\xi}{\varepsilon^2}$$</div><p></p>
@@ -330,6 +363,11 @@
 <td style="text-align:center">超几何分布</td>
 <td style="text-align:center"><span class="mathjax-exps">$\frac{nM}{N}$</span></td>
 <td style="text-align:center"><span class="mathjax-exps">$\frac{nM}{N}\left(1 - \frac{M}{N}\right)\frac{N-n}{N-1}$</span></td>
+</tr>
+<tr>
+<td style="text-align:center">伽马分布</td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{\alpha}{\lambda}$</span></td>
+<td style="text-align:center"><span class="mathjax-exps">$\frac{\alpha}{\lambda^2}$</span></td>
 </tr>
 </tbody>
 </table>
@@ -528,6 +566,272 @@
 <p>这个事实可以解释为：残差中已不再包含对预测 <span class="mathjax-exps">\(\eta\)</span> 有用的知识。因此观察值 <span class="mathjax-exps">\(\eta\)</span> 被分解为两个不相关的随机变量之和：<br>
 </p><div class="mathjax-exps">\[\eta = \hat{\eta} + (\eta - \hat{\eta})\]</div><p></p>
 </details>
+<h3 id="熵与信息">熵与信息 </h3>
+<h3 id="母函数">母函数 </h3>
+<h4 id="母函数的概念">母函数的概念 </h4>
+<p><span class="callout">4.4.1 Definition: 随机变量的母函数定义</span></p>
+<blockquote>
+<p>若随机变量 <span class="mathjax-exps">$\xi$</span> 取非负整数值，且相应的分布列为</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th><span class="mathjax-exps">$\xi$</span></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mathjax-exps">$P$</span></td>
+<td><span class="mathjax-exps">$p_0$</span></td>
+<td><span class="mathjax-exps">$p_1$</span></td>
+<td><span class="mathjax-exps">$p_2$</span></td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>则称<br>
+</p><div class="mathjax-exps">$$P(s)=\sum_{k=0}^{\infty} p_k s^k$$</div><p></p>
+<p>为 <span class="mathjax-exps">$\xi$</span> 的母函数(generating function)。</p>
+</blockquote>
+<p>下面给出常见分布的母函数。<br>
+<span class="callout">4.4.5 Example: 二项分布的母函数</span></p>
+<blockquote>
+<p></p><div class="mathjax-exps">$$P(s)=\sum_{k=0}^n\binom{n}{k}\cdot p^kq^{n-k}s^k=(q+ps)^n$$</div><p></p>
+</blockquote>
+<p><span class="callout">4.4.7 Example: 泊松分布的母函数</span></p>
+<blockquote>
+<p></p><div class="mathjax-exps">$$P(s)=\sum_{k=0}^{\infty}\frac{\lambda^k}{k!} e^{-\lambda}s^k=e^{-\lambda}\cdot e^{\lambda s}=e^{\lambda(s-1)}$$</div><p></p>
+</blockquote>
+<p><span class="callout">4.4.8 Example: 几何分布的母函数</span></p>
+<blockquote>
+<p></p><div class="mathjax-exps">$$P(s)=\sum_{k=1}^{\infty} q^{k-1} p s^k=p s\sum_{k=1}^{\infty}(q s)^{k-1}=\frac{p s}{1-q s}$$</div><p></p>
+</blockquote>
+<p>母函数的性质：<br>
+1.母函数和分布列是一一对应的。<br>
+设概率分布 <span class="mathjax-exps">$\left\{p_k\right\}$</span> 及 <span class="mathjax-exps">$\left\{q_k\right\}$</span> 分别具有母函数 <span class="mathjax-exps">$P(s)$</span> 及 <span class="mathjax-exps">$Q(s)$</span>，而且 <span class="mathjax-exps">$P(s)=Q(s)$</span>，因为 <span class="mathjax-exps">$P(s)$</span> 及 <span class="mathjax-exps">$Q(s)$</span> 都是幂级数，且当 <span class="mathjax-exps">$|s|\leqslant 1$</span> 时收敛，对 <span class="mathjax-exps">$P(s)$</span> 及 <span class="mathjax-exps">$Q(s)$</span> 求导 <span class="mathjax-exps">$k$</span> 次，并令 <span class="mathjax-exps">$s=0$</span>，则得<br>
+</p><div class="mathjax-exps">$$k! p_k=P^{(k)}(0)=Q^{(k)}(0)=k! q_k$$</div><p></p>
+<p>所以 <span class="mathjax-exps">$p_k=q_k$</span>，即母函数唯一确定分布列。</p>
+<p>2.母函数与数字特征的关系。<br>
+若 <span class="mathjax-exps">$P(s)=\sum_{k=0}^{\infty} p_k s^k$</span>，即 <span class="mathjax-exps">$P'(s)=\sum_{k=1}^{\infty} k p_k s^{k-1}, P''(s)=\sum_{k=2}^{\infty} k(k-1) p_k s^{k-2}$</span>，这两个级数至少在 <span class="mathjax-exps">$|s|&lt;1$</span> 是收敛的。</p>
+<p>当数学期望 <span class="mathjax-exps">$\sum_{k=1}^{\infty} kp_k$</span> 存在时，<span class="mathjax-exps">$P'(1)=\sum_{k=1}^{\infty} kp_k=E\xi$</span>。<br>
+当数学期望 <span class="mathjax-exps">$\sum_{k=1}^{\infty} k p_k=\infty$</span> 时，<span class="mathjax-exps">$\lim_{s\rightarrow 1} P'(s)=\infty$</span>。<br>
+同样，当方差 <span class="mathjax-exps">$D\xi$</span> 存在时，<span class="mathjax-exps">$E[\xi(\xi-1)]=\sum_{k=2}^{\infty} k(k-1) p_k=P''(1)$</span>。<br>
+故 <span class="mathjax-exps">$D\xi=E\xi^2-(E\xi)^2=P''(1)+P'(1)-[P'(1)]^2$</span>。<br>
+上述公式是计算数学期望及方差的简便公式。</p>
+<h4 id="独立随机变量和的母函数">独立随机变量和的母函数 </h4>
+<p>若随机变量 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$\eta$</span> 相互独立，它们都是整值随机变量，概率分布分别为 <span class="mathjax-exps">$\{a_k\}$</span> 及 <span class="mathjax-exps">$\{b_k\}$</span>，相应的母函数为 <span class="mathjax-exps">$A(s) = \sum_{k=0}^{\infty} a_k s^k$</span> 及 <span class="mathjax-exps">$B(s) = \sum_{k=0}^{\infty} b_k s^k$</span>。显然 <span class="mathjax-exps">$\zeta=\xi+\eta$</span> 也是整值随机变量，若记 <span class="mathjax-exps">$c_r = P(\zeta = r)$</span>，则<br>
+</p><div class="mathjax-exps">$$c_r = a_0 b_r + a_1 b_{r-1} + \cdots + a_r b_0$$</div><p></p>
+<p>这就是离散卷积公式。<br>
+记<br>
+</p><div class="mathjax-exps">$$C(s) = \sum_{r=0}^{\infty} c_r s^r$$</div><p></p>
+<p>利用母函数在 <span class="mathjax-exps">$|s| \leqslant 1$</span> 的一致收敛性及绝对收敛性，<br>
+</p><div class="mathjax-exps">$$A(s) B(s) = \sum_{r=0}^{\infty} \left( \sum_{k=0}^{r} a_k b_{r-k} \right) s^r,$$</div><p></p>
+<p>因此<br>
+</p><div class="mathjax-exps">$$C(s) = A(s) B(s).$$</div><p></p>
+<p>即两个独立随机变量之和的母函数是这两个随机变量的母函数的乘积，这是一个相当重要的性质，由于母函数具有这个性质，因此在研究独立随机变量和的问题时，母函数很适用。</p>
+<p>容易把上面结果推广到 <span class="mathjax-exps">$n$</span> 个独立整值随机变量之和的场合。若随机变量 <span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n$</span> 相互独立，且它们的母函数分别为 <span class="mathjax-exps">$P_1(s), P_2(s), \cdots, P_n(s)$</span>，则 <span class="mathjax-exps">$\xi = \xi_1 + \xi_2 + \cdots + \xi_n$</span> 的母函数为<br>
+</p><div class="mathjax-exps">$$P(s) = P_1(s) P_2(s) \cdots P_n(s)$$</div><p></p>
+<p>特别当 <span class="mathjax-exps">$\xi_i$</span> 有相同概率分布的场合，<span class="mathjax-exps">$P_i(s) = P_1(s)$</span>，这时<br>
+</p><div class="mathjax-exps">$$P(s) = [P_1(s)]^n$$</div><p></p>
+<h4 id="随机个随机变量的母函数">随机个随机变量的母函数 </h4>
+<h3 id="特征函数">特征函数 </h3>
+<p><span class="callout">4.5.1 Definition: 复随机变量</span></p>
+<blockquote>
+<p>如果 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$\eta$</span> 都是概率空间 <span class="mathjax-exps">$(\Omega, \mathcal{F}, P)$</span> 上的实值随机变量，则称 <span class="mathjax-exps">$\zeta = \xi + i\eta$</span> 为复随机变量。</p>
+</blockquote>
+<p><span class="callout">4.5.2 Definition: 复随机变量的数学期望</span></p>
+<blockquote>
+<p>定义一个复随机变量 <span class="mathjax-exps">$\zeta = \xi + i\eta$</span> 的数学期望为<br>
+</p><div class="mathjax-exps">$$E\zeta = E\xi + iE\eta$$</div><p></p>
+</blockquote>
+<p>从定义知道，对复随机变量的研究本质上是对二维随机向量的研究。例如二维向量 <span class="mathjax-exps">$(\xi_1, \eta_1)$</span> 与 <span class="mathjax-exps">$(\xi_2, \eta_2)$</span> 是独立的，则我们称复随机变量 <span class="mathjax-exps">$\zeta_1 = \xi_1 + i\eta_1$</span> 与 <span class="mathjax-exps">$\zeta_2 = \xi_2 + i\eta_2$</span> 是独立的。<br>
+对复随机变量也可以平行于实随机变量建立起一系列结果。例如，若 <span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n$</span> 是相互独立的，则<br>
+</p><div class="mathjax-exps">$$E\xi_1\xi_2\cdots\xi_n = E\xi_1 E\xi_2 \cdots E\xi_n$$</div><p></p>
+<p>又如，若 <span class="mathjax-exps">$g(x)$</span> 是一个一元博雷尔可测函数，而 <span class="mathjax-exps">$\eta = g(\xi)$</span>，则成立<br>
+</p><div class="mathjax-exps">$$Ee^{ig(\xi)} = \int_{-\infty}^{\infty} e^{itg(x)} dF_\xi(x)$$</div><p></p>
+<p>这里使用欧拉公式 <span class="mathjax-exps">$e^{i\theta} = \cos\theta + i\sin\theta$</span>。</p>
+<p><span class="callout">4.5.2 Definition: 特征函数</span></p>
+<blockquote>
+<p>若随机变量 <span class="mathjax-exps">$\xi$</span> 的分布函数为 <span class="mathjax-exps">$F_\xi(x)$</span>，则称<br>
+</p><div class="mathjax-exps">$$f_\xi(t)=E e^{i t\xi}=\int_{-\infty}^{\infty} e^{i t x} d F_\xi(x)$$</div><p></p>
+<p>为 <span class="mathjax-exps">$\xi$</span> 的特征函数(characteristic function)。</p>
+</blockquote>
+<p>特征函数是一个实变量的复值函数，由于 <span class="mathjax-exps">$|e^{itx}| = 1$</span>，所以它对一切实数 <span class="mathjax-exps">$t$</span> 都有意义。对于离散型随机变量，若其分布列为 <span class="mathjax-exps">$p_j$</span>，则其特征函数为<br>
+</p><div class="mathjax-exps">$$f(t) = \sum_{j=1}^{\infty} p_j e^{itx_j}$$</div><p></p>
+<p>特别地，对于整值随机变量，若其母函数为 <span class="mathjax-exps">$P(s)$</span>，则 <span class="mathjax-exps">$f(t) = P(e^{it})$</span>。显然对于常见的分布可以利用上一节的母函数立马得到特征函数。<br>
+对于连续型随机变量，若其分布密度函数为 <span class="mathjax-exps">$p(x)$</span>，则其特征函数为<br>
+</p><div class="mathjax-exps">$$f(t) = \int_{-\infty}^{\infty} e^{itx} p(x) dx$$</div><p></p>
+<p>这时，特征函数是密度函数 <span class="mathjax-exps">$p(x)$</span> 的傅里叶(Fourier)变换。<br>
+下面给出常见分布的特征函数。<br>
+<span class="callout">4.5.5 Example: 退化分布的特征函数</span></p>
+<blockquote>
+<p>退化分布 <span class="mathjax-exps">$I_c(x)$</span> 的特征函数为<br>
+</p><div class="mathjax-exps">$$f(t)=e^{i c t}$$</div><p></p>
+</blockquote>
+<p><span class="callout">4.5.6 Example: 二项分布的特征函数</span></p>
+<blockquote>
+<p>二项分布 <span class="mathjax-exps">$B(n, p)$</span> 的特征函数为<br>
+</p><div class="mathjax-exps">$$f(t)=\left(p e^{i t}+q\right)^n$$</div><p></p>
+</blockquote>
+<p><span class="callout">4.5.7 Example: 泊松分布的特征函数</span></p>
+<blockquote>
+<p>泊松分布 <span class="mathjax-exps">$P(\lambda)$</span> 的特征函数为<br>
+</p><div class="mathjax-exps">$$f(t)=e^{\lambda(e^{i t}-1)}$$</div><p></p>
+</blockquote>
+<p><span class="callout">4.5.8 Example: <span class="mathjax-exps">$\Gamma$</span> 分布的特征函数</span></p>
+<blockquote>
+<p><span class="mathjax-exps">$\Gamma$</span> 分布 <span class="mathjax-exps">$\Gamma(r,\lambda)$</span> 的特征函数为<br>
+</p><div class="mathjax-exps">$$\begin{align*} f(t)&amp;=\int_0^{\infty} e^{i t x}\frac{\lambda^r}{\Gamma(r)} x^{r-1} e^{-\lambda x} d x \\ &amp;=\int_0^{\infty}\frac{\lambda^r}{\Gamma(r)} x^{r-1} e^{-\left(\lambda -{i t}\right) x} d x \\ &amp;=\left(1-\frac{i t}{\lambda}\right)^{-r} \end{align*}$$</div><p></p>
+</blockquote>
+<p>最后一个等式需要用到 <span class="mathjax-exps">$\Gamma$</span> 函数的性质：<br>
+</p><div class="mathjax-exps">$$\int_0^{\infty} x^{r-1} e^{-\alpha x} d x = \frac{\Gamma(r)}{\alpha^r}$$</div><p></p>
+<p><span class="callout">4.5.9 Example: 指数分布的特征函数</span></p>
+<blockquote>
+<p>特别地，参数为 <span class="mathjax-exps">$\lambda$</span> 的指数分布 <span class="mathjax-exps">$\operatorname{Exp}(\lambda)$</span>，即 <span class="mathjax-exps">$\Gamma(1,\lambda)$</span> 的特征函数为<br>
+</p><div class="mathjax-exps">$$f(t)=\left(1-\frac{i t}{\lambda}\right)^{-1}$$</div><p></p>
+</blockquote>
+<p><span class="callout">4.5.10 Example: <span class="mathjax-exps">$\chi^2$</span> 分布的特征函数</span></p>
+<blockquote>
+<p>同样地，参数 <span class="mathjax-exps">$n$</span> 的 <span class="mathjax-exps">$\chi^2$</span> 分布，即 <span class="mathjax-exps">$\Gamma\left(\frac{n}{2},\frac{1}{2}\right)$</span> 的特征函数为<br>
+</p><div class="mathjax-exps">$$f(t)=(1-2 i t)^{-\frac{n}{2}}$$</div><p></p>
+</blockquote>
+<p><span class="callout">4.5.* Example: 正态分布的特征函数</span></p>
+<blockquote>
+<p>正态分布 <span class="mathjax-exps">\(N(\mu, \sigma^2)\)</span> 的特征函数为<br>
+</p><div class="mathjax-exps">\[f(t) = \exp\left\{i\mu t - \frac{1}{2}\sigma^2 t^2\right\}\]</div><p></p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p></p><div class="mathjax-exps">$$\begin{align*} f(t) &amp;= \int_{-\infty}^{+\infty}  \frac{1}{\sigma\sqrt{2\pi}} \exp \left\{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 \right\} \exp \left\{itx \right\} d x  \\ &amp;= \int_{-\infty}^{+\infty}  \frac{1}{\sigma\sqrt{2\pi}} \exp \left\{ -\frac{1}{2 \sigma ^2} \left( x^2 - 2 \mu x + \mu ^2 - 2 \sigma ^2 itx \right) \right\} d x \\ &amp;= \int_{-\infty}^{+\infty}  \frac{1}{\sigma\sqrt{2\pi}} \exp \left\{ -\frac{1}{2 \sigma ^2} \left[ x - (\mu + \sigma ^2 it) \right]^2 \right\} \exp \left\{ i \mu t - \frac{1}{2} \sigma ^2 t^2 \right\} dx \\ &amp;= \exp \left\{ i \mu t - \frac{1}{2} \sigma ^2 t^2 \right\} \end{align*}$$</div><p></p>
+</details>
+<p>下面讨论特征函数的性质。</p>
+<ol>
+<li>
+<p><span class="mathjax-exps">$f(0) = 1, |f(t)| \leqslant 1, f(-t) = \overline{f(t)}$</span>。</p>
+</li>
+<li>
+<p>特征函数在 <span class="mathjax-exps">$(-\infty, \infty)$</span> 上一致连续。</p>
+</li>
+<li>
+<p>对于任意的正整数 <span class="mathjax-exps">$n$</span> 及任意实数 <span class="mathjax-exps">$t_1, t_2, \cdots, t_n$</span> 及复数 <span class="mathjax-exps">$\lambda_1, \lambda_2, \cdots, \lambda_n$</span>，成立<br>
+</p><div class="mathjax-exps">$$\sum_{k=1}^{n} \sum_{j=1}^{n} f(t_k - t_j) \lambda_k \overline{\lambda_j} \geq 0$$</div><p></p>
+</li>
+<li>
+<p>两个相互独立的随机变量之和的特征函数等于它们的特征函数之积。一般的，若 <span class="mathjax-exps">$n$</span> 个独立整值随机变量之和的特征函数为这 <span class="mathjax-exps">$n$</span> 个随机变量的特征函数之积。</p>
+</li>
+<li>
+<p>设随机变量 <span class="mathjax-exps">$\xi$</span> 有 n 阶矩存在，则它的特征函数可微分 n 次，且当 <span class="mathjax-exps">$k \leqslant n$</span> 时：<span class="mathjax-exps">$f^{(k)}(0) = i^k E\xi^k$</span>。<br>
+该性质提供了计算随机变量的矩的一种方法。</p>
+</li>
+<li>
+<p>若随机变量有 n 阶矩存在，则它的特征函数可作如下展开：<br>
+</p><div class="mathjax-exps">$$f(t) = 1 + (it)E\xi + \frac{(it)^2}{2!}E\xi^2 + \cdots + \frac{(it)^n}{n!}E\xi^n + o(t^n)$$</div><p></p>
+</li>
+<li>
+<p>设 <span class="mathjax-exps">$\eta = a\xi + b$</span>，这里 <span class="mathjax-exps">$a, b$</span> 为常数，则<br>
+</p><div class="mathjax-exps">$$f_\eta(t) = e^{ibt} f_\xi(at)$$</div><p></p>
+</li>
+</ol>
+<details open="">
+    <summary>Proof:</summary>
+<p>参见概率论基础第三版p249</p>
+</details>
+<p><span class="callout">4.5.2 Theorem: 唯一性定理</span></p>
+<blockquote>
+<p>分布函数由其特征函数唯一决定。</p>
+</blockquote>
+<h4 id="分布函数的再生性">分布函数的再生性 </h4>
+<p>利用特征函数，可以很方便的研究分布的再生性，即可加性。</p>
+<p><span class="callout">4.5.26 Example: 二项分布的卷积</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$\xi_1 \sim B(m, p), \xi_2 \sim  B(n, p)$</span>，而且 <span class="mathjax-exps">$\xi_1$</span> 与 <span class="mathjax-exps">$\xi_2$</span> 独立，则 <span class="mathjax-exps">$\eta=\xi_1+\xi_2 \sim B(m+n, p)$</span>。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>事实上 <span class="mathjax-exps">$f_{\xi_1}(t)=\left(p e^{i t}+q\right)^m, f_{\xi_2}(t)=\left(p e^{i t}+q\right)^n$</span>，由性质 4 知<br>
+</p><div class="mathjax-exps">$$f_n(t)=\left(p e^{i t}+q\right)^{m+n}$$</div><p></p>
+<p>因此由唯一性定理知 <span class="mathjax-exps">$\eta$</span> 服从 <span class="mathjax-exps">$B(m+n, p)$</span>。<br>
+简记作<br>
+</p><div class="mathjax-exps">$$B(n_1, p) * B(n_2, p) = B(n_1+n_2, p)$$</div><p></p>
+</details>
+<p><span class="callout">4.5.27 Example: 泊松分布的卷积</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$\xi_1 \sim P(\lambda_1), \xi_2 \sim P(\lambda_2)$</span>，而且 <span class="mathjax-exps">$\xi_1$</span> 与 <span class="mathjax-exps">$\xi_2$</span> 独立，则 <span class="mathjax-exps">$\eta=\xi_1+\xi_2 \sim P(\lambda_1+\lambda_2)$</span>。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>事实上<br>
+</p><div class="mathjax-exps">$$f_{\xi_1}(t) = e^{\lambda_1(e^{it} - 1)}, \quad f_{\xi_2}(t) = e^{\lambda_2(e^{it} - 1)}$$</div><p></p>
+<p>简记作<br>
+</p><div class="mathjax-exps">$$P(\lambda_1) * P(\lambda_2) = P(\lambda_1 + \lambda_2)$$</div><p></p>
+</details>
+<p><span class="callout">4.5.28 Example: 正态分布的卷积</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$\xi_1 \sim N(\mu_1, \sigma_1^2), \xi_2 \sim N(\mu_2, \sigma_2^2)$</span>，而且 <span class="mathjax-exps">$\xi_1$</span> 与 <span class="mathjax-exps">$\xi_2$</span> 独立，则 <span class="mathjax-exps">$\eta=\xi_1+\xi_2 \sim N(\mu_1+\mu_2, \sigma_1^2+\sigma_2^2)$</span>。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>事实上<br>
+</p><div class="mathjax-exps">$$f_{\xi_1}(t) = e^{i\mu_1 t - \frac{1}{2}\sigma_1^2 t^2}, \quad f_{\xi_2}(t) = e^{i\mu_2 t - \frac{1}{2}\sigma_2^2 t^2}$$</div><p></p>
+<p>简记作<br>
+</p><div class="mathjax-exps">$$N(\mu_1, \sigma_1^2) * N(\mu_2, \sigma_2^2) = N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2)$$</div><p></p>
+</details>
+<p><span class="callout">4.5.29 Example: gamma分布的卷积</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$\xi_1 \sim \Gamma(r_1, \lambda), \xi_2 \sim \Gamma(r_2, \lambda)$</span>，而且 <span class="mathjax-exps">$\xi_1$</span> 与 <span class="mathjax-exps">$\xi_2$</span> 独立，则 <span class="mathjax-exps">$\eta=\xi_1+\xi_2 \sim \Gamma(r_1+r_2, \lambda)$</span>。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>事实上<br>
+</p><div class="mathjax-exps">$$\begin{align*} &amp; f_{\xi_1}(t) = \left(1 - \frac{it}{\lambda}\right)^{-r_1}, \quad f_{\xi_2}(t) = \left(1 - \frac{it}{\lambda}\right)^{-r_2} \\ &amp; f_\eta (t) = \left(1 - \frac{it}{\lambda}\right)^{-(r_1 + r_2)} \end{align*}$$</div><p></p>
+<p>简记作<br>
+</p><div class="mathjax-exps">$$\Gamma(r_1, \lambda) * \Gamma(r_2, \lambda) = \Gamma(r_1 + r_2, \lambda)$$</div><p></p>
+<p>特别地，<span class="mathjax-exps">$\chi_n^2$</span> 分布即为 <span class="mathjax-exps">$\Gamma\left(\frac{n}{2}, \frac{1}{2}\right)$</span>，也具有再生性：<br>
+</p><div class="mathjax-exps">$$\chi_m^2 * \chi_n^2 = \chi_{m+n}^2$$</div><p></p>
+</details>
+<h4 id="多元特征函数">多元特征函数 </h4>
+<h3 id="多元正态分布">多元正态分布 </h3>
+<p>最后一步推导是通过<strong>伽马函数的性质</strong>来完成的，以下是详细的过程：</p>
+<ol>
+<li>
+<p><strong>整理被积表达式：</strong></p>
+<p>我们将积分表达式化简：<br>
+</p><div class="mathjax-exps">$$f(t) = \int_0^{\infty} \frac{\lambda^r}{\Gamma(r)} x^{r-1} e^{-\lambda\left(1-\frac{i t}{\lambda}\right) x} d x$$</div><br>
+将指数部分重新表示为：<br>
+<div class="mathjax-exps">$$e^{-\lambda\left(1-\frac{i t}{\lambda}\right) x} = e^{-a x}, \quad \text{其中 } a = \lambda\left(1 - \frac{i t}{\lambda}\right) = \lambda - i t.$$</div><p></p>
+<p>整个积分变为：<br>
+</p><div class="mathjax-exps">$$f(t) = \frac{\lambda^r}{\Gamma(r)} \int_0^{\infty} x^{r-1} e^{-a x} d x, \quad \text{其中 } a = \lambda - i t.$$</div><p></p>
+</li>
+<li>
+<p><strong>结合伽马函数的定义：</strong></p>
+<p>伽马函数的定义为：<br>
+</p><div class="mathjax-exps">$$\Gamma(r) = \int_0^{\infty} x^{r-1} e^{-x} d x.$$</div><br>
+如果将 <span class="mathjax-exps">$x$</span> 替换为 <span class="mathjax-exps">$x/a$</span>，则积分可以写为：<br>
+<div class="mathjax-exps">$$\int_0^{\infty} x^{r-1} e^{-a x} d x = \frac{\Gamma(r)}{a^r}.$$</div><p></p>
+<p>将这一性质代入 <span class="mathjax-exps">$f(t)$</span> 的积分：<br>
+</p><div class="mathjax-exps">$$f(t) = \frac{\lambda^r}{\Gamma(r)} \cdot \frac{\Gamma(r)}{a^r}.$$</div><p></p>
+</li>
+<li>
+<p><strong>整理结果：</strong></p>
+<p>消去 <span class="mathjax-exps">$\Gamma(r)$</span>：<br>
+</p><div class="mathjax-exps">$$f(t) = \frac{\lambda^r}{a^r}.$$</div><br>
+代入 <span class="mathjax-exps">$a = \lambda - i t$</span>：<br>
+<div class="mathjax-exps">$$f(t) = \left(\lambda - i t\right)^{-r}.$$</div><p></p>
+<p>再将 <span class="mathjax-exps">$a$</span> 表达为 <span class="mathjax-exps">$\lambda\left(1 - \frac{i t}{\lambda}\right)$</span>，结果化简为：<br>
+</p><div class="mathjax-exps">$$f(t) = \left(1 - \frac{i t}{\lambda}\right)^{-r}.$$</div><p></p>
+</li>
+</ol>
+<h3 id="总结">总结 </h3>
+<p>关键在于：</p>
+<ol>
+<li>将积分中指数部分改写为 <span class="mathjax-exps">$e^{-a x}$</span> 的形式；</li>
+<li>利用伽马函数性质 <span class="mathjax-exps">$\int_0^{\infty} x^{r-1} e^{-a x} d x = \frac{\Gamma(r)}{a^r}$</span>。</li>
+</ol>
 
       </div>
       

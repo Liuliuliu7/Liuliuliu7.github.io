@@ -7,7 +7,7 @@
         <script type="text/javascript">
           window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
         </script>
-        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         
       
       
@@ -126,14 +126,38 @@
     
       <div class="crossnote markdown-preview  ">
       
+<div class="fixed-toc">
+<details open="">
+    <summary>Contents</summary>
+<ul>
+<li><a href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86">第五章 极限定理</a>
+<ul>
+<li><a href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B">大数定律</a></li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+<button id="toggleProofs">Toggle Proofs</button>
+<script>
+  document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
+    var details = document.querySelectorAll('details > summary');
+    for (var i = 0; i < details.length; i++) {
+      if (details[i].textContent.includes('Proof')) {
+        details[i].parentElement.open = !details[i].parentElement.open;
+      }
+    }
+  });
+</script>
 <h2 id="第五章-极限定理">第五章 极限定理 </h2>
 <h3 id="大数定律">大数定律 </h3>
 <p><span class="callout">5.1.1 Definition: 大数定律</span></p>
 <blockquote>
 <p>若<span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n, \cdots$</span>是随机变量序列，令<br>
 </p><div class="mathjax-exps">$$\eta_n = \frac{\xi_1 + \xi_2 + \cdots + \xi_n}{n}$$</div><p></p>
-<p>如果存在这样的一个常数序列<span class="mathjax-exps">$a_1, a_2, \cdots, a_n, \cdots$</span>，对任意的<span class="mathjax-exps">$\epsilon &gt; 0$</span>，恒有<br>
-</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{ \left| \eta_n - a_n \right| &lt; \epsilon\right\} = 1$$</div><p></p>
+<p>如果存在这样的一个常数序列<span class="mathjax-exps">$a_1, a_2, \cdots, a_n, \cdots$</span>，对任意的<span class="mathjax-exps">$\varepsilon &gt; 0$</span>，恒有<br>
+</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{ \left| \eta_n - a_n \right| &lt; \varepsilon\right\} = 1$$</div><p></p>
 <p>则称序列<span class="mathjax-exps">$\{\xi_n\}$</span>服从大数定律（或大数法则）。</p>
 </blockquote>
 <p><span class="callout">Definition: 中心极限定理</span></p>
@@ -146,8 +170,8 @@
 <blockquote>
 <p>设<span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n, \cdots$</span>是由两两不相关的随机变量所构成的序列，每一随机变量都有有限的方差，并且它们有公共上界<br>
 </p><div class="mathjax-exps">$$D\xi_1 \leq C, \quad D\xi_2 \leq C, \quad \cdots, \quad D\xi_n \leq C, \cdots$$</div><p></p>
-<p>则对任意的<span class="mathjax-exps">$\epsilon &gt; 0$</span>，皆有<br>
-</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{\left|\frac{1}{n} \sum_{k=1}^n \xi_k - \frac{1}{n} \sum_{k=1}^n E\xi_k\right| &lt; \epsilon\right\} = 1$$</div><p></p>
+<p>则对任意的<span class="mathjax-exps">$\varepsilon &gt; 0$</span>，皆有<br>
+</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{\left|\frac{1}{n} \sum_{k=1}^n \xi_k - \frac{1}{n} \sum_{k=1}^n E\xi_k\right| &lt; \varepsilon\right\} = 1$$</div><p></p>
 </blockquote>
 <details open="">
     <summary>Proof:</summary>
@@ -163,13 +187,14 @@
 <blockquote>
 <p>对于随机变量序列<span class="mathjax-exps">$\xi_1, \xi_2, \cdots, \xi_n, \cdots$</span>，若<br>
 </p><div class="mathjax-exps">$$D\left(\frac{1}{n} \sum_{k=1}^n \xi_k\right) \rightarrow 0$$</div><p></p>
-<p>成立，则对任意<span class="mathjax-exps">$\epsilon &gt; 0$</span>，均有切比雪夫大数定律成立。</p>
+<p>成立，则对任意<span class="mathjax-exps">$\varepsilon &gt; 0$</span>，均有切比雪夫大数定律成立。</p>
 </blockquote>
 <p>切比雪夫大数定律显然可由马尔可夫大数定律推出；更重要的是马尔可夫大数定律已经没有任何关于独立性的假定。</p>
-<p><span class="callout">Theorem: 伯努利大数定律</span></p>
+<p><span id="Bernoulli"></span><br>
+<span class="callout">Theorem: 伯努利大数定律</span></p>
 <blockquote>
-<p>设<span class="mathjax-exps">$\mu_n$</span>是<span class="mathjax-exps">$n$</span>次伯努利试验中事件<span class="mathjax-exps">$A$</span>出现的次数，而<span class="mathjax-exps">$p$</span>是事件<span class="mathjax-exps">$A$</span>在每次试验中出现的概率，则对任意<span class="mathjax-exps">$\epsilon &gt; 0$</span>，都有<br>
-</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{ \left| \mu_n - p \right| &lt; \epsilon \right\} = 1$$</div><p></p>
+<p>设<span class="mathjax-exps">$\mu_n$</span>是<span class="mathjax-exps">$n$</span>次伯努利试验中事件<span class="mathjax-exps">$A$</span>出现的次数，而<span class="mathjax-exps">$p$</span>是事件<span class="mathjax-exps">$A$</span>在每次试验中出现的概率，则对任意<span class="mathjax-exps">$\varepsilon &gt; 0$</span>，都有<br>
+</p><div class="mathjax-exps">$$\lim_{n \to \infty} P\left\{ \left| \mu_n - p \right| &lt; \varepsilon \right\} = 1$$</div><p></p>
 </blockquote>
 <details open="">
     <summary>Proof:</summary>

@@ -1,0 +1,421 @@
+<!DOCTYPE html><html><head>
+      <title>第一章</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  /* 样式化按钮 */
+  /* 当鼠标悬停在按钮上时改变背景颜色 */
+  /* 响应式设计：针对移动端 */
+}
+.markdown-preview.markdown-preview body {
+  line-height: 175%;
+}
+.markdown-preview.markdown-preview #toggleProofs {
+  font: 0.8em;
+  font-style: italic;
+  padding: 5px 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+.markdown-preview.markdown-preview #toggleProofs:hover {
+  background-color: #45a049;
+}
+.markdown-preview.markdown-preview details {
+  border: 2px solid #e1eaed;
+  /* 蓝色边框 */
+  border-radius: 10px;
+  /* 圆角 */
+  padding: 0px 8px 0px 8px;
+  /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
+  transition: box-shadow 0.3s ease;
+  /* 阴影过渡效果 */
+  line-height: 200%;
+  /* 设置行间距为当前字体大小的125% */
+}
+.markdown-preview.markdown-preview details:hover {
+  border: 2px solid #90c1f4;
+  /* 蓝色边框 */
+  border-radius: 10px;
+  /* 圆角 */
+  padding: 0px 8px 0px 8px;
+  /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
+  transition: box-shadow 0.3s ease;
+  /* 阴影过渡效果 */
+  line-height: 200%;
+  /* 设置行间距为当前字体大小的125% */
+}
+.markdown-preview.markdown-preview summary {
+  font-weight: bold;
+  font-style: italic;
+}
+.markdown-preview.markdown-preview .callout {
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+  color: #005792;
+  /* 深蓝色 */
+  background-color: #E7F7FF;
+  /* 浅蓝色背景 */
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  /* 添加圆角 */
+}
+.markdown-preview.markdown-preview .fixed-toc {
+  position: fixed;
+  /* 使用固定定位 */
+  left: 0;
+  /* 贴合窗口左侧 */
+  top: 0;
+  /* 贴合窗口顶部 */
+  max-width: 400px;
+  /* 目录最大宽度 */
+  overflow-y: auto;
+  /* 如果内容超出高度，则显示滚动条 */
+  height: 100%;
+  /* 目录的高度 */
+  padding: 10px;
+  /* 内边距 */
+  z-index: -100;
+  /* 使目录在最底层 */
+}
+@media (max-width: 768px) {
+  .markdown-preview.markdown-preview .fixed-toc {
+    padding: 10px;
+    /* 内边距 */
+    position: inherit;
+    /* 取消固定定位 */
+    z-index: 100;
+    /* 使目录在最顶层 */
+  }
+}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<div class="fixed-toc">
+<details open="">
+    <summary>Contents</summary>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">第一章 基础知识</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</a></li>
+<li><a href="#%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0">特征函数</a></li>
+<li><a href="#%E4%B8%89%E5%A4%A7%E5%88%86%E5%B8%83">三大分布</a>
+<ul>
+<li><a href="#%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83">卡方分布</a></li>
+<li><a href="#t-%E5%88%86%E5%B8%83"><span class="mathjax-exps">$t$</span> 分布</a></li>
+<li><a href="#f-%E5%88%86%E5%B8%83"><span class="mathjax-exps">$F$</span> 分布</a></li>
+</ul>
+</li>
+<li><a href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%B8%B8%E8%A7%81%E7%BB%9F%E8%AE%A1%E9%87%8F">正态分布常见统计量</a></li>
+<li><a href="#%E5%88%86%E4%BD%8D%E6%95%B0">分位数</a></li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+<button id="toggleProofs">Toggle Proofs</button>
+<script>
+  document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
+    var details = document.querySelectorAll('details > summary');
+    for (var i = 0; i < details.length; i++) {
+      if (details[i].textContent.includes('Proof')) {
+        details[i].parentElement.open = !details[i].parentElement.open;
+      }
+    }
+  });
+</script>
+<h2 id="第一章-基础知识">第一章 基础知识 </h2>
+<p><span class="callout">1.2.1 Definition: 统计量定义</span></p>
+<h3 id="基本概念">基本概念 </h3>
+<blockquote>
+<p>设<span class="mathjax-exps">$X_1, X_2, \ldots, X_n$</span>为来自总体<span class="mathjax-exps">$X$</span>的简单样本，若样本的函数<span class="mathjax-exps">$T(X_1, X_2, \ldots, X_n)$</span>中不包含任何未知参数，则称此函数为统计量。</p>
+</blockquote>
+<p>常见的统计量：<br>
+(1) 统计量 <span class="mathjax-exps">$\overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$</span> 称为样本均值，它反映了样本的平均取值，描述了样本的集中取值趋势。<br>
+(2) 统计量 <span class="mathjax-exps">$S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \overline{X})^2$</span> 称为样本方差（均方差），它描述了样本取值的分散程度大小，称 <span class="mathjax-exps">$S$</span> 为样本标准差。<br>
+(3) 统计量 <span class="mathjax-exps">$A_k = \frac{1}{n} \sum_{i=1}^{n} X_i^k (k = 1, 2, \cdots,)$</span> 称为样本 <span class="mathjax-exps">$k$</span> 阶原点矩。<br>
+(4) 统计量 <span class="mathjax-exps">$B_k = \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X})^k (k = 1, 2, \cdots,)$</span> 称为样本 <span class="mathjax-exps">$k$</span> 阶中心矩。特别地，当 <span class="mathjax-exps">$k = 2$</span> 时，样本二阶中心矩 <span class="mathjax-exps">$B_2$</span> 用记号 <span class="mathjax-exps">$\hat{\sigma}^2$</span> 来表示，即 <span class="mathjax-exps">$\hat{\sigma}^2 = \frac{1}{n} \sum_{i=1}^{n} (X_i - \overline{X})^2$</span>，它也描述了样本取值的分散程度大小。<br>
+(5) 顺序统计量<span class="mathjax-exps">$X_{(1)}, X_{(2)}, \cdots, X_{(n)}$</span>，<span class="mathjax-exps">$X_{(1)} = \min\{X_1, X_2, \cdots, X_n\}$</span>，<span class="mathjax-exps">$X_{(n)} = \max\{X_1, X_2, \cdots, X_n\}$</span>，<span class="mathjax-exps">$X_{(k)}$</span> 是第 <span class="mathjax-exps">$k$</span> 小的观测值。显然有 <span class="mathjax-exps">$F_{X_{(1)}}(t) = 1 - [1- F(t)]^n$</span>，<span class="mathjax-exps">$F_{X_{(n)}}(t) = F^n(t)$</span>。</p>
+<p><span class="callout">1.2.3 Example: 样本方差和总体方差</span></p>
+<blockquote>
+<p><span class="mathjax-exps">$E(S^2) = \sigma^2$</span> 。</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p></p><div class="mathjax-exps">$$\begin{align*} E\left(S^{2}\right)&amp;=E\left[\frac{1}{n-1}\sum_{i=1}^{n}\left(X_{i}-\bar{X}\right)^{2}\right]\\ &amp;=E\left[\frac{1}{n-1}\left(\sum_{i=1}^{n} X_{i}^{2}-n\bar{X}^{2}\right)\right]\\ &amp;=\frac{1}{n-1}\left[\sum_{i=1}^{n} E\left(X_{i}^{2}\right)-n E\left(\bar{X}^{2}\right)\right]\\ &amp;=\frac{1}{n-1}\left[n E\left(X^{2}\right)-n E\left(\bar{X}^{2}\right)\right]\\ &amp;=\frac{n}{n-1}\left[E\left(X^{2}\right)-E\left(\bar{X}^{2}\right)\right]\\ &amp;=\frac{n}{n-1}\left\{\operatorname{Var}(X)+\left[E(X)\right]^{2}-\operatorname{Var}(\bar{X})-\left[E(\bar{X})\right]^{2}\right\}\\ &amp;= \frac{n}{n-1}[\operatorname{Var}(X) - \operatorname{Var}(\bar{X})] \\ &amp;= \frac{n}{n-1}[\operatorname{Var}(X) - \frac{1}{n}\operatorname{Var}(X)] \\ &amp;= \operatorname{Var}(X) \end{align*}$$</div><p></p>
+</details>
+<p><span class="callout">1.2.2 Definition: 充分统计量</span></p>
+<blockquote>
+<p>设总体分布族为 <span class="mathjax-exps">$\{P_\theta: \theta \in \Theta\}$</span>，<span class="mathjax-exps">$X_1, X_2, \cdots, X_n$</span> 是来自总体的简单样本，样本的函数 <span class="mathjax-exps">$T(X_1, X_2, \cdots, X_n)$</span> 是统计量。如果在给定 <span class="mathjax-exps">$T(X_1, X_2, \cdots, X_n) = t$</span> 的条件下，样本 <span class="mathjax-exps">$X_1, X_2, \cdots, X_n$</span> 的条件分布函数 <span class="mathjax-exps">$F_0(x_1, x_2, \cdots, x_n \mid t)$</span> 与参数 <span class="mathjax-exps">$\theta$</span> 无关，则称统计量 <span class="mathjax-exps">$T(X_1, X_2, \cdots, X_n)$</span> 为参数 <span class="mathjax-exps">$\theta$</span> 的充分统计量。</p>
+</blockquote>
+<p>按充分统计量的定义求解比较麻烦，一般通过因子分解定理来求解。</p>
+<p><span class="callout">1.2.1 Theorem: 因子分解定理</span></p>
+<blockquote>
+<p>设总体分布族为 <span class="mathjax-exps">$\{P_\theta: \theta \in \Theta\}$</span>，则统计量 <span class="mathjax-exps">$T(x)$</span> 是充分的，当且仅当存在一个定义在 <span class="mathjax-exps">$I \times \Theta$</span> 上的实值函数 <span class="mathjax-exps">$g(t, \theta)$</span> 及定义在样本空间 <span class="mathjax-exps">$\mathscr{D}$</span> 上的不依赖于参数 <span class="mathjax-exps">$\theta$</span> 的实值函数 <span class="mathjax-exps">$h(x)$</span> 使得样本 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 的联合分布 <span class="mathjax-exps">$p(x; \theta)$</span> 的分解式<br>
+</p><div class="mathjax-exps">$$p(x; \theta) = g(T(x), \theta) h(x)$$</div><p></p>
+</blockquote>
+<p><span class="callout">1.2.6 Example: 泊松分布的充分统计量</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 是来自 Poisson 分布总体 <span class="mathjax-exps">$P(x;\lambda)$</span> 的简单样本，求参数 <span class="mathjax-exps">$\lambda$</span> 的充分统计量。</p>
+</blockquote>
+<p>样本 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 的联合分布列为<br>
+</p><div class="mathjax-exps">$$p\left(x_1, x_2, \cdots, x_n; \lambda\right) = \frac{e^{-n\lambda}}{x_1! x_2! \cdots x_n!} \lambda^{\sum_{i=1}^n x_i}$$</div><p></p>
+<p>取 <span class="mathjax-exps">$T(x) = \sum_{i=1}^n x_i$</span>, <span class="mathjax-exps">$g(t, \lambda) = e^{-n\lambda} \lambda^t$</span>, <span class="mathjax-exps">$h(x) = \frac{1}{x_1! x_2! \cdots x_n!}$</span>, 则有<br>
+</p><div class="mathjax-exps">$$p(x; \lambda) = g(T(x), \lambda) h(x)$$</div><p></p>
+<p>则<span class="mathjax-exps">$T(x) = \sum_{i=1}^n x_i$</span> 为参数 <span class="mathjax-exps">$\lambda$</span> 的充分统计量。</p>
+<p><span class="callout">1.2.7 Example: 正态分布的充分统计量</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$x_1, x_2, \cdots, x_s$</span> 是来自正态总体 <span class="mathjax-exps">$N(\mu, \sigma^2)$</span> 的简单样本，其中 <span class="mathjax-exps">$\mu$</span> 和 <span class="mathjax-exps">$\sigma^2$</span> 都是未知的，令参数 <span class="mathjax-exps">$\theta = (\mu, \sigma^2)$</span>，试证明 <span class="mathjax-exps">$T(x) = \left(\sum_{i=1}^{\infty} x_i, \sum_{i=1}^{\infty} x_i^2\right)$</span> 及 <span class="mathjax-exps">$S(x) = \left(\sum_{i=1}^{\infty} x_i, \sum_{i=1}^{\infty} (x_i - \bar{x})^2\right)$</span> 都是 <span class="mathjax-exps">$\theta$</span> 的充分统计量。</p>
+</blockquote>
+<p>样本的联合密度函数为<br>
+</p><div class="mathjax-exps">$$\begin{align*} p\left(x_1, x_2, \cdots, x_n; \theta\right) &amp;= \left(\frac{1}{\sqrt{2\pi \sigma^2}}\right)^n \exp\left\{-\frac{1}{2 \sigma^2}\sum_{i=1}^{n}\left(x_i-\mu\right)^2\right\} \\ &amp;= \left(\frac{1}{\sqrt{2\pi \sigma^2}}\right)^n \exp\left\{-\frac{1}{2 \sigma^2}\left(\sum_{i=1}^{n} x_i - 2\mu\sum_{i=1}^{n} x_i + n\mu^2\right)\right\} \end{align*}$$</div><p></p>
+<p>若取 <span class="mathjax-exps">$T(x) = \left(T_1(x), T_2(x)\right) = \left(\sum_{i=1}^{n} x_i, \sum_{i=1}^{n} x_i^2\right)$</span>, <span class="mathjax-exps">$h(x) = 1$</span> 及<br>
+</p><div class="mathjax-exps">$$g(t, \theta) = \left(\frac{1}{\sqrt{2\pi \sigma^2}}\right)^n \exp\left\{-\frac{1}{2\sigma^2}\left(t_2 - 2\mu t_1 + n\mu^2\right)\right\}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$t = (t_1, t_2)$</span>，则有<br>
+</p><div class="mathjax-exps">$$p\left(x_1, x_2, \cdots, x_n; \theta\right) = g(t, \theta) h(x)$$</div><p></p>
+<p>则<span class="mathjax-exps">$T(x) = \left(\sum_{i=1}^{\infty} x_i, \sum_{i=1}^{\infty} x_i^2\right)$</span> 是 <span class="mathjax-exps">$\theta$</span> 的充分统计量。</p>
+<p>又因为样本的联合密度函数可表示为<br>
+</p><div class="mathjax-exps">$$p\left(x_1, x_2, \cdots, x_n; \theta\right) = \left(\frac{1}{\sqrt{2\pi \sigma^2}}\right)^n \exp\left\{-\frac{1}{2 \sigma^2}\left[\sum_{i=1}^{n}\left(x_i-\bar{x}\right)^2 + n\left(\bar{x}-\mu\right)^2\right]\right\}$$</div><p></p>
+<p>若取 <span class="mathjax-exps">$S(x) = \left(S_1(x), S_2(x)\right) = \left(\sum_{i=1}^{n} x_i, \sum_{i=1}^{n} (x_i - \bar{x})^2\right)$</span>, <span class="mathjax-exps">$h(x) = 1$</span> 及</p>
+<p></p><div class="mathjax-exps">$$g(s, \theta) = \left(\frac{1}{\sqrt{2\pi \sigma^2}}\right)^n \exp\left\{-\frac{1}{2 \sigma^2}\left[s_2 + n\left(\frac{s_1}{n} - \mu\right)^2\right]\right\}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$s = (s_1, s_2)$</span>，则有</p>
+<p></p><div class="mathjax-exps">$$p\left(x_1, x_2, \cdots, x_s; \theta\right) = g(s, \theta) h(x)$$</div><p></p>
+<p>则<span class="mathjax-exps">$S(x) = \left(\sum x_1, \sum (x_1 - \bar{x})^2\right)$</span> 也是 <span class="mathjax-exps">$\theta$</span> 的充分统计量。</p>
+<p>{注}：上述充分统计量只在正态分布 <span class="mathjax-exps">$\mu ,\sigma$</span> 均未知时成立，若 <span class="mathjax-exps">$\mu$</span> 已知。</p>
+<p><span class="callout">1.2.8 Example: 均匀分布的充分统计量</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 是来自均匀分布总体 <span class="mathjax-exps">$U[a, b]$</span> 的简单样本，其中 <span class="mathjax-exps">$a$</span> 和 <span class="mathjax-exps">$b$</span> 都是未知的，且 <span class="mathjax-exps">$a &lt; b$</span>，令参数 <span class="mathjax-exps">$\theta = (a, b)$</span>，求 <span class="mathjax-exps">$\theta$</span> 的充分统计量。</p>
+</blockquote>
+<p>样本的联合密度函数为<br>
+</p><div class="mathjax-exps">$$\begin{align*} p\left(x_1, x_2, \cdots, x_n; \theta\right) &amp;= \prod_{i=1}^n p\left(x_i; \theta\right) = \frac{1}{(b-a)^n} I_{(a \leqslant x_{(1)} \leqslant x_{(n)} \leqslant b)}\left(x_1, x_2, \cdots, x_n\right) \\ &amp;= \frac{1}{(b-a)^n} I_{(a \leqslant x_{(1)} \leqslant x_{(n)} \leqslant b)}\left(x_{(1)}, x_{(n)}\right) \end{align*}$$</div><p></p>
+<p>其中<br>
+</p><div class="mathjax-exps">$$I_A(u) = \begin{cases}  1, &amp; u \in A \\ 0, &amp; u \notin A  \end{cases}$$</div><p></p>
+<p>称其为示性函数。<br>
+令<br>
+</p><div class="mathjax-exps">$$T(x) = (x_{(1)}, x_{(n)}), \quad g(t, \theta) = \frac{1}{(b-a)^n} I_{\{a \leqslant t_1 \leqslant t_2 \leqslant b\}}(t_1, t_2), \quad h(x) \equiv 1$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$t = (t_1, t_2)$</span>，则联合密度函数有分解式<br>
+</p><div class="mathjax-exps">$$p\left(x_1, x_2, \cdots, x_n; \theta\right) = g(t, \theta) h(x)$$</div><p></p>
+<p>则<span class="mathjax-exps">$T(x) = (x_{(1)}, x_{(n)})$</span> 是 <span class="mathjax-exps">$\theta$</span> 的充分统计量。</p>
+<p>由上述例子可见，充分统计量不唯一，一般情况下，若 <span class="mathjax-exps">$T(x)$</span> 是充分统计量，则 <span class="mathjax-exps">$g(T(x))$</span> 的函数也是充分统计量，<span class="mathjax-exps">$g(t)$</span> 为一一对应的实函数。另外需要注意，当参数 <span class="mathjax-exps">$\theta$</span> 是多维时，应将充分统计量作为一个整体。</p>
+<p>在前面的讨论中，我们一般假设分布函数已知，但在实际问题中，分布函数通常是未知的，因此需要通过样本来估计分布函数。<br>
+由 <a href="../概率论/第五章.html#Bernoulli ">Bernoulli大数定律 </a>可知，当 <span class="mathjax-exps">$n \to \infty$</span> 时，有 <span class="mathjax-exps">$\frac{\mu_n}{n} \to p$</span>，即样本均值收敛到总体均值。<br>
+对总体 <span class="mathjax-exps">\(X\)</span> 进行 <span class="mathjax-exps">\(n\)</span> 次重复独立观测，相当于获得简单样本 <span class="mathjax-exps">\(x_1, x_2, \cdots, x_n\)</span>，而观测到的具体数值 <span class="mathjax-exps">\(x_1, x_2, \cdots, x_n\)</span> 就是简单样本的一组观察值，用 <span class="mathjax-exps">\(v_n(x)\)</span> 表示 <span class="mathjax-exps">\(n\)</span> 次重复独立观测中事件 <span class="mathjax-exps">\(\{X \leq x\}\)</span> 发生的次数，即 <span class="mathjax-exps">\(n\)</span> 个观察值 <span class="mathjax-exps">\(x_1, x_2, \cdots, x_n\)</span> 中不大于 <span class="mathjax-exps">\(x\)</span> 的个数，称 <span class="mathjax-exps">\(v_n(x)\)</span> 为经验频数。对不同组样本观察值，一般 <span class="mathjax-exps">\(v_n(x)\)</span> 的取值是不同的，因此 <span class="mathjax-exps">\(v_n(x)\)</span> 实际上是一个随机变量。由于对总体 <span class="mathjax-exps">\(X\)</span> 进行 <span class="mathjax-exps">\(n\)</span> 次重复独立观测，相当于完成了以 <span class="mathjax-exps">\(F(x) = P\{X \leq x\}\)</span> 为成功概率的 <span class="mathjax-exps">\(n\)</span> 重 Bernoulli 独立试验，因此事件 <span class="mathjax-exps">\(\{X \leq x\}\)</span> 的发生次数 <span class="mathjax-exps">\(v_n(x)\)</span> 服从二项分布 <span class="mathjax-exps">\(B(n, F(x))\)</span>，即</p>
+<p></p><div class="mathjax-exps">$$P\left\{v_n(x)=k\right\}=C_n^k[F(x)]^k[1-F(x)]^{n-k}, \quad k=0,1,2,\cdots, n$$</div><p></p>
+<p>由 Bernoulli 大数定律知，对任意给定的 <span class="mathjax-exps">\(\varepsilon &gt; 0\)</span>，有<br>
+</p><div class="mathjax-exps">$$\lim_{n \rightarrow +\infty} P\left\{\left|\frac{v_n(x)}{n}-F(x)\right| \geq \varepsilon\right\} = 0$$</div><p></p>
+<p>这说明当样本容量 <span class="mathjax-exps">\(n\)</span> 充分大时，事件 <span class="mathjax-exps">\(\{X \leq x\}\)</span> 发生的频率 <span class="mathjax-exps">\(\frac{v_n(x)}{n}\)</span> 稳定于总体分布函数 <span class="mathjax-exps">\(F(x)\)</span> 是大概率事件，因此可以用频率 <span class="mathjax-exps">\(\frac{v_n(x)}{n}\)</span> 近似分布函数 <span class="mathjax-exps">\(F(x)\)</span>。利用顺序统计量可以给出所谓的经验分布函数定义如下。</p>
+<p><span class="callout">1.2.3 Definition: 经验分布函数</span></p>
+<blockquote>
+<p>设样本 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 的顺序统计量为 <span class="mathjax-exps">$x_{(1)}, x_{(2)}, \cdots, x_{(n)}$</span>，对任意实数 <span class="mathjax-exps">$x (x \in \mathbb{R})$</span> 定义函数<br>
+</p><div class="mathjax-exps">$$F_n(x) = \frac{v_n(x)}{n} = \left\{ \begin{array}{ll} 0, &amp; x &lt; x_{(1)} \\ \frac{k}{n}, &amp; x_{(k)} \leq x &lt; x_{(k+1)}, \quad k = 1, 2, \cdots, n-1 \\ 1, &amp; x \geq x_{(n)} \end{array} \right.$$</div><p></p>
+<p>称 <span class="mathjax-exps">$F_n(x)$</span> 为总体 <span class="mathjax-exps">$X$</span> 的经验分布函数。</p>
+</blockquote>
+<p>对于经验分布函数有：<br>
+</p><div class="mathjax-exps">$$E\left(F_{n}(x)\right)=E\left(\frac{v_{n}(x)}{n}\right)=F(x)$$</div><p></p>
+<p><span class="callout">1.2.2 Theorem: Glivenko's 定理</span></p>
+<blockquote>
+<p>当 <span class="mathjax-exps">$n \to \infty$</span> 时，经验分布函数 <span class="mathjax-exps">$F_n(x)$</span> 以概率 1 关于 <span class="mathjax-exps">$x$</span> 一致收敛于总体的分布函数 <span class="mathjax-exps">$F(x)$</span>，即<br>
+</p><div class="mathjax-exps">$$P\{\lim_{n \to \infty} \sup_{-\infty &lt; x &lt; \infty} |F_n(x) - F(x)| = 0\} = 1$$</div><p></p>
+</blockquote>
+<h3 id="特征函数">特征函数 </h3>
+<p><span id="def-char"></span><br>
+参见<a href="../概率论/第四章.html#特征函数">特征函数</a>。</p>
+<h3 id="三大分布">三大分布 </h3>
+<h4 id="卡方分布">卡方分布 </h4>
+<p><span class="callout">1.3.2 Definition: 卡方分布定义</span><br>
+<span id="Def1.3.2"></span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X_1, X_2, \cdots, X_n$</span> 是相互独立的随机变量，且 <span class="mathjax-exps">$X_i \sim N(0,1)(i=1,2,\cdots,n)$</span>，则称随机变量<br>
+</p><div class="mathjax-exps">$$\chi ^2 = X_1^2 + X_2^2 + \cdots + X_n^2$$</div><p></p>
+<p>所服从的分布是自由度为 <span class="mathjax-exps">$n$</span> 的 <span class="mathjax-exps">$\chi^2$</span> 分布，记为 <span class="mathjax-exps">$x^2 \sim \chi^2(n)$</span>。</p>
+</blockquote>
+<p><span class="callout">1.3.1 Theorem: 卡方分布概率密度函数</span></p>
+<blockquote>
+<p><span class="mathjax-exps">$\chi^2(n)$</span> 分布的概率密度函数为<br>
+</p><div class="mathjax-exps">$$f(x) = \left\{ \begin{array}{l} \frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)} x^{\frac{n}{2}-1} e^{-\frac{x}{2}}, &amp; x &gt; 0 \\ 0,&amp; x \leqslant 0 \end{array} \right.$$</div><p></p>
+</blockquote>
+<p><span class="callout">1.3.2 Theorem: 正态总体样本的卡方分布</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X_1, X_2, \cdots, X_n$</span> 是来自正态总体 <span class="mathjax-exps">$N(\mu, \sigma^2)$</span> 的简单样本，则<br>
+</p><div class="mathjax-exps">$$x^2 = \frac{1}{\sigma^2} \sum_{i=1}^n (X_i - \mu)^2 \sim \chi^2(n)$$</div><p></p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p>令 <span class="mathjax-exps">$Y_i = \frac{X_i - \mu}{\sigma}, i = 1, 2, \cdots, n$</span>，则<br>
+</p><div class="mathjax-exps">$$\chi ^2 = \frac{1}{\sigma^2} \sum_{i=1}^n (X_i - \mu)^2 = \sum_{i=1}^n Y_i^2$$</div><p></p>
+<p>因为 <span class="mathjax-exps">$X_i \sim N(\mu, \sigma^2), X_1, X_2, \cdots, X_n$</span> 相互独立，所以 <span class="mathjax-exps">$Y_i \sim N(0,1)$</span>，且 <span class="mathjax-exps">$Y_1, Y_2, \cdots, Y_n$</span> 相互独立，由<a href="#Def1.3.2">定义 1.3.2 </a>知结论成立。</p>
+</details>
+<p><span class="callout">1.3.3 Theorem: 卡方分布的性质</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$X \sim \chi^2(n)$</span>，则<br>
+(1) <span class="mathjax-exps">$\varphi(t) = (1 - 2it)^{-\frac{n}{2}}$</span>;<br>
+(2) <span class="mathjax-exps">$E(X) = n$</span> 及 <span class="mathjax-exps">$\operatorname{Var}(X) = 2n$</span>.</p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p><span class="callout">1.3.1 Proof: 特征函数证明</span></p>
+<p>由<a href="#def-char">特征函数的定义</a>有<br>
+</p><div class="mathjax-exps">$$\begin{align*} \varphi(t) &amp;= E\left(e^{it X}\right) = \int_0^{+\infty} e^{it x}\frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)} x^{\frac{n}{2}-1} e^{-\frac{x}{2}} d x \\ &amp;= \frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)}\int_0^{+\infty} x^{\frac{n}{2}-1} e^{-\left(\frac{1}{2}-{it}\right){x}} d x \end{align*}$$</div><p></p>
+<p>再由 <span class="mathjax-exps">$\Gamma$</span> 函数的定义，可得 <span class="mathjax-exps">$\varphi(t)=(1-2 i t)^{-\frac{n}{2}}$</span> 。<br>
+因为 <span class="mathjax-exps">$X$</span> 的特征函数 <span class="mathjax-exps">$\varphi(t)=(1-2 i t)^{-\frac{n}{2}}$</span> ,所以<br>
+</p><div class="mathjax-exps">$$\varphi^{\prime}(t) = ni(1-2 i t)^{-\frac{n+2}{2}}$$</div><p></p>
+<p></p><div class="mathjax-exps">$$\varphi^{\prime\prime}(t) = n(n+2) i^2(1-2 i t)^{-\frac{n+1}{2}}$$</div><p></p>
+<p>由<a href="#char-prop">特征函数的性质</a>,有<br>
+</p><div class="mathjax-exps">$$\begin{gathered} E(X) = \frac{\varphi^{\prime}(0)}{i} = n \\ E\left(X^2\right) = \frac{\varphi^{\prime\prime}(0)}{i^2} = n(n+2) \end{gathered}$$</div><p></p>
+<p>从而 <span class="mathjax-exps">$X$</span> 的方差为<br>
+</p><div class="mathjax-exps">$$\text{Var}(X) = E\left(X^2\right) - \left[E(X)\right]^2 = n(n+2) - n^2 = 2n$$</div><p></p>
+</details>
+<p><span class="callout">1.3.4 Theorem: 卡方分布的可加性</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$X \sim \chi^2(n_1), Y \sim \chi^2(n_2)$</span>，且 <span class="mathjax-exps">$X$</span> 与 <span class="mathjax-exps">$Y$</span> 相互独立，则<br>
+</p><div class="mathjax-exps">$$X + Y \sim \chi^2(n_1 + n_2)$$</div><p></p>
+</blockquote>
+<details open="">
+    <summary>Proof:</summary>
+<p><span class="mathjax-exps">$X$</span> 与 <span class="mathjax-exps">$Y$</span> 的特征函数分别为<br>
+</p><div class="mathjax-exps">$$\begin{align*} \varphi_X(t) &amp;= (1 - 2it)^{-\frac{n_1}{2}} \\ \varphi_Y(t) &amp;= (1 - 2it)^{-\frac{n_2}{2}} \end{align*}$$</div><p></p>
+<p>因为 <span class="mathjax-exps">$X$</span> 与 <span class="mathjax-exps">$Y$</span> 相互独立，所以由特征函数的性质，有 <span class="mathjax-exps">$X + Y$</span> 的特征函数为<br>
+</p><div class="mathjax-exps">$$\varphi_{X+Y}(t) = \varphi_X(t)\varphi_Y(t) = (1 - 2it)^{-\frac{n_1 + n_2}{2}}$$</div><p></p>
+<p>这是自由度为 <span class="mathjax-exps">$n_1 + n_2$</span> 的 <span class="mathjax-exps">$\chi^2$</span> 分布的特征函数，故 <span class="mathjax-exps">$X + Y \sim \chi^2(n_1 + n_2)$</span>。</p>
+</details>
+<p><span class="callout">1.3.1 Corollary: 卡方分布的独立性</span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$X_i \sim \chi^2(n_i), i = 1, 2, \cdots, k$</span>，且 <span class="mathjax-exps">$X_1, X_2, \cdots, X_k$</span> 相互独立，则<br>
+</p><div class="mathjax-exps">$$\sum_{i=1}^k X_i \sim \chi^2\left(\sum_{i=1}^k n_i\right)$$</div><p></p>
+</blockquote>
+<h4 id="t-分布"><span class="mathjax-exps">$t$</span> 分布 </h4>
+<p><span class="callout">1.3.3 Definition: t分布</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X \sim N(0,1), Y \sim \chi^2(n)$</span>，且 <span class="mathjax-exps">$X$</span> 与 <span class="mathjax-exps">$Y$</span> 相互独立，则称随机变量<br>
+</p><div class="mathjax-exps">$$T = \frac{X}{\sqrt{Y/n}}$$</div><p></p>
+<p>所服从的分布是自由度为 <span class="mathjax-exps">$n$</span> 的 <span class="mathjax-exps">$t$</span> 分布，记为 <span class="mathjax-exps">$T \sim t(n)$</span>。</p>
+</blockquote>
+<p><span class="callout">1.3.5 Theorem: t分布的概率密度函数</span></p>
+<blockquote>
+<p><span class="mathjax-exps">$t(n)$</span> 分布的概率密度函数为<br>
+</p><div class="mathjax-exps">$$f(t) = \frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{n\pi}\Gamma\left(\frac{n}{2}\right)}\left(1 + \frac{t^2}{n}\right)^{-\frac{n+1}{2}}$$</div><p></p>
+</blockquote>
+<p><span class="callout">1.3.6 Theorem: 一般正态分布的t分布</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X \sim N(\mu, \sigma^2), \frac{Y}{\sigma^2} \sim \chi^2(n)$</span>，且 <span class="mathjax-exps">$X$</span> 与 <span class="mathjax-exps">$Y$</span> 相互独立，则有<br>
+</p><div class="mathjax-exps">$$T = \frac{X - \mu}{\sqrt{Y/n}} \sim t(n)$$</div><p></p>
+</blockquote>
+<h4 id="f-分布"><span class="mathjax-exps">$F$</span> 分布 </h4>
+<p><span class="callout">1.3.4 Definition: F分布</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X \sim \chi^2(n_1), Y \sim \chi^2(n_2)$</span>，且 <span class="mathjax-exps">$X$</span> 与 <span class="mathjax-exps">$Y$</span> 相互独立，则称随机变量<br>
+</p><div class="mathjax-exps">$$F = \frac{X/n_1}{Y/n_2}$$</div><p></p>
+<p>所服从的分布是自由度为 <span class="mathjax-exps">$(n_1, n_2)$</span> 的 <span class="mathjax-exps">$F$</span> 分布，记为 <span class="mathjax-exps">$F \sim F(n_1, n_2)$</span>。</p>
+</blockquote>
+<p><span class="callout">1.3.7 Theorem: F分布的概率密度函数</span></p>
+<blockquote>
+<p><span class="mathjax-exps">$F(n_1, n_2)$</span> 分布的概率密度函数为<br>
+</p><div class="mathjax-exps">$$f(z) = \left\{ \begin{array}{ll} \frac{\Gamma\left(\frac{n_1 + n_2}{2}\right)}{\Gamma\left(\frac{n_1}{2}\right)\Gamma\left(\frac{n_2}{2}\right)} \left(\frac{n_1}{n_2}\right) \left(\frac{n_1}{n_2} z\right) ^{\frac{n_1}{2} - 1} \left(1 + \frac{n_1}{n_2}z\right)^{-\frac{n_1 + n_2}{2}}, &amp; z &gt; 0 \\ 0, &amp; z \leq 0 \end{array} \right.$$</div><p></p>
+</blockquote>
+<p><span class="callout">1.3.8 Theorem: F分布的倒数性质</span><br>
+<span id="th1.3.8"></span></p>
+<blockquote>
+<p>若 <span class="mathjax-exps">$F \sim F(n_1, n_2)$</span>，则 <span class="mathjax-exps">$\frac{1}{F} \sim F(n_2, n_1)$</span>。</p>
+</blockquote>
+<h3 id="正态分布常见统计量">正态分布常见统计量 </h3>
+<p><span class="callout">1.3.9 Theorem: 线性组合的正态分布</span></p>
+<blockquote>
+<p>设总体 <span class="mathjax-exps">$X \sim N(\mu, \sigma^2), X_1, X_2, \cdots, X_n$</span> 是来自总体 <span class="mathjax-exps">$X$</span> 的简单样本，令<br>
+</p><div class="mathjax-exps">$$Y = a_1X_1 + a_2X_2 + \cdots + a_nX_n$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$a_1, a_2, \cdots, a_n$</span> 是不全为零的常数，则有</p>
+<p></p><div class="mathjax-exps">$$Y \sim N\left(\mu \sum_{k=1}^n a_k, \sigma^2 \sum_{k=1}^n a_k^2\right)$$</div><p></p>
+</blockquote>
+<p><span class="callout">1.3.2 Corollary: 样本均值的正态分布</span></p>
+<blockquote>
+<p>设总体 <span class="mathjax-exps">$X \sim N(\mu, \sigma^2), X_1, X_2, \cdots, X_n$</span> 是来自总体 <span class="mathjax-exps">$X$</span> 的简单样本，则样本均值<br>
+</p><div class="mathjax-exps">$$\overline{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$$</div><p></p>
+</blockquote>
+<p><span class="callout">1.3.11 Theorem: 样本均值与样本方差的独立性</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X_1, X_2, \cdots, X_n$</span> 是来自正态总体 <span class="mathjax-exps">$N(\mu, \sigma^2)$</span> 的简单样本，则样本均值 <span class="mathjax-exps">$\overline{X}$</span> 和样本方差 <span class="mathjax-exps">$S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2$</span> 相互独立，且<br>
+</p><div class="mathjax-exps">$$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$$</div><p></p>
+</blockquote>
+<p>{注}：可以证明正态分布是唯一具有此性质的分布。该性质说明 <span class="mathjax-exps">$\overline{X}$</span> 提供了所有关于 <span class="mathjax-exps">$\mu$</span> 的信息，<span class="mathjax-exps">$S^2$</span> 提供了所有关于 <span class="mathjax-exps">$\sigma^2$</span> 的信息。</p>
+<p><span class="callout">1.3.12 Theorem: t分布和F分布</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X_1, X_2, \cdots, X_n$</span> 是来自正态总体 <span class="mathjax-exps">$N(\mu, \sigma^2)$</span> 的简单样本，则有<br>
+(1) <span class="mathjax-exps">$\frac{\overline{X} - \mu}{S/\sqrt{n}} \sim t(n-1)$</span>。<br>
+(2) <span class="mathjax-exps">$\frac{(\overline{X} - \mu)^2}{S^2/n} \sim F(1, n-1)$</span>。</p>
+</blockquote>
+<p><span class="callout">1.3.13 Theorem: 两样本t检验</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$X_1, X_2, \cdots, X_{n_1}$</span> 是来自正态总体 <span class="mathjax-exps">$N(\mu_1, \sigma^2)$</span> 的简单样本，<span class="mathjax-exps">$Y_1, Y_2, \cdots, Y_{n_2}$</span> 是来自正态总体 <span class="mathjax-exps">$N(\mu_2, \sigma^2)$</span> 的简单样本，且两样本相互独立，则<br>
+</p><div class="mathjax-exps">$$T = \frac{(\overline{X} - \overline{Y}) - (\mu_1 - \mu_2)}{S_w \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(n_1 + n_2 - 2)$$</div><p></p>
+</blockquote>
+<p>其中<br>
+</p><div class="mathjax-exps">$$\overline{X} = \frac{1}{n_1} \sum_{i=1}^{n_1} X_i, \quad \overline{Y} = \frac{1}{n_2} \sum_{i=1}^{n_2} Y_i$$</div><p></p>
+<p></p><div class="mathjax-exps">$$S_1^2 = \frac{1}{n_1 - 1} \sum_{i=1}^{n_1} (X_i - \overline{X})^2, \quad S_2^2 = \frac{1}{n_2 - 1} \sum_{i=1}^{n_2} (Y_i - \overline{Y})^2$$</div><p></p>
+<p></p><div class="mathjax-exps">$$S_w^2 = \frac{(n_1 - 1) S_1^2 + (n_2 - 1) S_2^2}{n_1 + n_2 - 2}$$</div><p></p>
+<h3 id="分位数">分位数 </h3>
+<p><span class="callout">1.3.5 Definition: 分位数</span></p>
+<blockquote>
+<p>设随机变量 <span class="mathjax-exps">$X$</span> 的分布函数为 <span class="mathjax-exps">$F(x)$</span>，对任意给定的实数 <span class="mathjax-exps">$p(0 &lt; p &lt; 1)$</span>，若存在 <span class="mathjax-exps">$x_p$</span> 使得<br>
+</p><div class="mathjax-exps">$$P\{X \leq x_p\} = F(x_p) = p$$</div><p></p>
+<p>则称 <span class="mathjax-exps">$x_p$</span> 为此概率分布的 <span class="mathjax-exps">$p$</span> 分位数。</p>
+</blockquote>
+<p>下面给出数理统计中常用分布的 <span class="mathjax-exps">$p$</span> 分位数的记号。<br>
+(1) 对标准正态分布 <span class="mathjax-exps">$N(0,1)$</span>，用 <span class="mathjax-exps">$z_p$</span> 表示其分布的 <span class="mathjax-exps">$p$</span> 分位数，即<br>
+</p><div class="mathjax-exps">$$P\{X \leq z_p\} = p$$</div><p></p>
+<p>由于标准正态分布的概率密度函数图形关于 <span class="mathjax-exps">$y$</span> 轴对称，因此有 <span class="mathjax-exps">$-z_p = z_{1-p}$</span>。</p>
+<p>(2) 对自由度为 <span class="mathjax-exps">$n$</span> 的 <span class="mathjax-exps">$\chi^2$</span> 分布 <span class="mathjax-exps">$\chi^2(n)$</span>，用 <span class="mathjax-exps">$\chi_p^2(n)$</span> 表示其分布的 <span class="mathjax-exps">$p$</span> 分位数，即<br>
+</p><div class="mathjax-exps">$$P\{\chi^2 \leq \chi_p^2(n)\} = p$$</div><p></p>
+<p>(3) 对自由度为 <span class="mathjax-exps">$n$</span> 的 <span class="mathjax-exps">$t$</span> 分布 <span class="mathjax-exps">$t(n)$</span>，用 <span class="mathjax-exps">$t_p(n)$</span> 表示其分布的 <span class="mathjax-exps">$p$</span> 分位数，即<br>
+</p><div class="mathjax-exps">$$P\{T \leq t_p(n)\} = p$$</div><p></p>
+<p>由于 <span class="mathjax-exps">$t$</span> 分布的概率密度函数图形关于 <span class="mathjax-exps">$y$</span> 轴对称，因此有 <span class="mathjax-exps">$-t_p(n) = t_{1-p}(n)$</span>。</p>
+<p>(4) 对自由度为 <span class="mathjax-exps">$n_1, n_2$</span> 的 <span class="mathjax-exps">$F$</span> 分布 <span class="mathjax-exps">$F(n_1, n_2)$</span>，用 <span class="mathjax-exps">$F_p(n_1, n_2)$</span> 表示其分布的 <span class="mathjax-exps">$p$</span> 分位数，即<br>
+</p><div class="mathjax-exps">$$P\{F \leq F_p(n_1, n_2)\} = p$$</div><p></p>
+<p>由<a href="#th1.3.8">定理 1.3.8 </a>可得</p>
+<p></p><div class="mathjax-exps">$$F_p(n_2, n_1) = \frac{1}{F_{1-p}(n_1, n_2)}$$</div><p></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

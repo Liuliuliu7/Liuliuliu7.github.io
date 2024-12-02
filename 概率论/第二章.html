@@ -45,8 +45,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -57,8 +59,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -224,14 +228,14 @@
 <blockquote>
 <p><span class="mathjax-exps">$n$</span>重伯努利实验中事件<span class="mathjax-exps">$A_1,A_2,\cdots,A_r$</span>分别发生<span class="mathjax-exps">$k_1,k_2,\cdots,k_r$</span>次的概率, 记为<span class="mathjax-exps">$m(k_1,k_2,\cdots,k_r;n,p_1,p_2,\cdots,p_r)$</span>.</p>
 </blockquote>
-<p></p><div class="mathjax-exps">$$m(k_1,k_2,\cdots,k_r;n,p_1,p_2,\cdots,p_r) = \frac{n!}{k_{1}! k_{2}!\cdots k_{r}!} p_{1}^{k_{1}} p_{2}^{k_{2}}\cdots p_{r}^{k_{r}}=1$$</div><p></p>
+<p></p><div class="mathjax-exps">$$\begin{aligned} m(k_1,k_2,\cdots,k_r;n,p_1,p_2,\cdots,p_r) &amp;= {n \choose k_1} {n-k_1 \choose k_2} \cdots {k_r \choose k_r} p_1^{k_1} p_2^{k_2} \cdots p_r^{k_r} = \frac{n!}{k_{1}! k_{2}!\cdots k_{r}!} p_{1}^{k_{1}} p_{2}^{k_{2}}\cdots p_{r}^{k_{r}} \\ \sum_{k_1+k_2+\cdots+k_r=n} m(k_1,k_2,\cdots,k_r;n,p_1,p_2,\cdots,p_r) &amp;= (p_1+p_2+\cdots+p_r)^n = 1 \end{aligned}$$</div><p></p>
 <h4 id="泊松分布">泊松分布 </h4>
 <blockquote>
 <p>事件<span class="mathjax-exps">$A$</span>在单位时间内发生<span class="mathjax-exps">$k$</span>次的概率, 记为<span class="mathjax-exps">$p(k;\lambda)$</span>.</p>
 </blockquote>
 <p>由于二项分布在<span class="mathjax-exps">$n$</span>很大的时候, 其计算较为复杂, 所以引入泊松分布.<br>
 对于<span class="mathjax-exps">$n$</span>很大, <span class="mathjax-exps">$p$</span>很小的情况, <span class="mathjax-exps">$\lambda = np$</span>适中的情况, 可将泊松分布作为二项分布的近似.</p>
-<p><span class="callout">Theorem: Poisson Distribution</span></p>
+<p><span class="callout">Theorem: Poisson 分布</span></p>
 <blockquote>
 <p>在独立试验中，以<span class="mathjax-exps">$p_n$</span>代表事件<span class="mathjax-exps">$A$</span>在试验中出现的概率，它与试验总数<span class="mathjax-exps">$n$</span>有关，如果<span class="mathjax-exps">$n p_n \rightarrow \lambda$</span>，则当<span class="mathjax-exps">$n \rightarrow \infty$</span>时，<br>
 </p><div class="mathjax-exps">\[b(k; n, p_n) \rightarrow \frac{\lambda^k}{k!} e^{-\lambda}\]</div><p></p>
@@ -251,8 +255,8 @@
 当<span class="mathjax-exps">$p$</span>较小时(一般小于0.1), 可用如下近似公式:<br>
 </p><div class="mathjax-exps">$$b(k; n, p) \approx \frac{(np)^k}{k!} e^{-np}$$</div><p></p>
 <p>由于泊松分布可以看作二项分布的近似，所以其极大值出现在<span class="mathjax-exps">$k = \lfloor \lambda \rfloor$</span>处。</p>
-<p>下面研究泊松过程, 其代表事件间隔<span class="mathjax-exps">$\Delta t$</span>内事件发生<span class="mathjax-exps">$k$</span>次的概率.<br>
-<em>Lemma: <span id="Le2.4.1">柯西定理</span></em></p>
+<p>下面研究泊松过程, 其代表事件间隔<span class="mathjax-exps">$\Delta t$</span>内事件发生<span class="mathjax-exps">$k$</span>次的概率.</p>
+<p><span class="callout">Lemma: <span id="Le2.4.1">柯西定理</span></span></p>
 <blockquote>
 <p>若函数连续且 <span class="mathjax-exps">$f(x)$</span> 满足 <span class="mathjax-exps">$f(x+y) = f(x) f(y), \text{ for } \forall x, y \in \mathbb{R}$</span>, 则 <span class="mathjax-exps">$f(x) = a^x$</span>.</p>
 </blockquote>
