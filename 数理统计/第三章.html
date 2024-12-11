@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>index</title>
+      <title>第三章</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -7,7 +7,7 @@
         <script type="text/javascript">
           window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
         </script>
-        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
         
       
       
@@ -126,42 +126,62 @@
     
       <div class="crossnote markdown-preview  ">
       
-<div class="fixed-toc">
-<details open="">
-    <summary>Contents</summary>
-<ul>
-<li><a href="#liuliuqiu-%E7%AC%94%E8%AE%B0">LiuLiuqiu 笔记</a>
-<ul>
-<li><a href="#%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA">矩阵理论</a></li>
-<li><a href="#%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90">数学分析</a></li>
-<li><a href="#%E6%A6%82%E7%8E%87%E8%AE%BA">概率论</a></li>
-</ul>
-</li>
-</ul>
-</details>
-</div>
-<h1 id="liuliuqiu-笔记">LiuLiuqiu 笔记 </h1>
+<h2 id="第三章-假设检验">第三章-假设检验 </h2>
+<h3 id="假设检验基本概念">假设检验基本概念 </h3>
+<p><span class="callout">3.1.* Definition: 参数假设检验</span></p>
 <blockquote>
-<p>仅为了个人学习记录</p>
+<p>凡是在总体分布形式已知的条件下，对总体分布中的参数进行假设检验的统计方法，称为参数假设检验。</p>
 </blockquote>
-<h2 id="矩阵理论">矩阵理论 </h2>
-<p><a href="./%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0.html">线性代数</a><br>
-<a href="./%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/%E7%AC%AC%E4%B8%80%E7%AB%A0.html">第一章-线性代数引论</a><br>
-<a href="./%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/%E7%AC%AC%E4%BA%8C%E7%AB%A0.html">第二章-线性映射</a><br>
-<a href="./%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/%E7%AC%AC%E4%B8%89%E7%AB%A0.html">第三章-矩阵分解</a><br>
-<a href="./%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90/%E7%AC%AC%E5%9B%9B%E7%AB%A0.html">第四章-矩阵分析</a></p>
-<h2 id="数学分析">数学分析 </h2>
-<p><a href="./%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/math-analysis.html">Baby-Rudin</a></p>
-<h2 id="概率论">概率论 </h2>
-<p><a href="./%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E4%B8%80%E7%AB%A0.html">第一章-概率论基础</a><br>
-<a href="./%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E4%BA%8C%E7%AB%A0.html">第二章-条件概率与统计独立性</a><br>
-<a href="./%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E4%B8%89%E7%AB%A0.html">第三章-随机变量与分布函数</a><br>
-<a href="./%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E5%9B%9B%E7%AB%A0.html">第四章-数字特征与特征函数</a><br>
-<a href="./%E6%A6%82%E7%8E%87%E8%AE%BA/%E7%AC%AC%E4%BA%94%E7%AB%A0.html">第五章-极限定理</a></p>
-<p><a href="./%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E7%AC%AC%E4%B8%80%E7%AB%A0.html">第一章-基础知识</a><br>
-<a href="./%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E7%AC%AC%E4%BA%8C%E7%AB%A0.html">第二章-参数估计</a><br>
-<a href="./%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E7%AC%AC%E4%B8%89%E7%AB%A0.html">第三章-假设检验</a><br>
-<a href="./%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/%E7%AC%AC%E5%9B%9B%E7%AB%A0.html">第四章-多元统计基础</a></p>
+<p>假设检验的基本思想是：在假设成立的条件下，计算一个样本统计量的值，然后根据这个值与相应的抽样分布进行比较，以确定是否拒绝原假设。</p>
+<p><span class="callout">3.1.* Definition: 原假设和备择假设</span></p>
+<blockquote>
+<p>设总体分布为 <span class="mathjax-exps">$\{ p(x;\theta ):\theta \in \Theta \}$</span>a，关于参数的推测 <span class="mathjax-exps">$\theta \in \overline{\Theta }\subset \Theta$</span> 称为假设，记为 <span class="mathjax-exps">$H: \theta \in \overline{\Theta}$</span>。<br>
+若 <span class="mathjax-exps">$\overline{\Theta } = \{ \theta _0\}$</span>，则称为简单假设，否则称为复合假设。<br>
+在假设检验中，常涉及两个假设，称索要检验的假设为原假设，记为 <span class="mathjax-exps">$H_0$</span>；另一个假设称为备择假设，记为 <span class="mathjax-exps">$H_1$</span>。</p>
+</blockquote>
+<p><span class="callout">3.1.* Definition: 拒绝域</span></p>
+<blockquote>
+<p>通常根据统计量与参数的偏差程度来判断是否拒绝原假设，即依据 <span class="mathjax-exps">$\left| T - \theta \right| \geqslant c$</span> 来判断是否拒绝原假设，其中 <span class="mathjax-exps">$T$</span> 为统计量，<span class="mathjax-exps">$\theta$</span> 为参数，<span class="mathjax-exps">$c$</span> 为临界值。显然该不等式将样本空间划分为两部分：<br>
+</p><div class="mathjax-exps">$$\begin{gathered} W = \left\{ (x_1, \cdots, x_n) : T(x _1, \cdots, x _n ) \geqslant c \right\} \\ W^c = \left\{ (x_1, \cdots, x_n) : T(x _1, \cdots, x _n ) &lt; c \right\}  \end{gathered}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$W$</span> 称为拒绝域，<span class="mathjax-exps">$W^c$</span> 称为接受域。</p>
+</blockquote>
+<p>在假设检验中，引入示性函数<br>
+</p><div class="mathjax-exps">\[\varphi(x) =  \begin{cases}  1, &amp; x \in W \\  0, &amp; x \notin W  \end{cases}\]</div><p></p>
+<p>称其为检验函数，当 <span class="mathjax-exps">$\varphi(x) = 1$</span> 时，拒绝 <span class="mathjax-exps">$H_0$</span>；当 <span class="mathjax-exps">$\varphi(x) = 0$</span> 时，接受 <span class="mathjax-exps">$H_0$</span>。这种检验称为非随机化检验。</p>
+<p>随机化检验是先定义取值于区间 <span class="mathjax-exps">$[0,1]$</span> 的样本的函数 <span class="mathjax-exps">$\varphi(x)$</span>，当获得样本 <span class="mathjax-exps">$x$</span> 后，计算函数值 <span class="mathjax-exps">$\varphi(x)$</span>，然后以 <span class="mathjax-exps">$p = \varphi(x)$</span> 为成功的概率作 Binomial 试验，若试验成功就拒绝 <span class="mathjax-exps">$H_0$</span>，否则就接受 <span class="mathjax-exps">$H_0$</span>。<br>
+令检验函数为<br>
+</p><div class="mathjax-exps">\[\varphi(x) =  \begin{cases}  1, &amp; x \in W_1 \\  r, &amp; x \in W_2 \\ 0, &amp; x \in W_3  \end{cases}\]</div><p></p>
+<p>其中 <span class="mathjax-exps">$r \in (0,1), W_1 \cup W_2 \cup W_3 = X$</span>。<br>
+<span class="mathjax-exps">$\varphi (x)$</span> 其代表了观察值为 <span class="mathjax-exps">$x$</span> 时拒绝原假设的可能性。<br>
+<span class="mathjax-exps">$E(\varphi (x))$</span> 其代表了拒绝的平均概率，对 <span class="mathjax-exps">$x$</span> 所有的可能的值。</p>
+<p><strong>假设检验的本质是给出拒绝域</strong>。</p>
+<h3 id="两类错误">两类错误 </h3>
+<p><span class="callout">3.1.* Definition: 第一/二类错误</span></p>
+<blockquote>
+<p>当原假设<span class="mathjax-exps">$H_0$</span>本来成立时，样本观察值却落入拒绝域<span class="mathjax-exps">$W$</span>，我们错误地拒绝了<span class="mathjax-exps">$H_0$</span>，这种错误通常称为第一类错误或“弃真”错误，其概率为<br>
+</p><div class="mathjax-exps">\[\alpha (\theta) = P_\theta\{x \in W\}, \theta \in \Theta_0\]</div><p></p>
+<p>其二，当原假设<span class="mathjax-exps">$H_0$</span>本来不成立时，样本观察值却落入接受域<span class="mathjax-exps">$W^c$</span>，我们错误地接受了<span class="mathjax-exps">$H_0$</span>，从而犯了“取伪”错误，称之为第二类错误，其概率为<br>
+</p><div class="mathjax-exps">\[\beta(\theta) = P_ \theta \{x \notin W\} = 1 - P_0\{x \in W\}, \quad \theta \in \Theta_1\]</div><p></p>
+</blockquote>
+<p><span class="callout">3.1.1 Definition: 势和势函数</span></p>
+<blockquote>
+<p>称<span class="mathjax-exps">$H_0$</span>不成立时拒绝<span class="mathjax-exps">$H_0$</span>的概率，即<br>
+</p><div class="mathjax-exps">\[\gamma(\theta) = P_ \theta \{x \in W\} = 1 - \beta(\theta), \theta \in \Theta_1\]</div><p></p>
+<p>为一个检验的势。<br>
+一个检验犯第一类错误的概率和势可以看成是函数<br>
+</p><div class="mathjax-exps">\[g(\theta) = P_ \theta \{x \in W\} = E_0(\varphi(x)), \theta \in \Theta\]</div><p></p>
+<p>的不同取值，这个函数称为势函数。</p>
+</blockquote>
+<p>当<span class="mathjax-exps">$\theta \in \Theta_0$</span>时，<span class="mathjax-exps">$g(\theta) = \alpha (\theta)$</span>；当<span class="mathjax-exps">$\theta \in \Theta_1$</span>时，<span class="mathjax-exps">$g(\theta) = \gamma(\theta)$</span>。</p>
+<p>对于非随机化检验，<span class="mathjax-exps">$\alpha(\theta ) = E(\varphi(x)), \theta \in \Theta _0$</span>，即犯一类错误的概率为原假设成立时检验函数的期望。</p>
+<p><span class="callout">3.1.2 Definition: 显著性水平</span></p>
+<blockquote>
+<p>对给定的<span class="mathjax-exps">$\alpha \in (0,1)$</span>，若检验函数<span class="mathjax-exps">$\varphi(x)$</span>对所有的参数<span class="mathjax-exps">$\theta \in \Theta_0$</span>，满足<span class="mathjax-exps">$E_\theta(\varphi(x)) \leqslant \alpha$</span>，则称<span class="mathjax-exps">$\varphi(x)$</span>是一个显著性水平为<span class="mathjax-exps">$\alpha$</span>的检验函数，简称水平为<span class="mathjax-exps">$\alpha$</span>的检验。</p>
+</blockquote>
+<p>显著性水平是检验的一个重要指标，它反映了检验的严格程度，即犯一类错误的概率不超过 <span class="mathjax-exps">$\alpha$</span>。<span class="mathjax-exps">$\alpha$</span> 越小，越容易接受原假设，相应的临界值越大。<br>
+实际计算中常用 <span class="mathjax-exps">$p$</span>-value(<span class="mathjax-exps">$p$</span> 值)，它表示给定一组样本观察值 <span class="mathjax-exps">$x_1, \cdots , x_n$</span>，构造的检验统计量 <span class="mathjax-exps">$T = T(x_1, \cdots , x_n)$</span>，则<span class="mathjax-exps">$p = P_{\theta_0}(|z| \geq |T|)$</span>，是基于已给的观察数据能作出拒绝原假设 <span class="mathjax-exps">\(H_0\)</span> 决定的最小显著性水平，即将 <span class="mathjax-exps">$T$</span> 作为拒绝的临界值。也就是说，只要所给的显著性水平 <span class="mathjax-exps">\(\alpha\)</span> 大于 <span class="mathjax-exps">$p$</span> 值，就拒绝原假设 <span class="mathjax-exps">\(H_0\)</span>。</p>
+<p>假设检验的原理是基于反证法。由于 <span class="mathjax-exps">\(\alpha\)</span> 是很小的正数，所以当 <span class="mathjax-exps">\(H_0\)</span> 成立时，事件 <span class="mathjax-exps">\(\left\{ T \geq z_{1-\frac{\alpha}{2}} \right\}\)</span> 是一个小概率事件。小概率事件在一次试验中实际上是几乎不可能发生的，即如果 <span class="mathjax-exps">\(H_0\)</span> 成立，则事件 <span class="mathjax-exps">\(\left\{ T \geq z_{1-\frac{\alpha}{2}} \right\}\)</span> 几乎不可能发生。</p>
+<h3 id="似然比估计">似然比估计 </h3>
 
       </div>
       
