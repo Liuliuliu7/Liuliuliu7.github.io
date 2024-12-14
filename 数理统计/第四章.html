@@ -142,7 +142,20 @@
 </ul>
 </details>
 </div>
-## 第四章-多元正态总体的统计推断 {#第四章-多元正态总体的统计推断 }
+<button onclick="window.location.href='../index.html'">Home</button>
+<button id="toggleProofs">Toggle Proofs</button>
+<script>
+  document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
+    var details = document.querySelectorAll('details > summary');
+    for (var i = 0; i < details.length; i++) {
+      if (details[i].textContent.includes('Proof')) {
+        details[i].parentElement.open = !details[i].parentElement.open;
+      }
+    }
+  });
+</script>
+<h2 id="第四章-多元正态总体的统计推断">第四章-多元正态总体的统计推断 </h2>
 <h3 id="多元统计基础">多元统计基础 </h3>
 <p><span class="callout">4.1.* Definition: 多元分布函数</span></p>
 <blockquote>

@@ -126,6 +126,40 @@
     
       <div class="crossnote markdown-preview  ">
       
+<div class="fixed-toc">
+<details open="">
+    <summary>Contents</summary>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C">第三章-假设检验</a>
+<ul>
+<li><a href="#%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">假设检验基本概念</a></li>
+<li><a href="#%E4%B8%A4%E7%B1%BB%E9%94%99%E8%AF%AF">两类错误</a></li>
+<li><a href="#%E4%BC%BC%E7%84%B6%E6%AF%94%E4%BC%B0%E8%AE%A1">似然比估计</a></li>
+<li><a href="#%E6%A3%80%E9%AA%8C%E7%9A%84%E4%BC%98%E8%89%AF%E6%80%A7">检验的优良性</a>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C">简单假设检验</a></li>
+<li><a href="#%E5%A4%8D%E5%90%88%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C">复合假设检验</a></li>
+<li><a href="#%E4%B8%80%E8%87%B4%E6%9C%80%E4%BC%98%E5%8A%BF%E6%97%A0%E5%81%8F%E4%BC%B0%E8%AE%A1">一致最优势无偏估计</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+</div>
+<button onclick="window.location.href='../index.html'">Home</button>
+<button id="toggleProofs">Toggle Proofs</button>
+<script>
+  document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
+    var details = document.querySelectorAll('details > summary');
+    for (var i = 0; i < details.length; i++) {
+      if (details[i].textContent.includes('Proof')) {
+        details[i].parentElement.open = !details[i].parentElement.open;
+      }
+    }
+  });
+</script>
 <h2 id="第三章-假设检验">第三章-假设检验 </h2>
 <h3 id="假设检验基本概念">假设检验基本概念 </h3>
 <p><span class="callout">3.1.* Definition: 参数假设检验</span></p>
@@ -182,6 +216,146 @@
 实际计算中常用 <span class="mathjax-exps">$p$</span>-value(<span class="mathjax-exps">$p$</span> 值)，它表示给定一组样本观察值 <span class="mathjax-exps">$x_1, \cdots , x_n$</span>，构造的检验统计量 <span class="mathjax-exps">$T = T(x_1, \cdots , x_n)$</span>，则<span class="mathjax-exps">$p = P_{\theta_0}(|z| \geq |T|)$</span>，是基于已给的观察数据能作出拒绝原假设 <span class="mathjax-exps">\(H_0\)</span> 决定的最小显著性水平，即将 <span class="mathjax-exps">$T$</span> 作为拒绝的临界值。也就是说，只要所给的显著性水平 <span class="mathjax-exps">\(\alpha\)</span> 大于 <span class="mathjax-exps">$p$</span> 值，就拒绝原假设 <span class="mathjax-exps">\(H_0\)</span>。</p>
 <p>假设检验的原理是基于反证法。由于 <span class="mathjax-exps">\(\alpha\)</span> 是很小的正数，所以当 <span class="mathjax-exps">\(H_0\)</span> 成立时，事件 <span class="mathjax-exps">\(\left\{ T \geq z_{1-\frac{\alpha}{2}} \right\}\)</span> 是一个小概率事件。小概率事件在一次试验中实际上是几乎不可能发生的，即如果 <span class="mathjax-exps">\(H_0\)</span> 成立，则事件 <span class="mathjax-exps">\(\left\{ T \geq z_{1-\frac{\alpha}{2}} \right\}\)</span> 几乎不可能发生。</p>
 <h3 id="似然比估计">似然比估计 </h3>
+<p><span class="callout">3.4.* Definition: 似然比检验</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$x_1, x_2,\cdots, x_n$</span> 是来自密度函数为 <span class="mathjax-exps">$p(x;\theta)(\theta\in\Theta)$</span> 的总体的简单样本,考虑简单原假设对简单备择假设的检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta=\theta_0,\quad H_1:\theta=\theta_1\quad\left(\theta_1&gt;\theta_0\right)$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\theta_0$</span> 和 <span class="mathjax-exps">$\theta_1$</span> 已知。构造似然比</p>
+<p></p><div class="mathjax-exps">$$\lambda(x)=\frac{p\left(x_1, x_2,\cdots, x_n;\theta_1\right)}{p\left(x_1, x_2,\cdots, x_n;\theta_0\right)}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$x$</span> 表示样本点 <span class="mathjax-exps">$\left(x_1, x_2,\cdots, x_n\right)$</span>。令拒绝域为 <span class="mathjax-exps">$W=\left\{(x_1,\cdots ,x_n):\lambda(x)\geqslant c\right\}$</span>，其中 <span class="mathjax-exps">$c$</span> 由 <span class="mathjax-exps">$P_{\theta _0}\left \{ \lambda (x) \geqslant c  \right\} \leqslant \alpha$</span> 确定。</p>
+</blockquote>
+<p>一般来说 <span class="mathjax-exps">$\lambda (x)$</span> 的表达式较为复杂，故若能通过构造常见统计量 <span class="mathjax-exps">$z$</span>，并使得 <span class="mathjax-exps">$\lambda (x)$</span> 为 <span class="mathjax-exps">$z$</span> 的单调增函数，能够大大简化运算。即构造下列公式转换为求 <span class="mathjax-exps">$c_1$</span>：<br>
+</p><div class="mathjax-exps">$$P_{\mu_0}\{z \geq c_1\} = P_{\mu_0}\{\lambda(x) \geq c\} = \alpha$$</div><p></p>
+<p>对一般的假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta\in\Theta_0, H_1:\theta\in\Theta_1$$</div><p></p>
+<p>类似地可以定义似然比检验统计量</p>
+<p></p><div class="mathjax-exps">$$\lambda(x)=\frac{ \underset{\theta \in \Theta _1}{\sup} \left\{p\left(x_1,\cdots, x_n;\theta\right)\right\}}{\underset{\theta \in \Theta _0}{\sup}\left\{p\left(x_1,\cdots, x_n;\theta\right)\right\}}$$</div><p></p>
+<p>为了计算最大值方便，例如，若原假设 <span class="mathjax-exps">$H_0$</span> 和备择假设 <span class="mathjax-exps">$H_1$</span> 的分布类型相同，且 <span class="mathjax-exps">$\Theta=\Theta_0\cup\Theta_1$</span>，也定义似然比检验统计量</p>
+<p></p><div class="mathjax-exps">$$\lambda(x)=\frac{ \underset{\theta \in \Theta}{\sup} \left\{p\left(x_1,\cdots, x_n;\theta\right)\right\}}{\underset{\theta \in \Theta _0}{\sup}\left\{p\left(x_1,\cdots, x_n;\theta\right)\right\}}$$</div><p></p>
+<p>此时由于 <span class="mathjax-exps">$\Theta_0\subset\Theta$</span>，所以有 <span class="mathjax-exps">$\lambda(x)\geqslant 1$</span>。<br>
+对于似然比假设检验，拒绝域的形式为<br>
+</p><div class="mathjax-exps">$$W=\left\{\left(x_1, x_2,\cdots, x_n\right):\lambda(x)\geqslant c\right\}$$</div><p></p>
+<p>其中临界值 <span class="mathjax-exps">$c$</span> 可由不等式</p>
+<p></p><div class="mathjax-exps">$$P_{\theta_0}\{\lambda(x)\geqslant c\}\leqslant a$$</div><p></p>
+<p>确定，其中 <span class="mathjax-exps">$\theta_0\in\Theta_0$</span>。</p>
+<p>若似然比统计量是 <span class="mathjax-exps">$\lambda(x)$</span>，拒绝域是 <span class="mathjax-exps">$W=\left\{\left(x_1, x_2,\cdots, x_n\right):\lambda(x)\geqslant c\right\}$</span>，在做统计推断时需要利用犯第一类错误的概率不超过显著性水平 <span class="mathjax-exps">$\alpha$</span> 来确定待定常数 <span class="mathjax-exps">$c$</span>。一般情形下，似然比统计量的精确分布很难获得，这导致拒绝域 <span class="mathjax-exps">$W=\{x:\lambda(x)\geqslant c\}$</span> 中的临界值 <span class="mathjax-exps">$c$</span> 不易直接求得。有三种方法可以解决此问题。</p>
+<p>其一，化简 <span class="mathjax-exps">$\lambda(x)$</span> 使其成为某个具有常见分布的统计量 <span class="mathjax-exps">$T(x)$</span> 的函数，如 <span class="mathjax-exps">$T(x)$</span> 服从标准正态分布、<span class="mathjax-exps">$\chi^2$</span> 分布等，再设法求出由 <span class="mathjax-exps">$T(x)$</span> 确定的拒绝域的临界值。<br>
+其二，在一定的条件下，可以给出 <span class="mathjax-exps">$\lambda(x)$</span> 的极限分布。因而，当样本容量 <span class="mathjax-exps">$n$</span> 很大时，利用极限分布可给出 <span class="mathjax-exps">$c$</span> 的近似值。<br>
+其三，利用 Monte-Carlo 模拟获得临界值 <span class="mathjax-exps">$c$</span> 的近似值。</p>
+<h3 id="检验的优良性">检验的优良性 </h3>
+<p>对于一个检验，若其犯错误的概率较小，其检验效果较好。但一般来说，给定样本容量，犯第一类错误的概率 <span class="mathjax-exps">$\alpha$</span> 越小，犯第二类错误的概率 <span class="mathjax-exps">$\beta$</span> 就越大，反之亦然。所以一般控制犯第一类错误的概率 <span class="mathjax-exps">$\alpha$</span>，然后使得犯第二类错误的概率 <span class="mathjax-exps">$\beta$</span> 较小。</p>
+<h4 id="简单假设检验">简单假设检验 </h4>
+<p><span class="callout">3.5.1 Definition: 最优势检验</span></p>
+<blockquote>
+<p>对假设简单检验问题，如果存在水平为 <span class="mathjax-exps">$\alpha$</span> 的检验函数 <span class="mathjax-exps">$\varphi^* \in \Phi_\alpha$</span>，即 <span class="mathjax-exps">$\Phi_a = \{\varphi: E_{\theta_0}(\varphi(x)) \leq \alpha\}$</span>，使得对任一水平为 <span class="mathjax-exps">$\alpha$</span> 的检验函数 <span class="mathjax-exps">$\varphi \in \Phi_\alpha$</span>，都有不等式</p>
+<p></p><div class="mathjax-exps">$$E_{\theta_1}(\varphi^*(x)) \geqslant E_{\theta_1}(\varphi(x))$$</div><p></p>
+<p>成立，则称检验函数 <span class="mathjax-exps">$\varphi^*$</span> 为假设检验问题的水平为 <span class="mathjax-exps">$\alpha$</span> 的最优势检验（Most Powerful Test），简称 MPT。</p>
+</blockquote>
+<p><span class="callout">3.5.1 Lemma: Neyman-Pearson 引理</span></p>
+<blockquote>
+<p>给定水平 <span class="mathjax-exps">$a(0 &lt; a &lt; 1)$</span>，对简单假设检验问题有<br>
+(1) 存在常数 <span class="mathjax-exps">$k \geqslant 0$</span> 及检验函数<br>
+</p><div class="mathjax-exps">$$\varphi(x)=\left\{\begin{array}{l} 1,\ \lambda(x)&gt;k\\ 0,\ \lambda(x)&lt;k\end{array}\right.$$</div><p></p>
+<p>满足<br>
+</p><div class="mathjax-exps">$$E_{\theta_0}(\varphi(x))=a$$</div><p></p>
+<p>即 <span class="mathjax-exps">$\varphi \in \Phi_a$</span>，且检验函数 <span class="mathjax-exps">$\varphi(x)$</span> 是水平为 <span class="mathjax-exps">$a$</span> 的最优势检验，其中 <span class="mathjax-exps">$\lambda(x)=\frac{p(x;\theta_1)}{p(x;\theta_0)}$</span> 是似然比统计量。</p>
+<p>(2) 如果检验函数 <span class="mathjax-exps">$\varphi(x)$</span> 是水平为 <span class="mathjax-exps">$a$</span> 的最优势检验，则必存在常数 <span class="mathjax-exps">$k \geqslant 0$</span>，使得检验函数 <span class="mathjax-exps">$\varphi(x)$</span> 满足式一。进一步，如果 <span class="mathjax-exps">$\varphi(x)$</span> 的势 <span class="mathjax-exps">$E_0(\varphi(x))&lt;1$</span>，则 <span class="mathjax-exps">$\varphi(x)$</span> 也满足式二。</p>
+</blockquote>
+<p>使用 N-P 引理寻找最优势检验时，应注意：<br>
+(1) 当似然比 <span class="mathjax-exps">$\lambda(x)$</span> 为连续型随机变量时，MPT 的检验函数可取为非随机化形式<br>
+</p><div class="mathjax-exps">$$\varphi(x) =  \begin{cases}  1, &amp; \lambda(x) \geq k \\ 0, &amp; \lambda(x) &lt; k  \end{cases}$$</div><p></p>
+<p>其中常数 <span class="mathjax-exps">$k$</span> 由 <span class="mathjax-exps">$E_{\theta_0}(\varphi(x)) = \alpha$</span> 确定，这是因为 <span class="mathjax-exps">$P_{\theta_0}\{\lambda(x) = k\} = 0$</span>。此时拒绝域具有形式 <span class="mathjax-exps">$W = \{x: \lambda(x) \geq k\}$</span>。</p>
+<p>(2) 当似然比 <span class="mathjax-exps">$\lambda(x)$</span> 为离散型随机变量时，最优势检验的检验函数具有形式<br>
+</p><div class="mathjax-exps">$$\varphi(x)=\left\{ \begin{array}{ll} 1, &amp; \lambda(x) &gt; k \\ \frac{\alpha  - P_{\theta _0}\{\lambda(x) &gt; k\}}{P_{\theta _0}\{\lambda(x) = k\}} , &amp; \lambda(x) = k \\ 0, &amp; \lambda(x) &lt; k \end{array} \right.$$</div><p></p>
+<p>其中常数 <span class="mathjax-exps">$k$</span> 由 <span class="mathjax-exps">$P_{\theta _0}\{\lambda(x) \geqslant k\} \geqslant a \geqslant P_{\theta _0}\{\lambda(x) &gt; k\}$</span> 确定。</p>
+<h4 id="复合假设检验">复合假设检验 </h4>
+<p>设总体分布族为 <span class="mathjax-exps">$\{p(x;\theta):\theta\in\Theta\}$</span>，考虑假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta\in\Theta_0, \quad H_1:\theta\in\Theta_1$$</div><p></p>
+<p>将水平为 <span class="mathjax-exps">$\alpha$</span> 的所有检验函数的集合记为<br>
+</p><div class="mathjax-exps">$$\Phi_\alpha=\{\varphi(x):\sup_{\theta\in\Theta_0}\{\varphi(x)\} \leqslant \alpha\}$$</div><p></p>
+<p><span class="callout">3.5.2 Definition: 一致最优势检验</span></p>
+<blockquote>
+<p>对复合假设检验问题，若存在水平为 <span class="mathjax-exps">$\alpha$</span> 的检验函数 <span class="mathjax-exps">$\varphi^* \in \Phi_\alpha$</span>，使得对任一水平为 <span class="mathjax-exps">$\alpha$</span> 的检验函数 <span class="mathjax-exps">$\varphi \in \Phi_\alpha$</span> 有不等式<br>
+</p><div class="mathjax-exps">$$E_\theta\left(\varphi^{*}(x)\right) \geqslant E_\theta\left(\varphi(x)\right)$$</div><p></p>
+<p>对所有的 <span class="mathjax-exps">$\theta \in \Theta_1$</span> 都成立，则称 <span class="mathjax-exps">$\varphi^*(x)$</span> 是水平为 <span class="mathjax-exps">$\alpha$</span> 的一致最优势检验（Uniformly Most Powerful Test），简记为 UMPT。</p>
+</blockquote>
+<p>对复合假设检验问题而言，一致最优势检验的存在性不但与总体的分布有关，而且与所考虑的假设检验问题有关。</p>
+<p><span class="callout">3.5.1 Theorem: 单边复合假设检验的最优势检验</span></p>
+<blockquote>
+<p>如果样本 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 的联合密度函数 <span class="mathjax-exps">$p(x;\theta)(\theta\in\Theta)$</span> 是单参数的并可以表示为<br>
+</p><div class="mathjax-exps">$$p(x;\theta)=d(\theta) h(x)\exp\{c(\theta) T(x)\}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\theta$</span> 是实值参数，且 <span class="mathjax-exps">$c(\theta)$</span> 关于 <span class="mathjax-exps">$\theta$</span> 是严格单调增函数，则对单侧检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta\leqslant\theta_0, H_1:\theta&gt;\theta_0$$</div><p></p>
+<p>(1) 水平为 <span class="mathjax-exps">$\alpha$</span> 的一致最优势检验存在，其检验函数为<br>
+</p><div class="mathjax-exps">$$\varphi^*(x)=\left\{\begin{array}{l} 1,\quad T(x)&gt;c\\ r,\quad T(x)=c\\ 0,\quad T(x)&lt;c\end{array}\right.$$</div><p></p>
+<p>其中常数 <span class="mathjax-exps">$c$</span> 和 <span class="mathjax-exps">$r\in[0,1]$</span> 由 <span class="mathjax-exps">$E_{\theta _0}\left(\varphi^{*}(x)\right)=a$</span> 确定。</p>
+<p>(2) 水平为 <span class="mathjax-exps">$\alpha$</span> 的一致最优势检验 <span class="mathjax-exps">$\varphi^{*}(x)$</span> 的势函数 <span class="mathjax-exps">$E_{\theta}\left(\varphi^{*}(x)\right)$</span> 是 <span class="mathjax-exps">$\theta$</span> 的单调增函数。</p>
+</blockquote>
+<p>对于其他单侧检验问题，可以进行转换，使其满足上述条件。<br>
+(2) 如果 <span class="mathjax-exps">$c(\theta)$</span> 是 <span class="mathjax-exps">$\theta$</span> 的严格单调减函数，则定理的结论同样成立，只需要将式中的不等号改变方向。<br>
+(3) 对假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta=\theta_0,\quad H_1:\theta&gt;\theta_0$$</div><p></p>
+<p>定理的结论全部成立。<br>
+(4) 对假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta=\theta_0, H_1:\theta&lt;\theta_0$$</div><br>
+和<p></p>
+<p></p><div class="mathjax-exps">$$H_0:\theta \geqslant \theta_0, H_1:\theta&lt;\theta_0$$</div><p></p>
+<p>可以分别化为假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0:-\theta=-\theta_0, H_1:-\theta&gt;-\theta_0$$</div><p></p>
+<p>和<br>
+</p><div class="mathjax-exps">$$H_0:-\theta\leqslant-\theta_0, H_1:-\theta&gt;-\theta_0$$</div><p></p>
+<p><span class="callout">3.5.2 Theorem: 双边复合假设检验的最优势检验</span></p>
+<blockquote>
+<p>如果样本 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 的联合密度函数 <span class="mathjax-exps">$p(x;\theta)(\theta\in\Theta)$</span> 是单参数的并可以表示为<br>
+</p><div class="mathjax-exps">$$p(x;\theta)=d(\theta) h(x)\exp\{c(\theta) T(x)\}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\theta$</span> 是实值参数，且 <span class="mathjax-exps">$c(\theta)$</span> 关于 <span class="mathjax-exps">$\theta$</span> 是严格单调增函数，则对双侧假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0: \theta \leqslant \theta_1 \text{ 或 } \theta \geqslant \theta_2, H_1: \theta_1 &lt; \theta &lt; \theta_2$$</div><p></p>
+<p>存在水平为 <span class="mathjax-exps">$\alpha$</span> 的一致最优势检验，其检验函数为<br>
+</p><div class="mathjax-exps">$$\varphi^*(x)=\left\{\begin{array}{l} 1,\quad c_1 &lt; T(x) &lt; c_2\\ r_i,\quad T(x)=c_i, i=1,2\\ 0,\quad T(x) &lt; c_1 \text{ 或 } T(x) &gt; c_2\end{array}\right.$$</div><p></p>
+<p>其中 4 个常数 <span class="mathjax-exps">$r_i, c_i(i=1,2)$</span> 由下面两式确定<br>
+</p><div class="mathjax-exps">$$E_{\theta_1}\left(\varphi^*(x)\right)= E_{\theta_2}\left(\varphi^*(x)\right)=\alpha$$</div><p></p>
+</blockquote>
+<h4 id="一致最优势无偏估计">一致最优势无偏估计 </h4>
+<p>由于对于某些双边检验，其不存在一致最优势检验，故引入一致最优势无偏估计。</p>
+<p><span class="callout">3.5.3 Definition: 无偏检验</span></p>
+<blockquote>
+<p>设 <span class="mathjax-exps">$\varphi(x)$</span> 是假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta\in\Theta_0,\quad H_1:\theta\in\Theta_1$$</div><p></p>
+<p>的检验函数，若其势函数 <span class="mathjax-exps">$g_{\varphi}(\theta)=E_\theta(\varphi(x))$</span> 满足<br>
+</p><div class="mathjax-exps">$$\left\{ \begin{align*}&amp; g_{\varphi}(\theta)\leqslant \alpha ,\quad\theta\in\Theta_0\\ &amp; g_{\varphi}(\theta)\geqslant \alpha ,\quad\theta\in\Theta_1\end{align*} \right.$$</div><p></p>
+<p>则称 <span class="mathjax-exps">$\varphi(x)$</span> 是水平为 <span class="mathjax-exps">$a$</span> 的无偏检验（Unbiased Test）。</p>
+</blockquote>
+<p>显然，水平为 <span class="mathjax-exps">$\alpha$</span> 的一致最优势检验一定是无偏检验。</p>
+<p><span class="callout">3.5.4 Definition: 一致最优势无偏检验</span></p>
+<blockquote>
+<p>在假设检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta\in\Theta_0, H_1:\theta\in\Theta_1$$</div><p></p>
+<p>中，若存在一个水平为 <span class="mathjax-exps">$\alpha$</span> 的无偏检验函数 <span class="mathjax-exps">$\varphi^*(x)$</span>，使得对任一水平为 <span class="mathjax-exps">$\alpha$</span> 的无偏检验函数 <span class="mathjax-exps">$\varphi(x)$</span>，不等式</p>
+<p></p><div class="mathjax-exps">$$E_0\left(\varphi^*(x)\right) \geqslant E_0(\varphi(x))$$</div><p></p>
+<p>对所有的 <span class="mathjax-exps">$\theta\in\Theta_1$</span> 都成立，则称检验函数 <span class="mathjax-exps">$\varphi^*(x)$</span> 是水平为 <span class="mathjax-exps">$\alpha$</span> 的一致最优势无偏检验（Uniformly Most Powerful Unbiased Test），简记为 UMPUT。</p>
+</blockquote>
+<p><span class="callout">3.5.3 Theorem: 双边复合假设检验的一致最优势无偏检验</span></p>
+<blockquote>
+<p>如果样本 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 的联合密度函数（或分布列） <span class="mathjax-exps">$p(x;\theta)(\theta\in\Theta)$</span> 是单参数的并可以表示为<br>
+</p><div class="mathjax-exps">$$p(x;\theta)=d(\theta) h(x)\exp\{c(\theta) T(x)\}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\theta$</span> 是实值参数，且 <span class="mathjax-exps">$c(\theta)$</span> 关于 <span class="mathjax-exps">$\theta$</span> 是严格单调增函数，则对双侧检验问题<br>
+</p><div class="mathjax-exps">$$H_0:\theta_1\leqslant\theta\leqslant\theta_2, H_1:\theta&lt;\theta_1 \text{ 或 } \theta&gt;\theta_2$$</div><p></p>
+<p>和任一水平 <span class="mathjax-exps">$\alpha (0&lt;\alpha &lt;1)$</span>，存在一致最优势无偏检验，其检验函数为</p>
+<p></p><div class="mathjax-exps">$$\varphi^*(x)=\left\{\begin{array}{l} 1,\quad T(x)&lt;c_1 \text{ 或 } T(x)&gt;c_2\\ r_i,\quad T(x)=c_i, i=1,2\\ 0,\quad c_1&lt;T(x)&lt;c_2\end{array}\right.$$</div><p></p>
+<p>其中 4 个常数 <span class="mathjax-exps">$r_i, c_i(i=1,2)$</span> 由下面两式确定</p>
+<p></p><div class="mathjax-exps">$$E_{\theta_1}(\varphi^*(x))=\alpha , E_{\theta_2}(\varphi^*(x))=\alpha$$</div><p></p>
+</blockquote>
+<p><span class="callout">3.5.4 Theorem: 双边复合假设检验的一致最优势无偏检验</span></p>
+<blockquote>
+<p>如果样本 <span class="mathjax-exps">$x_1, x_2, \cdots, x_n$</span> 的联合密度函数（或分布列） <span class="mathjax-exps">$p(x;\theta)(\theta\in\Theta)$</span> 是单参数的并可以表示为</p>
+<p></p><div class="mathjax-exps">$$p(x;\theta)=d(\theta) h(x)\exp\{c(\theta) T(x)\}$$</div><p></p>
+<p>其中 <span class="mathjax-exps">$\theta$</span> 是实值参数，且 <span class="mathjax-exps">$c(\theta)$</span> 关于 <span class="mathjax-exps">$\theta$</span> 是严格单调增函数，则对双侧假设检验问题</p>
+<p></p><div class="mathjax-exps">$$H_0:\theta=\theta_0,\quad H_1:\theta\neq\theta_0$$</div><p></p>
+<p>和任一给定的水平 <span class="mathjax-exps">$\alpha (0&lt;\alpha &lt;1)$</span>，存在一致最优势无偏检验，其检验函数为</p>
+<p></p><div class="mathjax-exps">$$\varphi^*(x)=\left\{\begin{array}{l} 1,\quad T(x)&lt;c_1 \text{ 或 } T(x)&gt;c_2\\ r_i,\quad T(x)=c_i, i=1,2\\ 0,\quad c_1&lt;T(x)&lt;c_2\end{array}\right.$$</div><p></p>
+<p>其中 4 个常数 <span class="mathjax-exps">$r_i, c_i(i=1,2)$</span> 由下面两式确定</p>
+<p></p><div class="mathjax-exps">$$E_0\left(\varphi^*(x)\right)=\alpha , E_0\left[T(x)\varphi^*(x)\right]=\alpha  E_0[T(x)]$$</div><p></p>
+</blockquote>
 
       </div>
       

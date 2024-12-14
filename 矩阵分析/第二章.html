@@ -45,8 +45,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -57,8 +59,10 @@
   /* 蓝色边框 */
   border-radius: 10px;
   /* 圆角 */
-  padding: 8px;
+  padding: 0px 8px 0px 8px;
   /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
   transition: box-shadow 0.3s ease;
   /* 阴影过渡效果 */
   line-height: 200%;
@@ -182,7 +186,8 @@
 </ul>
 </details>
 </div>
-<p><button id="toggleProofs">Toggle Proofs</button></p>
+<p><button onclick="window.location.href='../index.html'">Home</button><br>
+<button id="toggleProofs">Toggle Proofs</button></p>
 <script>
   document.getElementById('toggleProofs').addEventListener('click', function() {
     this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
