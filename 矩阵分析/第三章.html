@@ -7,7 +7,7 @@
         <script type="text/javascript">
           window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
         </script>
-        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         
       
       
@@ -100,10 +100,10 @@
   /* 目录的高度 */
   padding: 10px;
   /* 内边距 */
-  z-index: -100;
-  /* 使目录在最底层 */
+  z-index: 100;
+  /* 使目录在最顶层 */
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .markdown-preview.markdown-preview .fixed-toc {
     padding: 10px;
     /* 内边距 */
@@ -130,7 +130,7 @@
 <details open="">
   <summary>Contents</summary>
 <div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="code-chunk-btn-group"><div class="run-btn btn btn-xs btn-primary"><span>▶︎</span></div><div class="run-all-btn btn btn-xs btn-primary">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
-<li><a href="#%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3">矩阵分解</a>
+<li><a href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3">第三章 矩阵分解</a>
 <ul>
 <li><a href="#span-classcallout311-lemma-%E7%9F%A9%E9%98%B5%E7%9B%B8%E6%8A%B5%E5%BC%95%E7%90%86span">3.1.1 Lemma: 矩阵相抵引理</a></li>
 <li><a href="#span-classcallout311-example-%E7%9F%A9%E9%98%B5%E7%A7%A9%E4%B8%8D%E7%AD%89%E5%BC%8Fspan">3.1.1 Example: 矩阵秩不等式</a></li>
@@ -215,7 +215,8 @@
 </ul>
 </details>
 </div>
-<p><button id="toggleProofs">Toggle Proofs</button></p>
+<p><button onclick="window.location.href='../index.html'">Home</button><br>
+<button id="toggleProofs">Toggle Proofs</button></p>
 <script>
   document.getElementById('toggleProofs').addEventListener('click', function() {
 
@@ -229,7 +230,7 @@
 
   }); 
 </script>
-<h4 id="矩阵分解">矩阵分解 </h4>
+<h4 id="第三章-矩阵分解">第三章 矩阵分解 </h4>
 <h5 id="span-classcallout311-lemma-矩阵相抵引理span"><span class="callout">3.1.1 Lemma: 矩阵相抵引理</span> </h5>
 <blockquote>
 <p>设矩阵<span class="mathjax-exps">$A, B \in F^{m \times n}$</span>，则以下表述等价：<br>
@@ -318,6 +319,7 @@
 <p>设<span class="mathjax-exps">$A = [a_{ij}] \in \mathbb{C}^{n \times n}$</span>是非奇异矩阵，则存在排列矩阵<span class="mathjax-exps">$P$</span>使得<span class="mathjax-exps">$PA$</span>的所有顺序主子式均非零。</p>
 </blockquote>
 <h5 id="span-classcallout331-corollary-cholesky分解span"><span class="callout">3.3.1 Corollary: Cholesky分解</span> </h5>
+<p><span id="th3.3.1"></span></p>
 <blockquote>
 <p>若<span class="mathjax-exps">$n$</span>阶实对称矩阵<span class="mathjax-exps">$A$</span>是正定的，则存在唯一的正上三角矩阵<span class="mathjax-exps">$R$</span>使得<span class="mathjax-exps">$A = R^{\top} R$</span>。</p>
 </blockquote>

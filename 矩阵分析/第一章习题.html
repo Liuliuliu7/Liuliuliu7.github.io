@@ -1,0 +1,326 @@
+<!DOCTYPE html><html><head>
+      <title>第一章习题</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      
+        <script type="text/javascript">
+          window.MathJax = ({"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"options":{},"loader":{}});
+        </script>
+        <script type="text/javascript" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" charset="UTF-8"></script>
+        
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview {
+  /* 样式化按钮 */
+  /* 当鼠标悬停在按钮上时改变背景颜色 */
+  /* 响应式设计：针对移动端 */
+}
+.markdown-preview.markdown-preview body {
+  line-height: 175%;
+}
+.markdown-preview.markdown-preview #toggleProofs {
+  font: 0.8em;
+  font-style: italic;
+  padding: 5px 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+.markdown-preview.markdown-preview #toggleProofs:hover {
+  background-color: #45a049;
+}
+.markdown-preview.markdown-preview details {
+  border: 2px solid #e1eaed;
+  /* 蓝色边框 */
+  border-radius: 10px;
+  /* 圆角 */
+  padding: 0px 8px 0px 8px;
+  /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
+  transition: box-shadow 0.3s ease;
+  /* 阴影过渡效果 */
+  line-height: 200%;
+  /* 设置行间距为当前字体大小的125% */
+}
+.markdown-preview.markdown-preview details:hover {
+  border: 2px solid #90c1f4;
+  /* 蓝色边框 */
+  border-radius: 10px;
+  /* 圆角 */
+  padding: 0px 8px 0px 8px;
+  /* 内边距 */
+  margin-bottom: 8px;
+  /* 底部外边距 */
+  transition: box-shadow 0.3s ease;
+  /* 阴影过渡效果 */
+  line-height: 200%;
+  /* 设置行间距为当前字体大小的125% */
+}
+.markdown-preview.markdown-preview summary {
+  font-weight: bold;
+  font-style: italic;
+}
+.markdown-preview.markdown-preview .callout {
+  font-weight: bold;
+  font-size: medium;
+  font-style: italic;
+  color: #005792;
+  /* 深蓝色 */
+  background-color: #E7F7FF;
+  /* 浅蓝色背景 */
+  padding: 5px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  /* 添加圆角 */
+}
+.markdown-preview.markdown-preview .fixed-toc {
+  position: fixed;
+  /* 使用固定定位 */
+  left: 0;
+  /* 贴合窗口左侧 */
+  top: 0;
+  /* 贴合窗口顶部 */
+  max-width: 400px;
+  /* 目录最大宽度 */
+  overflow-y: auto;
+  /* 如果内容超出高度，则显示滚动条 */
+  height: 100%;
+  /* 目录的高度 */
+  padding: 10px;
+  /* 内边距 */
+  z-index: -100;
+  /* 使目录在最底层 */
+}
+@media (max-width: 768px) {
+  .markdown-preview.markdown-preview .fixed-toc {
+    padding: 10px;
+    /* 内边距 */
+    position: inherit;
+    /* 取消固定定位 */
+    z-index: 100;
+    /* 使目录在最顶层 */
+  }
+}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><span class="callout">例2(A)</span><br>
+已知 <span class="mathjax-exps">$A = \begin{bmatrix} 1 &amp; 0 \\ 2 &amp; 1 \end{bmatrix}$</span> 和集合 <span class="mathjax-exps">$S_A = \left\{ \sum_{i=0}^{10^3} a_i A^i, a_i \in \mathbb{R}, i=1,\ldots,10^3 \right\}$</span>，则 <span class="mathjax-exps">$S_A$</span>（ ）<span class="mathjax-exps">$\mathbb{R}$</span> 上的线性空间；若 <span class="mathjax-exps">$S_A$</span> 是 <span class="mathjax-exps">$\mathbb{R}$</span> 上的线性空间，则 <span class="mathjax-exps">$\text{dim}(S_A) =$</span></p>
+<details open="">
+    <summary>Solution:</summary>
+<p>可以验证<br>
+</p><div class="mathjax-exps">$$A^n = \begin{bmatrix} 1 &amp; 0 \\ 2n &amp; 0 \end{bmatrix}$$</div><p></p>
+<p>令 <span class="mathjax-exps">$y_1, y_2 \in S$</span>, 则有<br>
+</p><div class="mathjax-exps">$$y_1 = \begin{bmatrix} \sum_{i=0}^{10^3} \alpha_i  &amp; 0 \\ \sum_{i=0}^{10^3} \alpha_i \cdot 2i  &amp; \sum_{i=0}^{10^3} \alpha_i \end{bmatrix}, y_2 = \begin{bmatrix} \sum_{i=0}^{10^3} \beta_i  &amp; 0 \\ \sum_{i=0}^{10^3} \beta_i \cdot 2i  &amp; \sum_{i=0}^{10^3} \beta_i \end{bmatrix}$$</div><p></p>
+<p>验证 <span class="mathjax-exps">$y_1 + y_2 \in S$</span> 和 <span class="mathjax-exps">$k y \in S$</span>.<br>
+</p><div class="mathjax-exps">$$y_1 + y_2 = \begin{bmatrix} \sum_{i=0}^{10^3} \alpha_i + \beta_i  &amp; 0 \\ \sum_{i=0}^{10^3} (\alpha_i + \beta_i) \cdot 2i  &amp; \sum_{i=0}^{10^3} \alpha_i + \beta_i \end{bmatrix} \in S, \quad k y_1 = \begin{bmatrix} \sum_{i=0}^{10^3} k \alpha_i  &amp; 0 \\ \sum_{i=0}^{10^3} k \alpha_i \cdot 2i  &amp; \sum_{i=0}^{10^3} k \alpha_i \end{bmatrix} \in S$$</div><p></p>
+<p>由于 <span class="mathjax-exps">$S_A \subset \mathbb{R}^{2 \times 2}$</span>, 故 <span class="mathjax-exps">$S_A$</span> 是 <span class="mathjax-exps">$\mathbb{R}$</span> 上的线性空间。<br>
+由上表达式可以看出 <span class="mathjax-exps">$S$</span> 的一组基为<br>
+</p><div class="mathjax-exps">$$\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}, \begin{bmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{bmatrix}$$</div><p></p>
+<p>故 <span class="mathjax-exps">$\text{dim}(S_A) = 2$</span>.</p>
+</details>
+<p><span class="callout">例3(A)</span><br>
+已知 <span class="mathjax-exps">$A \in \mathbb{C}^{5 \times 5}, \operatorname{rank}(A) = 3$</span>，则子空间<br>
+</p><div class="mathjax-exps">$$S_A = \left\{ B \in \mathbb{C}^{5 \times 5} \mid AB = 0 \right\}$$</div><p></p>
+<p>的维数是</p>
+<details open="">
+    <summary>Solution:</summary>
+<p></p><div class="mathjax-exps">\[AB = 0 \implies \begin{bmatrix} I_{3,3} &amp; 0 \\ 0 &amp; 0 \end{bmatrix} \begin{bmatrix} B_1 &amp; B_2 \\ B_3 &amp; B_4 \end{bmatrix} = \begin{bmatrix} B_1 &amp; B_2 \\ 0 &amp; 0 \end{bmatrix} = 0\]</div><p></p>
+<p>故有 <span class="mathjax-exps">$B_1 = B_2 = 0$</span>，则<br>
+</p><div class="mathjax-exps">\[\dim(S_A) = \dim(B_{3}) + \dim(B_{4}) = 2 \times 5 = 10\]</div><p></p>
+</details>
+<p><span class="callout">例5(D)</span></p>
+<p>若矩阵 <span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span>，则下列说法错误的是：<br>
+<strong>A</strong> 若 <span class="mathjax-exps">$A^2 = A$</span>，则 <span class="mathjax-exps">$R(I - A) = N(A)$</span><br>
+<strong>B</strong> 若 <span class="mathjax-exps">$R(I - A) = N(A)$</span>，则 <span class="mathjax-exps">$A^2 = A$</span><br>
+<strong>C</strong> 若 <span class="mathjax-exps">$A^2 = A$</span>，则 <span class="mathjax-exps">$R(A) + N(A) = \mathbb{C}^n$</span><br>
+<strong>D</strong> 若 <span class="mathjax-exps">$R(A) + N(A) = \mathbb{C}^n$</span>，则 <span class="mathjax-exps">$A^2 = A$</span></p>
+<details open="">
+    <summary>Solution:</summary>
+<p><strong>A</strong> 参考书例1.5.4的证明。</p>
+<p><strong>B</strong><br>
+由于对 <span class="mathjax-exps">$\forall x \in \mathbb{R}^n, x = Ax + (I - A)x$</span>，其中 <span class="mathjax-exps">$Ax \in R(A)$</span>，<span class="mathjax-exps">$(I - A)x \in R(I - A) = N(A)$</span>。<br>
+则对等式两边同时左乘 <span class="mathjax-exps">$A$</span>，有 <span class="mathjax-exps">$Ax = A^2x$</span> ，则 <span class="mathjax-exps">$A^2 = A$</span>。</p>
+<p><strong>C</strong> 参考书例1.5.4的证明。</p>
+<p><strong>D</strong><br>
+反例可取 <span class="mathjax-exps">\(A = 2I\)</span>，则有 <span class="mathjax-exps">$R(A) + N(A) = C^n$</span>，但 <span class="mathjax-exps">$A^2 \neq A$</span>。</p>
+</details>
+<p><span class="callout">例6(B)</span></p>
+<details open="">
+    <summary>Solution:</summary>
+<p><strong>A,C</strong><br>
+令 <span class="mathjax-exps">$V = \{x | Ax = b\}$</span>，则有 <span class="mathjax-exps">$x = x_0 + \xi$</span><br>
+由于 <span class="mathjax-exps">$b \neq 0$</span>，故 <span class="mathjax-exps">$0 \not\in V$</span>，故 <span class="mathjax-exps">$V$</span> 不是线性空间。</p>
+<p><strong>B,D</strong><br>
+<span class="mathjax-exps">$\dim(N(A)) = n - r$</span>，由于 <span class="mathjax-exps">$\xi$</span> 与 <span class="mathjax-exps">$x_0$</span> 线性无关，故 <span class="mathjax-exps">$V$</span> 是 <span class="mathjax-exps">$n - r + 1$</span> 维的。</p>
+</details>
+<p><span class="callout">例7(B)</span></p>
+<p>设 <span class="mathjax-exps">$U$</span>，<span class="mathjax-exps">$W$</span> 是内积空间 <span class="mathjax-exps">$V$</span> 的两个子空间，则以下正确的是<br>
+<strong>A</strong> <span class="mathjax-exps">$(U+W)^{\perp}=U^{\perp}+W^{\perp}$</span><br>
+<strong>B</strong> <span class="mathjax-exps">$(U+W)^{\perp}=U^{\perp}\cap W^{\perp}$</span><br>
+<strong>C</strong> <span class="mathjax-exps">$(U\cap W)^{\perp}=U^{\perp}\cap W^{\perp}$</span><br>
+<strong>D</strong> <span class="mathjax-exps">$A (U\cap W)^{\perp}=U+W$</span></p>
+<details open="">
+    <summary>Solution:</summary>
+<p><strong>A,B</strong><br>
+<span class="mathjax-exps">\(\forall x \in (U^\perp \cap W^\perp) \Rightarrow x \cdot (U + W) = 0 \quad \Rightarrow x \in (U + W)^\perp\)</span>，则 <span class="mathjax-exps">\(U^\perp \cap W^\perp \subset (U + W)^\perp\)</span>。<br>
+<span class="mathjax-exps">$\forall x \in (U+W)^{\perp}$</span>，对<span class="mathjax-exps">$\forall u \in U \subset  (U + W)$</span>，故<span class="mathjax-exps">$x \cdot u = 0$</span>，同理 <span class="mathjax-exps">$\forall w \in W, x \cdot w = 0$</span>，故<span class="mathjax-exps">$x \in (U^{\perp} \cap W^{\perp})$</span>，则 <span class="mathjax-exps">$(U + W)^\perp \subset U^\perp \cap W^\perp$</span>。<br>
+综上 <span class="mathjax-exps">$(U+W)^{\perp} = U^{\perp} \cap W^{\perp}$</span>。</p>
+<p><strong>C,D</strong><br>
+由对称性有<span class="mathjax-exps">$(U \cap W)^{\perp} = (U^{\perp} + W^{\perp})$</span>（自证）。</p>
+</details>
+<p><span class="callout">例9(C)</span></p>
+<p>设 <span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}$</span> 且满足 <span class="mathjax-exps">$A^2 = A$</span>，则以下说法不正确的是：<br>
+<strong>A</strong> <span class="mathjax-exps">$R(A) + R(I - A)$</span> 是直和<br>
+<strong>B</strong> <span class="mathjax-exps">$R(I - A) = N(A)$</span><br>
+<strong>C</strong> <span class="mathjax-exps">$R(A) \perp N(A)$</span><br>
+<strong>D</strong> <span class="mathjax-exps">$\dim(R(I - A)) = n - \operatorname{rank}(A)$</span></p>
+<details open="">
+    <summary>Solution:</summary>
+<p>反例可取 <span class="mathjax-exps">$A = \begin{bmatrix} 1 &amp; 1 \\ 0 &amp; 0  \end{bmatrix}$</span>，则 <span class="mathjax-exps">$A^2 = A$</span>，但 <span class="mathjax-exps">$R(A) \perp N(A)$</span> 不成立。<br>
+其余选项参考例5。</p>
+</details>
+<p><span class="callout">例11(B)</span></p>
+<p>设 <span class="mathjax-exps">$V_1 = \{ x = [x_1, x_2, \dots, x_n]^T \in \mathbb{C}^n \mid x_1 + x_2 + \dots + x_n = 0 \}$</span>, <span class="mathjax-exps">$V_2 = \{ x = [x_1, x_2, \dots, x_n]^T \in \mathbb{C}^n \mid x_1 = x_2 = \dots = x_n \}$</span>,  则 <span class="mathjax-exps">$V_1 + V_2$</span> 的维数为：</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>方程 <span class="mathjax-exps">$x_1 + x_2 + \dots + x_n = 0$</span> 与 <span class="mathjax-exps">$x_1 = x_2 = \cdots x_n$</span> 显然是独立的，故 <span class="mathjax-exps">$\dim(V \cap V_1) \leqslant n - 2$</span>，则有<br>
+</p><div class="mathjax-exps">\[\dim(V_1 + V_2) = \dim(V_1) + \dim(V_2) - \dim(V_1 \cap V_1) = n\]</div><p></p>
+</details>
+<p><span class="callout">例18(AC)</span></p>
+<p>设 <span class="mathjax-exps">$A \in \mathbb{C}^{m \times n}$</span>，则以下说法正确的是：<br>
+<strong>A</strong> <span class="mathjax-exps">$R(A)$</span> 和 <span class="mathjax-exps">$N(A)$</span> 可能相等<br>
+<strong>B</strong> <span class="mathjax-exps">$\dim(N(A)) = m - \operatorname{rank}(A)$</span><br>
+<strong>C</strong> 若 <span class="mathjax-exps">$\dim(N(A)) = 0$</span>，则 <span class="mathjax-exps">$A$</span> 为列满秩矩阵。<br>
+<strong>D</strong> <span class="mathjax-exps">$R(A)$</span> 和 <span class="mathjax-exps">$N(A)$</span> 的零向量相同。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>可取 <span class="mathjax-exps">$A = \begin{bmatrix} 0 &amp; 1 \\ 0 &amp; 0 \end{bmatrix}$</span>，显然其 <span class="mathjax-exps">$R(A) = N(A) = \begin{bmatrix} \alpha \\ 0 \end{bmatrix}$</span>，<span class="mathjax-exps">$\alpha \in \mathbb{C}$</span>。</p>
+</details>
+<p><span class="callout">例20(C)</span></p>
+<p>定义 <span class="mathjax-exps">$W_1$</span>、<span class="mathjax-exps">$W_2$</span> 和 <span class="mathjax-exps">$W_3$</span> 三个集合，其中 <span class="mathjax-exps">$W_1$</span> 是所有形如 <span class="mathjax-exps">$[a - 3b, b - a, a, b]$</span> 的向量的集合，其中 <span class="mathjax-exps">$a$</span> 和 <span class="mathjax-exps">$b$</span> 为任意实数；  <span class="mathjax-exps">$W_2 = \{ X \in \mathbb{R}^{2 \times 2} \mid AX = XA, A = \operatorname{diag}(1, 2) \}$</span>；<span class="mathjax-exps">$W_3 = \left\{ \begin{bmatrix} a &amp; b &amp; 0 \\ c &amp; 0 &amp; d \end{bmatrix} \mid a + b + c = 0, a, b, c, d \in \mathbb{R} \right\}$</span>，则以下说法正确的是</p>
+<details open="">
+    <summary>Solution:</summary>
+<p><span class="mathjax-exps">$W_1 =\left\{ x \mid  x = \begin{bmatrix} 1 &amp; -3 \\ -1 &amp; 1 \\ 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix} \begin{bmatrix} a \\ b \end{bmatrix} \right\}$</span></p>
+<p>由<br>
+</p><div class="mathjax-exps">$$AX = XA \implies \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 2 \end{bmatrix} \begin{bmatrix} x_1 &amp; x_2 \\ x_3 &amp; x_4 \end{bmatrix} = \begin{bmatrix} x_1 &amp; x_2 \\ 2x_3 &amp; 2x_4 \end{bmatrix} = \begin{bmatrix} x_1 &amp; 2x_2 \\ x_3 &amp; 2x_4 \end{bmatrix} =  \begin{bmatrix} x_1 &amp; x_2 \\ x_3 &amp; x_4 \end{bmatrix} \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 2 \end{bmatrix}$$</div><p></p>
+<p>可得<br>
+<span class="mathjax-exps">$W_2 = \left\{ X \mid X = \begin{bmatrix} x_1 &amp; 0 \\ 0 &amp; 2x_4 \end{bmatrix} \right\}$</span></p>
+<p>可以验证 <span class="mathjax-exps">$W_1, W_2, W_3$</span> 均是线性空间，且有 <span class="mathjax-exps">$\dim(W_1) = 2, \dim(W_2) = 2, \dim(W_3) = 3$</span>。</p>
+</details>
+<p><span class="callout">例22(ABCD)</span></p>
+<p>设 <span class="mathjax-exps">$V = \{ a \cos t + b \sin t \mid a, b \in \mathbb{R} \}$</span>。对任意 <span class="mathjax-exps">$f, g \in V$</span>，定义 <span class="mathjax-exps">$(f, g) = f(0)g(0) + f\left(\frac{\pi}{2}\right)g\left(\frac{\pi}{2}\right)$</span>，则以下说法正确的是：<br>
+<strong>A</strong> <span class="mathjax-exps">$V$</span> 是二维实线性空间<br>
+<strong>B</strong> <span class="mathjax-exps">$V$</span> 是欧几里得空间<br>
+<strong>C</strong> <span class="mathjax-exps">$h(t) = 3\cos(t) + 4\sin(t)$</span> 的长度为 5<br>
+<strong>D</strong> <span class="mathjax-exps">$\sin(t), \cos(t)$</span> 是 <span class="mathjax-exps">$V$</span> 空间的一组标准正交基。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>可以验证该空间满足加法和数乘的封闭性，故 <span class="mathjax-exps">$V$</span> 是实线性空间。<span class="mathjax-exps">$\cos t, \sin t$</span> 可作为 <span class="mathjax-exps">$V$</span> 的一组基，故 <span class="mathjax-exps">$\dim(V) = 2$</span>。由于定义了内积，故 <span class="mathjax-exps">$V$</span> 是欧几里得空间。</p>
+<p><span class="mathjax-exps">$\left\| h(\cos t - h(\sin t)) \right\|= \sqrt{(h(t) ,h(t))} = \sqrt{3^2 + 4^2} = 5$</span></p>
+<p><span class="mathjax-exps">$(\sin t, \cos t) = 0$</span> 且 <span class="mathjax-exps">$(\sin t, \sin t) = 1$</span>，故 <span class="mathjax-exps">$\sin t, \cos t$</span> 是 <span class="mathjax-exps">$V$</span> 空间的一组标准正交基。</p>
+</details>
+<p><span class="callout">例27(<span class="mathjax-exps">$\checkmark$</span>)</span></p>
+<p>设 <span class="mathjax-exps">$A, B$</span> 均为 Hermite 半正定矩阵，若 <span class="mathjax-exps">$\operatorname{tr}(AB) = 0$</span>，则 <span class="mathjax-exps">$AB = 0$</span>。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>首先我们证明一下 <span class="mathjax-exps">$\operatorname{tr}(AB) = \operatorname{tr}(BA)$</span>，即矩阵乘积交换顺序迹不变。<br>
+设 <span class="mathjax-exps">\(A  \in \mathbb{R}^{m \times n}，B \in  \mathbb{R}^{n \times m}\)</span>，则有<br>
+</p><div class="mathjax-exps">\[(AB)_{ij} = \sum_k A_{ik} B_{kj}\]</div><p></p>
+<p>所以有<br>
+</p><div class="mathjax-exps">\[\operatorname{tr}(AB) = \sum_i (AB)_{ii} = \sum_i \sum_k A_{ik} B_{ki}\]</div><p></p>
+<p>交换乘积顺序和求和顺序：<br>
+</p><div class="mathjax-exps">\[\operatorname{tr}(AB) = \sum_i \sum_k A_{ik} B_{ki} = \sum_k \sum_i B_{ki} A_{ik} = \operatorname{tr}(BA)\]</div><p></p>
+<p>再证明半正定 Hermite 矩阵一定有其对应的平方根，其也是 Hermite 矩阵。</p>
+<p>对于任意半正定 Hermite 矩阵 <span class="mathjax-exps">$A$</span>，存在正交矩阵 <span class="mathjax-exps">$Q$</span>，使得 <span class="mathjax-exps">$Q^T A Q = \Lambda$</span>，其中 <span class="mathjax-exps">$\Lambda$</span> 为对角矩阵，对角元素为 <span class="mathjax-exps">$A$</span> 的特征值。则有 <span class="mathjax-exps">$A = Q \Lambda Q^T$</span>，则 <span class="mathjax-exps">$A^{0.5} = Q \Lambda^{0.5} Q^T$</span>，其中 <span class="mathjax-exps">$\Lambda^{0.5}$</span> 为 <span class="mathjax-exps">$\Lambda$</span> 的平方根，故 <span class="mathjax-exps">$A^{0.5}$</span> 也是 Hermite 矩阵。</p>
+<p>根据以上证明，可知<br>
+</p><div class="mathjax-exps">\[\begin{aligned} \operatorname{tr}(AB) &amp;= \operatorname{tr}(A^{0.5} A^{0.5} B) = \operatorname{tr}(A^{0.5} B A^{0.5}) = \operatorname{tr}(A^{0.5} B^{0.5} B^{0.5} A^{0.5}) \\ &amp;= \operatorname{tr}\left( \left( B^{0.5} A^{0.5} \right)^T \left( B^{0.5} A^{0.5} \right) \right) = 0 \end{aligned}\]</div><p></p>
+<p>因为 <span class="mathjax-exps">$\left( B^{0.5} A^{0.5} \right)^T \left( B^{0.5} A^{0.5} \right)$</span> 的迹为其主对角线元素之和，经分析可知矩阵 <span class="mathjax-exps">$B^{0.5} A^{0.5}$</span> 的所有元素的模平方之和为0。<br>
+因此若 <span class="mathjax-exps">$\operatorname{tr}(AB) = 0$</span>，需满足矩阵 <span class="mathjax-exps">$B^{0.5} A^{0.5} = 0$</span>。<br>
+所以<br>
+</p><div class="mathjax-exps">\[AB = A^{0.5} A^{0.5} B^{0.5} B^{0.5} = A^{0.5} (B^{0.5} A^{0.5})^T B^{0.5} = A^{0.5} 0 B^{0.5} = 0\]</div><p></p>
+</details>
+<p><span class="callout">例31(<span class="mathjax-exps">$\checkmark$</span>)</span></p>
+<p>任一复方阵都可以唯一地表示成 Hermite 矩阵和反 Hermite 矩阵之和。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>对于任一复方阵 <span class="mathjax-exps">$A$</span>，可以表示成<br>
+</p><div class="mathjax-exps">\[A = \frac{1}{2} (A + A^H) + \frac{1}{2} (A - A^H)\]</div><p></p>
+<p>显然 <span class="mathjax-exps">$\frac{1}{2} (A + A^H)$</span> 是 Hermite 矩阵，<span class="mathjax-exps">$\frac{1}{2} (A - A^H)$</span> 是反 Hermite 矩阵。</p>
+</details>
+<p><span class="callout">例31(<span class="mathjax-exps">$\checkmark$</span>)</span><br>
+设 <span class="mathjax-exps">$A$</span> 是复方阵，且 <span class="mathjax-exps">$\operatorname{rank}(A) = \operatorname{rank}(A^2)$</span>，则 <span class="mathjax-exps">$R(A) + N(A)$</span> 是直和。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>首先我们证明 <span class="mathjax-exps">$\operatorname{rank}(A) = \operatorname{rank}(A^2)$</span> 等价于 <span class="mathjax-exps">$R(A) = R(A^2)$</span>。<br>
+由于 <span class="mathjax-exps">$\forall y \in R(A^2), \exists x \in \mathbb{R}^n$</span>，使得 <span class="mathjax-exps">$A^2 x = y = A(Ax) \in R(A)$</span>，故 <span class="mathjax-exps">$R(A^2) \subset R(A)$</span>，即 <span class="mathjax-exps">$R(A) = R(A^2)$</span>。由于 <span class="mathjax-exps">$\operatorname{rank}(A) = \operatorname{rank}(A^2)$</span>，所以有 <span class="mathjax-exps">$R(A) = R(A^2)$</span>。</p>
+<p>下面证明 <span class="mathjax-exps">$R(A) \cap N(A) = \{ \mathbf{0} \}$</span>。<br>
+设 <span class="mathjax-exps">$v \in R(A) \cap N(A)$</span>，则存在 <span class="mathjax-exps">$u$</span> 使得 <span class="mathjax-exps">$v = A{u}$</span> 且 <span class="mathjax-exps">$A{v} = {0}$</span>。两边同时左乘 <span class="mathjax-exps">$A$</span>，有 <span class="mathjax-exps">$Av = A^2u = 0$</span>，故 <span class="mathjax-exps">$u \in N(A^2) = N(A)$</span>，所以 <span class="mathjax-exps">$v=Au = 0$</span>，即 <span class="mathjax-exps">$R(A) \cap N(A) = \{ \mathbf{0} \}$</span>。</p>
+</details>
+<p><span class="callout">例34(x)</span></p>
+<p>已知 <span class="mathjax-exps">$A \in \mathbb{C}^{n \times n}, \operatorname{rank}(A) = r$</span>，则子空间 <span class="mathjax-exps">$S_A = \{ B \in \mathbb{C}^{n \times n} \mid AB = 0 \}$</span>的维数是 <span class="mathjax-exps">$n - r$</span>。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>首先将 <span class="mathjax-exps">$A$</span> 化为标准型，然后将 <span class="mathjax-exps">$A,B$</span> 进行分块，如下<br>
+</p><div class="mathjax-exps">$$A = \begin{bmatrix} I_{r \times r} &amp; 0  \\ 0  &amp; 0\end{bmatrix}, B = \begin{bmatrix} B_1 &amp;  B_2 \\ B_3 &amp; B_4  \end{bmatrix}$$</div><p></p>
+<p>由 <span class="mathjax-exps">$AB = 0$</span> 可得<br>
+</p><div class="mathjax-exps">$$\begin{bmatrix} I_{r \times r} &amp; 0  \\ 0  &amp; 0\end{bmatrix} \begin{bmatrix} B_1 &amp;  B_2 \\ B_3 &amp; B_4  \end{bmatrix} = \begin{bmatrix} B_1 &amp;  B_2 \\ 0 &amp; 0  \end{bmatrix} = 0$$</div><p></p>
+<p>故 <span class="mathjax-exps">$B_1 = B_2 = 0$</span>，则 <span class="mathjax-exps">$B_3, B_4$</span> 可任意取值，故 <span class="mathjax-exps">$\dim(S_A) = n(n - r)$</span>。</p>
+</details>
+<p><span class="callout">例45(<span class="mathjax-exps">$\checkmark$</span>)</span><br>
+集合 <span class="mathjax-exps">$V = \{ x \mid x = (x_1, x_2, \dots, x_n), x_i \in \mathbb{C} \}$</span>，则在通常的向量加法和数乘下，<span class="mathjax-exps">$V$</span> 构成实数域上的线性空间，且 <span class="mathjax-exps">$\dim(V) = n$</span>。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p><span class="mathjax-exps">\(V = \{x \mid x = (x_1, x_2, \dots, x_n), x_i \in \mathbb{C}\} = \mathbb{C}^n\)</span>，每个复数元素 <span class="mathjax-exps">\(x_i\)</span> 都可以视为一个由两个实数表示的二元组，所以 <span class="mathjax-exps">\(\mathbb{C}^n \cong \mathbb{R}^{2n}\)</span>，因此<br>
+</p><div class="mathjax-exps">\[\dim_{\mathbb{R}}(\mathbb{C}^n) = 2n\]</div><p></p>
+</details>
+<p><span class="callout">例54(<span class="mathjax-exps">$\checkmark$</span>)</span></p>
+<p>设 <span class="mathjax-exps">$A \in \mathbb{R}^{m \times n}, b \in \mathbb{R}^m$</span>，若非齐次线性方程组 <span class="mathjax-exps">$Ax = b$</span> 有解，则在 <span class="mathjax-exps">$R(A^T)$</span> 只有 <span class="mathjax-exps">$Ax = b$</span> 的一个解向量。</p>
+<details open="">
+    <summary>Solution:</summary>
+<p>方程组的解集可写为：<br>
+</p><div class="mathjax-exps">\[\xi = \{ x \mid Ax = b \} = x_p + N(A),\]</div><p></p>
+<p>其中 <span class="mathjax-exps">\(x_p\)</span> 是一个特解，<span class="mathjax-exps">\(N(A)\)</span> 是 <span class="mathjax-exps">\(A\)</span> 的零空间。<br>
+由于<br>
+</p><div class="mathjax-exps">\[\mathbb{R}^n = R(A^T) \oplus N(A).\]</div><p></p>
+<p>当 <span class="mathjax-exps">\(Ax = b\)</span> 有解时，设 <span class="mathjax-exps">\(Ax_p = b\)</span>。由于任何 <span class="mathjax-exps">\(x\)</span> 都可以唯一分解为 <span class="mathjax-exps">\(x = x_r + x_n\)</span> ，其中 <span class="mathjax-exps">\(x_r \in R(A^T)\)</span> 且 <span class="mathjax-exps">\(x_n \in N(A)\)</span>。<br>
+对于方程的解 <span class="mathjax-exps">\(x\)</span> ，有<br>
+</p><div class="mathjax-exps">\[Ax = A(x_r + x_n) = b\]</div><p></p>
+<p>由于 <span class="mathjax-exps">\(x_n \in N(A)\)</span> 则 <span class="mathjax-exps">\(A x_n = 0\)</span>，故存在 <span class="mathjax-exps">\(x_r \in R(A^T)\)</span> 使得<br>
+</p><div class="mathjax-exps">\[A x_r = b\]</div><p></p>
+<p>若存在另一个不同的 <span class="mathjax-exps">\(x_r' \in R(A^T)\)</span> 也满足 <span class="mathjax-exps">\(A x_r' = b\)</span>，则 <span class="mathjax-exps">\(A(x_r - x_r') = 0\)</span> ，则有 <span class="mathjax-exps">\(x_r - x_r' \in N(A)\)</span> 。但 <span class="mathjax-exps">\(x_r, x_r' \in R(A^T)\)</span> 且 <span class="mathjax-exps">\(R(A^T) \cap N(A) = \{0\}\)</span>，故 <span class="mathjax-exps">\(x_r = x_r'\)</span>。</p>
+</details>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
