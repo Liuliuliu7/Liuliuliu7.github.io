@@ -19,12 +19,10 @@
 /* Please visit the URL below for more information: */
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 .markdown-preview.markdown-preview {
+  line-height: 175%;
   /* 样式化按钮 */
   /* 当鼠标悬停在按钮上时改变背景颜色 */
   /* 响应式设计：针对移动端 */
-}
-.markdown-preview.markdown-preview body {
-  line-height: 175%;
 }
 .markdown-preview.markdown-preview #toggleProofs {
   font: 0.8em;
@@ -129,71 +127,71 @@
 <div class="fixed-toc">
 <details open="">
     <summary>Contents</summary>
-<ul>
+<div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="code-chunk-btn-group"><div class="run-btn btn btn-xs btn-primary"><span>▶︎</span></div><div class="run-all-btn btn btn-xs btn-primary">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
 <li><a href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90">第四章-矩阵分析</a>
 <ul>
-<li><a href="#411-definition-%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E5%AE%9A%E4%B9%89">4.1.1 Definition: 向量范数定义</a></li>
-<li><a href="#412-example-%E5%9F%BA%E4%BA%8E%E5%9D%90%E6%A0%87%E7%9A%84%E8%8C%83%E6%95%B0">4.1.2 Example: 基于坐标的范数</a></li>
-<li><a href="#413-example-p-%E8%8C%83%E6%95%B0">4.1.3 Example: p-范数</a></li>
-<li><a href="#414-lemma-holder-%E4%B8%8E-minkowski-%E4%B8%8D%E7%AD%89%E5%BC%8F">4.1.4 Lemma: Holder 与 Minkowski 不等式</a></li>
-<li><a href="#415-example-%E5%8A%A0%E6%9D%83%E8%8C%83%E6%95%B0%E6%88%96%E6%A4%AD%E5%9C%86%E8%8C%83%E6%95%B0">4.1.5 Example: 加权范数或椭圆范数</a></li>
-<li><a href="#411-theorem-%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E7%9A%84%E8%8C%83%E6%95%B0%E8%BF%9E%E7%BB%AD">4.1.1 Theorem: 线性空间的范数连续</a></li>
-<li><a href="#412-definition-%E7%AD%89%E4%BB%B7%E8%8C%83%E6%95%B0">4.1.2 Definition: 等价范数</a></li>
-<li><a href="#412-theorem-%E6%9C%89%E9%99%90%E7%BB%B4%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E8%8C%83%E6%95%B0%E7%AD%89%E4%BB%B7">4.1.2 Theorem: 有限维线性空间范数等价</a></li>
-<li><a href="#411-proposition-%E5%90%91%E9%87%8F%E7%AD%89%E4%BB%B7%E8%8C%83%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8">4.1.1 Proposition: 向量等价范数的性质</a></li>
-<li><a href="#421-definition-%E7%9F%A9%E9%98%B5%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0">4.2.1 Definition: 矩阵向量范数</a></li>
-<li><a href="#421-example-%E5%B8%B8%E8%A7%81%E7%9F%A9%E9%98%B5%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0">4.2.1 Example: 常见矩阵向量范数</a></li>
-<li><a href="#422-definition-%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0">4.2.2 Definition: 矩阵范数</a></li>
-<li><a href="#422-example-frobenius-%E8%8C%83%E6%95%B0">4.2.2 Example: Frobenius 范数</a></li>
-<li><a href="#423-theorem-f-%E8%8C%83%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8">4.2.3 Theorem: F 范数的性质</a></li>
-<li><a href="#423-example-%E6%9E%84%E9%80%A0%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0">4.2.3 Example: 构造矩阵范数</a></li>
-<li><a href="#431-definition-%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E4%B8%8E%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E7%9B%B8%E5%AE%B9">4.3.1 Definition: 向量范数与矩阵范数相容</a></li>
-<li><a href="#431-theorem-%E7%9B%B8%E5%AE%B9%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E5%AD%98%E5%9C%A8%E6%80%A7">4.3.1 Theorem: 相容向量范数存在性</a></li>
-<li><a href="#432-theorem-%E7%AE%97%E5%AD%90%E8%8C%83%E6%95%B0%E5%AD%98%E5%9C%A8%E6%80%A7">4.3.2 Theorem: 算子范数存在性</a></li>
-<li><a href="#451-definition-%E8%B0%B1%E5%8D%8A%E5%BE%84">4.5.1 Definition: 谱半径</a></li>
-<li><a href="#451-theorem-%E8%B0%B1%E5%8D%8A%E5%BE%84%E4%B8%8D%E5%A4%A7%E4%BA%8E%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0">4.5.1 Theorem: 谱半径不大于矩阵范数</a></li>
-<li><a href="#452-theorem-%E8%B0%B1%E5%8D%8A%E5%BE%84%E4%B8%BA%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E7%9A%84%E4%B8%8B%E7%A1%AE%E7%95%8C">4.5.2 Theorem: 谱半径为矩阵范数的下确界</a></li>
-<li><a href="#452-definition-%E7%9B%96%E5%B0%94%E5%9C%86%E7%9B%98">4.5.2 Definition: 盖尔圆盘</a></li>
-<li><a href="#453-theorem-%E7%9B%96%E5%B0%94%E4%B8%AD%E5%BF%83%E5%AE%9A%E7%90%86">4.5.3 Theorem: 盖尔中心定理</a></li>
-<li><a href="#454-theorem-%E7%9B%96%E5%B0%94%E5%9C%86%E7%9B%98%E5%AE%9A%E7%90%86%E7%BB%AD">4.5.4 Theorem: 盖尔圆盘定理续</a></li>
-<li><a href="#451-corollary-%E9%9D%9E%E5%A5%87%E5%BC%82%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%96%E5%B0%94%E5%9C%86%E7%9B%98">4.5.1 Corollary: 非奇异矩阵的盖尔圆盘</a></li>
-<li><a href="#452-corollary-%E8%A1%8C%E5%88%97%E5%AF%B9%E8%A7%92%E7%BA%BF%E5%8D%A0%E4%BC%98%E7%9F%A9%E9%98%B5">4.5.2 Corollary: 行(列)对角线占优矩阵</a></li>
-<li><a href="#461-definition-%E5%90%91%E9%87%8F%E5%BA%8F%E5%88%97%E6%8C%89%E8%8C%83%E6%95%B0%E6%94%B6%E6%95%9B">4.6.1 Definition: 向量序列按范数收敛</a></li>
-<li><a href="#461-theorem-%E8%8C%83%E6%95%B0%E7%AD%89%E4%BB%B7%E5%AE%9A%E7%90%86">4.6.1 Theorem: 范数等价定理</a></li>
-<li><a href="#462-theorem-%E5%90%91%E9%87%8F%E5%BA%8F%E5%88%97%E7%9A%84%E8%8C%83%E6%95%B0%E6%94%B6%E6%95%9B%E4%B8%8E%E5%9D%90%E6%A0%87%E6%94%B6%E6%95%9B%E7%AD%89%E4%BB%B7">4.6.2 Theorem: 向量序列的范数收敛与坐标收敛等价</a></li>
-<li><a href="#463-definition-%E7%9F%A9%E9%98%B5%E5%BA%8F%E5%88%97%E6%8C%89%E5%9D%90%E6%A0%87%E6%94%B6%E6%95%9B">4.6.3 Definition: 矩阵序列按坐标收敛</a></li>
-<li><a href="#461-proposition-%E7%9F%A9%E9%98%B5%E5%BA%8F%E5%88%97%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7%E8%B4%A8">4.6.1 Proposition: 矩阵序列的收敛性质</a></li>
-<li><a href="#461-corollary-%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E4%B8%8E%E7%9F%A9%E9%98%B5%E6%94%B6%E6%95%9B">4.6.1 Corollary: 矩阵范数与矩阵收敛</a></li>
-<li><a href="#462-corollary">4.6.2 Corollary</a></li>
-<li><a href="#463-theorem-%E7%9F%A9%E9%98%B5%E5%B9%82%E6%94%B6%E6%95%9B%E7%9A%84%E5%85%85%E5%88%86%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6">4.6.3 Theorem: 矩阵幂收敛的充分必要条件</a></li>
-<li><a href="#464-definition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0">4.6.4 Definition: 矩阵级数</a></li>
-<li><a href="#462-proposition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7">4.6.2 Proposition: 矩阵级数的收敛性</a></li>
-<li><a href="#465-definition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9B">4.6.5 Definition: 矩阵级数的绝对收敛</a></li>
-<li><a href="#463-proposition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9B%E6%80%A7%E8%B4%A8">4.6.3 Proposition: 矩阵级数的绝对收敛性质</a></li>
-<li><a href="#464-theorem-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9B%E6%80%A7">4.6.4 Theorem: 矩阵级数的绝对收敛性</a></li>
-<li><a href="#466-definition-%E7%9F%A9%E9%98%B5%E5%B9%82%E7%BA%A7%E6%95%B0">4.6.6 Definition: 矩阵幂级数</a></li>
-<li><a href="#461-lemma-abel-%E5%B9%82%E7%BA%A7%E6%95%B0%E6%94%B6%E6%95%9B%E6%80%A7%E5%88%A4%E5%AE%9A">4.6.1 Lemma: Abel 幂级数收敛性判定</a></li>
-<li><a href="#465-theorem-abel%E5%9E%8B%E5%AE%9A%E7%90%86">4.6.5 Theorem: Abel型定理</a></li>
-<li><a href="#464-corollary">4.6.4 Corollary</a></li>
-<li><a href="#465-corollary-neumann-%E7%BA%A7%E6%95%B0">4.6.5 Corollary: Neumann 级数</a></li>
-<li><a href="#471-definition-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0">4.7.1 Definition: 矩阵函数</a></li>
-<li><a href="#471-proposition-%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E6%80%A7%E8%B4%A8">4.7.1 Proposition: 矩阵的三角函数性质</a></li>
-<li><a href="#471-theorem-%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0%E4%B9%98%E7%A7%AF%E5%8F%AF%E4%BA%A4%E6%8D%A2%E6%9D%A1%E4%BB%B6">4.7.1 Theorem: 矩阵指数函数乘积可交换条件</a></li>
-<li><a href="#472-theorem-%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0">4.7.2 Theorem: 相似矩阵的矩阵函数</a></li>
-<li><a href="#473-corollary-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC">4.7.3 Corollary: 矩阵函数的特征值</a></li>
-<li><a href="#473-theorem-%E6%9C%80%E5%B0%8F%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%A1%A8%E7%A4%BA%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0">4.7.3 Theorem: 最小多项式表示矩阵函数</a></li>
-<li><a href="#472-definition-%E8%B0%B1%E4%B8%8A%E7%BB%99%E5%AE%9A">4.7.2 Definition: 谱上给定</a></li>
-<li><a href="#473-definition-%E8%B0%B1%E4%B8%8A%E4%B8%80%E8%87%B4">4.7.3 Definition: 谱上一致</a></li>
-<li><a href="#474-theorem-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0%E8%B0%B1%E4%B8%8A%E4%B8%80%E8%87%B4">4.7.4 Theorem: 矩阵函数谱上一致</a></li>
-<li><a href="#474-definition-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0%E6%8E%A8%E5%B9%BF">4.7.4 Definition: 矩阵函数推广</a></li>
-<li><a href="#481-definition-%E5%87%BD%E6%95%B0%E7%9F%A9%E9%98%B5">4.8.1 Definition: 函数矩阵</a></li>
-<li><a href="#481-proposition-%E7%9F%A9%E9%98%B5%E5%BE%AE%E5%88%86%E8%A7%84%E5%88%99">4.8.1 Proposition: 矩阵微分规则</a></li>
-<li><a href="#482-proposition-%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0%E4%B8%8E%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86">4.8.2 Proposition: 矩阵指数与三角函数的微分</a></li>
-<li><a href="#482-definition-%E7%9F%A9%E9%98%B5%E5%AF%B9%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AF%BC%E6%95%B0">4.8.2 Definition: 矩阵对矩阵的导数</a></li>
-<li><a href="#482-example-%E6%A2%AF%E5%BA%A6%E5%90%91%E9%87%8F">4.8.2 Example: 梯度向量</a></li>
-<li><a href="#483-example-jacobian%E7%9F%A9%E9%98%B5">4.8.3 Example: Jacobian矩阵</a></li>
-<li><a href="#484-example-%E7%9F%A9%E9%98%B5%E5%BE%AE%E5%88%86">4.8.4 Example: 矩阵微分</a></li>
-<li><a href="#485-example-%E7%9F%A9%E9%98%B5%E5%BE%AE%E5%88%86">4.8.5 Example: 矩阵微分</a></li>
+<li><a href="#span-classcallout411-definition-%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E5%AE%9A%E4%B9%89span">4.1.1 Definition: 向量范数定义</a></li>
+<li><a href="#span-classcallout412-example-%E5%9F%BA%E4%BA%8E%E5%9D%90%E6%A0%87%E7%9A%84%E8%8C%83%E6%95%B0span">4.1.2 Example: 基于坐标的范数</a></li>
+<li><a href="#span-classcallout413-example-p-%E8%8C%83%E6%95%B0span">4.1.3 Example: p-范数</a></li>
+<li><a href="#span-classcallout414-lemma-holder-%E4%B8%8E-minkowski-%E4%B8%8D%E7%AD%89%E5%BC%8Fspan">4.1.4 Lemma: Holder 与 Minkowski 不等式</a></li>
+<li><a href="#span-classcallout415-example-%E5%8A%A0%E6%9D%83%E8%8C%83%E6%95%B0%E6%88%96%E6%A4%AD%E5%9C%86%E8%8C%83%E6%95%B0span">4.1.5 Example: 加权范数或椭圆范数</a></li>
+<li><a href="#span-classcallout411-theorem-%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E7%9A%84%E8%8C%83%E6%95%B0%E8%BF%9E%E7%BB%ADspan">4.1.1 Theorem: 线性空间的范数连续</a></li>
+<li><a href="#span-classcallout412-definition-%E7%AD%89%E4%BB%B7%E8%8C%83%E6%95%B0span">4.1.2 Definition: 等价范数</a></li>
+<li><a href="#span-classcallout412-theorem-%E6%9C%89%E9%99%90%E7%BB%B4%E7%BA%BF%E6%80%A7%E7%A9%BA%E9%97%B4%E8%8C%83%E6%95%B0%E7%AD%89%E4%BB%B7span">4.1.2 Theorem: 有限维线性空间范数等价</a></li>
+<li><a href="#span-classcallout411-proposition-%E5%90%91%E9%87%8F%E7%AD%89%E4%BB%B7%E8%8C%83%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8span">4.1.1 Proposition: 向量等价范数的性质</a></li>
+<li><a href="#span-classcallout421-definition-%E7%9F%A9%E9%98%B5%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0span">4.2.1 Definition: 矩阵向量范数</a></li>
+<li><a href="#span-classcallout421-example-%E5%B8%B8%E8%A7%81%E7%9F%A9%E9%98%B5%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0span">4.2.1 Example: 常见矩阵向量范数</a></li>
+<li><a href="#span-classcallout422-definition-%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0span">4.2.2 Definition: 矩阵范数</a></li>
+<li><a href="#span-classcallout422-example-frobenius-%E8%8C%83%E6%95%B0span">4.2.2 Example: Frobenius 范数</a></li>
+<li><a href="#span-classcallout423-theorem-f-%E8%8C%83%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8span">4.2.3 Theorem: F 范数的性质</a></li>
+<li><a href="#span-classcallout423-example-%E6%9E%84%E9%80%A0%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0span">4.2.3 Example: 构造矩阵范数</a></li>
+<li><a href="#span-classcallout431-definition-%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E4%B8%8E%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E7%9B%B8%E5%AE%B9span">4.3.1 Definition: 向量范数与矩阵范数相容</a></li>
+<li><a href="#span-classcallout431-theorem-%E7%9B%B8%E5%AE%B9%E5%90%91%E9%87%8F%E8%8C%83%E6%95%B0%E5%AD%98%E5%9C%A8%E6%80%A7span">4.3.1 Theorem: 相容向量范数存在性</a></li>
+<li><a href="#span-classcallout432-theorem-%E7%AE%97%E5%AD%90%E8%8C%83%E6%95%B0%E5%AD%98%E5%9C%A8%E6%80%A7span">4.3.2 Theorem: 算子范数存在性</a></li>
+<li><a href="#span-classcallout451-definition-%E8%B0%B1%E5%8D%8A%E5%BE%84span">4.5.1 Definition: 谱半径</a></li>
+<li><a href="#span-classcallout451-theorem-%E8%B0%B1%E5%8D%8A%E5%BE%84%E4%B8%8D%E5%A4%A7%E4%BA%8E%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0span">4.5.1 Theorem: 谱半径不大于矩阵范数</a></li>
+<li><a href="#span-classcallout452-theorem-%E8%B0%B1%E5%8D%8A%E5%BE%84%E4%B8%BA%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E7%9A%84%E4%B8%8B%E7%A1%AE%E7%95%8Cspan">4.5.2 Theorem: 谱半径为矩阵范数的下确界</a></li>
+<li><a href="#span-classcallout452-definition-%E7%9B%96%E5%B0%94%E5%9C%86%E7%9B%98span">4.5.2 Definition: 盖尔圆盘</a></li>
+<li><a href="#span-classcallout453-theorem-%E7%9B%96%E5%B0%94%E4%B8%AD%E5%BF%83%E5%AE%9A%E7%90%86span">4.5.3 Theorem: 盖尔中心定理</a></li>
+<li><a href="#span-classcallout454-theorem-%E7%9B%96%E5%B0%94%E5%9C%86%E7%9B%98%E5%AE%9A%E7%90%86%E7%BB%ADspan">4.5.4 Theorem: 盖尔圆盘定理续</a></li>
+<li><a href="#span-classcallout451-corollary-%E9%9D%9E%E5%A5%87%E5%BC%82%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9B%96%E5%B0%94%E5%9C%86%E7%9B%98span">4.5.1 Corollary: 非奇异矩阵的盖尔圆盘</a></li>
+<li><a href="#span-classcallout452-corollary-%E8%A1%8C%E5%88%97%E5%AF%B9%E8%A7%92%E7%BA%BF%E5%8D%A0%E4%BC%98%E7%9F%A9%E9%98%B5span">4.5.2 Corollary: 行(列)对角线占优矩阵</a></li>
+<li><a href="#span-classcallout461-definition-%E5%90%91%E9%87%8F%E5%BA%8F%E5%88%97%E6%8C%89%E8%8C%83%E6%95%B0%E6%94%B6%E6%95%9Bspan">4.6.1 Definition: 向量序列按范数收敛</a></li>
+<li><a href="#span-classcallout461-theorem-%E8%8C%83%E6%95%B0%E7%AD%89%E4%BB%B7%E5%AE%9A%E7%90%86span">4.6.1 Theorem: 范数等价定理</a></li>
+<li><a href="#span-classcallout462-theorem-%E5%90%91%E9%87%8F%E5%BA%8F%E5%88%97%E7%9A%84%E8%8C%83%E6%95%B0%E6%94%B6%E6%95%9B%E4%B8%8E%E5%9D%90%E6%A0%87%E6%94%B6%E6%95%9B%E7%AD%89%E4%BB%B7span">4.6.2 Theorem: 向量序列的范数收敛与坐标收敛等价</a></li>
+<li><a href="#span-classcallout463-definition-%E7%9F%A9%E9%98%B5%E5%BA%8F%E5%88%97%E6%8C%89%E5%9D%90%E6%A0%87%E6%94%B6%E6%95%9Bspan">4.6.3 Definition: 矩阵序列按坐标收敛</a></li>
+<li><a href="#span-classcallout461-proposition-%E7%9F%A9%E9%98%B5%E5%BA%8F%E5%88%97%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7%E8%B4%A8span">4.6.1 Proposition: 矩阵序列的收敛性质</a></li>
+<li><a href="#span-classcallout461-corollary-%E7%9F%A9%E9%98%B5%E8%8C%83%E6%95%B0%E4%B8%8E%E7%9F%A9%E9%98%B5%E6%94%B6%E6%95%9Bspan">4.6.1 Corollary: 矩阵范数与矩阵收敛</a></li>
+<li><a href="#span-classcallout462-corollaryspan">4.6.2 Corollary</a></li>
+<li><a href="#span-classcallout463-theorem-%E7%9F%A9%E9%98%B5%E5%B9%82%E6%94%B6%E6%95%9B%E7%9A%84%E5%85%85%E5%88%86%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6span">4.6.3 Theorem: 矩阵幂收敛的充分必要条件</a></li>
+<li><a href="#span-classcallout464-definition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0span">4.6.4 Definition: 矩阵级数</a></li>
+<li><a href="#span-classcallout462-proposition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7span">4.6.2 Proposition: 矩阵级数的收敛性</a></li>
+<li><a href="#span-classcallout465-definition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9Bspan">4.6.5 Definition: 矩阵级数的绝对收敛</a></li>
+<li><a href="#span-classcallout463-proposition-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9B%E6%80%A7%E8%B4%A8span">4.6.3 Proposition: 矩阵级数的绝对收敛性质</a></li>
+<li><a href="#span-classcallout464-theorem-%E7%9F%A9%E9%98%B5%E7%BA%A7%E6%95%B0%E7%9A%84%E7%BB%9D%E5%AF%B9%E6%94%B6%E6%95%9B%E6%80%A7span">4.6.4 Theorem: 矩阵级数的绝对收敛性</a></li>
+<li><a href="#span-classcallout466-definition-%E7%9F%A9%E9%98%B5%E5%B9%82%E7%BA%A7%E6%95%B0span">4.6.6 Definition: 矩阵幂级数</a></li>
+<li><a href="#span-classcallout461-lemma-abel-%E5%B9%82%E7%BA%A7%E6%95%B0%E6%94%B6%E6%95%9B%E6%80%A7%E5%88%A4%E5%AE%9Aspan">4.6.1 Lemma: Abel 幂级数收敛性判定</a></li>
+<li><a href="#span-classcallout465-theorem-abel%E5%9E%8B%E5%AE%9A%E7%90%86span">4.6.5 Theorem: Abel型定理</a></li>
+<li><a href="#span-classcallout464-corollaryspan">4.6.4 Corollary</a></li>
+<li><a href="#span-classcallout465-corollary-neumann-%E7%BA%A7%E6%95%B0span">4.6.5 Corollary: Neumann 级数</a></li>
+<li><a href="#span-classcallout471-definition-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0span">4.7.1 Definition: 矩阵函数</a></li>
+<li><a href="#span-classcallout471-proposition-%E7%9F%A9%E9%98%B5%E7%9A%84%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E6%80%A7%E8%B4%A8span">4.7.1 Proposition: 矩阵的三角函数性质</a></li>
+<li><a href="#span-classcallout471-theorem-%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0%E4%B9%98%E7%A7%AF%E5%8F%AF%E4%BA%A4%E6%8D%A2%E6%9D%A1%E4%BB%B6span">4.7.1 Theorem: 矩阵指数函数乘积可交换条件</a></li>
+<li><a href="#span-classcallout472-theorem-%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E7%9A%84%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0span">4.7.2 Theorem: 相似矩阵的矩阵函数</a></li>
+<li><a href="#span-classcallout473-corollary-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BCspan">4.7.3 Corollary: 矩阵函数的特征值</a></li>
+<li><a href="#span-classcallout473-theorem-%E6%9C%80%E5%B0%8F%E5%A4%9A%E9%A1%B9%E5%BC%8F%E8%A1%A8%E7%A4%BA%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0span">4.7.3 Theorem: 最小多项式表示矩阵函数</a></li>
+<li><a href="#span-classcallout472-definition-%E8%B0%B1%E4%B8%8A%E7%BB%99%E5%AE%9Aspan">4.7.2 Definition: 谱上给定</a></li>
+<li><a href="#span-classcallout473-definition-%E8%B0%B1%E4%B8%8A%E4%B8%80%E8%87%B4span">4.7.3 Definition: 谱上一致</a></li>
+<li><a href="#span-classcallout474-theorem-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0%E8%B0%B1%E4%B8%8A%E4%B8%80%E8%87%B4span">4.7.4 Theorem: 矩阵函数谱上一致</a></li>
+<li><a href="#span-classcallout474-definition-%E7%9F%A9%E9%98%B5%E5%87%BD%E6%95%B0%E6%8E%A8%E5%B9%BFspan">4.7.4 Definition: 矩阵函数推广</a></li>
+<li><a href="#span-classcallout481-definition-%E5%87%BD%E6%95%B0%E7%9F%A9%E9%98%B5span">4.8.1 Definition: 函数矩阵</a></li>
+<li><a href="#span-classcallout481-proposition-%E7%9F%A9%E9%98%B5%E5%BE%AE%E5%88%86%E8%A7%84%E5%88%99span">4.8.1 Proposition: 矩阵微分规则</a></li>
+<li><a href="#span-classcallout482-proposition-%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0%E4%B8%8E%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86span">4.8.2 Proposition: 矩阵指数与三角函数的微分</a></li>
+<li><a href="#span-classcallout482-definition-%E7%9F%A9%E9%98%B5%E5%AF%B9%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AF%BC%E6%95%B0span">4.8.2 Definition: 矩阵对矩阵的导数</a></li>
+<li><a href="#span-classcallout482-example-%E6%A2%AF%E5%BA%A6%E5%90%91%E9%87%8Fspan">4.8.2 Example: 梯度向量</a></li>
+<li><a href="#span-classcallout483-example-jacobian%E7%9F%A9%E9%98%B5span">4.8.3 Example: Jacobian矩阵</a></li>
+<li><a href="#span-classcallout484-example-%E7%9F%A9%E9%98%B5%E5%BE%AE%E5%88%86span">4.8.4 Example: 矩阵微分</a></li>
+<li><a href="#span-classcallout485-example-%E7%9F%A9%E9%98%B5%E5%BE%AE%E5%88%86span">4.8.5 Example: 矩阵微分</a></li>
 </ul>
 </li>
 </ul>

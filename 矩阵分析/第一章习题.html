@@ -100,10 +100,10 @@
   /* 目录的高度 */
   padding: 10px;
   /* 内边距 */
-  z-index: -100;
-  /* 使目录在最底层 */
+  z-index: 100;
+  /* 使目录在最顶层 */
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .markdown-preview.markdown-preview .fixed-toc {
     padding: 10px;
     /* 内边距 */
@@ -126,6 +126,20 @@
     
       <div class="crossnote markdown-preview  ">
       
+<p><button onclick="window.location.href='../index.html'">Home</button><br>
+<button id="toggleProofs">Toggle Proofs</button></p>
+<script>
+  document.getElementById('toggleProofs').addEventListener('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'gray' ? '' : 'gray';
+    var details = document.querySelectorAll('details > summary');
+    for (var i = 0; i < details.length; i++) {
+      if (details[i].textContent.includes('Proof')) {
+        details[i].parentElement.open = !details[i].parentElement.open;
+      }
+    }
+  });
+</script>
+<h1 id="第一章部分习题">第一章部分习题 </h1>
 <p><span class="callout">例2(A)</span><br>
 已知 <span class="mathjax-exps">$A = \begin{bmatrix} 1 &amp; 0 \\ 2 &amp; 1 \end{bmatrix}$</span> 和集合 <span class="mathjax-exps">$S_A = \left\{ \sum_{i=0}^{10^3} a_i A^i, a_i \in \mathbb{R}, i=1,\ldots,10^3 \right\}$</span>，则 <span class="mathjax-exps">$S_A$</span>（ ）<span class="mathjax-exps">$\mathbb{R}$</span> 上的线性空间；若 <span class="mathjax-exps">$S_A$</span> 是 <span class="mathjax-exps">$\mathbb{R}$</span> 上的线性空间，则 <span class="mathjax-exps">$\text{dim}(S_A) =$</span></p>
 <details open="">
